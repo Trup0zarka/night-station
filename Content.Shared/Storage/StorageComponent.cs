@@ -72,7 +72,7 @@ namespace Content.Shared.Storage
         public TimeSpan OpenDelay = TimeSpan.Zero;
 
         [DataField]
-        public bool ClickInsert = true; // Can insert stuff by clicking the storage entity with it
+        public bool OpenOnActivate = true;
 
         /// <summary>
         /// How many entities area pickup can pickup at once.
