@@ -211,9 +211,6 @@ namespace Content.Client.Lobby
 
             if (_gameTicker.ServerInfoBlob != null)
                 Lobby!.ServerInfo.SetInfoBlob(_gameTicker.ServerInfoBlob);
-
-            Lobby!.LabelName.SetMarkup("[font=\"Bedstead\" size=20] Night City [/font]"); // WD EDIT
-            //Lobby!.ChangelogLabel.SetMarkup(Loc.GetString("ui-lobby-changelog")); // WD EDIT
         }
 
         private void UpdateLobbySoundtrackInfo(LobbySoundtrackChangedEvent ev)

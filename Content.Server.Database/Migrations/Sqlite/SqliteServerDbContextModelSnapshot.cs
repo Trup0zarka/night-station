@@ -663,7 +663,7 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("job", (string)null);
                 });
 
-            modelBuilder.Entity("Content.Server.Database.LoadoutItem", b =>
+            modelBuilder.Entity("Content.Server.Database.Loadout", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -828,10 +828,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Property<int>("Age")
                         .HasColumnType("INTEGER")
                         .HasColumnName("age");
-
-                    b.Property<int>("BankBalance")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("bank_balance");
 
                     b.Property<byte>("BarkPause")
                         .HasColumnType("INTEGER")
@@ -1688,7 +1684,7 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("Profile");
                 });
 
-            modelBuilder.Entity("Content.Server.Database.LoadoutItem", b =>
+            modelBuilder.Entity("Content.Server.Database.Loadout", b =>
                 {
                     b.HasOne("Content.Server.Database.Profile", "Profile")
                         .WithMany("Loadouts")
