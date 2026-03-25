@@ -136,7 +136,7 @@ guide-entry-rules-sl-restricted-gear = Restricted Gear
 guide-entry-rules-sl-restricted-weapons = Restricted Weapons
 guide-entry-rules-ban-types = Ban Types
 guide-entry-rules-ban-durations = Ban Durations
-guide-entry-rules-white-dream = Правила White Dream
+guide-entry-rules-white-dream = Правила Night City
 
 guide-entry-writing = Разметка письма
 guide-entry-glossary = Словарь терминов

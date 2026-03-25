@@ -53,6 +53,12 @@ namespace Content.Shared.Storage
         public bool QuickInsert; // Can insert storables by clicking them with the storage entity
 
         /// <summary>
+        /// Can we insert an item by clicking on the storage entity with it?
+        /// </summary>
+        [DataField]
+        public bool ClickInsert = true;
+
+        /// <summary>
         /// Minimum delay between quick/area insert actions.
         /// </summary>
         /// <remarks>Used to prevent autoclickers spamming server with individual pickup actions.</remarks>
