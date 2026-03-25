@@ -5111,3 +5111,71 @@ Entries:
   id: 536
   time: '2026-03-06T10:13:42.0000000+00:00'
   url: https://github.com/WWhiteDreamProject/wwdpublic/pull/1076
+- author: Myaflic
+  changes:
+    - type: Fix
+      message: >-
+        Исправлены некоторые части UI в редакторе персонажей ||(старых
+        персонажей можно импортировать; поиск по всем лоадаутам . . . +1)||.
+    - type: Add
+      message: >-
+        Переводы редактора персонажей и всего меню лобби ||(кроме руководства и
+        панели администратора)|| и полезные фичи ||(скрытие недоступных
+        категорий; переключатель скрытия недоступных категорий; поле с пределом
+        максимального количества символов во флаворе для удобства написания
+        описания персонажа . . . +1)||.
+  id: 537
+  time: '2026-03-07T21:22:20.0000000+00:00'
+  url: https://github.com/WWhiteDreamProject/wwdpublic/pull/1056
+- author: Spatison
+  changes:
+    - type: Tweak
+      message: >-
+        Корабельные турели удаленного контроля теперь имеют расширенный обзор и
+        способность прицеливаться
+    - type: Fix
+      message: Исправлен интерфейс сканера масс
+    - type: Fix
+      message: Псевдо 3д текстуры теперь не ломают реплеи
+  id: 538
+  time: '2026-03-08T13:24:54.0000000+00:00'
+  url: https://github.com/WWhiteDreamProject/wwdpublic/pull/1080
+- author: Myaflic
+  changes:
+    - type: Tweak
+      message: Фелиниды теперь могут брать трейт «Несокрушимый».
+  id: 539
+  time: '2026-03-18T04:36:02.0000000+00:00'
+  url: https://github.com/WWhiteDreamProject/wwdpublic/pull/1085
+- author: Sevasstyan
+  changes:
+    - type: Fix
+      message: Бесплатные пистолетные магазины в сб техфабе больше не бесплатные.
+  id: 540
+  time: '2026-03-18T11:49:30.0000000+00:00'
+  url: https://github.com/WWhiteDreamProject/wwdpublic/pull/1087
+- author: SentryPrimies
+  changes:
+    - type: Add
+      message: >-
+        Добавлены новые спрайты Инженерному, Продвинотому Инженерному, и
+        Атмосферному хардсьюту.
+    - type: Remove
+      message: 'Удалены старые спрайты вышеприведённых скафандров '
+  id: 541
+  time: '2026-03-19T18:36:24.0000000+00:00'
+  url: https://github.com/WWhiteDreamProject/wwdpublic/pull/1089
+- author: SentryPrimies
+  changes:
+    - type: Add
+      message: Добавлены новые спрайты старым инженерным комбинезонам
+  id: 542
+  time: '2026-03-24T16:57:18.0000000+00:00'
+  url: https://github.com/WWhiteDreamProject/wwdpublic/pull/1091
+- author: SentryPrimies
+  changes:
+    - type: Add
+      message: Добавлены новые спрайты хранилищам скафандров
+  id: 543
+  time: '2026-03-24T16:57:47.0000000+00:00'
+  url: https://github.com/WWhiteDreamProject/wwdpublic/pull/1092
