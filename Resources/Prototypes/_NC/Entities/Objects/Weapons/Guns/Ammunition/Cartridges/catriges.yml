@@ -1,4 +1,22 @@
 - type: entity
+  id: Cartridge9mm
+  name: патрон (9мм)
+  parent: BaseCartridge
+  components:
+  - type: Tag
+    tags:
+    - Cartridge9mm
+  - type: CartridgeAmmo
+    proto: Bullet9mm
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+
+- type: entity
   id: Cartridge114mm
   name: патрон (11.4мм)
   parent: BaseCartridge

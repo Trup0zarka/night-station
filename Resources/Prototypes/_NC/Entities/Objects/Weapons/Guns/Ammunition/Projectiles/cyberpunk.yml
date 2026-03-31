@@ -1,4 +1,15 @@
 - type: entity
+  id: Bullet9mm
+  name: пуля (9мм)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 20
+
+- type: entity
   id: Bullet114mm
   name: пуля (11.4мм)
   parent: BaseBullet

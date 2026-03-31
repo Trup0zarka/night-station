@@ -124,3 +124,41 @@
   - type: Tag
     tags:
     - MagazinePistolMarkIII
+
+- type: entity
+  id: MagazinePistolCheesemaker
+  name: магазин FedArms "Cheesemaker" (12.7мм)
+  description: Магазин для тяжелого пистолета Cheesemaker. Вмещает 8 мощных патронов калибра 12.7мм.
+  parent: BaseMagazinePistol
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 8
+    proto: Cartridge127mm
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Tag
+    tags:
+    - MagazinePistolCheesemaker
+
+- type: entity
+  id: MagazinePistolFederalX9
+  name: магазин Federal Hand X9 (9мм)
+  description: Магазин для компактного пистолета Federal Hand X9. Вмещает 12 патронов калибра 9мм.
+  parent: BaseMagazinePistol
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 12
+    proto: Cartridge9mm
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Tag
+    tags:
+    - MagazinePistolFederalX9
