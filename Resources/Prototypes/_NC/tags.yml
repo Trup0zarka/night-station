@@ -85,3 +85,7 @@
 - type: Tag
   id: Bullet9mm
   name: Bullet9mm
+
+- type: Tag
+  id: MagazinePistolBoomerBuster
+  name: MagazinePistolBoomerBuster
