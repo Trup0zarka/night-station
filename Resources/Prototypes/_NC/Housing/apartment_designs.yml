@@ -1,0 +1,48 @@
+# =============================================
+#  Прототипы дизайнов квартир (ApartmentDesignPrototype)
+# =============================================
+#
+# Каждый дизайн ссылается на .yml файл префаба,
+# который маппер создал в редакторе.
+#
+# ПРАВИЛА ДЛЯ МАППЕРА:
+# 1. Создайте пустой грид нужного размера (5x5, 7x7, etc.)
+# 2. Замостите его желаемым полом
+# 3. Расставьте мебель, освещение, декор
+# 4. НЕ ставьте стены и окна (они уже есть на основной карте)
+# 5. Сохраните как .yml в папку Maps/_NC/Apartments/
+#
+# ПРИМЕР (раскомментируйте и создайте .yml файл):
+#
+# - type: apartmentDesign
+#   id: Design_Cyberpunk_Neon
+#   name: "Неоновый притон"
+#   description: "Минималистично, грязно, много розового света."
+#   basePrice: 5000
+#   mapPath: /Maps/_NC/Apartments/neon_5x5.yml
+#   requiredSize: 5,5
+#
+# - type: apartmentDesign
+#   id: Design_Corporate_Clean
+#   name: "Корпоративный минимализм"
+#   description: "Белые стены, дорогая мебель, вид на город."
+#   basePrice: 12000
+#   mapPath: /Maps/_NC/Apartments/corporate_5x5.yml
+#   requiredSize: 5,5
+#
+# - type: apartmentDesign
+#   id: Design_Nomad_Camp
+#   name: "Лагерь кочевника"
+#   description: "Костёр, спальник, ящики с припасами. Просто и надёжно."
+#   basePrice: 2000
+#   mapPath: /Maps/_NC/Apartments/nomad_3x3.yml
+#   requiredSize: 3,3
+
+
+- type: apartmentDesign
+  id: Design_Corporate_Clean
+  name: "Корпоративный минимализм"
+  description: "Белые стены, дорогая мебель, вид на город."
+  basePrice: 12000
+  mapPath: /Maps/_NC/test.yml
+  requiredSize: 5,5

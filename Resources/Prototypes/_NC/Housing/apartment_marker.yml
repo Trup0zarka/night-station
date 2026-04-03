@@ -1,0 +1,22 @@
+# =============================================
+#  Маркер квартиры (ставится маппером в центре комнаты)
+# =============================================
+- type: entity
+  id: ApartmentMarker
+  name: Маркер квартиры
+  description: Сервисная энтити. Определяет центр и зону будущей квартиры.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: ApartmentMarker
+    apartmentId: "Apt_Default_001"
+    size: 5,5
+    priceMultiplier: 1.0
+    displayName: "Квартира"
+  # Невидимый спрайт для отображения в маппере
+  - type: Sprite
+    sprite: Markers/cross.rsi
+    state: "green"
+    visible: false

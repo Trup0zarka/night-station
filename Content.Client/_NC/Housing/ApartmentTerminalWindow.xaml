@@ -1,0 +1,49 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      Title="Night City Realty — Терминал недвижимости"
+                      SetSize="520 440"
+                      MinSize="520 440">
+    <BoxContainer Margin="10 10 10 10" Orientation="Vertical" SeparationOverride="8">
+
+        <!-- Заголовок + баланс -->
+        <BoxContainer Orientation="Horizontal">
+            <Label Text="NIGHT CITY REALTY" StyleClasses="LabelHeading" HorizontalExpand="True" />
+            <Label Text="Баланс: " StyleClasses="LabelKeyText" />
+            <Label Name="BalanceLabel" Text="0$" FontColorOverride="#33FF99" />
+        </BoxContainer>
+
+        <PanelContainer StyleClasses="LowDivider" />
+
+        <!-- Секция: Список квартир -->
+        <Label Text="▶ ДОСТУПНЫЕ КВАРТИРЫ" StyleClasses="LabelSubText" FontColorOverride="#AAAAAA"/>
+
+        <ScrollContainer VerticalExpand="True" MinSize="0 120" HScrollEnabled="False">
+            <BoxContainer Name="ApartmentList" Orientation="Vertical" SeparationOverride="4" />
+        </ScrollContainer>
+
+        <PanelContainer StyleClasses="LowDivider" />
+
+        <!-- Секция: Список дизайнов -->
+        <Label Text="▶ ДИЗАЙНЫ ИНТЕРЬЕРА" StyleClasses="LabelSubText" FontColorOverride="#AAAAAA"/>
+
+        <ScrollContainer VerticalExpand="True" MinSize="0 120" HScrollEnabled="False">
+            <BoxContainer Name="DesignList" Orientation="Vertical" SeparationOverride="4" />
+        </ScrollContainer>
+
+        <PanelContainer StyleClasses="LowDivider" />
+
+        <!-- Нижняя панель действий -->
+        <BoxContainer Orientation="Horizontal" SeparationOverride="8">
+            <Button Name="BuyButton" Text="Купить"
+                    HorizontalExpand="True"
+                    Disabled="True"
+                    StyleClasses="ButtonColorGreen" />
+            <Button Name="SellButton" Text="Продать"
+                    HorizontalExpand="True"
+                    Disabled="True"
+                    StyleClasses="ButtonColorRed" />
+        </BoxContainer>
+
+    </BoxContainer>
+</controls:FancyWindow>

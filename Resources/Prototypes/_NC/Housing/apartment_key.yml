@@ -1,0 +1,14 @@
+# =============================================
+#  Физический ключ от квартиры
+# =============================================
+- type: entity
+  id: ApartmentKey
+  name: Ключ от квартиры
+  description: Физический ключ для доступа в квартиру. Не потеряйте!
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/encryption_keys.rsi
+    state: common_label
+  - type: Item
+    size: Tiny

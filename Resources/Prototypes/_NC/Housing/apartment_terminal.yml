@@ -1,0 +1,35 @@
+# =============================================
+#  Терминал недвижимости (взаимодействие открывает BUI)
+# =============================================
+- type: entity
+  id: ApartmentTerminal
+  name: Терминал недвижимости
+  description: Корпоративный терминал для покупки и продажи квартир. Powered by Night City Realty Inc.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: Structures/Machines/computers.rsi
+    state: computer
+  - type: ApartmentTerminal
+  - type: UserInterface
+    interfaces:
+      enum.ApartmentTerminalUiKey.Key:
+        type: ApartmentTerminalBoundUserInterface
+  - type: ActivatableUI
+    key: enum.ApartmentTerminalUiKey.Key
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
