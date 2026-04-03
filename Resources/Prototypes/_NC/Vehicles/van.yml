@@ -1,0 +1,136 @@
+- type: entity
+  id: NCVehicleVanBase
+  abstract: true
+  name: van
+  description: A rugged transport van.
+  components:
+  - type: Vehicle
+    movementKind: Grid
+  - type: Clickable
+  - type: GridVehicleMover
+    maxSpeed: 8
+    acceleration: 5
+    deceleration: 12
+    pushCooldown: 2
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      world:
+        shape:
+          !type:PhysShapeAabb
+          bounds: -0.425,-1.2,0.425,1.2
+        density: 1000
+        mask:
+        - Impassable
+        - HighImpassable
+        - LowImpassable
+        layer:
+        - LargeMobLayer
+  - type: InteractionOutline
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: /Textures/_NC/Structures/Vehicles/van.rsi
+    layers:
+    - map: [ base ]
+      state: van_base
+  - type: DoAfter
+  - type: UserInterface
+    interfaces:
+      enum.RMCHardpointUiKey.Key:
+        type: RMCHardpointBoundUserInterface
+      enum.RMCVehicleWeaponsUiKey.Key:
+        type: RMCVehicleWeaponsBoundUserInterface
+  - type: RMCVehicleWeapons
+  - type: InputMover
+  - type: ItemSlots
+  - type: RMCHardpointSlots
+    vehicleFamily: Van
+    slots:
+    - id: wheel-1
+      slotTypes: [ Wheel ]
+      insertDelay: 1.5
+  - type: RMCHardpointIntegrity
+    maxIntegrity: 1000
+    bypassEntryOnZero: true
+  - type: Appearance
+  - type: VehicleEnter
+    interiorPath: /Maps/_NC/Vehicles/van_interior.yml
+    enterDoAfter: 1.0
+    exitDoAfter: 1.0
+    maxPassengers: 8
+    entryPoints:
+    - offset: 1,-1
+      radius: 0.6
+      interiorCoords: 3.5,-0.34
+    - offset: -1,-1
+      radius: 0.6
+      interiorCoords: 3.25,-1
+    - offset: 0,2
+      radius: 0.75
+      interiorCoords: 0.25,-1
+
+- type: entity
+  parent: NCVehicleVanBase
+  id: NCVehicleVan
+
+- type: entity
+  id: NCVehicleBoxVanBase
+  abstract: true
+  parent: NCVehicleVanBase
+  name: box van
+  description: A rugged transport van fitted with a box body.
+  components:
+  - type: Fixtures
+    fixtures:
+      world:
+        shape:
+          !type:PhysShapeAabb
+          bounds: -0.425,1.4,0.425,-0.35
+        density: 1000
+        mask:
+        - Impassable
+        - HighImpassable
+        - LowImpassable
+        layer:
+        - LargeMobLayer
+  - type: Sprite
+    offset: "0,0.5"
+    sprite: /Textures/_NC/Structures/Vehicles/box_van.rsi
+    layers:
+    - map: [ base ]
+      state: van_base
+  - type: VehicleEnter
+    interiorPath: /Maps/_NC/Vehicles/box_van_interior.yml
+    enterDoAfter: 1.0
+    exitDoAfter: 1.0
+    maxPassengers: 8
+    entryPoints:
+    - offset: 1,-0.25
+      radius: 0.6
+      interiorCoords: -0.42,1.6
+    - offset: -1,-0.25
+      radius: 0.6
+      interiorCoords: -0.53,0.84
+    - offset: 0,2
+      radius: 0.75
+      interiorCoords: -1.74,1.22
+
+- type: entity
+  parent: NCVehicleBoxVanBase
+  id: NCVehicleBoxVan
+
+- type: entity
+  parent: NCVehicleBoxVanBase
+  id: NCVehiclePizzaVan
+  name: pizza van
+  description: A van repurposed for pizza delivery, still sturdy enough for transport.
+  components:
+  - type: Sprite
+    sprite: /Textures/_NC/Structures/Vehicles/pizza_van.rsi
+    offset: "0,0.5"
+    layers:
+    - map: [ base ]
+      state: van_base
+  - type: VehicleEnter
+    interiorPath: /Maps/_NC/Vehicles/pizza_van_interior.yml

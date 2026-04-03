@@ -1,8 +1,7 @@
-﻿using System.Numerics;
+using System.Numerics;
 using Content.Shared._NC.Vehicle.Components;
 using Content.Shared._NC.Vehicle.Grid.Components;
 using Content.Shared.Damage;
-using Content.Shared.Damage.Prototypes;
 using Content.Shared.Doors.Systems;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Physics;
@@ -24,10 +23,22 @@ namespace Content.Shared._NC.Vehicle.Grid;
 
 public sealed partial class GridVehicleMoverSystem : EntitySystem
 {
-    [Dependency] private readonly SharedTransformSystem transform = default!;
-    [Dependency] private readonly SharedMapSystem map = default!;
-    [Dependency] private readonly SharedPhysicsSystem physics = default!;
-    [Dependency] private readonly EntityLookupSystem lookup = default!;
+    private enum VehicleCollisionClass : byte
+    {
+        None,
+        Static,
+        Mob,
+        Vehicle,
+        SoftMob,
+        Ignore,
+        Breakable,
+        Hard
+    }
+
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
@@ -38,103 +49,131 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
     [Dependency] private readonly StandingStateSystem _standing = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
 
-    private EntityQuery<MapGridComponent> gridQ;
-    private EntityQuery<PhysicsComponent> physicsQ;
-    private EntityQuery<FixturesComponent> fixtureQ;
+    private EntityQuery<MapGridComponent> _gridQuery;
+    private EntityQuery<PhysicsComponent> _physicsQuery;
+    private EntityQuery<FixturesComponent> _fixturesQuery;
+    private EntityQuery<TransformComponent> _xformQuery;
 
     private const float Clearance = PhysicsConstants.PolygonRadius * 0.75f;
-    private const double MobCollisionDamage = 8;
-    private static readonly TimeSpan MobCollisionKnockdown = TimeSpan.FromSeconds(1.5);
-    private static readonly TimeSpan MobCollisionCooldown = TimeSpan.FromSeconds(0.75);
-    private static readonly ProtoId<DamageTypePrototype> CollisionDamageType = "Blunt";
     private const int GridVehicleStaticBlockerMask =
         (int) (CollisionGroup.Impassable |
                CollisionGroup.HighImpassable |
                CollisionGroup.LowImpassable |
                CollisionGroup.MidImpassable);
-    private const CollisionGroup GridVehiclePushHardBlockMask =
-        CollisionGroup.Impassable |
-        CollisionGroup.HighImpassable |
-        CollisionGroup.LowImpassable |
-        CollisionGroup.MidImpassable;
-    private const float PushTileBlockFraction = 0.005f;
-    private const float PushOverlapEpsilon = 0.05f;
-    private const float PushAxisHysteresis = 0.05f;
-    private const float PushWallSkin = 0.1f;
-    private const float PushWallOverlapArea = 0.01f;
+
     private const float MovementFixedStep = 1f / 60f;
     private const int MaxFixedStepsPerFrame = 6;
     private const float ClientSmoothingSnapDistance = 1.25f;
     private const float ClientSmoothingRate = 22f;
 
-
-    public static readonly List<(EntityUid grid, Vector2i tile)> DebugTestedTiles = new();
-    public static readonly List<DebugCollision> DebugCollisions = new();
-    private readonly Dictionary<EntityUid, TimeSpan> _lastMobCollision = new();
     private readonly Dictionary<EntityUid, bool> _hardState = new();
-    private readonly Dictionary<EntityUid, bool> _lastMobPushAxis = new();
     private readonly Dictionary<EntityUid, float> _movementAccumulator = new();
-
-    private enum VehicleCollisionClass : byte
-    {
-        Ignore = 0,
-        SoftMob = 1,
-        Breakable = 2,
-        Hard = 3,
-    }
-
-    public readonly record struct DebugCollision(
-        EntityUid Tested,
-        EntityUid Blocker,
-        Box2 TestedAabb,
-        Box2 BlockerAabb,
-        float Distance,
-        float Skin,
-        float Clearance,
-        MapId Map);
+    
+    // Missing Debug structures from RMC
+    private readonly List<(EntityUid, Vector2i)> DebugTestedTiles = new();
+    private readonly List<DebugCollision> DebugCollisions = new();
+    private readonly Dictionary<EntityUid, TimeSpan> _lastMobCollision = new();
+    private readonly Dictionary<EntityUid, bool> _lastMobPushAxis = new();
+    private const float PushOverlapEpsilon = 0.01f;
+    private const float PushAxisHysteresis = 0.05f;
+    private const float PushTileBlockFraction = 0.5f;
+    private const float PushWallOverlapArea = 0.1f;
+    private const float PushWallSkin = 0.05f;
+    private const int GridVehiclePushHardBlockMask = (int) CollisionGroup.Impassable;
+    private readonly TimeSpan MobCollisionCooldown = TimeSpan.FromSeconds(1);
+    private readonly float MobCollisionKnockdown = 3f;
+    private readonly EntProtoId CollisionDamageType = "Blunt";
+    private readonly float MobCollisionDamage = 10f;
 
     public override void Initialize()
     {
         base.Initialize();
-        gridQ = GetEntityQuery<MapGridComponent>();
-        physicsQ = GetEntityQuery<PhysicsComponent>();
-        fixtureQ = GetEntityQuery<FixturesComponent>();
+        _gridQuery = GetEntityQuery<MapGridComponent>();
+        _physicsQuery = GetEntityQuery<PhysicsComponent>();
+        _fixturesQuery = GetEntityQuery<FixturesComponent>();
+        _xformQuery = GetEntityQuery<TransformComponent>();
+
         SubscribeLocalEvent<GridVehicleMoverComponent, ComponentStartup>(OnMoverStartup);
         SubscribeLocalEvent<GridVehicleMoverComponent, ComponentShutdown>(OnMoverShutdown);
+        SubscribeLocalEvent<GridVehicleMoverComponent, MoveEvent>(OnMoverMove);
+        SubscribeLocalEvent<GridVehicleMoverComponent, ReAnchorEvent>(OnMoverReAnchor);
         SubscribeLocalEvent<GridVehicleMoverComponent, VehicleCanRunEvent>(OnMoverCanRun);
         SubscribeLocalEvent<GridVehicleMoverComponent, PreventCollideEvent>(OnMoverPreventCollide);
     }
 
     private void OnMoverStartup(Entity<GridVehicleMoverComponent> ent, ref ComponentStartup args)
     {
-        var uid = ent.Owner;
-        var xform = Transform(uid);
-
-        if (xform.GridUid is not { } grid || !gridQ.TryComp(grid, out var gridComp))
-            return;
-
-        var coords = xform.Coordinates.WithEntityId(grid, transform, EntityManager);
-        var tile = map.TileIndicesFor(grid, gridComp, coords);
-
-        ent.Comp.CurrentTile = tile;
-        ent.Comp.TargetTile = tile;
-        ent.Comp.Position = new Vector2(tile.X + 0.5f, tile.Y + 0.5f);
-        ent.Comp.CurrentSpeed = 0f;
-        ent.Comp.NextPushTime = TimeSpan.Zero;
-        ent.Comp.NextTurnTime = TimeSpan.Zero;
-        ent.Comp.InPlaceTurnBlockUntil = TimeSpan.Zero;
-        ent.Comp.IsCommittedToMove = false;
-        ent.Comp.IsPushMove = false;
-        _hardState[uid] = true;
-        _movementAccumulator[uid] = 0f;
-
-        Dirty(uid, ent.Comp);
+        TrySyncMoverToCurrentGrid(ent, centerOnTile: true, force: true);
     }
 
     private void OnMoverShutdown(Entity<GridVehicleMoverComponent> ent, ref ComponentShutdown args)
     {
         _hardState.Remove(ent.Owner);
         _movementAccumulator.Remove(ent.Owner);
+    }
+
+    private void OnMoverMove(Entity<GridVehicleMoverComponent> ent, ref MoveEvent args)
+    {
+        if (!args.ParentChanged)
+            return;
+
+        TrySyncMoverToCurrentGrid(ent, centerOnTile: false);
+    }
+
+    private void OnMoverReAnchor(Entity<GridVehicleMoverComponent> ent, ref ReAnchorEvent args)
+    {
+        TrySyncMoverToCurrentGrid(ent, centerOnTile: false);
+    }
+
+    private bool TrySyncMoverToCurrentGrid(
+        Entity<GridVehicleMoverComponent> ent,
+        bool centerOnTile,
+        TransformComponent? xform = null,
+        bool force = false)
+    {
+        var uid = ent.Owner;
+        xform ??= Transform(uid);
+
+        if (xform.GridUid is not { } grid || !_gridQuery.TryComp(grid, out var gridComp))
+        {
+            if (ent.Comp.SyncedGrid == null)
+                return false;
+
+            ent.Comp.SyncedGrid = null;
+            ent.Comp.CurrentSpeed = 0f;
+            ent.Comp.IsCommittedToMove = false;
+            ent.Comp.IsPushMove = false;
+            ent.Comp.IsMoving = false;
+            _hardState[uid] = true;
+            _movementAccumulator[uid] = 0f;
+            Dirty(uid, ent.Comp);
+            return true;
+        }
+
+        if (!force && ent.Comp.SyncedGrid == grid)
+            return false;
+
+        var coords = xform.Coordinates.WithEntityId(grid, _transform, EntityManager);
+        var tile = _map.TileIndicesFor(grid, gridComp, coords);
+
+        ent.Comp.SyncedGrid = grid;
+        ent.Comp.CurrentTile = tile;
+        ent.Comp.TargetTile = tile;
+        ent.Comp.Position = centerOnTile
+            ? new Vector2(tile.X + 0.5f, tile.Y + 0.5f)
+            : coords.Position;
+        ent.Comp.CurrentSpeed = 0f;
+        ent.Comp.NextPushTime = TimeSpan.Zero;
+        ent.Comp.NextTurnTime = TimeSpan.Zero;
+        ent.Comp.InPlaceTurnBlockUntil = TimeSpan.Zero;
+        ent.Comp.IsCommittedToMove = false;
+        ent.Comp.IsPushMove = false;
+        ent.Comp.IsMoving = false;
+        _hardState[uid] = true;
+        _movementAccumulator[uid] = 0f;
+
+        Dirty(uid, ent.Comp);
+        return true;
     }
 
     private void OnMoverCanRun(Entity<GridVehicleMoverComponent> ent, ref VehicleCanRunEvent args)
@@ -144,8 +183,6 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
 
         if (!TryComp(ent.Owner, out VehicleComponent? vehicle) || vehicle.Operator is not { } operatorUid)
             return;
-
-        args.CanRun = false;
     }
 
     private void OnMoverPreventCollide(Entity<GridVehicleMoverComponent> ent, ref PreventCollideEvent args)
@@ -172,9 +209,6 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        DebugTestedTiles.Clear();
-        DebugCollisions.Clear();
-
         var q = EntityQueryEnumerator<GridVehicleMoverComponent, VehicleComponent, TransformComponent>();
 
         while (q.MoveNext(out var uid, out var mover, out var vehicle, out var xform))
@@ -182,7 +216,9 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
             if (vehicle.MovementKind != VehicleMovementKind.Grid)
                 continue;
 
-            if (xform.GridUid is not { } grid || !gridQ.TryComp(grid, out var gridComp))
+            TrySyncMoverToCurrentGrid((uid, mover), centerOnTile: false, xform);
+
+            if (xform.GridUid is not { } grid || !_gridQuery.TryComp(grid, out var gridComp))
                 continue;
 
             if (_net.IsClient && !ShouldPredictVehicleMovement(vehicle))
@@ -200,7 +236,12 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
             var steps = 0;
             while (accumulator >= MovementFixedStep && steps < MaxFixedStepsPerFrame)
             {
-                UpdateMovement(uid, mover, vehicle, grid, gridComp, inputDir, pushing, MovementFixedStep);
+                var currentXform = Transform(uid);
+                TrySyncMoverToCurrentGrid((uid, mover), centerOnTile: false, currentXform);
+                if (currentXform.GridUid is not { } currentGrid || !_gridQuery.TryComp(currentGrid, out var currentGridComp))
+                    break;
+
+                UpdateMovement(uid, mover, vehicle, currentGrid, currentGridComp, inputDir, pushing, MovementFixedStep);
                 accumulator -= MovementFixedStep;
                 steps++;
             }
@@ -227,18 +268,42 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
             return;
 
         var coords = new EntityCoordinates(grid, mover.Position);
-        var target = coords.WithEntityId(xform.ParentUid, transform, EntityManager).Position;
+        var target = coords.WithEntityId(xform.ParentUid, _transform, EntityManager).Position;
         var current = xform.LocalPosition;
         var delta = target - current;
 
         if (delta.LengthSquared() >= ClientSmoothingSnapDistance * ClientSmoothingSnapDistance)
         {
-            transform.SetLocalPosition(uid, target, xform);
+            _transform.SetLocalPosition(uid, target, xform);
             return;
         }
 
         var alpha = 1f - MathF.Exp(-ClientSmoothingRate * frameTime);
         var smoothed = Vector2.Lerp(current, target, alpha);
-        transform.SetLocalPosition(uid, smoothed, xform);
+        _transform.SetLocalPosition(uid, smoothed, xform);
+    }
+
+    private struct DebugCollision
+    {
+        public EntityUid Vehicle;
+        public EntityUid Other;
+        public Box2 VehicleAabb;
+        public Box2 OtherAabb;
+        public float Damage;
+        public float Speed;
+        public float Clearance;
+        public MapId MapId;
+
+        public DebugCollision(EntityUid vehicle, EntityUid other, Box2 vehicleAabb, Box2 otherAabb, float damage, float speed, float clearance, MapId mapId)
+        {
+            Vehicle = vehicle;
+            Other = other;
+            VehicleAabb = vehicleAabb;
+            OtherAabb = otherAabb;
+            Damage = damage;
+            Speed = speed;
+            Clearance = clearance;
+            MapId = mapId;
+        }
     }
 }

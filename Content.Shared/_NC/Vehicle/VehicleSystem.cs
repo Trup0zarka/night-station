@@ -1,15 +1,25 @@
-﻿using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
 using Content.Shared._NC.Vehicle.Components;
 using Content.Shared._NC.Vehicle.Grid.Components;
 using Content.Shared.Access.Components;
 using Content.Shared.ActionBlocker;
+using Content.Shared.Buckle;
+using Content.Shared.Buckle.Components;
+using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Damage;
+using Content.Shared.DoAfter;
+using Content.Shared.Interaction;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
+using Content.Shared.Popups;
 using Content.Shared.Whitelist;
 using JetBrains.Annotations;
 using Robust.Shared.Containers;
+using Robust.Shared.EntitySerialization.Systems;
+using Robust.Shared.Map;
+using Robust.Shared.Network;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._NC.Vehicle;
@@ -23,11 +33,24 @@ public sealed partial class VehicleSystem : EntitySystem
     [Dependency] private readonly EntityWhitelistSystem _entityWhitelist = default!;
     [Dependency] private readonly SharedMoverController _mover = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    
+    // RMC Dependencies
+    [Dependency] private readonly SharedEyeSystem _eye = default!;
+    [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly MetaDataSystem _meta = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
 
     public override void Initialize()
     {
         InitializeOperator();
         InitializeKey();
+        InitializeInterior();
+        InitializeWeapons();
 
         SubscribeLocalEvent<VehicleComponent, BeforeDamageChangedEvent>(OnBeforeDamageChanged);
         SubscribeLocalEvent<VehicleComponent, UpdateCanMoveEvent>(OnVehicleUpdateCanMove);
@@ -42,9 +65,8 @@ public sealed partial class VehicleSystem : EntitySystem
         if (!ent.Comp.TransferDamage || !args.Damage.AnyPositive() || ent.Comp.Operator is not { } operatorUid)
             return;
 
-        // in case this ever wants to be a thing
-        var vehicleMap = Transform(ent.Owner).MapID;
-        var operatorMap = Transform(operatorUid).MapID;
+        var vehicleMap = _transform.GetMapId(ent.Owner);
+        var operatorMap = _transform.GetMapId(operatorUid);
         if (vehicleMap != operatorMap)
             return;
 
@@ -67,6 +89,7 @@ public sealed partial class VehicleSystem : EntitySystem
     private void OnVehicleShutdown(Entity<VehicleComponent> ent, ref ComponentShutdown args)
     {
         TryRemoveOperator(ent);
+        CleanupInterior(ent.Owner); // New
     }
 
     private void OnVehicleGetAdditionalAccess(Entity<VehicleComponent> ent, ref GetAdditionalAccessEvent args)

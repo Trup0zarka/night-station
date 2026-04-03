@@ -1,0 +1,132 @@
+- type: entity
+  id: NCVehicleHumveeBase
+  abstract: true
+  name: humvee
+  description: A fast armored utility vehicle outfitted for patrols and support.
+  components:
+  - type: Vehicle
+    movementKind: Grid
+  - type: Clickable
+  - type: GridVehicleMover
+    maxSpeed: 9
+    acceleration: 6
+    deceleration: 12
+    pushCooldown: 2
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      world:
+        shape:
+          !type:PhysShapeAabb
+          bounds: -0.425,-1.2,0.425,1.2
+        density: 1000
+        mask:
+        - Impassable
+        - HighImpassable
+        - LowImpassable
+        layer:
+        - LargeMobLayer
+  - type: InteractionOutline
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: /Textures/_NC/Structures/Vehicles/humvee.rsi
+    layers:
+    - map: [ base ]
+      state: humvee_base
+    - map: [ primary ]
+      state: PRIMARY
+      visible: false
+    - map: [ secondary ]
+      state: SECONDARY
+      visible: false
+    - map: [ support ]
+      state: ATTACH
+      visible: false
+    - map: [ support-2 ]
+      state: ATTACH
+      visible: false
+  - type: DoAfter
+  - type: UserInterface
+    interfaces:
+      enum.RMCHardpointUiKey.Key:
+        type: RMCHardpointBoundUserInterface
+      enum.RMCVehicleWeaponsUiKey.Key:
+        type: RMCVehicleWeaponsBoundUserInterface
+  - type: RMCVehicleWeapons
+  - type: InputMover
+  - type: ItemSlots
+  - type: RMCHardpointSlots
+    vehicleFamily: Humvee
+    slots:
+    - id: turret
+      slotTypes: [ Turret ]
+      insertDelay: 2.0
+    - id: roof
+      slotTypes: [ RoofAttachment ]
+      insertDelay: 1.5
+    - id: front
+      slotTypes: [ FrontAttachment ]
+      insertDelay: 1.5
+  - type: RMCHardpointIntegrity
+    maxIntegrity: 1000
+    bypassEntryOnZero: true
+  - type: Appearance
+  - type: VehicleEnter
+    interiorPath: /Maps/_NC/Vehicles/humvee_interior.yml
+    enterDoAfter: 1.0
+    exitDoAfter: 1.0
+    maxPassengers: 4
+    entryPoints:
+    - offset: -1,0.8
+      radius: 0.45
+      interiorCoords: 1.61, -2.15
+    - offset: -1,-0.1
+      radius: 0.45
+      interiorCoords: 2.47, -2.15
+    - offset: 1,0.8
+      radius: 0.45
+      interiorCoords: 1.6, -1.35
+    - offset: 1,-0.1
+      radius: 0.45
+      interiorCoords: 2.41,-1.35
+
+- type: entity
+  parent: NCVehicleHumveeBase
+  id: NCVehicleHumvee
+
+- type: entity
+  parent: NCVehicleHumveeBase
+  id: NCVehicleHumveeMedical
+  name: humvee (medical)
+  description: A medical-configured humvee outfitted for field triage.
+  components:
+  - type: Sprite
+    sprite: /Textures/_NC/Structures/Vehicles/humvee_medical.rsi
+    layers:
+    - map: [ base ]
+      state: humvee_base
+    - map: [ support ]
+      state: ATTACH
+      visible: false
+    - map: [ support-2 ]
+      state: ATTACH
+      visible: false
+  - type: VehicleEnter
+    interiorPath: /Maps/_NC/Vehicles/humvee_medical_interior.yml
+    enterDoAfter: 1.0
+    exitDoAfter: 1.0
+    maxPassengers: 4
+    entryPoints:
+    - offset: 0.45,1.6
+      radius: 0.5
+      interiorCoords: 0.89, -0.57
+    - offset: -0.45,1.6
+      radius: 0.5
+      interiorCoords: 0.89,-1.35
+    - offset: -1,-0.2
+      radius: 0.5
+      interiorCoords: 3.01, -1.23
+    - offset: 1,-0.2
+      radius: 0.5
+      interiorCoords: 2.94, -0.44

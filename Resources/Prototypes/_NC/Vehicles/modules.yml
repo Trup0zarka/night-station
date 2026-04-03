@@ -1,0 +1,123 @@
+- type: entity
+  parent: BaseItem
+  id: NCHardpointBase
+  abstract: true
+  components:
+  - type: Item
+    size: Large
+
+- type: entity
+  parent: NCHardpointBase
+  id: NCAPCWheel
+  name: APC wheel
+  description: A reinforced APC wheel.
+  components:
+  - type: Sprite
+    sprite: /Textures/_NC/Structures/Vehicles/hardpoints/apc.rsi
+    state: tires
+  - type: RMCHardpointItem
+    slotTypes: [ Wheel ]
+    vehicleFamilies: [ APC ]
+  - type: RMCHardpointIntegrity
+    maxIntegrity: 500
+
+- type: entity
+  parent: NCHardpointBase
+  id: NCAPCFrontCannon
+  name: APC frontal cannon
+  description: A fixed forward cannon for an APC hardpoint.
+  components:
+  - type: Sprite
+    sprite: /Textures/_NC/Structures/Vehicles/hardpoints/apc.rsi
+    state: front_cannon
+  - type: RMCHardpointItem
+    slotTypes: [ Cannon ]
+    vehicleFamilies: [ APC ]
+  - type: RMCHardpointIntegrity
+    maxIntegrity: 350
+  - type: VehicleTurret
+    rotationSpeed: 0
+    rotateToCursor: false
+  - type: Gun
+    fireRate: 3.3
+    selectedMode: FullAuto
+    availableModes: [ FullAuto ]
+    soundGunshot: /Audio/_NC/Vehicle/gun_fire.ogg
+  - type: BallisticAmmoProvider
+    capacity: 500
+  - type: RMCVehicleHardpointAmmo
+    magazineSize: 500
+    maxStoredMagazines: 1
+  - type: RefillableByBulletBox
+    bulletType: Frontal
+
+- type: entity
+  parent: NCHardpointBase
+  id: NCAPCDualCannon
+  name: APC dual cannon
+  description: A dual cannon turret for an APC hardpoint.
+  components:
+  - type: Sprite
+    sprite: /Textures/_NC/Structures/Vehicles/hardpoints/apc.rsi
+    state: dual_cannon
+  - type: RMCHardpointItem
+    slotTypes: [ Turret ]
+    vehicleFamilies: [ APC ]
+  - type: RMCHardpointIntegrity
+    maxIntegrity: 500
+  - type: VehicleTurret
+    rotationSpeed: 90
+  - type: Gun
+    fireRate: 2
+    selectedMode: FullAuto
+    availableModes: [ FullAuto ]
+    soundGunshot: /Audio/_NC/Vehicle/dual_cannon_fire.ogg
+  - type: BallisticAmmoProvider
+    capacity: 60
+  - type: RMCVehicleHardpointAmmo
+    magazineSize: 60
+    maxStoredMagazines: 2
+  - type: RefillableByBulletBox
+    bulletType: Autocannon
+
+- type: entity
+  parent: NCHardpointBase
+  id: NCAPCFlareLauncher
+  name: APC flare launcher
+  description: A flare launcher hardpoint for APC support slots.
+  components:
+  - type: Sprite
+    sprite: /Textures/_NC/Structures/Vehicles/hardpoints/apc.rsi
+    state: flare_launcher
+  - type: RMCHardpointItem
+    slotTypes: [ SupportAttachment ]
+    vehicleFamilies: [ APC ]
+  - type: RMCHardpointIntegrity
+    maxIntegrity: 500
+  - type: VehicleTurret
+  - type: Gun
+    fireRate: 0.5
+    selectedMode: SemiAuto
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/flaregun.ogg
+  - type: BallisticAmmoProvider
+    capacity: 10
+  - type: RMCVehicleHardpointAmmo
+    magazineSize: 10
+    maxStoredMagazines: 3
+  - type: RefillableByBulletBox
+    bulletType: Flare
+
+- type: entity
+  parent: NCHardpointBase
+  id: NCAPCFreightStorage
+  name: APC freight storage
+  description: A cargo pod for APC support slots.
+  components:
+  - type: Sprite
+    sprite: /Textures/_NC/Structures/Vehicles/hardpoints/apc.rsi
+    state: freighter_storage
+  - type: RMCHardpointItem
+    slotTypes: [ SupportAttachment ]
+    vehicleFamilies: [ APC ]
+  - type: RMCHardpointIntegrity
+    maxIntegrity: 100

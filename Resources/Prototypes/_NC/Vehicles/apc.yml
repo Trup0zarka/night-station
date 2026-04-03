@@ -1,0 +1,122 @@
+- type: entity
+  id: NCVehicleAPCBase
+  abstract: true
+  name: armored personnel carrier
+  description: A rugged armored personnel carrier outfitted for battlefield support.
+  components:
+  - type: Vehicle
+    movementKind: Grid
+  - type: Clickable
+  - type: GridVehicleMover
+    maxSpeed: 7
+    acceleration: 4
+    deceleration: 10
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      world:
+        shape:
+          !type:PhysShapeAabb
+          bounds: -1,-1.2,1,1.2
+        density: 1200
+        mask:
+        - Impassable
+        - HighImpassable
+        - LowImpassable
+        layer:
+        - LargeMobLayer
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: InteractionOutline
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: /Textures/_NC/Structures/Vehicles/apc.rsi
+    layers:
+    - map: [ base ]
+      state: apc_base
+    - map: [ primary ]
+      state: PRIMARY
+      visible: false
+    - map: [ secondary ]
+      state: SECONDARY
+      visible: false
+    - map: [ support ]
+      state: SUPPORT
+      visible: false
+  - type: DoAfter
+  - type: UserInterface
+    interfaces:
+      enum.RMCHardpointUiKey.Key:
+        type: RMCHardpointBoundUserInterface
+      enum.RMCVehicleWeaponsUiKey.Key:
+        type: RMCVehicleWeaponsBoundUserInterface
+  - type: VehicleWeaponsOperator
+  - type: InputMover
+  - type: RMCHardpointSlots
+    vehicleFamily: APC
+    slots:
+    - id: primary
+      slotTypes: [ Turret ]
+      insertDelay: 2.5
+    - id: secondary
+      slotTypes: [ Cannon ]
+      insertDelay: 2.5
+    - id: support
+      slotTypes: [ SupportAttachment ]
+      insertDelay: 2.0
+  - type: RMCHardpointIntegrity
+    maxIntegrity: 1000
+    bypassEntryOnZero: true
+  - type: Appearance
+  - type: VehicleEnter
+    interiorPath: /Maps/_NC/Vehicles/apc_transport_interior.yml
+    enterDoAfter: 1.0
+    exitDoAfter: 1.0
+    maxPassengers: 10
+    entryPoints:
+    - offset: 1.5,0
+      radius: 0.7
+      interiorCoords: 1.55,2.65
+    - offset: -1.5,0
+      radius: 0.7
+      interiorCoords: 1.55,-1.2
+
+- type: entity
+  parent: NCVehicleAPCBase
+  id: NCVehicleAPC
+
+- type: entity
+  parent: NCVehicleAPCBase
+  id: NCVehicleAPCMed
+  name: armored personnel carrier (medical)
+  description: A medical-configured APC outfitted with triage markings.
+  components:
+  - type: Sprite
+    layers:
+    - map: [ base ]
+      state: apc_base_med
+    - map: [ primary ]
+      state: PRIMARY
+      visible: false
+    - map: [ secondary ]
+      state: SECONDARY
+      visible: false
+    - map: [ support ]
+      state: SUPPORT
+      visible: false
+  - type: VehicleEnter
+    interiorPath: /Maps/_NC/Vehicles/apc_medical_interior.yml
+    enterDoAfter: 1.0
+    exitDoAfter: 1.0
+    maxPassengers: 10
+    entryPoints:
+    - offset: 1.5,0
+      radius: 0.7
+      interiorCoords: 1.6,2.6
+    - offset: -1.5,0
+      radius: 0.7
+      interiorCoords: 1.6,-1.5
+    - offset: 0,2
+      radius: 0.85
+      interiorCoords: 0.25,-1

@@ -1,0 +1,93 @@
+- type: entity
+  id: NCVehicleTankBase
+  abstract: true
+  name: tank
+  description: A heavy armored tank built for battlefield dominance.
+  components:
+  - type: Vehicle
+    movementKind: Grid
+  - type: Clickable
+  - type: GridVehicleMover
+    maxSpeed: 3
+    acceleration: 1
+    deceleration: 8
+    maxReverseSpeed: 2
+    reverseAcceleration: 1
+    turnDelay: 1
+    turnInPlace: true
+    turnInPlaceMaxSpeed: 0.5
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      world:
+        shape:
+          !type:PhysShapeAabb
+          bounds: -1.2,-1.6,1.2,1.6
+        density: 1500
+        mask:
+        - Impassable
+        - HighImpassable
+        - LowImpassable
+        layer:
+        - LargeMobLayer
+  - type: InteractionOutline
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: /Textures/_NC/Structures/Vehicles/tank.rsi
+    layers:
+    - map: [ base ]
+      state: tank_base
+    - map: [ armor ]
+      state: ARMOR
+      visible: false
+    - map: [ primary ]
+      state: tank_turret_0
+    - map: [ secondary ]
+      state: SECONDARY
+      visible: false
+    - map: [ support ]
+      state: SUPPORT
+      visible: false
+  - type: DoAfter
+  - type: UserInterface
+    interfaces:
+      enum.RMCHardpointUiKey.Key:
+        type: RMCHardpointBoundUserInterface
+      enum.RMCVehicleWeaponsUiKey.Key:
+        type: RMCVehicleWeaponsBoundUserInterface
+  - type: RMCVehicleWeapons
+  - type: InputMover
+  - type: ItemSlots
+  - type: RMCHardpointSlots
+    vehicleFamily: Tank
+    slots:
+    - id: armor
+      slotTypes: [ Armor ]
+      insertDelay: 2.5
+    - id: primary
+      slotTypes: [ Turret ]
+      insertDelay: 3.0
+    - id: secondary
+      slotTypes: [ Turret ]
+      insertDelay: 2.5
+    - id: support
+      slotTypes: [ SupportAttachment ]
+      insertDelay: 2.0
+  - type: RMCHardpointIntegrity
+    maxIntegrity: 1000
+    bypassEntryOnZero: true
+  - type: Appearance
+  - type: VehicleEnter
+    interiorPath: /Maps/_NC/Vehicles/tank_interior.yml
+    enterDoAfter: 1.0
+    exitDoAfter: 1.0
+    maxPassengers: 4
+    entryPoints:
+    - offset: 0,2
+      radius: 1
+      interiorCoords: 0.5,-1
+
+- type: entity
+  parent: NCVehicleTankBase
+  id: NCVehicleTank

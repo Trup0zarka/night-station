@@ -1,4 +1,4 @@
-﻿using System.Numerics;
+using System.Numerics;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared._NC.Vehicle.Grid.Components;
@@ -68,6 +68,9 @@ public sealed partial class GridVehicleMoverComponent : Component
 
     [AutoNetworkedField]
     public bool IsMoving;
+
+    [NonSerialized]
+    public EntityUid? SyncedGrid;
 
     [AutoNetworkedField]
     public float SmashSlowdownMultiplier = 1f;
