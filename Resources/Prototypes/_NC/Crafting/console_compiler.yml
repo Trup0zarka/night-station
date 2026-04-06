@@ -1,8 +1,5 @@
-# Прототипы для консоли-компилятора (Техно-Принтер)
-
-# ─── Сама консоль ───
 - type: entity
-  parent: BaseStructure
+  parent: BaseComputer
   id: NCConsoleCompiler
   name: console-compiler-name
   description: console-compiler-desc
@@ -14,9 +11,9 @@
     - map: ["computerLayerKeyboard"]
       state: generic_keyboard
     - map: ["computerLayerScreen"]
-      state: tank
+      state: generic
     - map: ["computerLayerKeys"]
-      state: atmos_key
+      state: generic_keys
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
   - type: ConsoleCompiler
