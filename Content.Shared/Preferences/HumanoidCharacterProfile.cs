@@ -313,21 +313,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     // TODO: This should eventually not be a visual change only.
     public static HumanoidCharacterProfile Random(HashSet<string>? ignoredSpecies = null)
     {
-        var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
-        var random = IoCManager.Resolve<IRobustRandom>();
-        // WWDP edit start
-        var specieslist = prototypeManager
-            .EnumeratePrototypes<SpeciesPrototype>()
-            .Where(x => !ignoredSpecies?.Contains(x.ID) ?? true) // WWDP
-            .ToArray();
-
-        if (specieslist.Length == 0) // Fallback
-            specieslist = [prototypeManager.Index<SpeciesPrototype>(SharedHumanoidAppearanceSystem.DefaultSpecies)];
-
-        var species = random.Pick(specieslist).ID;
-        // WWDP edit end
-
-        return RandomWithSpecies(species);
+        return RandomWithSpecies(SharedHumanoidAppearanceSystem.DefaultSpecies);
     }
 
     public static HumanoidCharacterProfile RandomWithSpecies(string species = SharedHumanoidAppearanceSystem.DefaultSpecies)
@@ -552,11 +538,10 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         var configManager = collection.Resolve<IConfigurationManager>();
         var prototypeManager = collection.Resolve<IPrototypeManager>();
 
-        if (!prototypeManager.TryIndex(Species, out var speciesPrototype) || speciesPrototype.RoundStart == false)
-        {
-            Species = SharedHumanoidAppearanceSystem.DefaultSpecies;
-            speciesPrototype = prototypeManager.Index(Species);
-        }
+        // NC - Force species to human
+        Species = SharedHumanoidAppearanceSystem.DefaultSpecies;
+        var speciesPrototype = prototypeManager.Index(Species);
+        // NC - End
 
         var sex = Sex switch
         {

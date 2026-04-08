@@ -36,7 +36,7 @@
                         <BoxContainer HorizontalExpand="True" Orientation="Vertical">
                             <ui:AlternatingBGContainer Orientation="Vertical" HorizontalExpand="True">
                                 <!-- Species -->
-                                <BoxContainer HorizontalExpand="True">
+                                <BoxContainer Visible="False" HorizontalExpand="True">
                                     <Label Text="{Loc 'humanoid-profile-editor-species-label'}" />
                                     <Control HorizontalExpand="True"/>
                                     <TextureButton Name="SpeciesInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"
