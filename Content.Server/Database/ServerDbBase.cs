@@ -51,6 +51,7 @@ namespace Content.Server.Database
                 .Include(p => p.Profiles).ThenInclude(h => h.Antags)
                 .Include(p => p.Profiles).ThenInclude(h => h.Traits)
                 .Include(p => p.Profiles).ThenInclude(h => h.Loadouts)
+                .Include(p => p.Profiles).ThenInclude(h => h.QuittedDepartments) // NC
                 .AsSingleQuery()
                 .SingleOrDefaultAsync(p => p.UserId == userId.UserId, cancel);
 
@@ -249,6 +250,8 @@ namespace Content.Server.Database
                 }
             }
 
+            var quittedDepts = profile.QuittedDepartments.ToDictionary(q => q.DepartmentId, q => q.QuitTime);
+
             return new HumanoidCharacterProfile(
                 profile.CharacterName,
                 profile.FlavorText,
@@ -262,6 +265,7 @@ namespace Content.Server.Database
                 profile.Age,
                 sex,
                 profile.BankBalance, // NC
+                profile.EmployedDepartment, // NC
                 voice, // WD EDIT
                 profile.BarkVoice, // WD EDIT
                                    // WD EDIT START
@@ -294,7 +298,8 @@ namespace Content.Server.Database
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
                 antags.ToHashSet(),
                 traits.ToHashSet(),
-                loadouts.ToDictionary(p => p.LoadoutName) // WWDP EDIT
+                loadouts.ToDictionary(p => p.LoadoutName, p => new Loadout(p.LoadoutName, p.CustomName, p.CustomDescription, p.CustomContent, p.CustomColorTint, p.CustomHeirloom)), // WWDP EDIT
+                quittedDepts // NC
             );
         }
 
@@ -318,6 +323,7 @@ namespace Content.Server.Database
             profile.Lifepath = humanoid.Lifepath;
             profile.Age = humanoid.Age;
             profile.BankBalance = humanoid.BankBalance; // NC
+            profile.EmployedDepartment = humanoid.EmployedDepartment; // NC
             profile.Sex = humanoid.Sex.ToString();
             profile.Voice = humanoid.Voice; // WD EDIT
             profile.BarkVoice = humanoid.BarkVoice; // WD EDIT
@@ -358,6 +364,12 @@ namespace Content.Server.Database
             profile.Traits.AddRange(
                 humanoid.TraitPreferences
                     .Select(t => new Trait { TraitName = t })
+            );
+
+            profile.QuittedDepartments.Clear();
+            profile.QuittedDepartments.AddRange(
+                humanoid.QuittedDepartments
+                    .Select(q => new QuittedDepartment { DepartmentId = q.Key, QuitTime = q.Value })
             );
 
             profile.Loadouts.Clear();

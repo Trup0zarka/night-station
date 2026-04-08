@@ -881,6 +881,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("display_pronouns");
 
+                    b.Property<string>("EmployedDepartment")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("employed_department");
+
                     b.Property<string>("Employer")
                         .IsRequired()
                         .HasColumnType("TEXT")
@@ -997,6 +1001,35 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .IsUnique();
 
                     b.ToTable("profile", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.QuittedDepartment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("quitted_department_id");
+
+                    b.Property<string>("DepartmentId")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("department_id");
+
+                    b.Property<int>("ProfileId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("profile_id");
+
+                    b.Property<DateTime>("QuitTime")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("quit_time");
+
+                    b.HasKey("Id")
+                        .HasName("PK_quitted_department");
+
+                    b.HasIndex("ProfileId", "DepartmentId")
+                        .IsUnique();
+
+                    b.ToTable("quitted_department", (string)null);
                 });
 
             modelBuilder.Entity("Content.Server.Database.RoleWhitelist", b =>
@@ -1743,6 +1776,18 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("Preference");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.QuittedDepartment", b =>
+                {
+                    b.HasOne("Content.Server.Database.Profile", "Profile")
+                        .WithMany("QuittedDepartments")
+                        .HasForeignKey("ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_quitted_department_profile_profile_id");
+
+                    b.Navigation("Profile");
+                });
+
             modelBuilder.Entity("Content.Server.Database.RoleWhitelist", b =>
                 {
                     b.HasOne("Content.Server.Database.Player", "Player")
@@ -2027,6 +2072,8 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("Jobs");
 
                     b.Navigation("Loadouts");
+
+                    b.Navigation("QuittedDepartments");
 
                     b.Navigation("Traits");
                 });

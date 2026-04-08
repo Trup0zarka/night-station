@@ -99,6 +99,12 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     [DataField]
     public int BankBalance { get; set; } = 0;
 
+    [DataField]
+    public string? EmployedDepartment { get; set; } // NC
+
+    [DataField]
+    public Dictionary<string, DateTime> QuittedDepartments { get; set; } = new(); // NC
+
     // WD EDIT START
     [DataField]
     public string BodyType { get; set; } = SharedHumanoidAppearanceSystem.DefaultBodyType;
@@ -173,6 +179,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         int age,
         Sex sex,
         int bankBalance, // NC
+        string? employedDepartment, // NC
         string voice, // WD EDIT
         string barkVoice, // WD EDIT
         BarkPercentageApplyData barkSettings, // WD EDIT
@@ -189,7 +196,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         PreferenceUnavailableMode preferenceUnavailable,
         HashSet<ProtoId<AntagPrototype>> antagPreferences,
         HashSet<ProtoId<TraitPrototype>> traitPreferences,
-        Dictionary<string, Loadout> loadoutPreferences) // WWDP EDIT
+        Dictionary<string, Loadout> loadoutPreferences, // WWDP EDIT
+        Dictionary<string, DateTime> quittedDepartments) // NC
     {
         Name = name;
         FlavorText = flavortext;
@@ -205,6 +213,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         Age = age;
         Sex = sex;
         BankBalance = bankBalance;
+        EmployedDepartment = employedDepartment;
+        QuittedDepartments = quittedDepartments; // NC
         Voice = voice; // WD EDIT
         BarkVoice = barkVoice; // WD EDIT
         BodyType = bodyType; // WD EDIT
@@ -255,6 +265,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.Age,
             other.Sex,
             other.BankBalance, // NC
+            other.EmployedDepartment, // NC
             other.Voice, // WD EDIT
             other.BarkVoice, // WD EDIT
             other.BarkSettings.Clone(), // WD EDIT
@@ -271,7 +282,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.PreferenceUnavailable,
             new HashSet<ProtoId<AntagPrototype>>(other.AntagPreferences),
             new HashSet<ProtoId<TraitPrototype>>(other.TraitPreferences),
-            new Dictionary<string, Loadout>(other.LoadoutPreferences)) // WWDP EDIT
+            new Dictionary<string, Loadout>(other.LoadoutPreferences), // WWDP EDIT
+            new Dictionary<string, DateTime>(other.QuittedDepartments)) // NC
     {
     }
 
@@ -392,6 +404,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     public HumanoidCharacterProfile WithAge(int age) => new(this) { Age = age };
     public HumanoidCharacterProfile WithBankBalance(int bankBalance) => new(this) { BankBalance = bankBalance };
+    public HumanoidCharacterProfile WithEmployedDepartment(string? employedDepartment) => new(this) { EmployedDepartment = employedDepartment }; // NC
     // EE - Contractors Change Start
     public HumanoidCharacterProfile WithNationality(string nationality) => new(this) { Nationality = nationality };
     public HumanoidCharacterProfile WithEmployer(string employer) => new(this) { Employer = employer };
@@ -513,6 +526,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             && Age == other.Age
             && Sex == other.Sex
             && BankBalance == other.BankBalance
+            && EmployedDepartment == other.EmployedDepartment // NC
+            && QuittedDepartments.SequenceEqual(other.QuittedDepartments) // NC
             && Voice == other.Voice // WD EDIT
             && BarkVoice == other.BarkVoice // WD EDIT
             && BodyType == other.BodyType // WD EDIT
@@ -637,14 +652,39 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             _ => SpawnPriorityPreference.None // Invalid enum values.
         };
 
+        var civilianDepartments = new[] { "Civilian", "CivilianNC" };
+        var departmentPrototypes = prototypeManager.EnumeratePrototypes<DepartmentPrototype>().ToList();
+
         var priorities = new Dictionary<ProtoId<JobPrototype>, JobPriority>(JobPriorities
-            .Where(p => prototypeManager.TryIndex<JobPrototype>(p.Key, out var job) && job.SetPreference && p.Value switch
+            .Where(p =>
             {
-                JobPriority.Never => false, // Drop never since that's assumed default.
-                JobPriority.Low => true,
-                JobPriority.Medium => true,
-                JobPriority.High => true,
-                _ => false
+                if (!prototypeManager.TryIndex<JobPrototype>(p.Key, out var job) || !job.SetPreference)
+                    return false;
+
+                // NC START
+                if (EmployedDepartment != null)
+                {
+                    // Only allow jobs from the employed department
+                    if (!departmentPrototypes.Any(d => d.ID == EmployedDepartment && d.Roles.Contains(p.Key)))
+                        return false;
+                }
+                else
+                {
+                    // If not employed, only allow civilian jobs
+                    // We assume civilian jobs are those that belong to a department in CivilianDepartments
+                    if (!departmentPrototypes.Any(d => civilianDepartments.Contains(d.ID) && d.Roles.Contains(p.Key)))
+                        return false;
+                }
+                // NC END
+
+                return p.Value switch
+                {
+                    JobPriority.Never => false,
+                    JobPriority.Low => true,
+                    JobPriority.Medium => true,
+                    JobPriority.High => true,
+                    _ => false
+                };
             }));
 
         var hasHighPrio = false;
@@ -813,6 +853,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         hashCode.Add(Lifepath);
         hashCode.Add(Age);
         hashCode.Add((int) Sex);
+        hashCode.Add(EmployedDepartment); // NC
         hashCode.Add((int) Gender);
         hashCode.Add(Voice); // WD EDIT
         hashCode.Add(BodyType); // WD EDIT
