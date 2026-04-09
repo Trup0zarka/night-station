@@ -231,7 +231,7 @@ namespace Content.Server._NC.Dispatch
 
                     // play alarm sound at the console if high priority
                     if (playSound)
-                        _audio.PlayGlobal(new SoundPathSpecifier("/Audio/Effects/alert.ogg"), Filter.Pvs(uid), true);
+                        _audio.PlayPvs(new SoundPathSpecifier("/Audio/Effects/alert.ogg"), uid);
                 }
 
                 UpdateConsoleUi(uid, comp);
