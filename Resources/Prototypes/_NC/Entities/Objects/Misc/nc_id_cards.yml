@@ -1,0 +1,523 @@
+# ID-карты НСПД (NCPD)
+
+# ID-карта патрульного НСПД
+- type: entity
+  parent: IDCardStandard
+  id: NCPDPatrolIDCard
+  name: ID-карта патрульного НСПД
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#3B6EA5"
+    - state: subdepartment
+      color: "#3B6EA5"
+  - type: Access
+    tags:
+    - NCPD_Patrol
+    groups:
+    - NCPD
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+# ID-карта детектива НСПД
+- type: entity
+  parent: IDCardStandard
+  id: NCPDDetectiveIDCard
+  name: ID-карта детектива НСПД
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#4A7FB5"
+    - state: subdepartment
+      color: "#4A7FB5"
+  - type: Access
+    tags:
+    - NCPD_Patrol
+    - NCPD_Detective
+    groups:
+    - NCPD
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+# ID-карта арсенальщика НСПД
+- type: entity
+  parent: IDCardStandard
+  id: NCPDArmoryIDCard
+  name: ID-карта арсенальщика НСПД
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#5A8CC5"
+    - state: subdepartment
+      color: "#5A8CC5"
+  - type: Access
+    tags:
+    - NCPD_Patrol
+    - NCPD_Armory
+    groups:
+    - NCPD
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+# ID-карта командира НСПД
+- type: entity
+  parent: IDCardStandard
+  id: NCPDCommandIDCard
+  name: ID-карта командира НСПД
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#6A9BD5"
+    - state: subdepartment
+      color: "#6A9BD5"
+  - type: Access
+    tags:
+    - NCPD_Patrol
+    - NCPD_Detective
+    - NCPD_Armory
+    - NCPD_Command
+    groups:
+    - NCPD
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+# ID-карты Макстак (MaxTac)
+
+# ID-карта бойца Макстак
+- type: entity
+  parent: IDCardStandard
+  id: MaxTacGeneralIDCard
+  name: ID-карта бойца Макстак
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#1A1A2E"
+    - state: subdepartment
+      color: "#1A1A2E"
+  - type: Access
+    tags:
+    - MaxTac_General
+    groups:
+    - MaxTac
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+# ID-карта нетраннера Макстак
+- type: entity
+  parent: IDCardStandard
+  id: MaxTacArmoryIDCard
+  name: ID-карта нетраннера Макстак
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#2A2A3E"
+    - state: subdepartment
+      color: "#2A2A3E"
+  - type: Access
+    tags:
+    - MaxTac_General
+    - MaxTac_Armory
+    groups:
+    - MaxTac
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+# ID-карта командира Макстак
+- type: entity
+  parent: IDCardStandard
+  id: MaxTacCommandIDCard
+  name: ID-карта командира Макстак
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#3A3A4E"
+    - state: subdepartment
+      color: "#3A3A4E"
+  - type: Access
+    tags:
+    - MaxTac_General
+    - MaxTac_Armory
+    - MaxTac_Command
+    groups:
+    - MaxTac
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+# ID-карты Траума Тим (Trauma Team)
+
+# ID-карта медика Траума
+- type: entity
+  parent: IDCardStandard
+  id: TraumaMedicalIDCard
+  name: ID-карта медика Траума
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#E8D44D"
+    - state: subdepartment
+      color: "#E8D44D"
+  - type: Access
+    tags:
+    - Trauma_Medical
+    groups:
+    - TraumaTeam
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+# ID-карта патологоанатома Траума
+- type: entity
+  parent: IDCardStandard
+  id: TraumaMorgueIDCard
+  name: ID-карта патологоанатома Траума
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#D4C43D"
+    - state: subdepartment
+      color: "#D4C43D"
+  - type: Access
+    tags:
+    - Trauma_Medical
+    - Trauma_Morgue
+    groups:
+    - TraumaTeam
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+# ID-карта пилота Траума
+- type: entity
+  parent: IDCardStandard
+  id: TraumaHangarIDCard
+  name: ID-карта пилота Траума
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#C4B42D"
+    - state: subdepartment
+      color: "#C4B42D"
+  - type: Access
+    tags:
+    - Trauma_Medical
+    - Trauma_Hangar
+    groups:
+    - TraumaTeam
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+# ID-карта оперативника Траума
+- type: entity
+  parent: IDCardStandard
+  id: TraumaOperativeIDCard
+  name: ID-карта оперативника Траума
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#B4A41D"
+    - state: subdepartment
+      color: "#B4A41D"
+  - type: Access
+    tags:
+    - Trauma_Medical
+    - Trauma_Operative
+    groups:
+    - TraumaTeam
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+# ID-карта командира Траума
+- type: entity
+  parent: IDCardStandard
+  id: TraumaCommandIDCard
+  name: ID-карта командира Траума
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#A49410"
+    - state: subdepartment
+      color: "#A49410"
+  - type: Access
+    tags:
+    - Trauma_Medical
+    - Trauma_Morgue
+    - Trauma_Hangar
+    - Trauma_Command
+    - Trauma_Operative
+    groups:
+    - TraumaTeam
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+# ID-карты Биотехника (Biotechnica)
+
+# ID-карта сотрудника Биотехника
+- type: entity
+  parent: IDCardStandard
+  id: BiotechGeneralIDCard
+  name: ID-карта сотрудника Биотехника
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#4CAF50"
+    - state: subdepartment
+      color: "#4CAF50"
+  - type: Access
+    tags:
+    - Biotech_General
+    groups:
+    - Biotechnica
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+# ID-карта персонала Биотехника
+- type: entity
+  parent: IDCardStandard
+  id: BiotechStaffIDCard
+  name: ID-карта персонала Биотехника
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#5DBF61"
+    - state: subdepartment
+      color: "#5DBF61"
+  - type: Access
+    tags:
+    - Biotech_General
+    - Biotech_Staff
+    groups:
+    - Biotechnica
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+# ID-карта МедТех Биотехника
+- type: entity
+  parent: IDCardStandard
+  id: BiotechMedTechIDCard
+  name: ID-карта МедТех Биотехника
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#6ECF72"
+    - state: subdepartment
+      color: "#6ECF72"
+  - type: Access
+    tags:
+    - Biotech_General
+    - Biotech_MedTech
+    groups:
+    - Biotechnica
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+# ID-карта оперативника Биотехника
+- type: entity
+  parent: IDCardStandard
+  id: BiotechOperativeIDCard
+  name: ID-карта оперативника Биотехника
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#7FDF83"
+    - state: subdepartment
+      color: "#7FDF83"
+  - type: Access
+    tags:
+    - Biotech_General
+    - Biotech_Operative
+    groups:
+    - Biotechnica
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+# ID-карта руководителя отдела Биотехника
+- type: entity
+  parent: IDCardStandard
+  id: BiotechHeadOfDepartmentIDCard
+  name: ID-карта руководителя отдела Биотехника
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#90EF94"
+    - state: subdepartment
+      color: "#90EF94"
+  - type: Access
+    tags:
+    - Biotech_General
+    - Biotech_Staff
+    - Biotech_MedTech
+    - Biotech_HeadOfDepartment
+    groups:
+    - Biotechnica
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+# ID-карта директора Биотехника
+- type: entity
+  parent: IDCardStandard
+  id: BiotechDirectorIDCard
+  name: ID-карта директора Биотехника
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#A1FFA5"
+    - state: subdepartment
+      color: "#A1FFA5"
+  - type: Access
+    tags:
+    - Biotech_General
+    - Biotech_Staff
+    - Biotech_MedTech
+    - Biotech_Operative
+    - Biotech_HeadOfDepartment
+    - Biotech_Director
+    groups:
+    - Biotechnica
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+# Общие ID-карты Найт-Сити
+
+# ID-карта гражданина Найт-Сити
+- type: entity
+  parent: IDCardStandard
+  id: NCGeneralIDCard
+  name: ID-карта гражданина Найт-Сити
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#878787"
+    - state: subdepartment
+      color: "#878787"
+  - type: Access
+    tags:
+    - NC_General
+    groups:
+    - NightCity
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+# ID-карта Эджраннера
+- type: entity
+  parent: IDCardStandard
+  id: EdgeRunnerIDCard
+  name: ID-карта Эджраннера
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#FF5722"
+    - state: subdepartment
+      color: "#FF5722"
+  - type: Access
+    tags:
+    - NC_General
+    - EdgeRunner
+    groups:
+    - NightCity
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+# ID-карта Фиксера
+- type: entity
+  parent: IDCardStandard
+  id: FixerIDCard
+  name: ID-карта Фиксера
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#9C27B0"
+    - state: subdepartment
+      color: "#9C27B0"
+  - type: Access
+    tags:
+    - NC_General
+    - EdgeRunner
+    - Fixer
+    groups:
+    - NightCity
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+# ID-карта Риппера
+- type: entity
+  parent: IDCardStandard
+  id: RipperIDCard
+  name: ID-карта Риппера
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: department
+      color: "#E91E63"
+    - state: subdepartment
+      color: "#E91E63"
+  - type: Access
+    tags:
+    - NC_General
+    - Ripper
+    groups:
+    - NightCity
+  - type: Tag
+    tags:
+    - DoorBumpOpener
