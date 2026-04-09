@@ -72,7 +72,7 @@
       amount: 1
     BioEthanol:
       amount: 1
-    Aluminium:
+    NCPlastic:
       amount: 2
   products:
     NitroPolymer: 2
