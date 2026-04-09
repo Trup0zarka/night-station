@@ -1,0 +1,20 @@
+- type: entity
+  parent: ClothingOuterArmorBase
+  id: ClothingOuterArmorBiotechnicaBulletproof
+  name: пуленепробиваемый бронежилет Biotechnica
+  description: Тяжелый бронежилет с логотипом Biotechnica. Обеспечивает отличную защиту от пуль.
+  components:
+  - type: Sprite
+    sprite: _NC/Clothing/OuterClothing/Armor/biotech_bulletproof.rsi
+  - type: Clothing
+    sprite: _NC/Clothing/OuterClothing/Armor/biotech_bulletproof.rsi
+  - type: Armor
+    modifiers:
+      flatReductions:
+        Piercing: 4
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.5
+        Heat: 0.95
+

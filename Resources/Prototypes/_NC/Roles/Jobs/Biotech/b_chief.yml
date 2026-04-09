@@ -16,12 +16,8 @@
 - type: startingGear
   id: BiotechnicaChiefGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitCMO
+    jumpsuit: ClothingUniformJumpsuitArmoredBusinessSuit
     back: ClothingBackpackSatchelMedical
     shoes: ClothingShoesColorWhite
-    head: ClothingHeadHatBeretSeniorPhysician
     eyes: ClothingEyesGlassesSunglasses
-    ears: ClothingHeadsetCMO
     id: TraumaTeamChiefPDA
-    belt: ClothingBeltMedicalFilled
-    outerClothing: ClothingOuterCoatLabCmo

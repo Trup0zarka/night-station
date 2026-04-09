@@ -16,7 +16,7 @@
 - type: startingGear
   id: BiotechnicaBotanistGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitCMO
+    jumpsuit: ClothingUniformJumpsuitBiotech
     back: ClothingBackpackSatchelMedical
     shoes: ClothingShoesColorWhite
     head: ClothingHeadHatBeretSeniorPhysician

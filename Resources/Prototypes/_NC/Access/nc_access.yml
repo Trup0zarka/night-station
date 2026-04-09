@@ -88,3 +88,27 @@
   - EdgeRunner
   - Fixer
   - Ripper
+
+- type: accessLevel
+  id: Biotech_General
+  name: access-level-biotech-general
+
+- type: accessLevel
+  id: Biotech_Lab
+  name: access-level-biotech-lab
+
+- type: accessLevel
+  id: Biotech_Security
+  name: access-level-biotech-security
+
+- type: accessLevel
+  id: Biotech_Command
+  name: access-level-biotech-command
+
+- type: accessGroup
+  id: Biotech
+  tags:
+  - Biotech_General
+  - Biotech_Lab
+  - Biotech_Security
+  - Biotech_Command
