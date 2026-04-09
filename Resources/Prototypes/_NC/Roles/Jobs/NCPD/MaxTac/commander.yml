@@ -28,12 +28,12 @@
 - type: startingGear
   id: MaxTacCommanderGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitHoS
+    jumpsuit: ClothingUniformNSPDNormisBlack
     back: ClothingBackpackSecurity
     shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHelmetHardsuitSecurityRed
     eyes: ClothingEyesGlassesSunglasses
-    ears: ClothingHeadsetAltSecurity
+  
     id: MaxTacCommanderPDA
     belt: ClothingBeltSecurityFilled
-    outerClothing: ClothingOuterHardsuitSecurityRed
+    outerClothing: ClothingOuterHardsuitMilitech

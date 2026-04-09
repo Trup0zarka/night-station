@@ -23,10 +23,10 @@
     - NCPDOfficer
     - NCPDWatchAgent
     - MaxTacCommander
-    - MaxTacNetrunner
+#    - MaxTacNetrunner
     - MaxTacEraser
-    - MaxTacPretor
-    - MaxTacInterdictor
+#    - MaxTacPretor
+#    - MaxTacInterdictor
 
 - type: department
   id: TraumaTeam

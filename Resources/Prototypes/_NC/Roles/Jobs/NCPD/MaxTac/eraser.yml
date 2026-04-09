@@ -24,11 +24,10 @@
 - type: startingGear
   id: MaxTacEraserGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSec
+    jumpsuit: ClothingUniformNSPDNormisBlack
     back: ClothingBackpackSecurity
     shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHelmetHardsuitSecurity
-    ears: ClothingHeadsetAltSecurity
     id: MaxTacEraserPDA
     belt: ClothingBeltSecurityFilled
-    outerClothing: ClothingOuterHardsuitSecurity
+    outerClothing: ClothingOuterHardsuitMilitech
