@@ -97,7 +97,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     public Sex Sex { get; private set; } = Sex.Male;
 
     [DataField]
-    public int BankBalance { get; set; } = 0;
+    public int BankBalance { get; set; } = 3000;
 
     [DataField]
     public string? EmployedDepartment { get; set; } // NC
