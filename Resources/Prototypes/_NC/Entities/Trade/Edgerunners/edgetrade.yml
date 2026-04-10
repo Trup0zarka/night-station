@@ -72,9 +72,6 @@
   - proto: WeaponShotgunSvakha
     price: 200
     count: 5
-  - proto: WeaponRifleM04
-    price: 2400
-    count: 1
   - proto: WeaponPistolStreetMaster
     price: 1200
     count: 2
@@ -83,6 +80,21 @@
     count: 2
   - proto: WeaponPistolStukachTommy
     price: 1800
+    count: 1
+  - proto: WeaponRifleNokotaD5Copperhead
+    price: 3500
+    count: 2
+  - proto: WeaponRifleArasakaNOWAKI
+    price: 4500
+    count: 2
+  - proto: WeaponRifleNomadGvozdemet
+    price: 3200
+    count: 2
+  - proto: WeaponRifleArasakaProto
+    price: 8500
+    count: 1
+  - proto: WeaponRifleM04
+    price: 5500
     count: 1
 
 - type: storeCategoryStructured
@@ -137,6 +149,18 @@
   - proto: AmmoBox622mmCaseless
     price: 700
     count: 2
+  - proto: MagazineRifleNokota
+    price: 250
+    count: 10
+  - proto: MagazineRifleNowaki
+    price: 300
+    count: 10
+  - proto: MagazineRifleNomad
+    price: 200
+    count: 10
+  - proto: CartridgeArasakaRailgun
+    price: 100
+    count: 20
 
 - type: storeCategoryStructured
   id: EdgeMarket_Clothing

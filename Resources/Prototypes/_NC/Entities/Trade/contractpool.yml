@@ -2,13 +2,10 @@
   id: caravan_easy
   entries:
   - type: Item
-    id: WeaponPistolMk58
+    id: WeaponPistolStreetMaster
     weight: 1
   - type: Item
-    id: WeaponPistolViper
-    weight: 1
-  - type: Item
-    id: WeaponLaserGun
+    id: WeaponPistolCheesemaker
     weight: 1
   - type: Item
     id: SheetSteel
@@ -47,10 +44,7 @@
     id: MedkitFilled
     weight: 2
   - type: Item
-    id: WeaponShotgunBulldog
-    weight: 1
-  - type: Item
-    id: WeaponLaserCarbine
+    id: WeaponShotgunSvakha
     weight: 1
   - type: Item
     id: ClothingOuterArmorVest
@@ -59,16 +53,10 @@
     id: ClothingHeadHelmetRiot
     weight: 2
   - type: Item
-    id: WeaponSubMachineGunWt550
+    id: WeaponRifleNokotaD5Copperhead
     weight: 2
   - type: Item
-    id: ClothingOuterHardsuitSecurity
-    weight: 1
-  - type: Item
-    id: WeaponEnergyGun
-    weight: 1
-  - type: Item
-    id: WeaponSubMachineGunC20r
+    id: WeaponPistolFederalX9
     weight: 1
 
 - type: ncContractRewardPool
@@ -78,13 +66,10 @@
     id: MedkitCombatFilled
     weight: 1
   - type: Item
-    id: WeaponShotgunEnforcer
+    id: WeaponRifleArasakaNOWAKI
     weight: 1
   - type: Item
-    id: WeaponRifleAk
-    weight: 1
-  - type: Item
-    id: WeaponRifleM90GrenadeLauncher
+    id: WeaponRifleArasakaProto
     weight: 1
   - type: Item
     id: ClothingOuterArmorRiot
@@ -93,7 +78,7 @@
     id: ClothingHeadHelmetHardsuitSecurity
     weight: 1
   - type: Item
-    id: WeaponPulseRifle
+    id: WeaponRifleM04
     weight: 1
 
 - type: ncContractRewardPool

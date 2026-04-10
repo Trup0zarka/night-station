@@ -1,0 +1,91 @@
+# Пулы наград для контрактов фиксера
+# Тир Easy — базовое вооружение и расходники
+- type: ncContractRewardPool
+  id: fixer_easy
+  entries:
+  - type: Item
+    id: WeaponPistolStreetMaster
+    weight: 2
+  - type: Item
+    id: WeaponPistolCheesemaker
+    weight: 2
+  - type: Item
+    id: AmmoBox9mm
+    weight: 3
+  - type: Item
+    id: Brutepack
+    amount: { min: 5, max: 10 }
+    weight: 4
+  - type: Item
+    id: Ointment
+    amount: { min: 5, max: 10 }
+    weight: 4
+  - type: Item
+    id: SheetSteel
+    amount: { min: 5, max: 10 }
+    weight: 3
+  - type: Item
+    id: ClothingOuterArmorBasic
+    weight: 2
+  - type: Item
+    id: MagazinePistolCheesemaker
+    amount: { min: 2, max: 4 }
+    weight: 3
+
+# Тир Medium — серьёзное вооружение и экипировка
+- type: ncContractRewardPool
+  id: fixer_medium
+  entries:
+  - type: Item
+    id: WeaponPistolFederalX9
+    weight: 2
+  - type: Item
+    id: WeaponShotgunSvakha
+    weight: 1
+  - type: Item
+    id: WeaponRifleNokotaD5Copperhead
+    weight: 1
+  - type: Item
+    id: MedkitCombatFilled
+    weight: 2
+  - type: Item
+    id: ClothingOuterArmorBulletproof
+    weight: 2
+  - type: Item
+    id: AmmoBox114mm
+    weight: 3
+  - type: Item
+    id: WeaponPistolAvenger
+    weight: 2
+  - type: Item
+    id: EpinephrineChemistryBottle
+    weight: 2
+
+# Тир Hard — элитное снаряжение и прототипы
+- type: ncContractRewardPool
+  id: fixer_hard
+  entries:
+  - type: Item
+    id: WeaponRifleArasakaNOWAKI
+    weight: 1
+  - type: Item
+    id: WeaponRifleArasakaProto
+    weight: 1
+  - type: Item
+    id: WeaponRifleM04
+    weight: 1
+  - type: Item
+    id: ClothingOuterHardsuitMilitech
+    weight: 1
+  - type: Item
+    id: NCCyberdeck
+    weight: 1
+  - type: Item
+    id: ClothingOuterArmorRiot
+    weight: 2
+  - type: Item
+    id: Defibrillator
+    weight: 1
+  - type: Item
+    id: WeaponPistolStukachTommy
+    weight: 1
