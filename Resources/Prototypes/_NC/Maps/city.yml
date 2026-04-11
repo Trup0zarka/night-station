@@ -1,7 +1,7 @@
 - type: gameMap
   id: Aldente
   mapName: 'New Aldenteе'
-  mapPath: /Maps/_NC/aldente.yml
+  mapPath: /Maps/_NC/new_aldente.yml
   maxRandomOffset: 0
   randomPainting: false
   minPlayers: 0 # TempChange 0 (10)
@@ -11,7 +11,7 @@
       stationProto: NightCityStation
       components:
       - type: StationNameSetup
-        mapNameTemplate: '{0} New Aldente {1}'
+        mapNameTemplate: 'New Aldente'
       - type: StationJobs
         availableJobs:
           # === Гражданские (CivilianNC) ===

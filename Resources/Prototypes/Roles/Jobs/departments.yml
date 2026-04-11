@@ -1,182 +1,182 @@
-- type: department
-  id: Logistics
-  name: department-Logistics
-  description: department-Cargo-description
-  color: "#A46106"
-  weight: -5 # WD EDIT
-  roles:
-  - CargoTechnician
-  - Quartermaster
-  - SalvageSpecialist
-  - MailCarrier
-
-- type: department
-  id: Civilian
-  name: department-Civilian
-  description: department-Civilian-description
-  color: "#9FED58"
-  weight: -4 # WD EDIT
-  roles:
-  - Bartender
-  - Botanist
-  - Boxer
-  - Chef
-  - Clown
-  - HeadOfPersonnel
-  - Janitor
-  - Mime
-  - Musician
-  - Passenger
-  - Reporter
-  - Visitor
-  - Zookeeper
-  - ServiceWorker
-  - MartialArtist
-  # - Prisoner - WD EDIT: Moved to Security
-  - Gladiator
-  - Hobo # WD EDIT
-
-- type: department
-  id: CentralCommand
-  name: department-CentralCommand
-  description: department-CentralCommand-description
-  color: "#0c344d"
-  weight: -1 # WD EDIT
-  roles:
-  - CentralCommandOfficial
-  - CBURN
-  - ERTLeader
-  - ERTChaplain
-  - ERTJanitor
-  - ERTMedical
-  - ERTSecurity
-  - ERTEngineer
-  - DeathSquad
-  editorHidden: true
-
-- type: department
-  id: Command
-  name: department-Command
-  description: department-Command-description
-  color: "#334E6D"
-  weight: -2 # WD EDIT
-  roles:
-  - Captain
-  - ChiefEngineer
-  - ChiefMedicalOfficer
-  - HeadOfPersonnel
-  - HeadOfSecurity
-  - ResearchDirector
-  - Quartermaster
-  - ChiefJustice
-  - AdministrativeAssistant
-  - CentralCommandOfficial
-  - CBURN
-  - ERTLeader
-  - ERTChaplain
-  - ERTJanitor
-  - ERTMedical
-  - ERTSecurity
-  - ERTEngineer
-  - DeathSquad
-  - Maid # WD EDIT
-  primary: false
-
-# WD EDIT START
 # - type: department
-#   id: Dignitary
-#   name: department-Dignitary
-#   description: department-Dignitary-description
-#   color: "#33FE6D"
+#   id: Logistics
+#   name: department-Logistics
+#   description: department-Cargo-description
+#   color: "#A46106"
+#   weight: -5 # WD EDIT
 #   roles:
-#   - BlueshieldOfficer
-#   - NanotrasenRepresentative
-#   - Magistrate
+#   - CargoTechnician
+#   - Quartermaster
+#   - SalvageSpecialist
+#   - MailCarrier
+
+# - type: department
+#   id: Civilian
+#   name: department-Civilian
+#   description: department-Civilian-description
+#   color: "#9FED58"
+#   weight: -4 # WD EDIT
+#   roles:
+#   - Bartender
+#   - Botanist
+#   - Boxer
+#   - Chef
+#   - Clown
+#   - HeadOfPersonnel
+#   - Janitor
+#   - Mime
+#   - Musician
+#   - Passenger
+#   - Reporter
+#   - Visitor
+#   - Zookeeper
+#   - ServiceWorker
+#   - MartialArtist
+#   # - Prisoner - WD EDIT: Moved to Security
+#   - Gladiator
+#   - Hobo # WD EDIT
+
+# - type: department
+#   id: CentralCommand
+#   name: department-CentralCommand
+#   description: department-CentralCommand-description
+#   color: "#0c344d"
+#   weight: -1 # WD EDIT
+#   roles:
+#   - CentralCommandOfficial
+#   - CBURN
+#   - ERTLeader
+#   - ERTChaplain
+#   - ERTJanitor
+#   - ERTMedical
+#   - ERTSecurity
+#   - ERTEngineer
+#   - DeathSquad
+#   editorHidden: true
+
+# - type: department
+#   id: Command
+#   name: department-Command
+#   description: department-Command-description
+#   color: "#334E6D"
+#   weight: -2 # WD EDIT
+#   roles:
+#   - Captain
+#   - ChiefEngineer
+#   - ChiefMedicalOfficer
+#   - HeadOfPersonnel
+#   - HeadOfSecurity
+#   - ResearchDirector
+#   - Quartermaster
+#   - ChiefJustice
+#   - AdministrativeAssistant
+#   - CentralCommandOfficial
+#   - CBURN
+#   - ERTLeader
+#   - ERTChaplain
+#   - ERTJanitor
+#   - ERTMedical
+#   - ERTSecurity
+#   - ERTEngineer
+#   - DeathSquad
+#   - Maid # WD EDIT
 #   primary: false
-#   weight: 101
-# WD EDIT END
 
-- type: department
-  id: Engineering
-  name: department-Engineering
-  description: department-Engineering-description
-  color: "#EFB341"
-  weight: -6 # WD EDIT
-  roles:
-  - AtmosphericTechnician
-  - ChiefEngineer
-  - SeniorEngineer
-  - StationEngineer
-  - TechnicalAssistant
+# # WD EDIT START
+# # - type: department
+# #   id: Dignitary
+# #   name: department-Dignitary
+# #   description: department-Dignitary-description
+# #   color: "#33FE6D"
+# #   roles:
+# #   - BlueshieldOfficer
+# #   - NanotrasenRepresentative
+# #   - Magistrate
+# #   primary: false
+# #   weight: 101
+# # WD EDIT END
 
-- type: department
-  id: Medical
-  name: department-Medical
-  description: department-Medical-description
-  color: "#52B4E9"
-  weight: -7 # WD EDIT
-  roles:
-  - Chemist
-  - ChiefMedicalOfficer
-  - MedicalDoctor
-  - MedicalIntern
-  - Psychologist
-  - Paramedic
-  - SeniorPhysician
-  - MedicalBorg
+# - type: department
+#   id: Engineering
+#   name: department-Engineering
+#   description: department-Engineering-description
+#   color: "#EFB341"
+#   weight: -6 # WD EDIT
+#   roles:
+#   - AtmosphericTechnician
+#   - ChiefEngineer
+#   - SeniorEngineer
+#   - StationEngineer
+#   - TechnicalAssistant
 
-- type: department
-  id: Security
-  name: department-Security
-  description: department-Security-description
-  color: "#DE3A3A"
-  weight: -3 # WD EDIT
-  roles:
-  - HeadOfSecurity
-  - SecurityCadet
-  - SecurityOfficer
-  - SeniorOfficer
-  - Detective
-  - Warden
-  - PrisonGuard
-  - Brigmedic
-  - Prisoner # WD EDIT: Moved from Civilian
+# - type: department
+#   id: Medical
+#   name: department-Medical
+#   description: department-Medical-description
+#   color: "#52B4E9"
+#   weight: -7 # WD EDIT
+#   roles:
+#   - Chemist
+#   - ChiefMedicalOfficer
+#   - MedicalDoctor
+#   - MedicalIntern
+#   - Psychologist
+#   - Paramedic
+#   - SeniorPhysician
+#   - MedicalBorg
 
-- type: department
-  id: Epistemics
-  name: department-Epistemics
-  description: department-Science-description
-  color: "#D381C9"
-  weight: -8 # WD EDIT
-  roles:
-  - ResearchDirector
-  - SeniorResearcher
-  - Scientist
-  - ResearchAssistant
-  - Chaplain
-  - ForensicMantis
-  - Librarian
-  - Roboticist
+# - type: department
+#   id: Security
+#   name: department-Security
+#   description: department-Security-description
+#   color: "#DE3A3A"
+#   weight: -3 # WD EDIT
+#   roles:
+#   - HeadOfSecurity
+#   - SecurityCadet
+#   - SecurityOfficer
+#   - SeniorOfficer
+#   - Detective
+#   - Warden
+#   - PrisonGuard
+#   - Brigmedic
+#   - Prisoner # WD EDIT: Moved from Civilian
 
-- type: department
-  id: Silicon
-  name: department-Silicon
-  description: department-Silicon-description
-  color: "#D381C9"
-  weight: -9 # WD EDIT
-  roles:
-  - Borg
-  - StationAi
+# - type: department
+#   id: Epistemics
+#   name: department-Epistemics
+#   description: department-Science-description
+#   color: "#D381C9"
+#   weight: -8 # WD EDIT
+#   roles:
+#   - ResearchDirector
+#   - SeniorResearcher
+#   - Scientist
+#   - ResearchAssistant
+#   - Chaplain
+#   - ForensicMantis
+#   - Librarian
+#   - Roboticist
 
-- type: department
-  id: Specific
-  name: department-Specific
-  description: department-Specific-description
-  color: "#29282f"
-  weight: -10 # WD EDIT
-  roles:
-  - Boxer
-  - Reporter
-  - Zookeeper
-  - Psychologist
-  primary: false
+# - type: department
+#   id: Silicon
+#   name: department-Silicon
+#   description: department-Silicon-description
+#   color: "#D381C9"
+#   weight: -9 # WD EDIT
+#   roles:
+#   - Borg
+#   - StationAi
+
+# - type: department
+#   id: Specific
+#   name: department-Specific
+#   description: department-Specific-description
+#   color: "#29282f"
+#   weight: -10 # WD EDIT
+#   roles:
+#   - Boxer
+#   - Reporter
+#   - Zookeeper
+#   - Psychologist
+#   primary: false
