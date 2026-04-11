@@ -161,12 +161,12 @@
                                     <Control HorizontalExpand="True"/>
                                     <Button Name="ShowLoadouts" Pressed="True" ToggleMode="True" Text="{Loc 'Show'}" HorizontalAlignment="Right" />
                                 </BoxContainer>
-                                <!-- Spawn Priority -->
+                                <!-- Spawn Priority
                                 <BoxContainer HorizontalExpand="True">
                                     <Label Text="{Loc 'humanoid-profile-editor-spawn-priority-label'}" />
                                     <Control HorizontalExpand="True"/>
                                     <OptionButton Name="SpawnPriorityButton" HorizontalAlignment="Right" />
-                                </BoxContainer>
+                                </BoxContainer> -->
 						        <!-- Height -->
                                 <BoxContainer HorizontalExpand="True">
                                     <Label Name="HeightLabel" MinWidth="110" />

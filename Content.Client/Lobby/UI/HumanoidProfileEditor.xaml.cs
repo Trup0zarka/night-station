@@ -479,6 +479,7 @@ namespace Content.Client.Lobby.UI
 
             #region SpawnPriority
 
+            /*
             foreach (var value in Enum.GetValues<SpawnPriorityPreference>())
                 SpawnPriorityButton.AddItem(Loc.GetString($"humanoid-profile-editor-preference-spawn-priority-{value.ToString().ToLower()}"), (int) value);
 
@@ -487,6 +488,7 @@ namespace Content.Client.Lobby.UI
                 SpawnPriorityButton.SelectId(args.Id);
                 SetSpawnPriority((SpawnPriorityPreference) args.Id);
             };
+            */
 
             #endregion SpawnPriority
 
@@ -941,7 +943,7 @@ namespace Content.Client.Lobby.UI
             UpdateClownControls(); // WD EDIT
             UpdateMimeControls(); // WD EDIT
             UpdateSkinColor();
-            UpdateSpawnPriorityControls();
+            // UpdateSpawnPriorityControls();
             UpdateFlavorTextEdit();
             UpdateCustomSpecieNameEdit();
             UpdateAgeEdit();
@@ -1822,6 +1824,7 @@ namespace Content.Client.Lobby.UI
         }
         // WD EDIT END
 
+        /*
         private void UpdateSpawnPriorityControls()
         {
             if (Profile == null)
@@ -1829,6 +1832,7 @@ namespace Content.Client.Lobby.UI
 
             SpawnPriorityButton.SelectId((int) Profile.SpawnPriority);
         }
+        */
 
                 private void UpdateHeightWidthSliders()
         {
@@ -2417,6 +2421,10 @@ namespace Content.Client.Lobby.UI
             var tree = new Dictionary<string, object>();
             foreach (var category in cats)
             {
+                // WD EDIT: Hide Psionics and Languages
+                if (category.ID == "Psionics" || category.ID == "Language" || category.ID == "TraitsSpeechLanguages")
+                    continue;
+
                 // If the category is already in the tree, ignore it
                 if (tree.ContainsKey(category.ID))
                     continue;
