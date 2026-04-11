@@ -68,6 +68,12 @@ public sealed partial class NCWeaponWorkbenchSystem : EntitySystem
 
         if (materialContainer.ContainedEntity == null)
         {
+            if (!HasComp<NCWeaponBlankComponent>(args.Used))
+            {
+                _popup.PopupEntity(Loc.GetString("nc-workbench-invalid-item"), uid, args.User);
+                return;
+            }
+
             if (_container.Insert(args.Used, materialContainer))
             {
                 args.Handled = true;
