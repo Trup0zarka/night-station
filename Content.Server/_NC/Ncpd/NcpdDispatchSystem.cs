@@ -5,8 +5,10 @@ using Content.Server._NC.CitiNet;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Timing;
+using Robust.Shared.GameObjects;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 
 namespace Content.Server._NC.Ncpd
 {
@@ -21,7 +23,7 @@ namespace Content.Server._NC.Ncpd
         private readonly List<NcpdCallData> _activeCalls = new();
         private int _nextCallId = 1;
         private float _updateTimer = 0f;
-        private const float UpdateInterval = 5.0f;
+        private const float UpdateInterval = 3.0f;
 
         public override void Initialize()
         {
@@ -40,7 +42,38 @@ namespace Content.Server._NC.Ncpd
             if (_updateTimer >= UpdateInterval)
             {
                 _updateTimer = 0f;
+
+                // Update coordinates for calls that are tracking a live entity.
+                // This ensures the call marker itself moves on the map, not just the ping.
+                UpdateTrackedCallPositions();
+
                 UpdateAllTablets();
+            }
+        }
+
+        /// <summary>
+        /// For every active call bound to a live entity (TargetUid),
+        /// overwrite its Coordinates with the entity's current position.
+        /// NcpdCallData is a struct, so we must replace it in the list by index.
+        /// </summary>
+        private void UpdateTrackedCallPositions()
+        {
+            for (var i = 0; i < _activeCalls.Count; i++)
+            {
+                var call = _activeCalls[i];
+                if (call.TargetUid is not { } targetNet)
+                    continue;
+
+                var targetEnt = GetEntity(targetNet);
+                if (!EntityManager.EntityExists(targetEnt))
+                    continue;
+
+                if (!TryComp<TransformComponent>(targetEnt, out var xform))
+                    continue;
+
+                // Overwrite the call's coordinates with the target's current position
+                call.Coordinates = GetNetCoordinates(xform.Coordinates);
+                _activeCalls[i] = call;
             }
         }
 
@@ -63,7 +96,11 @@ namespace Content.Server._NC.Ncpd
             UpdateTabletUi(uid, component);
         }
 
-        public void AddCall(string title, string sector, string description, NetCoordinates coordinates, string sourceId = "")
+        /// <summary>
+        /// Creates a new dispatch call visible on all NCPD tablets.
+        /// If targetUid is provided, the call will include real-time entity tracking.
+        /// </summary>
+        public void AddCall(string title, string sector, string description, NetCoordinates coordinates, string sourceId = "", EntityUid? targetUid = null)
         {
             // If already dispatched, ignore (safety check)
             if (!string.IsNullOrEmpty(sourceId) && _activeCalls.Any(c => c.SourceId == sourceId))
@@ -76,7 +113,8 @@ namespace Content.Server._NC.Ncpd
                 description,
                 coordinates,
                 _timing.CurTime,
-                sourceId
+                sourceId,
+                targetUid.HasValue ? GetNetEntity(targetUid.Value) : null
             );
 
             _activeCalls.Add(call);
@@ -141,6 +179,34 @@ namespace Content.Server._NC.Ncpd
             }
 
             var pings = _citiNetMapSystem.GetActivePings(gridUid ?? mapUid ?? uid);
+
+            // === Live Entity Tracking ===
+            // If this tablet's active call is tracking a live entity,
+            // inject a real-time tracker ping at the target's current position.
+            if (component.ActiveCallId is { } activeId)
+            {
+                var activeCall = _activeCalls.FirstOrDefault(c => c.Id == activeId);
+                if (activeCall.TargetUid is { } targetNet)
+                {
+                    var targetEnt = GetEntity(targetNet);
+                    if (EntityManager.EntityExists(targetEnt) && TryComp<TransformComponent>(targetEnt, out var targetXform))
+                    {
+                        var targetPos = _transform.GetGridOrMapTilePosition(targetEnt, targetXform);
+
+                        // Determine tracker color by call type:
+                        // Cyberpsycho = bright red, Wanted = yellow
+                        var isCP = activeCall.Title.Contains("CYBERPSYCHO", System.StringComparison.OrdinalIgnoreCase);
+                        var trackerColor = isCP ? Color.Red : Color.Yellow;
+
+                        pings.Add(new CitiNetMapPingData(
+                            targetPos,
+                            trackerColor,
+                            8f,  // large radius for visibility
+                            CitiNetPingType.Tracker
+                        ));
+                    }
+                }
+            }
 
             _ui.SetUiState(uid, NcpdTabletUiKey.Key, new NcpdTabletState(
                 _activeCalls, 

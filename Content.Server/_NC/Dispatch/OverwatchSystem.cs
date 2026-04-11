@@ -107,9 +107,39 @@ namespace Content.Server._NC.Dispatch
                     if (alert.Dispatched)
                         break;
 
-                    var camUid = EntityManager.GetEntity(alert.CameraUid);
-                    var coords = Transform(camUid).Coordinates;
-                    _dispatchSystem.AddCall(alert.Type, alert.Sector, Loc.GetString("nspd-call-desc-camera", ("name", alert.CameraName)), GetNetCoordinates(coords), $"overwatch_{msg.AlertId}");
+                    // If we're tracking an entity (wanted/cyberpsycho), use its position
+                    // and pass targetUid for real-time tracking on tablets.
+                    EntityUid? trackTarget = null;
+                    EntityCoordinates dispatchCoords;
+
+                    if (alert.TargetUid is { } targetNet)
+                    {
+                        var targetEnt = EntityManager.GetEntity(targetNet);
+                        if (EntityManager.EntityExists(targetEnt))
+                        {
+                            dispatchCoords = Transform(targetEnt).Coordinates;
+                            trackTarget = targetEnt;
+                        }
+                        else
+                        {
+                            // Target entity no longer exists, fall back to camera
+                            var fallbackCam = EntityManager.GetEntity(alert.CameraUid);
+                            dispatchCoords = Transform(fallbackCam).Coordinates;
+                        }
+                    }
+                    else
+                    {
+                        var camUid = EntityManager.GetEntity(alert.CameraUid);
+                        dispatchCoords = Transform(camUid).Coordinates;
+                    }
+
+                    _dispatchSystem.AddCall(
+                        alert.Type,
+                        alert.Sector,
+                        Loc.GetString("nspd-call-desc-camera", ("name", alert.CameraName)),
+                        GetNetCoordinates(dispatchCoords),
+                        $"overwatch_{msg.AlertId}",
+                        trackTarget);
                     alert.Dispatched = true;
                     break;
             }
@@ -231,9 +261,42 @@ namespace Content.Server._NC.Dispatch
 
                     // play alarm sound at the console if high priority
                     if (playSound)
-                        _audio.PlayGlobal(new SoundPathSpecifier("/Audio/Effects/alert.ogg"), Filter.Pvs(uid), true);
+                        _audio.PlayPvs(new SoundPathSpecifier("/Audio/Effects/alert.ogg"), uid);
                 }
 
+                UpdateConsoleUi(uid, comp);
+            }
+        }
+
+        /// <summary>
+        /// Public method for external systems (e.g. admin smites) to create an alert
+        /// that tracks a live entity instead of a surveillance camera.
+        /// The alert appears on all Overwatch consoles. The dispatcher then forwards it to tablets.
+        /// </summary>
+        public void AddEntityAlert(EntityUid targetUid, string type, string description)
+        {
+            var timeStr = _gameTicker.RoundDuration().ToString(@"hh\:mm\:ss");
+            var transform = Transform(targetUid);
+            var gridPos = _transform.GetGridOrMapTilePosition(targetUid, transform);
+            var sectorWithCoords = $"({gridPos.X}, {gridPos.Y}) {description}";
+
+            var consoles = EntityQueryEnumerator<OverwatchConsoleComponent>();
+            while (consoles.MoveNext(out var uid, out var comp))
+            {
+                var id = comp.NextAlertId++;
+                comp.ActiveAlerts[id] = new OverwatchAlertData(
+                    id,
+                    type,
+                    sectorWithCoords,
+                    description,
+                    timeStr,
+                    EntityManager.GetNetEntity(targetUid),  // CameraUid doubles as position source
+                    dispatched: false,
+                    targetUid: EntityManager.GetNetEntity(targetUid)  // TargetUid for live tracking
+                );
+
+                // Always play alarm for entity alerts (high priority)
+                _audio.PlayPvs(new SoundPathSpecifier("/Audio/Effects/alert.ogg"), uid);
                 UpdateConsoleUi(uid, comp);
             }
         }

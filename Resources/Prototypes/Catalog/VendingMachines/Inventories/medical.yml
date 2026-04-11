@@ -13,7 +13,6 @@
     Bloodpack: 5
     EpinephrineChemistryBottle: 3
     Syringe: 5
-    ParamedHypo: 2
     Defibrillator: 3 # WD EDIT: Portafib -> Defibrillator
     CartridgeEpinephrine: 2
     CartridgeAtropine: 2
@@ -22,7 +21,6 @@
     #ClothingEyesHudMedical: 2
     #ClothingEyesEyepatchHudMedical: 2
     # WD EDIT END
-    ParamedHypo: 2 #Goobstation - ParamedHypo
     EmergencyRollerBedSpawnFolded: 1 # WD EDIT
     VehicleWheelchairFolded: 3 # Goobstation - Vehicles
     SyringeCase: 3
@@ -30,25 +28,8 @@
     EmergencyMedipen: 3
     PowerCellMedium: 2
     RollerBedSpawnFolded: 2
-
-
-
-    #NC EDIT START
+  #NC EDIT START
   startingItemPrices:
-    # Night City 2045 Market Prices (Civilian/Contractor)
-    # HandheldHealthAnalyzer: 1000
-    # Brutepack: 50
-    # Ointment: 50
-    # MedicalPatchPrefilledBicaridine: 50
-    # MedicalPatchPrefilledDermaline: 50
-    # Bloodpack: 50
-    # EpinephrineChemistryBottle: 50
-    # Syringe: 20
-    # Defibrillator: 500
-    # ParamedHypo: 100
-    # EmergencyRollerBedSpawnFolded: 100
-    # VehicleWheelchairFolded: 100
-    # Night City 2045 Employee Prices (Trauma Team internal logic)
     HandheldHealthAnalyzer: 50
     Brutepack: 5
     Ointment: 5
@@ -61,7 +42,6 @@
     Bloodpack: 20
     EpinephrineChemistryBottle: 30
     Syringe: 0
-    ParamedHypo: 150
     Defibrillator: 250
     CartridgeEpinephrine: 40
     CartridgeAtropine: 40
@@ -72,8 +52,7 @@
     RollerBedSpawnFolded: 50
     EmergencyRollerBedSpawnFolded: 50
     VehicleWheelchairFolded: 100
-    #NC EDIT END
-
+  #NC EDIT END
   # WD EDIT START
   emaggedInventory:
     StimpackMini: 1

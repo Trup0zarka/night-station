@@ -24,16 +24,17 @@
       color: "#ffaa00"
       icon: /Textures/Interface/VerbIcons/star-solid-yellow.svg.192dpi.png
       visibleInWorld: false
+    - type: TraumaSubscriber
+      tier: Silver
 
 - type: startingGear
   id: MaxTacCommanderGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitHoS
+    jumpsuit: ClothingUniformNSPDNormisBlack
     back: ClothingBackpackSecurity
     shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHelmetHardsuitSecurityRed
-    eyes: ClothingEyesGlassesSunglasses
-    ears: ClothingHeadsetAltSecurity
+    eyes: ClothingEyesGlassesSunglasses 
     id: MaxTacCommanderPDA
     belt: ClothingBeltSecurityFilled
-    outerClothing: ClothingOuterHardsuitSecurityRed
+    outerClothing: ClothingOuterHardsuitMilitech

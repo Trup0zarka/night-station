@@ -8,6 +8,11 @@
     - NC_General
     - Fixer
   startingGear: FixerGear
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: TraumaSubscriber
+      tier: Silver
 
 - type: startingGear
   id: FixerGear

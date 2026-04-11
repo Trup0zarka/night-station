@@ -91,5 +91,4 @@
     unlitIdleState: unlit
     unlitRunningState: unlit-building
     staticPacks:
-    - NCAmmoPackerStatic
     - NCCyberpunkAmmoPack

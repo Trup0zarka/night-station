@@ -22,15 +22,21 @@
     id: Syringe
     amount: { min: 5, max: 10 }
     weight: 5
+  - type: Item
+    id: WeaponPistolStreetMaster
+    weight: 1
 
 - type: ncContractRewardPool
   id: botany_medium
   entries:
   - type: Item
-    id: WeaponPistolMk58
+    id: WeaponPistolCheesemaker
     weight: 1
   - type: Item
-    id: WeaponPistolViper
+    id: WeaponPistolFederalX9
+    weight: 1
+  - type: Item
+    id: WeaponShotgunSvakha
     weight: 1
   - type: Item
     id: MedkitFilled
@@ -46,10 +52,13 @@
   id: botany_hard
   entries:
   - type: Item
-    id: WeaponShotgunBulldog
+    id: WeaponRifleNokotaD5Copperhead
     weight: 1
   - type: Item
-    id: WeaponSubMachineGunWt550
+    id: WeaponRifleArasakaNOWAKI
+    weight: 1
+  - type: Item
+    id: WeaponRifleM04
     weight: 1
   - type: Item
     id: MedkitCombatFilled

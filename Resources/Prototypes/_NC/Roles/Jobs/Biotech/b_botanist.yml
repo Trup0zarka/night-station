@@ -1,0 +1,27 @@
+- type: job
+  id: BiotechnicaBotanist
+  name: Ботаник Biotechnica
+  description: 'Научный персонал, растит и перегоняет овощи в пищу, выводит новые сорта растений'
+  playTimeTracker: JobBiotechnicaBotanist
+  weight: 10
+  salary: 1100
+  startingGear: BiotechnicaBotanistGear
+  access:
+    - Trauma_Command
+    - Trauma_Medical
+    - Trauma_Morgue
+    - Trauma_Hangar
+    - NC_General
+
+- type: startingGear
+  id: BiotechnicaBotanistGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBiotech
+    back: ClothingBackpackSatchelMedical
+    shoes: ClothingShoesColorWhite
+    head: ClothingHeadHatBeretSeniorPhysician
+    eyes: ClothingEyesGlassesSunglasses
+    ears: ClothingHeadsetCMO
+    id: TraumaTeamChiefPDA
+    belt: ClothingBeltMedicalFilled
+    outerClothing: ClothingOuterCoatLabCmo

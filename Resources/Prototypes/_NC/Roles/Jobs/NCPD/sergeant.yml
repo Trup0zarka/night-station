@@ -19,6 +19,8 @@
       color: "#ffaa00"
       icon: /Textures/Interface/VerbIcons/star-solid-yellow.svg.192dpi.png
       visibleInWorld: false
+    - type: TraumaSubscriber
+      tier: Silver
 
 - type: startingGear
   id: NCPDSergeantGear

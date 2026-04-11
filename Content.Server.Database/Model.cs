@@ -85,6 +85,10 @@ namespace Content.Server.Database
                 .HasIndex(j => new { j.ProfileId, j.JobName })
                 .IsUnique();
 
+            modelBuilder.Entity<QuittedDepartment>()
+                .HasIndex(q => new { q.ProfileId, q.DepartmentId })
+                .IsUnique();
+
             modelBuilder.Entity<AssignedUserId>()
                 .HasIndex(p => p.UserName)
                 .IsUnique();
@@ -399,6 +403,8 @@ namespace Content.Server.Database
         public int Age { get; set; }
         public string Sex { get; set; } = null!;
         public int BankBalance { get; set; } = 0; // NC
+        public string? EmployedDepartment { get; set; } // NC
+        public List<QuittedDepartment> QuittedDepartments { get; } = new(); // NC
         public string BodyType { get; set; } = null!; // WD EDIT
         public string Voice { get; set; } = null!; // WD EDIT
         public string BarkVoice { get; set; } = null!; // WD EDIT
@@ -444,6 +450,16 @@ namespace Content.Server.Database
 
         public string JobName { get; set; } = null!;
         public DbJobPriority Priority { get; set; }
+    }
+
+    public class QuittedDepartment
+    {
+        public int Id { get; set; }
+        public Profile Profile { get; set; } = null!;
+        public int ProfileId { get; set; }
+
+        public string DepartmentId { get; set; } = null!;
+        public DateTime QuitTime { get; set; }
     }
 
     public enum DbJobPriority

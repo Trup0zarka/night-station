@@ -1,0 +1,32 @@
+- type: job
+  id: BiotechnicaMedTech
+  name: МедТех Biotechnica
+  description: 'Научный персонал, Выполняет Медицинские операции, варит химикаты и производит медикаменты '
+  playTimeTracker: JobBiotechnicaMedTech
+  weight: 10
+  salary: 1400
+  startingGear: BiotechnicaMedTechGear
+  access:
+    - Trauma_Command
+    - Trauma_Medical
+    - Trauma_Morgue
+    - Trauma_Hangar
+    - NC_General
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: TraumaSubscriber
+      tier: Silver
+
+- type: startingGear
+  id: BiotechnicaMedTechGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBiotech
+    back: ClothingBackpackSatchelMedical
+    shoes: ClothingShoesColorWhite
+    head: ClothingHeadHatBeretSeniorPhysician
+    eyes: ClothingEyesGlassesSunglasses
+    ears: ClothingHeadsetCMO
+    id: TraumaTeamChiefPDA
+    belt: ClothingBeltMedicalFilled
+    outerClothing: ClothingOuterCoatLabCmo

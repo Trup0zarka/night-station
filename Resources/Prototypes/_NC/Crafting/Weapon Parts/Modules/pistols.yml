@@ -147,3 +147,146 @@
           doAfterTime: 1.5
         - tool: Pulsing
           doAfterTime: 2.5
+
+# FedArms "Cheesemaker" (Tier 1)
+- type: entity
+  id: NCBlueprintCheesemaker
+  name: модуль "Cheesemaker"
+  description: Диск с инструкциями по сборке и физический каркас под детали для тяжелого пистолета FedArms "Cheesemaker".
+  parent: BaseItem
+  components:
+    - type: Sprite
+      sprite: Objects/Tools/blueprint.rsi
+      state: icon
+    - type: NCBlueprint
+      resultEntity: WeaponPistolCheesemaker
+      garbageEntity: Wrench
+      steps:
+        - part: Frame
+          prototype: NCProcessedFrameT1
+          doAfterTime: 2.0
+        - part: Barrel
+          prototype: NCProcessedBarrelT1
+          doAfterTime: 2.0
+        - tool: Screwing
+          doAfterTime: 3.0
+        - part: Internals
+          prototype: NCProcessedInternalsT1
+          doAfterTime: 2.5
+        - tool: Screwing
+          doAfterTime: 2.5
+
+# Federal Arms X9 (Tier 1)
+- type: entity
+  id: NCBlueprintFederalX9
+  name: модуль "Federal Arms X9"
+  description: Диск с инструкциями по сборке и физический каркас под детали для компактного пистолета Federal Arms X9.
+  parent: BaseItem
+  components:
+    - type: Sprite
+      sprite: Objects/Tools/blueprint.rsi
+      state: icon
+    - type: NCBlueprint
+      resultEntity: WeaponPistolFederalX9
+      garbageEntity: Wrench
+      steps:
+        - part: Frame
+          prototype: NCProcessedFrameT1
+          doAfterTime: 2.0
+        - part: Barrel
+          prototype: NCProcessedBarrelT1
+          doAfterTime: 2.0
+        - tool: Screwing
+          doAfterTime: 3.0
+        - part: Internals
+          prototype: NCProcessedInternalsT1
+          doAfterTime: 2.5
+        - tool: Screwing
+          doAfterTime: 2.5
+
+# Militech "Boomer Buster" (Tier 1)
+- type: entity
+  id: NCBlueprintBoomerBuster
+  name: модуль "Boomer Buster"
+  description: Диск с инструкциями по сборке и физический каркас под детали для тяжелого пистолета Militech "Boomer Buster".
+  parent: BaseItem
+  components:
+    - type: Sprite
+      sprite: Objects/Tools/blueprint.rsi
+      state: icon
+    - type: NCBlueprint
+      resultEntity: WeaponPistolBoomerBuster
+      garbageEntity: Wrench
+      steps:
+        - part: Frame
+          prototype: NCProcessedFrameT1
+          doAfterTime: 2.0
+        - part: Barrel
+          prototype: NCProcessedBarrelT1
+          doAfterTime: 2.0
+        - tool: Screwing
+          doAfterTime: 3.0
+        - part: Internals
+          prototype: NCProcessedInternalsT1
+          doAfterTime: 2.5
+        - tool: Screwing
+          doAfterTime: 2.5
+
+# Mustang Arms Mark III (Tier 1)
+- type: entity
+  id: NCBlueprintMarkIII
+  name: модуль "Mustang Arms Mark III"
+  description: Диск с инструкциями по сборке и физический каркас под детали для пистолета Mustang Arms Mark III.
+  parent: BaseItem
+  components:
+    - type: Sprite
+      sprite: Objects/Tools/blueprint.rsi
+      state: icon
+    - type: NCBlueprint
+      resultEntity: WeaponPistolMarkIII
+      garbageEntity: Wrench
+      steps:
+        - part: Frame
+          prototype: NCProcessedFrameT1
+          doAfterTime: 2.0
+        - part: Barrel
+          prototype: NCProcessedBarrelT1
+          doAfterTime: 2.0
+        - tool: Screwing
+          doAfterTime: 3.0
+        - part: Internals
+          prototype: NCProcessedInternalsT1
+          doAfterTime: 2.5
+        - tool: Screwing
+          doAfterTime: 2.5
+
+# Sternmeyer P35 (Tier 2)
+- type: entity
+  id: NCBlueprintSternmeyerP35
+  name: модуль "Sternmeyer P35"
+  description: Диск с инструкциями по сборке и физический каркас под детали для револьвера Sternmeyer P35.
+  parent: BaseItem
+  components:
+    - type: Sprite
+      sprite: Objects/Tools/blueprint.rsi
+      state: icon
+    - type: NCBlueprint
+      resultEntity: NCWeaponRevolverSternmeyerP35
+      garbageEntity: Wrench
+      steps:
+        - part: Frame
+          prototype: NCProcessedFrameT2
+          doAfterTime: 2.0
+        - part: Barrel
+          prototype: NCProcessedBarrelT2
+          doAfterTime: 2.0
+        - tool: Screwing
+          doAfterTime: 3.0
+        - part: Internals
+          prototype: NCProcessedInternalsT2
+          doAfterTime: 2.5
+        - part: Board
+          prototype: NCProcessedElectronicsT2
+          doAfterTime: 1.5
+        - tool: Pulsing
+          doAfterTime: 2.5

@@ -1,0 +1,32 @@
+- type: job
+  id: BiotechnicaOperativeLead
+  name: Младший офицер Biotechnica
+  description: 'Относится к Офицерскому составу, в иерархии стоит ниже Старшего Офицера но выше всего остального СБ'
+  playTimeTracker: JobBiotechnicaOperativeLead
+  weight: 10
+  salary: 2000
+  startingGear: BiotechnicaOperativeLeadGear
+  access:
+    - Trauma_Command
+    - Trauma_Medical
+    - Trauma_Morgue
+    - Trauma_Hangar
+    - NC_General
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: TraumaSubscriber
+      tier: Silver
+
+- type: startingGear
+  id: BiotechnicaOperativeLeadGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBiotech
+    back: ClothingBackpackSatchelMedical
+    shoes: ClothingShoesColorWhite
+    head: ClothingHeadHatBeretSeniorPhysician
+    eyes: ClothingEyesGlassesSunglasses
+    ears: ClothingHeadsetCMO
+    id: TraumaTeamChiefPDA
+    belt: ClothingBeltMedicalFilled
+    outerClothing: ClothingOuterCoatLabCmo

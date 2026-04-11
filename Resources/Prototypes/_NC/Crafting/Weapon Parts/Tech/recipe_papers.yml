@@ -99,6 +99,87 @@
       5. Установите контроллер боепитания
       6. Инструмент: Pulsing
 
+- type: entity
+  parent: NCRecipePaperBase
+  id: NCRecipePaperCheesemaker
+  name: рецепт (FedArms Cheesemaker)
+  components:
+  - type: Paper
+    content: |
+      ИНСТРУКЦИЯ ПО СБОРКЕ: FedArms Cheesemaker
+
+      Алгоритм сборки:
+      1. Установите рамка кустарного оружия
+      2. Установите гладкоствольная трубка
+      3. Инструмент: Screwing
+      4. Установите примитивный УСМ
+      5. Инструмент: Screwing
+
+- type: entity
+  parent: NCRecipePaperBase
+  id: NCRecipePaperFederalX9
+  name: рецепт (Federal Arms X9)
+  components:
+  - type: Paper
+    content: |
+      ИНСТРУКЦИЯ ПО СБОРКЕ: Federal Arms X9
+
+      Алгоритм сборки:
+      1. Установите рамка кустарного оружия
+      2. Установите гладкоствольная трубка
+      3. Инструмент: Screwing
+      4. Установите примитивный УСМ
+      5. Инструмент: Screwing
+
+- type: entity
+  parent: NCRecipePaperBase
+  id: NCRecipePaperBoomerBuster
+  name: рецепт (Militech Boomer Buster)
+  components:
+  - type: Paper
+    content: |
+      ИНСТРУКЦИЯ ПО СБОРКЕ: Militech Boomer Buster
+
+      Алгоритм сборки:
+      1. Установите рамка кустарного оружия
+      2. Установите гладкоствольная трубка
+      3. Инструмент: Screwing
+      4. Установите примитивный УСМ
+      5. Инструмент: Screwing
+
+- type: entity
+  parent: NCRecipePaperBase
+  id: NCRecipePaperMarkIII
+  name: рецепт (Mustang Arms Mark III)
+  components:
+  - type: Paper
+    content: |
+      ИНСТРУКЦИЯ ПО СБОРКЕ: Mustang Arms Mark III
+
+      Алгоритм сборки:
+      1. Установите рамка кустарного оружия
+      2. Установите гладкоствольная трубка
+      3. Инструмент: Screwing
+      4. Установите примитивный УСМ
+      5. Инструмент: Screwing
+
+- type: entity
+  parent: NCRecipePaperBase
+  id: NCRecipePaperSternmeyerP35
+  name: рецепт (Sternmeyer P35)
+  components:
+  - type: Paper
+    content: |
+      ИНСТРУКЦИЯ ПО СБОРКЕ: Sternmeyer P35
+
+      Алгоритм сборки:
+      1. Установите корпоративная ствольная коробка
+      2. Установите стандартный нарезной ствол
+      3. Инструмент: Screwing
+      4. Установите затворная группа военого стандарта
+      5. Установите контроллер боепитания
+      6. Инструмент: Pulsing
+
 # --- ВИНТОВКИ ---
 
 - type: entity

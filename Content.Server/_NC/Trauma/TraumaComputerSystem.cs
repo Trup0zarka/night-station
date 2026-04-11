@@ -183,16 +183,32 @@ namespace Content.Server._NC.Trauma
         {
             var patients = new List<TraumaPatientData>();
 
-            var query = EntityQueryEnumerator<TraumaSubscriberComponent, MetaDataComponent, MobStateComponent, MindContainerComponent>();
+            // Мы ищем всех, у кого есть состояние моба и контейнер для разума (т.е. персонажей)
+            var query = EntityQueryEnumerator<MetaDataComponent, MobStateComponent, MindContainerComponent>();
 
-            while (query.MoveNext(out var entity, out var sub, out var meta, out var mobState, out var mindContainer))
+            while (query.MoveNext(out var entity, out var meta, out var mobState, out var mindContainer))
             {
+                // Проверяем, является ли это игроком (Actor) или явным подписчиком
+                var isActor = HasComp<ActorComponent>(entity);
+                var hasSub = TryComp<TraumaSubscriberComponent>(entity, out var sub);
+
+                // Если это не игрок и не подписчик - игнорируем (например, простые NPC животные)
+                if (!isActor && !hasSub)
+                    continue;
+
+                // Определяем тир подписки: если компонента нет, но это игрок - по умолчанию Bronze
+                var tier = hasSub ? sub!.Tier : (isActor ? TraumaSubscriptionTier.Bronze : TraumaSubscriptionTier.None);
+
+                // Если тир всё еще None (например, NPC без подписки), не показываем его в списке
+                if (tier == TraumaSubscriptionTier.None)
+                    continue;
+
                 string status = _mobState.IsDead(entity, mobState) ? Loc.GetString("trauma-status-dead") :
                                 (_mobState.IsCritical(entity, mobState) ? Loc.GetString("trauma-status-critical") : Loc.GetString("trauma-status-alive"));
 
                 var damageInfo = Loc.GetString("trauma-hp-format", ("hp", 100));
                 if (TryComp<DamageableComponent>(entity, out var damageable))
-                    damageInfo = Loc.GetString("trauma-dmg-format", ("damage", damageable.TotalDamage));
+                    damageInfo = Loc.GetString("trauma-dmg-format", ("damage", (int)damageable.TotalDamage));
 
                 var jobTitle = Loc.GetString("trauma-unknown-job");
                 if (mindContainer.Mind.HasValue && _jobs.MindTryGetJob(mindContainer.Mind.Value, out var prototype))
@@ -203,7 +219,7 @@ namespace Content.Server._NC.Trauma
                     EntityUid = GetNetEntity(entity),
                     Name = meta.EntityName,
                     HealthStatus = status,
-                    Subscription = sub.Tier,
+                    Subscription = tier,
                     Job = jobTitle,
                     DamageInfo = damageInfo
                 });

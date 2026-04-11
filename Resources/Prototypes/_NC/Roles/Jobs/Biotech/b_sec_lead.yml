@@ -1,0 +1,29 @@
+- type: job
+  id: BiotechnicaSecurityLead
+  name: Старший офиер безопасности Biotechnica
+  description: 'Руковodитель отдела Biotechnica отвечает за управление и координацию всех операций, связанных с биотехнологическими исследованиями и разработками. Он обеспечивает эффективное использование ресурсов, поддерживает высокие стандарты безопасности и качества, а также способствует инновациям в области биотехнологий.'
+  playTimeTracker: JobBiotechnicaSecurityLead
+  weight: 10
+  salary: 2200
+  startingGear: BiotechnicaSecurityLeadGear
+  access:
+    - Trauma_Command
+    - Trauma_Medical
+    - Trauma_Morgue
+    - Trauma_Hangar
+    - NC_General
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: TraumaSubscriber
+      tier: Silver
+
+- type: startingGear
+  id: BiotechnicaSecurityLeadGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBiotech
+    shoes: ClothingShoesColorWhite
+    eyes: ClothingEyesGlassesSunglasses
+    id: TraumaTeamChiefPDA
+    belt: ClothingBeltMedicalFilled
+    outerClothing: ClothingOuterCoatLabCmo

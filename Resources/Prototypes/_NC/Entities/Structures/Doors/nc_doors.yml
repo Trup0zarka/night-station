@@ -49,7 +49,7 @@
     access: [["NC_General"]]
 
 - type: entity
-  id: NCAirlockLuxury
+  id: NCAirlock1000
   parent: BaseNCAirlock
   name: дверь
   suffix: "квартира люкс класса 1000"

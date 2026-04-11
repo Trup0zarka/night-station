@@ -1,0 +1,32 @@
+- type: job
+  id: BiotechnicaNetrunner
+  name: Нетраннер Biotechnica
+  description: 'Относится к рядовому составу, в иерархии стоит на ровне с Оперативниками. Может быть как пауком так и оказывать поддержку Оперативникам '
+  playTimeTracker: JobBiotechnicaNetrunner
+  weight: 10
+  salary: 2500
+  startingGear: BiotechnicaNetrunnerGear
+  access:
+    - Trauma_Command
+    - Trauma_Medical
+    - Trauma_Morgue
+    - Trauma_Hangar
+    - NC_General
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: TraumaSubscriber
+      tier: Silver
+
+- type: startingGear
+  id: BiotechnicaNetrunnerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBiotech
+    back: ClothingBackpackSatchelMedical
+    shoes: ClothingShoesColorWhite
+    head: ClothingHeadHatBeretSeniorPhysician
+    eyes: ClothingEyesGlassesSunglasses
+    ears: ClothingHeadsetCMO
+    id: TraumaTeamChiefPDA
+    belt: ClothingBeltMedicalFilled
+    outerClothing: ClothingOuterCoatLabCmo

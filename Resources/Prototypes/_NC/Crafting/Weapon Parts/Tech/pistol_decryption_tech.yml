@@ -92,3 +92,98 @@
     moduleCost: 110
     recipeCost: 150
     maxUses: 3
+
+- type: entity
+  parent: BaseItem
+  id: NCTechPistolCheesemaker
+  name: Технология (FedArms Cheesemaker)
+  description: Технология для создания модуля "Cheesemaker". Т1.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    layers:
+    - state: datadisk_base
+    - state: datadisk_label
+  - type: DecryptionTechnology
+    tier: Standard
+    modulePrototype: NCBlueprintCheesemaker
+    recipePrototype: NCRecipePaperCheesemaker
+    moduleCost: 55
+    recipeCost: 85
+    maxUses: 5
+
+- type: entity
+  parent: BaseItem
+  id: NCTechPistolFederalX9
+  name: Технология (Federal Arms X9)
+  description: Технология для создания модуля "Federal Arms X9". Т1.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    layers:
+    - state: datadisk_base
+    - state: datadisk_label
+  - type: DecryptionTechnology
+    tier: Standard
+    modulePrototype: NCBlueprintFederalX9
+    recipePrototype: NCRecipePaperFederalX9
+    moduleCost: 45
+    recipeCost: 75
+    maxUses: 5
+
+- type: entity
+  parent: BaseItem
+  id: NCTechPistolBoomerBuster
+  name: Технология (Militech Boomer Buster)
+  description: Технология для создания модуля "Boomer Buster". Т1.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    layers:
+    - state: datadisk_base
+    - state: datadisk_label
+  - type: DecryptionTechnology
+    tier: Standard
+    modulePrototype: NCBlueprintBoomerBuster
+    recipePrototype: NCRecipePaperBoomerBuster
+    moduleCost: 65
+    recipeCost: 95
+    maxUses: 4
+
+- type: entity
+  parent: BaseItem
+  id: NCTechPistolMarkIII
+  name: Технология (Mustang Arms Mark III)
+  description: Технология для создания модуля "Mark III". Т1.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    layers:
+    - state: datadisk_base
+    - state: datadisk_label
+  - type: DecryptionTechnology
+    tier: Standard
+    modulePrototype: NCBlueprintMarkIII
+    recipePrototype: NCRecipePaperMarkIII
+    moduleCost: 50
+    recipeCost: 80
+    maxUses: 5
+
+- type: entity
+  parent: BaseItem
+  id: NCTechPistolSternmeyerP35
+  name: Технология (Sternmeyer P35)
+  description: Технология для создания модуля "Sternmeyer P35". Т2.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    layers:
+    - state: datadisk_base
+    - state: datadisk_label
+  - type: DecryptionTechnology
+    tier: Excellent
+    modulePrototype: NCBlueprintSternmeyerP35
+    recipePrototype: NCRecipePaperSternmeyerP35
+    moduleCost: 120
+    recipeCost: 160
+    maxUses: 3

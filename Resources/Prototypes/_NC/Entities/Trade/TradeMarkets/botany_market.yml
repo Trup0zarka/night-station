@@ -19,10 +19,85 @@
   entries:
   - proto: SeedExtractorFlatpack
     price: 5000
-    count: 1
+    count: 2
   - proto: HydroponicsTrayFlatpack
     price: 1200
+    count: 6
+  - proto: WaterTankHighCapacity
+    price: 1500
+    count: 1
+
+- type: storeCategoryStructured
+  id: TradeBotany_Tools
+  name: "Инструменты"
+  entries:
+  - proto: Dropper
+    price: 50
+    count: 5
+  - proto: PlantAnalyzer
+    price: 450
+    count: 2
+  - proto: HydroponicsToolHatchet
+    price: 250
+    count: 2
+  - proto: HydroponicsToolClippers
+    price: 200
     count: 3
+  - proto: HydroponicsToolScythe
+    price: 350
+    count: 2
+  - proto: HydroponicsToolSpade
+    price: 150
+    count: 3
+  - proto: HydroponicsToolMiniHoe
+    price: 150
+    count: 3
+  - proto: Bucket
+    price: 100
+    count: 5
+  - proto: BoxMouthSwab
+    price: 120
+    count: 2
+  - proto: PlantBag
+    price: 300
+    count: 2
+
+- type: storeCategoryStructured
+  id: TradeBotany_Chemistry
+  name: "Агрохимия"
+  entries:
+  - proto: PlantBGoneSpray
+    price: 180
+    count: 5
+  - proto: PestSpray
+    price: 150
+    count: 5
+  - proto: WeedSpray
+    price: 150
+    count: 5
+  - proto: RobustHarvestChemistryBottle
+    price: 400
+    count: 3
+  - proto: UnstableMutagenChemistryBottle
+    price: 600
+    count: 2
+  - proto: EZNutrientChemistryBottle
+    price: 250
+    count: 5
+
+- type: storeCategoryStructured
+  id: TradeBotany_Apparel
+  name: "Спецодежда"
+  entries:
+  - proto: ClothingBeltPlant
+    price: 400
+    count: 2
+  - proto: ClothingOuterApronBotanist
+    price: 350
+    count: 2
+  - proto: ClothingHandsGlovesLeather
+    price: 200
+    count: 2
 
 - type: storeCategoryStructured
   id: TradeBotany_Seeds
@@ -76,7 +151,7 @@
 
 - type: storeCategoryStructured
   id: TradeBotany_SellCrops
-  name: "Сбыт урожая (Luxury Food)"
+  name: "Сбыт урожая"
   entries:
   - proto: FoodTomato
     price: 220
@@ -119,6 +194,9 @@
   categories:
   - TradeBotany_Equipment
   - TradeBotany_Seeds
+  - TradeBotany_Tools
+  - TradeBotany_Chemistry
+  - TradeBotany_Apparel
 
 - type: storePresetStructured
   id: TradeBotany_Sell

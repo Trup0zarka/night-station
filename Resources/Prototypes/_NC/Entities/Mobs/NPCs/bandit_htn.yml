@@ -1,0 +1,29 @@
+- type: htnCompound
+  id: NCBanditRootCompound
+  branches:
+    # Priority 1: Maintenance (Jam clearing / Racking).
+    # We MUST do this if the gun is jammed or not racked, 
+    # otherwise CombatCompound might fail and lead to dropping the weapon.
+    - tasks:
+        - !type:HTNCompoundTask
+          task: RackGunCompound
+      preconditions:
+        - !type:NCWeaponMaintenancePrecondition
+
+    # Priority 2: Tactical Combat.
+    - tasks:
+        - !type:HTNCompoundTask
+          task: SimpleHumanoidHostileCompound
+
+    # Priority 3: Idle (Fallback).
+    # If no combat target and no maintenance, just idle around.
+    - tasks:
+        - !type:HTNCompoundTask
+          task: IdleCompound
+
+- type: htnCompound
+  id: RackGunCompound
+  branches:
+    - tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:NPCUseInHandOperator

@@ -40,6 +40,8 @@
       color: "#ffaa00"
       icon: /Textures/Interface/VerbIcons/star-solid-yellow.svg.192dpi.png
       visibleInWorld: false
+    - type: TraumaSubscriber
+      tier: Platinum
   afterLoadoutSpecial:
   - !type:ModifyEnvirosuitSpecial
     charges: 8

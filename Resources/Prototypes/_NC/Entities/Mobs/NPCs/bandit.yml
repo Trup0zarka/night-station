@@ -1,0 +1,79 @@
+# Bandit NPC for Night City
+
+# --- Gear Sets ---
+
+- type: startingGear
+  id: NCBanditGearPistol
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAncient
+    outerClothing: ClothingOuterArmorMilitechBulletproof
+    shoes: ClothingShoesColorBlack
+    pocket1: MagazinePistolAvenger
+    pocket2: MagazinePistolAvenger
+  inhand:
+  - WeaponPistolAvenger
+
+- type: startingGear
+  id: NCBanditGearRifle
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAncient
+    outerClothing: ClothingOuterArmorMilitechBulletproof
+    shoes: ClothingShoesColorBlack
+    pocket1: MagazineRifleNokota
+    pocket2: MagazineRifleNokota
+  inhand:
+  - WeaponRifleNokotaD5Copperhead
+
+- type: startingGear
+  id: NCBanditGearBoss
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAncient
+    outerClothing: ClothingOuterHardsuitMilitech
+    shoes: ClothingShoesColorBlack
+    pocket1: MagazineRifleArasaka
+    pocket2: MagazineRifleArasaka
+  inhand:
+  - WeaponRifleArasakaProto
+
+# --- Bandit Variations ---
+
+- type: entity
+  name: бандит
+  parent: BaseMobHuman
+  id: MobNCBandit
+  description: Обычный уличный бандит, вооружившийся корпо-снаряжением с черного рынка.
+  abstract: true
+  components:
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
+  - type: HTN
+    rootTask:
+      task: NCBanditRootCompound
+  - type: NPCAutoReload
+  - type: InputMover
+  - type: MobMover
+
+- type: entity
+  parent: MobNCBandit
+  id: MobNCBanditPistol
+  suffix: NC Pistol
+  components:
+  - type: Loadout
+    prototypes: [NCBanditGearPistol]
+
+- type: entity
+  parent: MobNCBandit
+  id: MobNCBanditRifle
+  suffix: NC Rifle
+  components:
+  - type: Loadout
+    prototypes: [NCBanditGearRifle]
+
+- type: entity
+  parent: MobNCBandit
+  id: MobNCBanditBoss
+  suffix: NC Boss
+  components:
+  - type: Loadout
+    prototypes: [NCBanditGearBoss]

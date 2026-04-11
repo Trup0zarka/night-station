@@ -12,6 +12,11 @@
     - Trauma_Morgue
     - Trauma_Hangar
     - NC_General
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: TraumaSubscriber
+      tier: Platinum
 
 - type: startingGear
   id: TraumaTeamChiefGear

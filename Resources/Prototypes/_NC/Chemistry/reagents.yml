@@ -10,6 +10,15 @@
     entity: MaterialGunpowder
 
 - type: reagent
+  id: NCPlastic
+  name: Плакстик
+  group: Elements
+  desc: Пластик.
+  physicalDesc: Серый порошок.
+  color: "#404040"
+
+
+- type: reagent
   id: Yeast
   name: Дрожжи
   group: Foods

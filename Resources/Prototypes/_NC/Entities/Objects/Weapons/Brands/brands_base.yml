@@ -233,7 +233,7 @@
     durability: 100
     maxDurability: 100
     degradationRate: 0.6
-    jamChance: 0.02
+    jamChance: 0.05
     meleeDamageBonus: 5      # Мощный приклад
 
 # Mustang Arms — «Патрульный стандарт»
@@ -251,7 +251,7 @@
     durability: 95
     maxDurability: 95
     degradationRate: 0.6
-    jamChance: 0.02
+    jamChance: 0.05
     reloadTimeMultiplier: 1.5  # На 50% дольше перезаряжаешь
 
 # Techtronika — «Тяжесть — это надежно»
@@ -272,6 +272,23 @@
     jamChance: 0.01
     meleeDamageBonus: 10     # Приклад — холодное оружие
     drawTimeMultiplier: 1.8  # Очень долго доставать
+
+# Nokota — «Американская классика»
+# Надёжное, простое в обслуживании оружие. Хорошие средние показатели.
+- type: entity
+  id: NCBrandNokota
+  abstract: true
+  components:
+  - type: Clothing
+    equipDelay: 0.5
+    unequipDelay: 0.5
+  - type: NCWeapon
+    manufacturer: Nokota
+    tier: Standard
+    durability: 110
+    maxDurability: 110
+    degradationRate: 0.55
+    jamChance: 0.01
 
 #endregion
 
@@ -311,7 +328,7 @@
     durability: 90
     maxDurability: 90
     degradationRate: 0.4
-    jamChance: 0.01
+    jamChance: 0
     drawTimeMultiplier: 0.7  # Быстрое извлечение
 
 # Tsunami Arms — «Умный перегруз»

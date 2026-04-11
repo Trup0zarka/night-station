@@ -26,7 +26,13 @@ namespace Content.Shared._NC.Dispatch
         public NetEntity CameraUid;
         public bool Dispatched;
 
-        public OverwatchAlertData(int id, string type, string sector, string cameraName, string timeStr, NetEntity cameraUid, bool dispatched = false)
+        /// <summary>
+        /// If set, this alert is tracking a live entity (wanted / cyberpsycho).
+        /// When dispatched to tablet, the entity will be bound for real-time tracking.
+        /// </summary>
+        public NetEntity? TargetUid;
+
+        public OverwatchAlertData(int id, string type, string sector, string cameraName, string timeStr, NetEntity cameraUid, bool dispatched = false, NetEntity? targetUid = null)
         {
             Id = id;
             Type = type;
@@ -35,6 +41,7 @@ namespace Content.Shared._NC.Dispatch
             TimeStr = timeStr;
             CameraUid = cameraUid;
             Dispatched = dispatched;
+            TargetUid = targetUid;
         }
     }
 

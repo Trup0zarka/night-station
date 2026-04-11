@@ -16,6 +16,7 @@ public enum WeaponManufacturer : byte
     DaiLung,
     Sanroo,
     DarraPolytechnic,
+    Nokota,
 
     // ТИР-2: «Рабочие лошадки»
     FederatedArms,

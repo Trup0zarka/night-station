@@ -50,11 +50,23 @@ namespace Content.Server._NC.Bank
             _log = Logger.GetSawmill("bank");
 
             SubscribeLocalEvent<StationBankComponent, MapInitEvent>(OnStationBankInit);
+            SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawn);
         }
 
         private void OnStationBankInit(EntityUid uid, StationBankComponent component, MapInitEvent args)
         {
             EnsureDefaultAccounts(component);
+        }
+
+        private void OnPlayerSpawn(PlayerSpawnCompleteEvent ev)
+        {
+            if (ev.Mob == EntityUid.Invalid)
+                return;
+
+            var balance = GetBalance(ev.Mob);
+            var bankComp = EnsureComp<BankAccountComponent>(ev.Mob);
+            bankComp.Balance = balance;
+            Dirty(ev.Mob, bankComp);
         }
 
         public StationBankComponent EnsureStationBank(EntityUid stationUid)

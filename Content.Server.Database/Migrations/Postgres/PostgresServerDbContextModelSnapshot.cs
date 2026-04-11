@@ -931,6 +931,10 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("display_pronouns");
 
+                    b.Property<string>("EmployedDepartment")
+                        .HasColumnType("text")
+                        .HasColumnName("employed_department");
+
                     b.Property<string>("Employer")
                         .IsRequired()
                         .HasColumnType("text")
@@ -1047,6 +1051,37 @@ namespace Content.Server.Database.Migrations.Postgres
                         .IsUnique();
 
                     b.ToTable("profile", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.QuittedDepartment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("quitted_department_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("DepartmentId")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("department_id");
+
+                    b.Property<int>("ProfileId")
+                        .HasColumnType("integer")
+                        .HasColumnName("profile_id");
+
+                    b.Property<DateTime>("QuitTime")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("quit_time");
+
+                    b.HasKey("Id")
+                        .HasName("PK_quitted_department");
+
+                    b.HasIndex("ProfileId", "DepartmentId")
+                        .IsUnique();
+
+                    b.ToTable("quitted_department", (string)null);
                 });
 
             modelBuilder.Entity("Content.Server.Database.RoleWhitelist", b =>
@@ -1815,6 +1850,18 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Navigation("Preference");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.QuittedDepartment", b =>
+                {
+                    b.HasOne("Content.Server.Database.Profile", "Profile")
+                        .WithMany("QuittedDepartments")
+                        .HasForeignKey("ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_quitted_department_profile_profile_id");
+
+                    b.Navigation("Profile");
+                });
+
             modelBuilder.Entity("Content.Server.Database.RoleWhitelist", b =>
                 {
                     b.HasOne("Content.Server.Database.Player", "Player")
@@ -2099,6 +2146,8 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Navigation("Jobs");
 
                     b.Navigation("Loadouts");
+
+                    b.Navigation("QuittedDepartments");
 
                     b.Navigation("Traits");
                 });

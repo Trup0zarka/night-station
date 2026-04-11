@@ -54,7 +54,6 @@
   - type: Sprite
     layers:
       - state: green
-      - state: security_cadet
 
 - type: entity
   id: SpawnPointNCPDChief
@@ -66,7 +65,6 @@
   - type: Sprite
     layers:
       - state: green
-      - state: hos
 
 - type: entity
   id: SpawnPointNCPDOfficer
@@ -78,7 +76,6 @@
   - type: Sprite
     layers:
       - state: green
-      - state: security_officer
 
 - type: entity
   id: SpawnPointNCPDSergeant
@@ -90,7 +87,6 @@
   - type: Sprite
     layers:
       - state: green
-      - state: warden
 
 - type: entity
   id: SpawnPointNCPDWatchAgent
@@ -102,7 +98,6 @@
   - type: Sprite
     layers:
       - state: green
-      - state: detective
 
 # MaxTac
 
@@ -116,7 +111,6 @@
   - type: Sprite
     layers:
       - state: green
-      - state: hos
 
 - type: entity
   id: SpawnPointMaxTacNetrunner
@@ -152,7 +146,6 @@
   - type: Sprite
     layers:
       - state: green
-      - state: cmo
 
 - type: entity
   id: SpawnPointTraumaTeamDoctor
@@ -164,7 +157,6 @@
   - type: Sprite
     layers:
       - state: green
-      - state: doctor
 
 - type: entity
   id: SpawnPointTraumaTeamParamedic
@@ -176,19 +168,39 @@
   - type: Sprite
     layers:
       - state: green
-      - state: paramedic
 
 - type: entity
-  id: SpawnPointTraumaTeamChemist
+  id: SpawnPointTraumaTeamTech
   parent: SpawnPointJobBase
-  name: trauma team chemist spawn point
+  name: trauma team tech spawn point
   components:
   - type: SpawnPoint
-    job_id: TraumaTeamChemist
+    job_id: TraumaTeamTech
   - type: Sprite
     layers:
       - state: green
-      - state: chemist
+
+- type: entity
+  id: SpawnPointTraumaTeamCoroner
+  parent: SpawnPointJobBase
+  name: trauma team coroner spawn point
+  components:
+  - type: SpawnPoint
+    job_id: TraumaTeamCoroner
+  - type: Sprite
+    layers:
+      - state: green
+
+- type: entity
+  id: SpawnPointTraumaTeamPsych
+  parent: SpawnPointJobBase
+  name: trauma team psych spawn point
+  components:
+  - type: SpawnPoint
+    job_id: TraumaTeamPsych
+  - type: Sprite
+    layers:
+      - state: green
 
 - type: entity
   id: SpawnPointTraumaTeamOperative
@@ -200,3 +212,105 @@
   - type: Sprite
     layers:
       - state: green
+
+# Biotechnica
+
+- type: entity
+  id: SpawnPointBiotechnicaChief
+  parent: SpawnPointJobBase
+  name: biotechnica chief spawn point
+  components:
+  - type: SpawnPoint
+    job_id: BiotechnicaChief
+  - type: Sprite
+    layers:
+      - state: green
+
+- type: entity
+  id: SpawnPointBiotechnicaSecurityLead
+  parent: SpawnPointJobBase
+  name: biotechnica security lead spawn point
+  components:
+  - type: SpawnPoint
+    job_id: BiotechnicaSecurityLead
+  - type: Sprite
+    layers:
+      - state: green
+
+- type: entity
+  id: SpawnPointBiotechnicaOperativeLead
+  parent: SpawnPointJobBase
+  name: biotechnica operative lead spawn point
+  components:
+  - type: SpawnPoint
+    job_id: BiotechnicaOperativeLead
+  - type: Sprite
+    layers:
+      - state: green
+
+- type: entity
+  id: SpawnPointBiotechnicaOperative
+  parent: SpawnPointJobBase
+  name: biotechnica operative spawn point
+  components:
+  - type: SpawnPoint
+    job_id: BiotechnicaOperative
+  - type: Sprite
+    layers:
+      - state: green
+
+- type: entity
+  id: SpawnPointBiotechnicaNetrunner
+  parent: SpawnPointJobBase
+  name: biotechnica netrunner spawn point
+  components:
+  - type: SpawnPoint
+    job_id: BiotechnicaNetrunner
+  - type: Sprite
+    layers:
+      - state: green
+
+- type: entity
+  id: SpawnPointBiotechnicaBotanist
+  parent: SpawnPointJobBase
+  name: biotechnica botanist spawn point
+  components:
+  - type: SpawnPoint
+    job_id: BiotechnicaBotanist
+  - type: Sprite
+    layers:
+      - state: green
+
+- type: entity
+  id: SpawnPointBiotechnicaMedTech
+  parent: SpawnPointJobBase
+  name: biotechnica medtech spawn point
+  components:
+  - type: SpawnPoint
+    job_id: BiotechnicaMedTech
+  - type: Sprite
+    layers:
+      - state: green
+- type: entity
+  id: SpawnPointBiotechnicaTech
+  parent: SpawnPointJobBase
+  name: biotechnica tech spawn point
+  components:
+  - type: SpawnPoint
+    job_id: BiotechnicaTech
+  - type: Sprite
+    layers:
+      - state: green
+
+- type: entity
+  id: SpawnPointBiotechnicaParamedic
+  parent: SpawnPointJobBase
+  name: biotechnica paramedic spawn point
+  components:
+  - type: SpawnPoint
+    job_id: BiotechnicaParamedic
+  - type: Sprite
+    layers:
+      - state: green
+
+

@@ -19,12 +19,12 @@
     activePower: 50000
 
     # --- Настройки взаимодействия ---
-    connectDelay: 2.0 # Время в секундах на подключение диска
-    emergencyDelay: 3.0 # Время в секундах на отмену скачивания
+    connectDelay: 5.0 # Время в секундах на подключение диска
+    emergencyDelay: 10.0 # Время в секундах на отмену скачивания
 
     # --- Лут и Наказания ---
     burnedDiskPrototype: NCRawDataBurned # Что спавнится при ошибке/прерывании
-    cleanTechChance: 0.5 # 15% шанс, что вместо сырых данных (RawData) выпадет технология (CleanTech)
+    cleanTechChance: 0.5 # 50% шанс, что вместо сырых данных (RawData) выпадет технология (CleanTech)
 
     # --- Звуки ---
     soundConnect: /Audio/Machines/terminal_insert_disc.ogg
@@ -32,12 +32,19 @@
     soundSuccess: /Audio/Machines/twobeep.ogg
 
     # Пул "Чистых Технологий". Используется система весов (Weights).
-    # Шанс выпадения конкретной технологии = (Её вес / Сумма всех весов пула).
-    # В данном случае сумма = 100. Значит Пистолет выпадет с шансом 50% от этих 15%, Винтовка 30%, Снайперка 20%.
     cleanTechPool:
-      NCTechPistolStreetMaster: 50
-      NCTechRifleM04: 30
-      NCTechRifleArasakaProto: 20
+      NCTechPistolStreetMaster: 10
+      NCTechPistolHelloCutie: 10
+      NCTechPistolOverlord: 10
+      NCTechPistolCheesemaker: 10
+      NCTechPistolFederalX9: 10
+      NCTechPistolBoomerBuster: 10
+      NCTechPistolMarkIII: 10
+      NCTechPistolAvenger: 8
+      NCTechPistolStukachTommy: 8
+      NCTechPistolSternmeyerP35: 8
+      NCTechRifleM04: 10
+      NCTechRifleArasakaProto: 5
 
     # Пул "Сырых данных". Сюда можно добавить Tier2, Tier3 мусор с разными весами.
     rawDataPool:

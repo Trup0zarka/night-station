@@ -5,8 +5,12 @@
   parent: BaseMagazinePistol
   components:
   - type: BallisticAmmoProvider
+    mayTransfer: true
     capacity: 8
     proto: Cartridge127mm
+    whitelist:
+      tags:
+      - Cartridge127mm
   - type: Sprite
     layers:
     - state: red
@@ -24,8 +28,12 @@
   parent: BaseMagazinePistol
   components:
   - type: BallisticAmmoProvider
+    mayTransfer: true
     capacity: 6
     proto: Cartridge127mm
+    whitelist:
+      tags:
+      - Cartridge127mm
   - type: Sprite
     layers:
     - state: red
@@ -43,8 +51,12 @@
   parent: BaseMagazinePistol
   components:
   - type: BallisticAmmoProvider
+    mayTransfer: true
     capacity: 10
     proto: Cartridge114mm
+    whitelist:
+      tags:
+      - Cartridge114mm
   - type: Sprite
     layers:
     - state: red
@@ -94,8 +106,12 @@
   parent: BaseMagazinePistol
   components:
   - type: BallisticAmmoProvider
+    mayTransfer: true
     capacity: 12
     proto: Cartridge114mm
+    whitelist:
+      tags:
+      - Cartridge114mm
   - type: Sprite
     layers:
     - state: red
@@ -113,8 +129,12 @@
   parent: BaseMagazinePistol
   components:
   - type: BallisticAmmoProvider
+    mayTransfer: true
     capacity: 8
     proto: Cartridge127mm
+    whitelist:
+      tags:
+      - Cartridge127mm
   - type: Sprite
     layers:
     - state: red
@@ -132,8 +152,12 @@
   parent: BaseMagazinePistol
   components:
   - type: BallisticAmmoProvider
+    mayTransfer: true
     capacity: 8
     proto: Cartridge127mm
+    whitelist:
+      tags:
+      - Cartridge127mm
   - type: Sprite
     layers:
     - state: red
@@ -151,8 +175,12 @@
   parent: BaseMagazinePistol
   components:
   - type: BallisticAmmoProvider
+    mayTransfer: true
     capacity: 12
     proto: Cartridge9mm
+    whitelist:
+      tags:
+      - Cartridge9mm
   - type: Sprite
     layers:
     - state: red
@@ -170,8 +198,12 @@
   parent: BaseMagazinePistol
   components:
   - type: BallisticAmmoProvider
+    mayTransfer: true
     capacity: 8
     proto: Cartridge127mm
+    whitelist:
+      tags:
+      - Cartridge127mm
   - type: Sprite
     layers:
     - state: red

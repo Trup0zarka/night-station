@@ -24,13 +24,13 @@
   - type: GunRequiresWield
 
   - type: Gun
-    fireRate: 6
+    fireRate: 9
     angleIncrease: 6
     angleDecay: 10
     cameraRecoilScalar: 1
-    minAngle: 21
-    maxAngle: 45
-    bonusAngleIncreaseMove: 15
+    minAngle: 10
+    maxAngle: 20
+    bonusAngleIncreaseMove: 5
     bonusAngleIncreaseTurn: 0.4
     bonusAngleDecay: 40
     maxBonusAngle: 20
@@ -53,7 +53,7 @@
     - prototype: Cartridge622mmCaseless
       usesMagazine: true
       modeName: dual-ammo-mode-rifle
-      fireRate: 6
+      fireRate: 9
       soundGunshot:
         path: /Audio/Weapons/Guns/Gunshots/batrifle.ogg
       whitelistTags:

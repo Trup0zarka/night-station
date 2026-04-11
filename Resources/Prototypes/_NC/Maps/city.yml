@@ -1,23 +1,53 @@
 - type: gameMap
   id: Aldente
   mapName: 'New Aldenteе'
-  mapPath: /Maps/_NC/night_city.yml
+  mapPath: /Maps/_NC/NightCity.yml
   maxRandomOffset: 0
   randomPainting: false
   minPlayers: 0 # TempChange 0 (10)
   maxPlayers: 60
   stations:
     City:
-      stationProto: StandardNanotrasenStation
+      stationProto: NightCityStation
       components:
       - type: StationNameSetup
-        mapNameTemplate: '{0} New Aldente {1}'
-        nameGenerator:
-          !type:NanotrasenNameGenerator
-          prefixCreator: 'NC'
-      - type: StationBiome
-        biome: LowDesert
+        mapNameTemplate: 'New Aldente'
       - type: StationJobs
         availableJobs:
-          TraumaTeamOperative: [-1, -1]
-
+          # === Гражданские (CivilianNC) ===
+          NCCitizen: [-1, -1]
+          EdgeRunnerSolo: [-1, -1]
+          Fixer: [2, 2]
+          Reaper: [2, 2]
+          # === NCPD ===
+          NCPDChief: [1, 1]
+          NCPDCommander: [1, 1]
+          NCPDLieutenant: [2, 2]
+          NCPDInspector: [2, 2]
+          NCPDSergeant: [3, 3]
+          NCPDOfficer: [4, 4]
+          NCPDWatchAgent: [4, 4]
+          # === NCPD MaxTac ===
+          MaxTacCommander: [1, 1]
+          MaxTacPretor: [2, 2]
+          MaxTacInterdictor: [2, 2]
+          MaxTacNetrunner: [1, 1]
+          MaxTacEraser: [2, 2]
+          # === Trauma Team ===
+          TraumaTeamChief: [1, 1]
+          TraumaTeamDoctor: [2, 2]
+          TraumaTeamParamedic: [2, 2]
+          TraumaTeamOperative: [3, 3]
+          TraumaTeamCoroner: [1, 1]
+          TraumaTeamPsych: [1, 1]
+          TraumaTeamTech: [2, 2]
+          # === Biotechnica ===
+          BiotechnicaChief: [1, 1]
+          BiotechnicaOperativeLead: [1, 1]
+          BiotechnicaSecurityLead: [1, 1]
+          BiotechnicaOperative: [3, 3]
+          BiotechnicaMedTech: [2, 2]
+          BiotechnicaNetrunner: [1, 1]
+          BiotechnicaParamedic: [2, 2]
+          BiotechnicaTech: [2, 2]
+          BiotechnicaBotanist: [2, 2]

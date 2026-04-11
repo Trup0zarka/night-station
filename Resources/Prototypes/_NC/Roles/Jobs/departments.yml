@@ -23,10 +23,10 @@
     - NCPDOfficer
     - NCPDWatchAgent
     - MaxTacCommander
-    - MaxTacNetrunner
+#    - MaxTacNetrunner
     - MaxTacEraser
-    - MaxTacPretor
-    - MaxTacInterdictor
+#    - MaxTacPretor
+#    - MaxTacInterdictor
 
 - type: department
   id: TraumaTeam
@@ -41,3 +41,19 @@
     - TraumaTeamTech
     - TraumaTeamCoroner
     - TraumaTeamPsych
+
+- type: department
+  id: Biotechnica
+  name: Отделение Biotechnica
+  description: department-Biotechnica-description
+  color: "#2ecc71"
+  roles:
+    - BiotechnicaChief
+    - BiotechnicaSecurityLead
+    - BiotechnicaOperativeLead
+    - BiotechnicaOperative
+    - BiotechnicaNetrunner
+    - BiotechnicaBotanist
+    - BiotechnicaMedTech
+    - BiotechnicaTech
+    - BiotechnicaParamedic

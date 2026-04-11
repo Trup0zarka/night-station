@@ -18,7 +18,7 @@
     buyPresets:
     - NightMarket_Buy
     contractPresets:
-    - PresetBazar
+    - PresetFixer
   - type: AccessReader
     access: [["Fixer"]]
 
@@ -26,26 +26,53 @@
   id: NightMarket_Weapons
   name: "Оружие"
   entries:
-  - proto: WeaponPistolViper
-    price: 400
+  - proto: WeaponPistolHelloCutie
+    price: 600
     count: 3
-  - proto: WeaponPistolMk58
-    price: 500
+  - proto: WeaponPistolOverlord
+    price: 800
     count: 2
-  - proto: WeaponPistolCobra
-    price: 1500
-    count: 1
-  - proto: WeaponSubMachineGunAtreides
+  - proto: WeaponPistolStreetMaster
+    price: 1000
+    count: 3
+  - proto: WeaponPistolMarkIII
+    price: 1000
+    count: 2
+  - proto: WeaponPistolFederalX9
+    price: 1100
+    count: 2
+  - proto: WeaponPistolCheesemaker
     price: 1200
-    count: 1
-  - proto: WeaponSubMachineGunC20r
-    price: 2500
+    count: 2
+  - proto: WeaponPistolAvenger
+    price: 1500
+    count: 2
+  - proto: NCWeaponRevolverSternmeyerP35
+    price: 1500
+    count: 2
+  - proto: WeaponPistolBoomerBuster
+    price: 1800
+    count: 2
+  - proto: WeaponPistolStukachTommy
+    price: 2000
     count: 1
   - proto: WeaponShotgunSvakha
-    price: 350
+    price: 1000
+    count: 2
+  - proto: WeaponRifleNomadGvozdemet
+    price: 3500
+    count: 2
+  - proto: WeaponRifleNokotaD5Copperhead
+    price: 4500
+    count: 2
+  - proto: WeaponRifleArasakaNOWAKI
+    price: 5000
     count: 2
   - proto: WeaponRifleM04
-    price: 2500
+    price: 6000
+    count: 1
+  - proto: WeaponRifleArasakaProto
+    price: 12000
     count: 1
 
 - type: storeCategoryStructured
@@ -104,42 +131,69 @@
   id: NightMarket_Ammo
   name: "Боеприпасы"
   entries:
-  - proto: MagazineBoxPistol
+  - proto: MagazinePistolHelloCutie
+    price: 60
+    count: 15
+  - proto: MagazinePistolOverlord
+    price: 80
+    count: 15
+  - proto: MagazinePistolStreetMaster
+    price: 100
+    count: 10
+  - proto: MagazinePistolMarkIII
+    price: 100
+    count: 10
+  - proto: MagazinePistolFederalX9
+    price: 110
+    count: 10
+  - proto: MagazinePistolCheesemaker
+    price: 120
+    count: 10
+  - proto: MagazinePistolAvenger
     price: 150
     count: 10
-  - proto: MagazineBoxCaselessRifle
+  - proto: MagazinePistolBoomerBuster
+    price: 180
+    count: 10
+  - proto: MagazinePistolStukach
     price: 200
     count: 5
-  - proto: MagazineBoxMagnum
+  - proto: MagazineRifleNowaki
+    price: 300
+    count: 8
+  - proto: MagazineRifleNokota
     price: 250
-    count: 3
-  - proto: BoxLethalshot
+    count: 8
+  - proto: MagazineRifleNomad
     price: 200
-    count: 4
+    count: 8
+  - proto: MagazineRifleM04
+    price: 300
+    count: 5
+  - proto: CartridgeArasakaRailgun
+    price: 100
+    count: 20
+  - proto: AmmoBox9mm
+    price: 200
+    count: 5
+  - proto: AmmoBox114mm
+    price: 300
+    count: 5
+  - proto: AmmoBox127mm
+    price: 500
+    count: 3
+  - proto: AmmoBox622mmCaseless
+    price: 700
+    count: 2
+  - proto: AmmoBox152mm
+    price: 800
+    count: 2
+  - proto: AmmoBoxNomadSpike
+    price: 400
+    count: 5
   - proto: BoxShotgunSlug
     price: 250
     count: 4
-  - proto: MagazineBoxRifle
-    price: 350
-    count: 2
-  - proto: MagazinePistol
-    price: 40
-    count: 10
-  - proto: MagazinePistolHighCapacity
-    price: 60
-    count: 5
-  - proto: MagazinePistolSubMachineGun
-    price: 60
-    count: 5
-  - proto: MagazineMagnum
-    price: 50
-    count: 5
-  - proto: MagazineCaselessRifle
-    price: 50
-    count: 5
-  - proto: MagazineRifle
-    price: 80
-    count: 3
 
 - type: storeCategoryStructured
   id: NightMarket_Medical
@@ -169,6 +223,21 @@
   - proto: Syringe
     price: 40
     count: 30
+  - proto: PillCanisterBicaridine
+    price: 400
+    count: 4
+  - proto: PillCanisterKelotane
+    price: 400
+    count: 4
+  - proto: PillCanisterDylovene
+    price: 500
+    count: 3
+  - proto: PillCanisterDexalin
+    price: 600
+    count: 3
+  - proto: PillCanisterTricordrazine
+    price: 800
+    count: 2
 
 - type: storeCategoryStructured
   id: NightMarket_BotanyEquipment
@@ -180,6 +249,98 @@
   - proto: HydroponicsTrayFlatpack
     price: 600
     count: 3
+
+- type: storeCategoryStructured
+  id: NightMarket_IndustrialEquipment
+  name: "Пром. Оборудование"
+  entries:
+  - proto: WeaponWorkbenchFlatpack
+    price: 3000
+    count: 2
+  - proto: ConsoleCompilerFlatpack
+    price: 2500
+    count: 2
+  - proto: Civil3DPrinterFlatpack
+    price: 4000
+    count: 2
+  - proto: ChemDispenserFlatpack
+    price: 5000
+    count: 2
+  - proto: ReagentGrinderFlatpack
+    price: 1500
+    count: 2
+
+- type: storeCategoryStructured
+  id: NightMarket_Chemistry
+  name: "Химия"
+  entries:
+  - proto: PrimeTimeChemistryBottle
+    price: 550
+    count: 5
+  - proto: NitroPolymerChemistryBottle
+    price: 650
+    count: 3
+  - proto: SixGunChemistryBottle
+    price: 450
+    count: 4
+  - proto: OmnizineChemistryBottle
+    price: 1200
+    count: 1
+  - proto: EphedrineChemistryBottle
+    price: 300
+    count: 5
+  - proto: MorphineChemistryBottle
+    price: 400
+    count: 4
+  - proto: NocturineChemistryBottle
+    price: 500
+    count: 3
+  - proto: UnstableMutagenChemistryBottle
+    price: 400
+    count: 3
+
+- type: storeCategoryStructured
+  id: NightMarket_Hacking
+  name: "Нетраннинг и Софт"
+  entries:
+  - proto: NCCyberdeck
+    price: 8000
+    count: 3
+  - proto: NCProgramPing
+    price: 1000
+    count: 3
+  - proto: NCProgramShock
+    price: 2500
+    count: 3
+  - proto: NCProgramSword
+    price: 3500
+    count: 3
+  - proto: NCProgramBreach
+    price: 3000
+    count: 3
+  - proto: NeuralLinkCable
+    price: 500
+    count: 3
+  - proto: BurnerChip
+    price: 400
+    count: 5
+
+- type: storeCategoryStructured
+  id: NightMarket_TechGear
+  name: "Техника и Сборка"
+  entries:
+  - proto: NCNetVisor
+    price: 2500
+    count: 2
+  - proto: Multitool
+    price: 5000
+    count: 1
+  - proto: Welder
+    price: 800
+    count: 3
+  - proto: Matchbox
+    price: 50
+    count: 10
 
 - type: storeCategoryStructured
   id: NightMarket_Seeds
@@ -241,5 +402,9 @@
   - NightMarket_Ammo
   - NightMarket_Medical
   - NightMarket_BotanyEquipment
+  - NightMarket_IndustrialEquipment
+  - NightMarket_Chemistry
+  - NightMarket_Hacking
+  - NightMarket_TechGear
   - NightMarket_Seeds
 

@@ -89,3 +89,25 @@
       map: [ "enum.AmmoVisualLayers.Base" ]
   - type: Appearance
   - type: SpentAmmoVisuals
+
+# _NC: Штырь для пневматического гвоздемета Кочевников
+- type: entity
+  id: CartridgeNomadSpike
+  name: заточенный штырь
+  description: Грубо заточенный кусок арматуры для пневматического гвоздемета. Летит медленно, бьет — больно.
+  parent: BaseCartridge
+  components:
+  - type: Tag
+    tags:
+    - CartridgeNomadSpike
+  - type: CartridgeAmmo
+    proto: BulletNomadSpike
+    deleteOnSpawn: true # пневматика — гильзы нет
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+

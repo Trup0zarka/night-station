@@ -1,0 +1,19 @@
+- type: entity
+  parent: ClothingOuterArmorBase
+  id: ClothingOuterArmorMilitechBulletproof
+  name: пуленепробиваемый бронежилет Militech
+  description: Тяжелый бронежилет производства Militech. Стандарт качества для частных военных компаний.
+  components:
+  - type: Sprite
+    sprite: _NC/Clothing/OuterClothing/Armor/militech_bulletproof.rsi
+  - type: Clothing
+    sprite: _NC/Clothing/OuterClothing/Armor/militech_bulletproof.rsi
+  - type: Armor
+    modifiers:
+      flatReductions:
+        Piercing: 4
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.5
+        Heat: 0.95

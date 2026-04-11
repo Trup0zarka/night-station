@@ -1,0 +1,74 @@
+- type: entity
+  name: Bandit Spawner
+  parent: MarkerBase
+  id: SpawnMobNCBandit
+  suffix: NC Random
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Aliens/Xenos/burrower.rsi
+      state: walking
+    - state: ai
+  - type: RandomSpawner
+    # Simulation of weights (4:3:2:1)
+    prototypes:
+    - MobNCBanditPistol
+    - MobNCBanditPistol
+    - MobNCBanditPistol
+    - MobNCBanditPistol
+    - MobNCBanditPistol
+    - MobNCBanditPistol
+    - MobNCBanditPistol
+    - MobNCBanditRifle
+    - MobNCBanditRifle
+    - MobNCBanditRifle
+    - MobNCBanditBoss
+
+- type: entity
+  name: Bandit Spawner (Pistol)
+  parent: MarkerBase
+  id: SpawnMobNCBanditPistol
+  suffix: NC Pistol
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Aliens/Xenos/burrower.rsi
+      state: walking
+    - state: ai
+  - type: RandomSpawner
+    prototypes:
+    - MobNCBanditPistol
+
+- type: entity
+  name: Bandit Spawner (Rifle)
+  parent: MarkerBase
+  id: SpawnMobNCBanditRifle
+  suffix: NC Rifle
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Aliens/Xenos/burrower.rsi
+      state: walking
+    - state: ai
+  - type: RandomSpawner
+    prototypes:
+    - MobNCBanditRifle
+
+- type: entity
+  name: Bandit Spawner (Boss)
+  parent: MarkerBase
+  id: SpawnMobNCBanditBoss
+  suffix: NC Boss
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Aliens/Xenos/burrower.rsi
+      state: walking
+    - state: ai
+  - type: RandomSpawner
+    prototypes:
+    - MobNCBanditBoss

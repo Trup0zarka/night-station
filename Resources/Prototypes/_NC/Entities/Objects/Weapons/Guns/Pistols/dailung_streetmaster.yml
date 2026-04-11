@@ -2,7 +2,7 @@
   name: Dai Lung "StreetMaster"
   parent: [BaseWeaponPistol, NCBrandDaiLung]
   id: WeaponPistolStreetMaster
-  description: 'Тяжелый армейский пистолет с квадратным силуэтом, ценящийся за эталонную надежность Militech и пробивную мощь калибра .45 в любых условиях «Четвертой корпоративной».'
+  description: 'Надежность это не про эту хуйню, проще застрелиться с него чем кого-то убить и то будет осечка.'
   components:
   - type: Sprite
     sprite: _NC/Objects/Weapons/Guns/Pistol/Dai_Lung_Streetmaster.rsi

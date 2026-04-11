@@ -5,8 +5,12 @@
   parent: BaseMagazineRifle
   components:
   - type: BallisticAmmoProvider
+    mayTransfer: true
     capacity: 12
     proto: CartridgeNomadSpike
+    whitelist:
+      tags:
+      - CartridgeNomadSpike
   - type: Sprite
     layers:
     - state: red
@@ -24,8 +28,12 @@
   parent: BaseMagazineRifle
   components:
   - type: BallisticAmmoProvider
+    mayTransfer: true
     capacity: 30
     proto: Cartridge622mmCaseless
+    whitelist:
+      tags:
+      - Cartridge622mmCaseless
   - type: Sprite
     layers:
     - state: red
@@ -43,8 +51,59 @@
   parent: BaseMagazineRifle
   components:
   - type: BallisticAmmoProvider
+    mayTransfer: true
     capacity: 20
     proto: Cartridge622mmCaseless
+    whitelist:
+      tags:
+      - Cartridge622mmCaseless
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Tag
+    tags:
+    - MagazineRifle
+
+- type: entity
+  id: MagazineRifleNokota
+  name: магазин Nokota (6.22мм безгильзовые)
+  description: Стандартный магазин для винтовок Nokota D5. Вмещает 30 безгильзовых патронов калибра 6.22мм.
+  parent: BaseMagazineRifle
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    capacity: 30
+    proto: Cartridge622mmCaseless
+    whitelist:
+      tags:
+      - Cartridge622mmCaseless
+  - type: Sprite
+    sprite: _NC/Objects/Weapons/Guns/Rifles/NokotaD5Copperhead/mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Tag
+    tags:
+    - MagazineRifleNokota
+
+- type: entity
+  id: MagazineRifleNowaki
+  name: магазин Nokota (6.22мм безгильзовые)
+  description: Стандартный магазин для винтовок Nokota D5. Вмещает 30 безгильзовых патронов калибра 6.22мм.
+  parent: BaseMagazineRifle
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    capacity: 25
+    proto: Cartridge622mmCaseless
+    whitelist:
+      tags:
+      - Cartridge622mmCaseless
   - type: Sprite
     layers:
     - state: red

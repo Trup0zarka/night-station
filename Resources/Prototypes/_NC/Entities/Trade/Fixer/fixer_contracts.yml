@@ -1,0 +1,326 @@
+# ============================================
+# Контракты Фиксера — Night City 2045
+# ============================================
+
+# --- Пак контрактов ---
+- type: storeContractPack
+  id: PackFixer
+  contracts:
+  # Easy
+  - id: fixer_contract_ScrapMetal
+    weight: 50
+  - id: fixer_contract_JunkElectronics
+    weight: 50
+  - id: fixer_contract_WeaponScrap
+    weight: 40
+  - id: fixer_contract_BarrelBlanks
+    weight: 40
+  - id: fixer_contract_ClinicSupplies
+    weight: 50
+  - id: fixer_contract_MedicalSmuggling
+    weight: 40
+  # Medium
+  - id: fixer_contract_BarrelsForMaelstrom
+    weight: 30
+  - id: fixer_contract_NetrunnerParts
+    weight: 25
+  - id: fixer_contract_ChemBatch
+    weight: 30
+  - id: fixer_contract_ConvoyArmor
+    weight: 20
+  - id: fixer_contract_GunOrder
+    weight: 25
+  # Hard
+  - id: fixer_contract_ArasakaPrototypes
+    weight: 10
+  - id: fixer_contract_RaidArsenal
+    weight: 10
+  - id: fixer_contract_CorpoGear
+    weight: 10
+  - id: fixer_contract_NarcoBatch
+    weight: 15
+
+# --- Пресет контрактов ---
+- type: storeContractsPreset
+  id: PresetFixer
+  limits:
+    Easy: 3
+    Medium: 2
+    Hard: 1
+  packs:
+  - id: PackFixer
+    weight: 1
+
+# ============================================
+# Easy — «Уличный шум» (Street Hustle)
+# ============================================
+
+- type: storeContract
+  id: fixer_contract_ScrapMetal
+  name: "Металлолом для мастерской"
+  description: "Местный оружейник просит принести сталь для ствольных заготовок. Без вопросов, чисто бизнес."
+  difficulty: Easy
+  targets:
+  - id: SheetSteel
+    required: { min: 10, max: 20 }
+  rewards:
+  - type: Currency
+    id: Credit
+    amount: { min: 800, max: 1500 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: fixer_easy
+
+- type: storeContract
+  id: fixer_contract_JunkElectronics
+  name: "Электроника со свалки"
+  description: "Рипер-док собирает компоненты для кибердеки. Любые платы подойдут — даже горелые."
+  difficulty: Easy
+  targets:
+  - id: NCBlankElectronicsCircuit
+    required: { min: 3, max: 5 }
+  rewards:
+  - type: Currency
+    id: Credit
+    amount: { min: 1000, max: 1800 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: fixer_easy
+
+- type: storeContract
+  id: fixer_contract_WeaponScrap
+  name: "Оружейный лом"
+  description: "Старые стволы на запчасти. Мастерская платит за любой хлам, который можно переплавить."
+  difficulty: Easy
+  targets:
+  - id: NCWeaponScrap
+    required: { min: 5, max: 10 }
+  rewards:
+  - type: Currency
+    id: Credit
+    amount: { min: 600, max: 1200 }
+  - type: Pool
+    amount: 1
+    options:
+    - type: Pool
+      id: fixer_easy
+
+- type: storeContract
+  id: fixer_contract_BarrelBlanks
+  name: "Заготовки стволов"
+  description: "Нужны ствольные заготовки — любые, даже кривые. Мастер выправит."
+  difficulty: Easy
+  targets:
+  - id: NCBlankBarrelPipe
+    required: { min: 3, max: 6 }
+  rewards:
+  - type: Currency
+    id: Credit
+    amount: { min: 800, max: 1400 }
+  - type: Pool
+    amount: 1
+    options:
+    - type: Pool
+      id: fixer_easy
+
+- type: storeContract
+  id: fixer_contract_ClinicSupplies
+  name: "Медикаменты для клиники"
+  description: "Подпольная клиника в Combat Zone нуждается в перевязочных. Раненых — больше, чем бинтов."
+  difficulty: Easy
+  targets:
+  - id: Brutepack
+    required: { min: 5, max: 8 }
+  - id: Ointment
+    required: { min: 5, max: 8 }
+  rewards:
+  - type: Currency
+    id: Credit
+    amount: { min: 1000, max: 1800 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: fixer_easy
+
+# ============================================
+# Medium — «Дело серьёзное» (Serious Biz)
+# ============================================
+
+- type: storeContract
+  id: fixer_contract_BarrelsForMaelstrom
+  name: "Стволы для Мальстрёма"
+  description: "Банда «Мальстрём» готовит рейд. Нужны обработанные стволы. Кто спрашивает — тот не из банды."
+  difficulty: Medium
+  targets:
+  - id: NCProcessedBarrelT2
+    required: { min: 3, max: 5 }
+  rewards:
+  - type: Currency
+    id: Credit
+    amount: { min: 3000, max: 5000 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: fixer_medium
+
+- type: storeContract
+  id: fixer_contract_NetrunnerParts
+  name: "Электроника для нетраннеров"
+  description: "Группе нетраннеров нужны нейро-компоненты высшего класса. Работа тонкая — только лучшее."
+  difficulty: Medium
+  targets:
+  - id: NCProcessedElectronicsT3
+    required: { min: 2, max: 4 }
+  rewards:
+  - type: Currency
+    id: Credit
+    amount: { min: 4000, max: 7000 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: fixer_medium
+
+- type: storeContract
+  id: fixer_contract_ChemBatch
+  name: "Химическая партия"
+  description: "Анонимный заказчик хочет партию боевых стимуляторов. Адреналин для тех, кому мало своего."
+  difficulty: Medium
+  targets:
+  - id: EphedrineChemistryBottle
+    required: { min: 3, max: 5 }
+  rewards:
+  - type: Currency
+    id: Credit
+    amount: { min: 3500, max: 5500 }
+  - type: Pool
+    amount: 1
+    options:
+    - type: Pool
+      id: fixer_medium
+
+- type: storeContract
+  id: fixer_contract_ConvoyArmor
+  name: "Броня для конвоя"
+  description: "Корпо-караван идёт через Hot Zone. Нужна дополнительная защита для водителей."
+  difficulty: Medium
+  targets:
+  - id: ClothingOuterArmorBulletproof
+    required: { min: 2, max: 3 }
+  rewards:
+  - type: Currency
+    id: Credit
+    amount: { min: 5000, max: 8000 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: fixer_medium
+
+- type: storeContract
+  id: fixer_contract_GunOrder
+  name: "Заказ на стволы"
+  description: "Клиент хочет получить готовые пистолеты. Без серийных номеров, без вопросов, без следов."
+  difficulty: Medium
+  targets:
+  - id: WeaponPistolCheesemaker
+    required: 2
+  - id: WeaponPistolAvenger
+    required: 1
+  rewards:
+  - type: Currency
+    id: Credit
+    amount: { min: 5000, max: 8000 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: fixer_medium
+
+# ============================================
+# Hard — «Большая игра» (The Big Score)
+# ============================================
+
+- type: storeContract
+  id: fixer_contract_ArasakaPrototypes
+  name: "Прототипы для Арасаки"
+  description: "Двойной агент сливает военные прототипы. Нужны самые передовые компоненты — стволы и электроника Т3."
+  difficulty: Hard
+  targets:
+  - id: NCProcessedBarrelT3
+    required: 3
+  - id: NCProcessedElectronicsT3
+    required: 3
+  rewards:
+  - type: Currency
+    id: Credit
+    amount: { min: 15000, max: 25000 }
+  - type: Pool
+    amount: { min: 2, max: 3 }
+    options:
+    - type: Pool
+      id: fixer_hard
+
+- type: storeContract
+  id: fixer_contract_RaidArsenal
+  name: "Арсенал для рейда"
+  description: "Готовится штурм корпо-башни. Нужно серьёзное вооружение — автоматы и штурмовые винтовки."
+  difficulty: Hard
+  targets:
+  - id: WeaponRifleNokotaD5Copperhead
+    required: 2
+  - id: WeaponRifleM04
+    required: 1
+  rewards:
+  - type: Currency
+    id: Credit
+    amount: { min: 20000, max: 30000 }
+  - type: Pool
+    amount: { min: 2, max: 3 }
+    options:
+    - type: Pool
+      id: fixer_hard
+
+- type: storeContract
+  id: fixer_contract_CorpoGear
+  name: "Корпо-снаряжение"
+  description: "Нужен комплект элитной брони Trauma Team. Зачем? Не твоё дело, фиксер."
+  difficulty: Hard
+  targets:
+  - id: ClothingOuterHardsuitTraumaTeamOperative
+    required: 1
+  rewards:
+  - type: Currency
+    id: Credit
+    amount: { min: 12000, max: 18000 }
+  - type: Pool
+    amount: { min: 2, max: 3 }
+    options:
+    - type: Pool
+      id: fixer_hard
+
+- type: storeContract
+  id: fixer_contract_NarcoBatch
+  name: "Партия для каравана"
+  description: "Крупная партия продвинутой химии для контрабандного каравана. Нитро-полимер и эфедрин — золото улиц."
+  difficulty: Hard
+  targets:
+  - id: NitroPolymerChemistryBottle
+    required: 5
+  - id: EphedrineChemistryBottle
+    required: 5
+  rewards:
+  - type: Currency
+    id: Credit
+    amount: { min: 15000, max: 22000 }
+  - type: Pool
+    amount: { min: 2, max: 3 }
+    options:
+    - type: Pool
+      id: fixer_hard

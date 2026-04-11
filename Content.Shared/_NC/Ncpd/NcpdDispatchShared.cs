@@ -21,7 +21,13 @@ namespace Content.Shared._NC.Ncpd
         public TimeSpan CreatedTime;
         public string SourceId;
 
-        public NcpdCallData(int id, string title, string sector, string description, NetCoordinates coordinates, TimeSpan createdTime, string sourceId = "")
+        /// <summary>
+        /// If set, the call is tracking a live entity (wanted person / cyberpsycho).
+        /// Tablets that accept this call will show a real-time marker on the target.
+        /// </summary>
+        public NetEntity? TargetUid;
+
+        public NcpdCallData(int id, string title, string sector, string description, NetCoordinates coordinates, TimeSpan createdTime, string sourceId = "", NetEntity? targetUid = null)
         {
             Id = id;
             Title = title;
@@ -30,6 +36,7 @@ namespace Content.Shared._NC.Ncpd
             Coordinates = coordinates;
             CreatedTime = createdTime;
             SourceId = sourceId;
+            TargetUid = targetUid;
         }
     }
 

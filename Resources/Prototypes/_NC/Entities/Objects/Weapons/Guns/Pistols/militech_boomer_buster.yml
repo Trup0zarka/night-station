@@ -49,9 +49,9 @@
 
 # Пустой вариант для лута
 - type: entity
-  name: Militech "AVENGER"
-  parent: WeaponPistolAvenger
-  id: WeaponPistolAvengerEmpty
+  name: Militech "Boomer Buster"
+  parent: WeaponPistolBoomerBuster
+  id: WeaponPistolBoomerBusterEmpty
   suffix: Empty
   components:
   - type: ItemSlots
@@ -63,4 +63,4 @@
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
         whitelist:
           tags:
-          - MagazinePistolAvenger
+          - MagazinePistolBoomerBuster

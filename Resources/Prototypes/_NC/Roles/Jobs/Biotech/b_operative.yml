@@ -1,0 +1,32 @@
+- type: job
+  id: BiotechnicaOperative
+  name: Оперативник Biotechnica
+  description: 'Относится к рядовому составу Стоит выше обычного патрульного в иерархии.'
+  playTimeTracker: JobBiotechnicaOperative
+  weight: 10
+  salary: 1500
+  startingGear: BiotechnicaOperativeGear
+  access:
+    - Trauma_Command
+    - Trauma_Medical
+    - Trauma_Morgue
+    - Trauma_Hangar
+    - NC_General
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: TraumaSubscriber
+      tier: Silver
+
+- type: startingGear
+  id: BiotechnicaOperativeGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBiotech
+    back: ClothingBackpackSatchelMedical
+    shoes: ClothingShoesColorWhite
+    head: ClothingHeadHatBeretSeniorPhysician
+    eyes: ClothingEyesGlassesSunglasses
+    ears: ClothingHeadsetCMO
+    id: TraumaTeamChiefPDA
+    belt: ClothingBeltMedicalFilled
+    outerClothing: ClothingOuterCoatLabCmo

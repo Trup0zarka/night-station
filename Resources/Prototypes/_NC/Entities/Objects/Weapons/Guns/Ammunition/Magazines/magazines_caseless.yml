@@ -4,8 +4,12 @@
   parent: BaseMagazineRifle
   components:
   - type: BallisticAmmoProvider
+    mayTransfer: true
     capacity: 30
     proto: Cartridge622mmCaseless
+    whitelist:
+      tags:
+      - Cartridge622mmCaseless
   - type: Tag
     tags:
     - Magazine622mmCaseless

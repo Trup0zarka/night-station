@@ -2,10 +2,10 @@
   id: DefaultMapPool
   maps:
   # WD EDIT START - white dream maps
-  - Kettle
-  - Moose
-  - WonderBox
-  - WhiteMeta
+  #- Kettle
+  #- Moose
+  #- WonderBox
+  #- WhiteMeta
   # # TempChange 0 start
   # - Gax
   # - Asterisk

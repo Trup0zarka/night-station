@@ -1,15 +1,8 @@
-<div align="center"><img alt="WWDP logo" src="https://raw.githubusercontent.com/WWhiteDreamProject/wwdpublic/master/Resources/Textures/_White/Logo/WWDPDarkSplashIcon.png" width="512px" /></div>
+<div align="center"><img alt="WWDP logo" src="https://raw.githubusercontent.com/NightCitySS14/night-station/dev/Resources/Textures/_NC/Logo/14062025_092658.png" width="512px" /></div>
 
 ---
 
-WWDP - форк Einstein Engines, представляющего из себя хард-форк  [Space Station 14](https://github.com/space-wizards/space-station-14), построенный на идеалах и дизайнерском вдохновении семейства серверов BayStation 12 от Space Station 13 с упором на модульный код, который каждый может использовать для создания RP-сервера своей мечты.
-
-WWDP - один из основных серверов русского коммьюнити, который выступает за идеалы свободы отыгрыша, свободы слова и настоящей классической атмосферы Space Station 13 - хаос, веселье, возможности.
-
-Space Station 14 - это ремейк SS13, который работает на собственном движке  [Supermatter Engine](https://github.com/Simple-Station/SupermatterEngine), собственном игровом движке, написанном на C#.
-
-Поскольку это хард-форк, любой код, взятый из другого апстрима, не может быть напрямую замержен сюда, а должен быть перенесен.
-Весь код, представленный в этом репозитории, может быть изменен по желанию кодербаса Белой Мечты.
+Night City 2045 форк билда WWDP в мире настольной версии Киберпанк РЕД
 
 ## Ссылки
 

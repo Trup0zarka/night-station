@@ -50,3 +50,22 @@
 - type: playTimeTracker
   id: JobTraumaTeamPsych
 
+# Jobs Biotech
+- type: playTimeTracker
+  id: JobBiotechnicaChief
+- type: playTimeTracker
+  id: JobBiotechnicaSecurityLead
+- type: playTimeTracker
+  id: JobBiotechnicaOperativeLead
+- type: playTimeTracker
+  id: JobBiotechnicaOperative
+- type: playTimeTracker
+  id: JobBiotechnicaNetrunner
+- type: playTimeTracker
+  id: JobBiotechnicaBotanist
+- type: playTimeTracker
+  id: JobBiotechnicaMedTech
+- type: playTimeTracker
+  id: JobBiotechnicaTech
+- type: playTimeTracker
+  id: JobBiotechnicaParamedic
