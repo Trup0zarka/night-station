@@ -1,0 +1,55 @@
+# Биотехника (Biotechnica) - Шлюзы
+
+# Шлюз руководителя Биотехники
+- type: entity
+  id: BiotechDirectorAirlock
+  parent: BaseNCAirlock
+  name: шлюз руководителя Биотехника
+  components:
+  - type: AccessReader
+    access: [["Biotech_Director"]]
+
+# Шлюз руководителей отделов Биотехники
+- type: entity
+  id: BiotechHeadOfDepartmentAirlock
+  parent: BaseNCAirlock
+  name: шлюз руководителя отдела Биотехника
+  components:
+  - type: AccessReader
+    access: [["Biotech_HeadOfDepartment"]]
+
+# Шлюз МедТех Биотехники
+- type: entity
+  id: BiotechMedTechAirlock
+  parent: BaseNCAirlock
+  name: шлюз МедТех Биотехника
+  components:
+  - type: AccessReader
+    access: [["Biotech_MedTech"]]
+
+# Шлюз оперативников Биотехники
+- type: entity
+  id: BiotechOperativeAirlock
+  parent: BaseNCAirlock
+  name: шлюз оперативников Биотехника
+  components:
+  - type: AccessReader
+    access: [["Biotech_Operative"]]
+
+# Шлюз персонала Биотехники
+- type: entity
+  id: BiotechStaffAirlock
+  parent: BaseNCAirlock
+  name: шлюз персонала Биотехника
+  components:
+  - type: AccessReader
+    access: [["Biotech_Staff"]]
+
+# Общий шлюз Биотехники
+- type: entity
+  id: BiotechGeneralAirlock
+  parent: BaseNCAirlock
+  name: шлюз Биотехника общий
+  components:
+  - type: AccessReader
+    access: [["Biotech_General"]]

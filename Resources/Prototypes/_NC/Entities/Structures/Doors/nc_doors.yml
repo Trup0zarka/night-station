@@ -20,6 +20,8 @@
     - state: emergency_unlit
       map: ["enum.DoorVisualLayers.BaseEmergencyAccess"]
       shader: unshaded
+  - type: AccessReader
+    containerAccessProvider: null
 
 
 - type: entity
@@ -27,7 +29,6 @@
   parent: BaseNCAirlock
   name: дверь
   components:
-  - type: Sprite
   - type: AccessReader
     access: [["NC_General"]]
 
@@ -37,7 +38,6 @@
   name: дверь
   suffix: "квартира"
   components:
-  - type: Sprite
   - type: UserInterface
     interfaces:
       enum.DoorInterfaceUiKey.Key:
@@ -54,7 +54,6 @@
   name: дверь
   suffix: "квартира люкс класса 1000"
   components:
-  - type: Sprite
   - type: UserInterface
     interfaces:
       enum.DoorInterfaceUiKey.Key:
@@ -71,7 +70,6 @@
   name: дверь
   suffix: "квартира 300"
   components:
-  - type: Sprite
   - type: UserInterface
     interfaces:
       enum.DoorInterfaceUiKey.Key:
@@ -88,7 +86,6 @@
   name: дверь
   suffix: "квартира 500"
   components:
-  - type: Sprite
   - type: UserInterface
     interfaces:
       enum.DoorInterfaceUiKey.Key:
@@ -105,7 +102,6 @@
   name: дверь
   suffix: "квартира 700"
   components:
-  - type: Sprite
   - type: UserInterface
     interfaces:
       enum.DoorInterfaceUiKey.Key:

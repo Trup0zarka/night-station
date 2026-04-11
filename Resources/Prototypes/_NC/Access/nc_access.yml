@@ -57,6 +57,10 @@
   id: Trauma_Command
   name: access-level-trauma-command
 
+- type: accessLevel
+  id: Trauma_Operative
+  name: access-level-trauma-operative
+
 - type: accessGroup
   id: TraumaTeam
   tags:
@@ -64,6 +68,7 @@
   - Trauma_Morgue
   - Trauma_Hangar
   - Trauma_Command
+  - Trauma_Operative
 
 - type: accessLevel
   id: NC_General
@@ -89,6 +94,40 @@
   - Fixer
   - Ripper
 
+# Биотехника (Biotechnica)
+- type: accessLevel
+  id: Biotech_Director
+  name: access-level-biotech-director
+
+- type: accessLevel
+  id: Biotech_HeadOfDepartment
+  name: access-level-biotech-head-of-department
+
+- type: accessLevel
+  id: Biotech_MedTech
+  name: access-level-biotech-medtech
+
+- type: accessLevel
+  id: Biotech_Operative
+  name: access-level-biotech-operative
+
+- type: accessLevel
+  id: Biotech_Staff
+  name: access-level-biotech-staff
+
+- type: accessLevel
+  id: Biotech_General
+  name: access-level-biotech-general
+
+- type: accessGroup
+  id: Biotechnica
+  tags:
+  - Biotech_Director
+  - Biotech_HeadOfDepartment
+  - Biotech_MedTech
+  - Biotech_Operative
+  - Biotech_Staff
+  - Biotech_General
 - type: accessLevel
   id: Biotech_General
   name: access-level-biotech-general
