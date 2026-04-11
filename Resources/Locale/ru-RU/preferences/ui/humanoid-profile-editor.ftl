@@ -98,3 +98,5 @@ humanoid-profile-editor-markings-tab = Черты внешности
 humanoid-profile-editor-flavortext-tab = Описание
 humanoid-profile-editor-clown-name-label = Кличка клоуна:
 humanoid-profile-editor-mime-name-label = Кличка мима:
+humanoid-profile-editor-job-priority-department-employed-tooltip = Вы привязаны к другому департаменту.
+humanoid-profile-editor-job-priority-department-employed-civilian-tooltip = Доступно только когда все роли в вашем департаменте будут заняты.

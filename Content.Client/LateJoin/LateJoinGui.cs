@@ -46,6 +46,7 @@ namespace Content.Client.LateJoin
         private readonly List<ScrollContainer> _jobLists = new();
 
         private readonly Control _base;
+        private static readonly string[] CivilianDepartments = { "Civilian", "CivilianNC" };
 
         public LateJoinGui()
         {
@@ -175,11 +176,34 @@ namespace Content.Client.LateJoin
 
                 _jobButtons[id] = new Dictionary<string, List<JobButton>>();
 
+                var profile = (HumanoidCharacterProfile) (_prefs.Preferences?.SelectedCharacter ?? HumanoidCharacterProfile.DefaultWithSpecies());
+                var employedDept = profile.EmployedDepartment;
+
+                var stationAvailable = _gameTicker.JobsAvailable[id];
+                bool hasAvailableEmployedJobs = false;
+                if (employedDept != null)
+                {
+                    var employedDeptProto = departments.FirstOrDefault(d => d.ID == employedDept);
+                    if (employedDeptProto != null)
+                    {
+                        foreach (var jobId in employedDeptProto.Roles)
+                        {
+                            if (stationAvailable.TryGetValue(jobId, out var count))
+                            {
+                                if (count == null || count > 0)
+                                {
+                                    hasAvailableEmployedJobs = true;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+
                 foreach (var department in departments)
                 {
                     var departmentName = Loc.GetString(department.Name);
                     _jobCategories[id] = new Dictionary<string, BoxContainer>();
-                    var stationAvailable = _gameTicker.JobsAvailable[id];
                     var jobsAvailable = new List<JobPrototype>();
 
                     foreach (var jobId in department.Roles)
@@ -270,6 +294,40 @@ namespace Content.Client.LateJoin
 
                             var tooltip = new Tooltip();
                             tooltip.SetMessage(reason);
+                            jobButton.TooltipSupplier = _ => tooltip;
+
+                            jobSelector.AddChild(new TextureRect
+                            {
+                                TextureScale = new Vector2(0.4f, 0.4f),
+                                Stretch = TextureRect.StretchMode.KeepCentered,
+                                Texture = _sprites.Frame0(new SpriteSpecifier.Texture(new ("/Textures/Interface/Nano/lock.svg.192dpi.png"))),
+                                HorizontalExpand = true,
+                                HorizontalAlignment = HAlignment.Right,
+                            });
+                        }
+                        else if (!CivilianDepartments.Contains(department.ID) && employedDept != null && employedDept != department.ID)
+                        {
+                            jobButton.Disabled = true;
+
+                            var tooltip = new Tooltip();
+                            tooltip.SetMessage(FormattedMessage.FromMarkup(Loc.GetString("humanoid-profile-editor-job-priority-department-employed-tooltip") ?? "Вы привязаны к другому департаменту."));
+                            jobButton.TooltipSupplier = _ => tooltip;
+
+                            jobSelector.AddChild(new TextureRect
+                            {
+                                TextureScale = new Vector2(0.4f, 0.4f),
+                                Stretch = TextureRect.StretchMode.KeepCentered,
+                                Texture = _sprites.Frame0(new SpriteSpecifier.Texture(new ("/Textures/Interface/Nano/lock.svg.192dpi.png"))),
+                                HorizontalExpand = true,
+                                HorizontalAlignment = HAlignment.Right,
+                            });
+                        }
+                        else if (CivilianDepartments.Contains(department.ID) && employedDept != null && hasAvailableEmployedJobs)
+                        {
+                            jobButton.Disabled = true;
+
+                            var tooltip = new Tooltip();
+                            tooltip.SetMessage(FormattedMessage.FromMarkup(Loc.GetString("humanoid-profile-editor-job-priority-department-employed-civilian-tooltip") ?? "Доступно только когда все роли в вашем департаменте будут заняты."));
                             jobButton.TooltipSupplier = _ => tooltip;
 
                             jobSelector.AddChild(new TextureRect
