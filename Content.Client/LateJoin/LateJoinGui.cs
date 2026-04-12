@@ -211,10 +211,7 @@ namespace Content.Client.LateJoin
                         if (!stationAvailable.ContainsKey(jobId))
                             continue;
 
-                        if (!_prototypeManager.TryIndex<JobPrototype>(jobId, out var jobPrototype))
-                            continue;
-
-                        jobsAvailable.Add(jobPrototype);
+                        jobsAvailable.Add(_prototypeManager.Index<JobPrototype>(jobId));
                     }
 
                     jobsAvailable.Sort(JobUIComparer.Instance);

@@ -1,7 +1,7 @@
 - type: job
   id: EdgeRunnerSolo
   name: Эджраннер
-  description: Стандартный наёмник. Ищите нанимателя. Исполняйте заказы: защита, убийство, сбор информации, поиск, похищение и многое другое.
+  description: Стандартный наёмник. Ищите нанимателя. Исполняйте заказы защита, убийство, сбор информации, поиск, похищение и многое другое.
   playTimeTracker: JobEdgeRunnerSolo
   icon: "JobIconCivilEdgerunner"
   salary: 200
