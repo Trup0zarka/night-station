@@ -476,7 +476,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 1000
+        damage: 2000
       behaviors:
       - !type:SpawnEntitiesBehavior
         spawn:
@@ -511,7 +511,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 2000
+        damage: 3000
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -599,7 +599,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 600
+        damage: 1600
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
@@ -658,7 +658,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 500
+        damage: 1000
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
@@ -977,7 +977,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 400
+        damage: 800
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
