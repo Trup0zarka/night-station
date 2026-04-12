@@ -47,3 +47,6 @@
           BiotechnicaParamedic: [2, 2]
           BiotechnicaTech: [2, 2]
           BiotechnicaBotanist: [2, 2]
+          # === Zhirafa ===
+          ZhirafaEngeneer: [1, 1]
+          ZhirafaJanitor: [2, 2]
