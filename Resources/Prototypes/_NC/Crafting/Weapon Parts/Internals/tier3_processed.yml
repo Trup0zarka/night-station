@@ -1,7 +1,7 @@
 - type: entity
   id: NCProcessedInternalsT3
-  name: микрогидравлическая система отдачи (Т3)
-  description: Совершенная система стабилизации для высокотехнологичного оружия. Т3.
+  name: микрогидравлическая система отдачи (Т3) (УСМ для оружия. Т3.)
+  description: УСМ для оружия. Т3.
   parent: BaseItem
   components:
     - type: Sprite

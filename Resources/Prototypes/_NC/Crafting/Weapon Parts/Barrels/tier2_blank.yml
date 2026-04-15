@@ -1,7 +1,7 @@
 - type: entity
   id: NCBlankBarrelAlloy
-  name: сплавная болванка
-  description: Тяжелый цилиндр из оружейной стали корпоративного стандарта. Т2.
+  name: сплавная болванка (стволы заготовка Т2)
+  description: стволы заготовка Т2
   parent: BaseItem
   components:
     - type: Sprite

@@ -1,7 +1,7 @@
 - type: entity
   id: NCProcessedBarrelT1
-  name: гладкоствольная трубка (Т1)
-  description: Выточенный на ЧПУ-станке гладкий ствол. Т1.
+  name: гладкоствольная трубка (Т1) (Ствол для оружия. Т1.)
+  description: Ствол для оружия. Т1.
   parent: BaseItem
   components:
     - type: Sprite

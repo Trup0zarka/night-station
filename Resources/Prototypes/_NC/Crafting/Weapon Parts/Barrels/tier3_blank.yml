@@ -1,7 +1,7 @@
 - type: entity
   id: NCBlankBarrelTungsten
-  name: вольфрамовый стержень
-  description: Увесистый тугоплавкий стержень, требующий лазерной фрезеровки. Т3.
+  name: вольфрамовый стержень (стволы заготовка Т3)
+  description: стволы заготовка Т3
   parent: BaseItem
   components:
     - type: Sprite

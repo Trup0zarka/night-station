@@ -3,8 +3,8 @@
 # ==========================================
 - type: entity
   id: NCBlankElectronicsCircuit
-  name: базовая текстолитовая плата
-  description: Пустая плата, требующая микропайки на ЧПУ. Т2.
+  name: базовая текстолитовая плата (электроника заготовка Т2)
+  description: электроника заготовка Т2
   parent: BaseItem
   components:
     - type: Sprite

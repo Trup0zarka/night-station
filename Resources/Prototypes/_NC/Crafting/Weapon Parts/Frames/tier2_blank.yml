@@ -1,7 +1,7 @@
 - type: entity
   id: NCBlankFrameMilled
-  name: фрезерованный блок
-  description: Цельный кусок металла, из которого станок вытачивает ствольную коробку. Т2.
+  name: фрезерованный блок (каркас заготовка Т2)
+  description: каркас заготовка Т2
   parent: BaseItem
   components:
     - type: Sprite

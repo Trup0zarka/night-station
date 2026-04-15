@@ -1,7 +1,7 @@
 - type: entity
   id: NCBlankElectronicsNeuro
-  name: чистая нейро-плата
-  description: Высокотехнологичный чип, способный соединяться с нейропортом. Т3.
+  name: чистая нейро-плата (электроника заготовка Т3)
+  description: электроника заготовка Т3
   parent: BaseItem
   components:
     - type: Sprite

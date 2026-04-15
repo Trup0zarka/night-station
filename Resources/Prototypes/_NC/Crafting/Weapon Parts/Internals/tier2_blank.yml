@@ -1,7 +1,7 @@
 - type: entity
   id: NCBlankInternalsBolt
-  name: неоткалиброванный затвор
-  description: Сложный механический узел, требующий точной подгонки на станке. Т2.
+  name: неоткалиброванный затвор (УСМ заготовка Т2)
+  description: УСМ заготовка Т2
   parent: BaseItem
   components:
     - type: Sprite

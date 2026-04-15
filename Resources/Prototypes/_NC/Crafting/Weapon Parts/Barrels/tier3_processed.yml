@@ -1,7 +1,7 @@
 - type: entity
   id: NCProcessedBarrelT3
-  name: ствол с магнитной стабилизацией (Т3)
-  description: Смарт-ствол с интегрированными магнитами стабилизации пули. Т3.
+  name: ствол с магнитной стабилизацией (Т3) (Ствол для оружия. Т3.)
+  description: Ствол для оружия. Т3.
   parent: BaseItem
   components:
     - type: Sprite

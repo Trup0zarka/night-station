@@ -1,8 +1,7 @@
-
 - type: entity
   id: NCProcessedElectronicsT3
-  name: смарт-модуль наведения (Т3)
-  description: Нейро-интерфейс для системы Смарт-линк. Т3.
+  name: смарт-модуль наведения (Т3) (Электроника для оружия. Т3.)
+  description: Электроника для оружия. Т3.
   parent: BaseItem
   components:
     - type: Sprite

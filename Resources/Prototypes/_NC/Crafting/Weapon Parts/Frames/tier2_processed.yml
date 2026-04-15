@@ -1,7 +1,7 @@
 - type: entity
   id: NCProcessedFrameT2
-  name: корпоративная ствольная коробка (Т2)
-  description: Надежная металлическая рамка корпоративного стандарта. Т2.
+  name: корпоративная ствольная коробка (Т2) (Каркас для оружия. Т2.)
+  description: Каркас для оружия. Т2.
   parent: BaseItem
   components:
     - type: Sprite

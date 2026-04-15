@@ -3,8 +3,8 @@
 # ==========================================
 - type: entity
   id: NCBlankFramePlastic
-  name: штампованный полимер
-  description: Дешевая пластиковая форма, легко плавится при ошибке на станке. Т1.
+  name: штампованный полимер (каркас заготовка Т1)
+  description: каркас заготовка Т1
   parent: BaseItem
   components:
     - type: Sprite
