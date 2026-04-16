@@ -10,6 +10,9 @@
   supervisors: Коммандер
   access:
     - NCPD_Patrol
+    - NCPD_Armory
+    - NCPD_Detective
+    - NCPD_Command
     - NC_General
   special:
   - !type:AddComponentSpecial

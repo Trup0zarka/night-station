@@ -10,7 +10,6 @@
   supervisors: Лейтенант
   access:
     - NCPD_Patrol
-    - NCPD_Armory
     - NC_General
   special:
   - !type:AddComponentSpecial
