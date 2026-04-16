@@ -1,11 +1,11 @@
 - type: gameMap
   id: Aldente
   mapName: 'New Aldenteе'
-  mapPath: /Maps/_NC/NightCity.yml
+  mapPath: /Maps/_NC/aldente_remap.yml
   maxRandomOffset: 0
   randomPainting: false
   minPlayers: 0 # TempChange 0 (10)
-  maxPlayers: 60
+  maxPlayers: 90
   stations:
     City:
       stationProto: NightCityStation
