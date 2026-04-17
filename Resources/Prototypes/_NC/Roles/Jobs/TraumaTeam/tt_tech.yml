@@ -4,7 +4,7 @@
   description: занимается починкой техники Trauma Team
   playTimeTracker: JobTraumaTeamTech
   weight: 40
-  salary: 450
+  salary: 250
   icon: "JobIconTraumaTech"
   startingGear: TraumaTeamTechGear
   supervisors: Главный врач Trauma Team

@@ -29,46 +29,46 @@
   name: "Оружие"
   entries:
   - proto: WeaponPistolHelloCutie
-    price: 600
+    price: 60
     count: 3
   - proto: WeaponPistolOverlord
-    price: 800
+    price: 80
     count: 2
   - proto: WeaponPistolStreetMaster
-    price: 1000
+    price: 120
     count: 3
   - proto: WeaponPistolMarkIII
-    price: 1000
+    price: 120
     count: 2
   - proto: WeaponPistolFederalX9
-    price: 1100
+    price: 150
     count: 2
   - proto: WeaponPistolCheesemaker
-    price: 1200
+    price: 180
     count: 2
   - proto: WeaponPistolAvenger
-    price: 1500
+    price: 350
     count: 2
   - proto: NCWeaponRevolverSternmeyerP35
-    price: 1500
+    price: 400
     count: 2
   - proto: WeaponPistolBoomerBuster
-    price: 1800
+    price: 250
     count: 2
   - proto: WeaponPistolStukachTommy
-    price: 2000
+    price: 600
     count: 1
   - proto: WeaponShotgunSvakha
-    price: 150
+    price: 120
     count: 7
   - proto: WeaponRifleNomadGvozdemet
-    price: 3500
+    price: 800
     count: 2
   - proto: WeaponRifleNokotaD5Copperhead
-    price: 4500
+    price: 1000
     count: 2
   - proto: WeaponRifleArasakaNOWAKI
-    price: 5000
+    price: 1500
     count: 2
 
 - type: storeCategoryStructured
@@ -76,28 +76,28 @@
   name: "Защита"
   entries:
   - proto: ClothingOuterArmorBasic
-    price: 350
-    count: 5
-  - proto: ClothingOuterVestWebMerc
-    price: 450
-    count: 3
-  - proto: ClothingOuterVestDetective
-    price: 400
-    count: 3
-  - proto: ClothingOuterArmorRiot
-    price: 800
-    count: 2
-  - proto: ClothingOuterArmorBulletproof
-    price: 1000
-    count: 2
-  - proto: ClothingHeadHelmetBasic
     price: 150
     count: 5
+  - proto: ClothingOuterVestWebMerc
+    price: 250
+    count: 3
+  - proto: ClothingOuterVestDetective
+    price: 200
+    count: 3
+  - proto: ClothingOuterArmorRiot
+    price: 400
+    count: 2
+  - proto: ClothingOuterArmorBulletproof
+    price: 600
+    count: 2
+  - proto: ClothingHeadHelmetBasic
+    price: 80
+    count: 5
   - proto: ClothingHeadHelmetMerc
-    price: 300
+    price: 150
     count: 3
   - proto: ClothingHeadHelmetRiot
-    price: 450
+    price: 250
     count: 2
 
 - type: storeCategoryStructured
@@ -105,22 +105,22 @@
   name: "Ближний бой"
   entries:
   - proto: CombatKnife
-    price: 250
+    price: 50
     count: 5
   - proto: SurvivalKnife
-    price: 350
+    price: 80
     count: 3
   - proto: Machete
-    price: 400
+    price: 100
     count: 3
   - proto: KukriKnife
-    price: 450
+    price: 150
     count: 2
   - proto: FireAxe
-    price: 1000
+    price: 200
     count: 1
   - proto: Katana
-    price: 1500
+    price: 600
     count: 1
 
 - type: storeCategoryStructured
@@ -128,67 +128,67 @@
   name: "Боеприпасы"
   entries:
   - proto: MagazinePistolHelloCutie
-    price: 60
+    price: 20
     count: 15
   - proto: MagazinePistolOverlord
-    price: 80
+    price: 25
     count: 15
   - proto: MagazinePistolStreetMaster
-    price: 100
+    price: 30
     count: 10
   - proto: MagazinePistolMarkIII
-    price: 100
+    price: 30
     count: 10
   - proto: MagazinePistolFederalX9
-    price: 110
+    price: 35
     count: 10
   - proto: MagazinePistolCheesemaker
-    price: 120
+    price: 40
     count: 10
   - proto: MagazinePistolAvenger
-    price: 150
+    price: 45
     count: 10
   - proto: MagazinePistolBoomerBuster
-    price: 180
+    price: 50
     count: 10
   - proto: MagazinePistolStukach
-    price: 200
+    price: 60
     count: 5
   - proto: MagazineRifleNowaki
-    price: 300
+    price: 90
     count: 8
   - proto: MagazineRifleNokota
-    price: 250
+    price: 75
     count: 8
   - proto: MagazineRifleNomad
-    price: 200
+    price: 60
     count: 8
   - proto: MagazineRifleM04
-    price: 300
+    price: 90
     count: 5
   - proto: CartridgeArasakaRailgun
-    price: 100
+    price: 50
     count: 20
   - proto: AmmoBox9mm
-    price: 200
+    price: 100
     count: 5
   - proto: AmmoBox114mm
-    price: 300
+    price: 150
     count: 5
   - proto: AmmoBox127mm
-    price: 500
+    price: 200
     count: 3
   - proto: AmmoBox622mmCaseless
-    price: 700
+    price: 250
     count: 2
   - proto: AmmoBox152mm
-    price: 800
+    price: 300
     count: 2
   - proto: AmmoBoxNomadSpike
-    price: 400
+    price: 100
     count: 5
   - proto: BoxShotgunSlug
-    price: 250
+    price: 60
     count: 4
 
 - type: storeCategoryStructured
@@ -196,43 +196,43 @@
   name: "Медицина"
   entries:
   - proto: HandheldHealthAnalyzer
-    price: 400
+    price: 150
     count: 6
   - proto: EmergencyRollerBedSpawnFolded
-    price: 600
+    price: 200
     count: 3
   - proto: Brutepack
-    price: 100
+    price: 30
     count: 20
   - proto: Ointment
-    price: 100
+    price: 30
     count: 20
   - proto: Bloodpack
-    price: 150
+    price: 60
     count: 10
   - proto: Defibrillator
-    price: 900
+    price: 400
     count: 2
   - proto: EpinephrineChemistryBottle
-    price: 300
+    price: 100
     count: 6
   - proto: Syringe
-    price: 40
+    price: 10
     count: 30
   - proto: PillCanisterBicaridine
-    price: 400
+    price: 150
     count: 4
   - proto: PillCanisterKelotane
-    price: 400
+    price: 150
     count: 4
   - proto: PillCanisterDylovene
-    price: 500
+    price: 200
     count: 3
   - proto: PillCanisterDexalin
-    price: 600
+    price: 250
     count: 3
   - proto: PillCanisterTricordrazine
-    price: 800
+    price: 300
     count: 2
 
 - type: storeCategoryStructured
@@ -240,10 +240,10 @@
   name: "Бот. Оборудование"
   entries:
   - proto: SeedExtractorFlatpack
-    price: 2000
+    price: 800
     count: 1
   - proto: HydroponicsTrayFlatpack
-    price: 600
+    price: 300
     count: 3
 
 - type: storeCategoryStructured
@@ -251,19 +251,19 @@
   name: "Пром. Оборудование"
   entries:
   - proto: WeaponWorkbenchFlatpack
-    price: 3000
+    price: 1200
     count: 2
   - proto: ConsoleCompilerFlatpack
-    price: 2500
+    price: 1000
     count: 2
   - proto: Civil3DPrinterFlatpack
-    price: 4000
+    price: 1500
     count: 2
   - proto: ChemDispenserFlatpack
-    price: 5000
+    price: 2000
     count: 2
   - proto: ReagentGrinderFlatpack
-    price: 1500
+    price: 600
     count: 2
 
 - type: storeCategoryStructured
@@ -271,28 +271,28 @@
   name: "Химия"
   entries:
   - proto: PrimeTimeChemistryBottle
-    price: 550
+    price: 150
     count: 5
   - proto: NitroPolymerChemistryBottle
-    price: 650
+    price: 200
     count: 3
   - proto: SixGunChemistryBottle
-    price: 450
+    price: 120
     count: 4
   - proto: OmnizineChemistryBottle
-    price: 1200
+    price: 500
     count: 1
   - proto: EphedrineChemistryBottle
-    price: 300
+    price: 80
     count: 5
   - proto: MorphineChemistryBottle
-    price: 400
+    price: 100
     count: 4
   - proto: NocturineChemistryBottle
-    price: 500
+    price: 150
     count: 3
   - proto: UnstableMutagenChemistryBottle
-    price: 400
+    price: 150
     count: 3
 
 - type: storeCategoryStructured
@@ -300,25 +300,25 @@
   name: "Нетраннинг и Софт"
   entries:
   - proto: NCCyberdeck
-    price: 8000
-    count: 3
-  - proto: NCProgramPing
-    price: 1000
-    count: 3
-  - proto: NCProgramShock
-    price: 2500
-    count: 3
-  - proto: NCProgramSword
     price: 3500
     count: 3
+  - proto: NCProgramPing
+    price: 300
+    count: 3
+  - proto: NCProgramShock
+    price: 800
+    count: 3
+  - proto: NCProgramSword
+    price: 1200
+    count: 3
   - proto: NCProgramBreach
-    price: 3000
+    price: 1000
     count: 3
   - proto: NeuralLinkCable
-    price: 500
+    price: 150
     count: 3
   - proto: BurnerChip
-    price: 400
+    price: 100
     count: 5
 
 - type: storeCategoryStructured
@@ -326,16 +326,16 @@
   name: "Техника и Сборка"
   entries:
   - proto: NCNetVisor
-    price: 2500
+    price: 800
     count: 2
   - proto: Multitool
-    price: 5000
+    price: 250
     count: 1
   - proto: Welder
-    price: 800
+    price: 100
     count: 3
   - proto: Matchbox
-    price: 50
+    price: 10
     count: 10
 
 - type: storeCategoryStructured
@@ -343,31 +343,31 @@
   name: "Семена"
   entries:
   - proto: AloeSeeds
-    price: 225
+    price: 300
     count: 5
   - proto: AmbrosiaVulgarisSeeds
-    price: 425
+    price: 800
     count: 5
   - proto: ChiliSeeds
-    price: 250
+    price: 350
     count: 3
   - proto: CocoaSeeds
-    price: 750
+    price: 800
     count: 1
   - proto: CornSeeds
-    price: 125
+    price: 150
     count: 5
   - proto: GarlicSeeds
-    price: 200
+    price: 300
     count: 4
   - proto: OnionSeeds
-    price: 200
+    price: 250
     count: 4
   - proto: OnionRedSeeds
-    price: 225
+    price: 300
     count: 3
   - proto: PoppySeeds
-    price: 450
+    price: 800
     count: 2
   - proto: PotatoSeeds
     price: 150
@@ -376,17 +376,79 @@
     price: 150
     count: 5
   - proto: SoybeanSeeds
-    price: 100
+    price: 150
     count: 5
   - proto: TeaPlantSeeds
-    price: 700
+    price: 600
     count: 1
   - proto: TomatoSeeds
-    price: 275
+    price: 350
     count: 4
   - proto: WheatSeeds
     price: 150
     count: 5
+
+- type: storeCategoryStructured
+  id: NightMarket_Cyberware
+  name: "Кибер-Импланты"
+  entries:
+  - proto: CyberwareImplantAntiglare
+    price: 800
+    count: 2
+  - proto: CyberwareImplantInfraredVision
+    price: 1500
+    count: 1
+  - proto: CyberwareImplantMicroVideo
+    price: 400
+    count: 2
+  - proto: CyberwareImplantMicroOptics
+    price: 2000
+    count: 1
+  - proto: CyberwareNeuroKerenzikovMk1
+    price: 3500
+    count: 1
+  - proto: CyberwareNeuroKerenzikovMk2
+    price: 7000
+    count: 1
+  - proto: CyberwareNeuroKerenzikovMk3
+    price: 15000
+    count: 1
+  - proto: CyberwareNeuroBioInhibitorStoic
+    price: 1800
+    count: 2
+  - proto: CyberwareNeuroBlockerAegis
+    price: 3000
+    count: 1
+  - proto: CyberwareNeuroTacticalSpartan
+    price: 12000
+    count: 1
+  - proto: CyberwareNeuroSandevistanMk1
+    price: 8000
+    count: 1
+  - proto: CyberwareInternalPolymerSkeleton
+    price: 2500
+    count: 1
+  - proto: CyberwareInternalTitaniumReinforcement
+    price: 8000
+    count: 1
+  - proto: CyberwareInternalArmyEndoskeleton
+    price: 18000
+    count: 1
+  - proto: CyberwareInternalNasalFilters
+    price: 1200
+    count: 2
+  - proto: CyberwareInternalEnhancedAntibodies
+    price: 3500
+    count: 1
+  - proto: CyberwareExternalKevlarSublayer
+    price: 2000
+    count: 1
+  - proto: CyberwareExternalThermoplasticArmor
+    price: 6000
+    count: 1
+  - proto: CyberwareExternalReactiveSublayer
+    price: 14000
+    count: 1
 
 - type: storePresetStructured
   id: NightMarket_Buy
@@ -403,4 +465,5 @@
   - NightMarket_Hacking
   - NightMarket_TechGear
   - NightMarket_Seeds
+  - NightMarket_Cyberware
 

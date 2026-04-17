@@ -4,7 +4,7 @@
   description: 'Научный персонал, Производит снаряжение и импланты, занимается тех обслуживанием объекта.'
   playTimeTracker: JobBiotechnicaTech
   weight: 50
-  salary: 1300
+  salary: 200
   icon: "JobIconBiotechTechnician"
   startingGear: BiotechnicaTechGear
   access:

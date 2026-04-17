@@ -4,7 +4,7 @@
   description: Вскрывает трупы и помогает копам из NCPD понять, почему этот парень стал трупом. Ваше кредо, мертвые не болтают, но их потроха могут рассказать чертовски много
   playTimeTracker: JobTraumaTeamCoroner
   weight: 90
-  salary: 600
+  salary: 280
   icon: "JobIconTraumaCoroner"
   startingGear: TraumaTeamCoronerGear
   supervisors: Главный врач Trauma Team

@@ -4,7 +4,7 @@
   description: Нетраннер при НСПД
   playTimeTracker: JobNCPDWatchAgent
   weight: 50
-  salary: 800
+  salary: 200
   icon: "JobIconNCPDPolice"
   startingGear: NCPDWatchAgentGear
   supervisors: Начальник департамента полиции

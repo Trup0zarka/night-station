@@ -4,7 +4,7 @@
   description: Глава NCPD. Отвечает за поддержание порядка в Найт-Сити и координацию действий всех подразделений полиции
   playTimeTracker: JobNCPDChief
   weight: 100
-  salary: 1500
+  salary: 450
   icon: "JobIconNCPDChief"
   startingGear: NCPDChiefGear
   access:

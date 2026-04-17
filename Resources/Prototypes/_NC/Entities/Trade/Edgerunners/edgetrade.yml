@@ -20,31 +20,31 @@
   name: "Ближний бой"
   entries:
   - proto: KitchenKnife
-    price: 50
+    price: 15
     count: 4
   - proto: KnifePlastic
-    price: 10
+    price: 5
     count: 6
   - proto: CombatKnife
-    price: 150
+    price: 50
     count: 5
   - proto: SurvivalKnife
-    price: 250
+    price: 80
     count: 3
   - proto: BaseBallBat
-    price: 100
+    price: 30
     count: 4
   - proto: Machete
-    price: 300
+    price: 100
     count: 3
   - proto: KukriKnife
-    price: 350
+    price: 150
     count: 2
   - proto: FireAxe
-    price: 600
+    price: 200
     count: 1
   - proto: Katana
-    price: 1000
+    price: 600
     count: 1
 
 - type: storeCategoryStructured
@@ -52,114 +52,105 @@
   name: "Дальний бой"
   entries:
   - proto: WeaponPistolAvenger
-    price: 1000
+    price: 350
     count: 2
   - proto: WeaponPistolCheesemaker
-    price: 1200
+    price: 180
     count: 2
   - proto: WeaponPistolFederalX9
-    price: 800
+    price: 150
     count: 2
   - proto: WeaponPistolHelloCutie
-    price: 400
+    price: 60
     count: 3
   - proto: WeaponPistolBoomerBuster
-    price: 1500
+    price: 250
     count: 2
   - proto: WeaponPistolMarkIII
-    price: 700
+    price: 120
     count: 2
   - proto: WeaponShotgunSvakha
-    price: 200
+    price: 120
     count: 5
   - proto: WeaponPistolStreetMaster
-    price: 1200
+    price: 120
     count: 2
   - proto: WeaponPistolOverlord
-    price: 500
+    price: 80
     count: 2
-  - proto: WeaponPistolStukachTommy
-    price: 1800
-    count: 1
   - proto: WeaponRifleNokotaD5Copperhead
-    price: 3500
+    price: 1000
     count: 2
   - proto: WeaponRifleArasakaNOWAKI
-    price: 4500
+    price: 1500
     count: 2
   - proto: WeaponRifleNomadGvozdemet
-    price: 3200
+    price: 800
     count: 2
-  - proto: WeaponRifleArasakaProto
-    price: 8500
-    count: 1
-  - proto: WeaponRifleM04
-    price: 5500
-    count: 1
 
 - type: storeCategoryStructured
   id: EdgeMarket_Ammo
   name: "Патроны"
   entries:
   - proto: MagazinePistolAvenger
-    price: 150
+    price: 45
     count: 15
   - proto: MagazinePistolCheesemaker
-    price: 150
+    price: 40
     count: 10
   - proto: MagazinePistolFederalX9
-    price: 120
+    price: 35
     count: 15
   - proto: MagazinePistolHelloCutie
-    price: 80
+    price: 20
     count: 20
   - proto: MagazinePistolBoomerBuster
-    price: 150
+    price: 50
     count: 10
   - proto: MagazinePistolMarkIII
-    price: 100
+    price: 30
     count: 15
   - proto: BoxLethalshot
-    price: 350
+    price: 80
     count: 2
   - proto: BoxShotgunSlug
-    price: 250
+    price: 60
     count: 1
   - proto: MagazineRifleM04
-    price: 300
+    price: 120
     count: 5
   - proto: MagazinePistolStreetMaster
-    price: 125
+    price: 30
     count: 10
   - proto: MagazinePistolOverlord
-    price: 100
+    price: 25
     count: 20
   - proto: MagazinePistolStukach
-    price: 150
+    price: 60
     count: 5
   - proto: AmmoBox9mm
-    price: 200
+    price: 100
     count: 5
   - proto: AmmoBox114mm
-    price: 300
+    price: 150
     count: 5
   - proto: AmmoBox127mm
-    price: 500
+    price: 200
     count: 3
   - proto: AmmoBox622mmCaseless
-    price: 700
+    price: 250
     count: 2
   - proto: MagazineRifleNokota
-    price: 250
+    price: 75
     count: 10
   - proto: MagazineRifleNowaki
-    price: 300
+    price: 90
     count: 10
   - proto: MagazineRifleNomad
-    price: 200
+    price: 60
     count: 10
   - proto: CartridgeArasakaRailgun
-    price: 100
+    price: 50
     count: 20
 
 - type: storeCategoryStructured
@@ -167,85 +158,85 @@
   name: "Одежда наёмников"
   entries:
   - proto: ClothingHeadHatBeanieGreen
-    price: 40
+    price: 10
     count: 2
   - proto: ClothingHandsGlovesColorBlack
-    price: 50
+    price: 15
     count: 4
   - proto: ClothingHandsGlovesFingerless
-    price: 60
+    price: 20
     count: 3
   - proto: ClothingHandsGlovesCombat
-    price: 250
+    price: 80
     count: 2
   - proto: ClothingHandsGlovesMercFingerless
-    price: 120
+    price: 40
     count: 3
   - proto: ClothingHandsGlovesColorGray
-    price: 50
+    price: 15
     count: 4
   - proto: ClothingOuterCoatBomberPunkRed
-    price: 450
+    price: 150
     count: 3
   - proto: ClothingOuterHoodieBlack
-    price: 200
+    price: 60
     count: 3
   - proto: ClothingUniformRandomShirt
-    price: 80
+    price: 25
     count: 6
   - proto: ClothingUniformJumpsuitBlackTurtleneck
-    price: 150
+    price: 50
     count: 5
   - proto: ClothingUniformMNKTracksuitBlack
-    price: 250
+    price: 80
     count: 2
   - proto: ClothingOuterCoatMNKBlackTopCoat
-    price: 600
+    price: 200
     count: 2
   - proto: ClothingUniformMNKGymBra
-    price: 150
+    price: 50
     count: 2
   - proto: ClothingOuterCoatJacketLeather
-    price: 500
-    count: 3
-  - proto: ClothingOuterCoatBomberRandomized
-    price: 400
-    count: 8
-  - proto: ClothingOuterCoatLettermanRandomized
-    price: 350
-    count: 8
-  - proto: ClothingUniformJumpsuitRippedPunk
-    price: 180
-    count: 2
-  - proto: ClothingMaskPunkHalf
-    price: 120
-    count: 4
-  - proto: ClothingShoesBootsWork
     price: 150
     count: 3
+  - proto: ClothingOuterCoatBomberRandomized
+    price: 120
+    count: 8
+  - proto: ClothingOuterCoatLettermanRandomized
+    price: 100
+    count: 8
+  - proto: ClothingUniformJumpsuitRippedPunk
+    price: 60
+    count: 2
+  - proto: ClothingMaskPunkHalf
+    price: 40
+    count: 4
+  - proto: ClothingShoesBootsWork
+    price: 50
+    count: 3
   - proto: ClothingShoesBootsCombat
-    price: 300
+    price: 100
     count: 3
   - proto: ClothingShoesColorWhite
-    price: 100
+    price: 30
     count: 3
   - proto: ClothingShoesColorBlack
-    price: 100
+    price: 30
     count: 3
   - proto: ClothingShoesBootsPunkRandomized
-    price: 250
+    price: 80
     count: 8
   - proto: ClothingUniformJumpsuitLightBlueShirt
-    price: 120
+    price: 40
     count: 4
   - proto: ClothingUniformJumpsuitGreyShirt
-    price: 120
+    price: 40
     count: 4
   - proto: ClothingBeltMercWebbing
-    price: 350
+    price: 100
     count: 3
   - proto: ClothingBeltMilitaryWebbing
-    price: 400
+    price: 120
     count: 3
 
 - type: storeCategoryStructured
@@ -253,16 +244,16 @@
   name: "Защита"
   entries:
   - proto: ClothingOuterArmorBasic
-    price: 500
+    price: 150
     count: 5
   - proto: ClothingOuterVestWebMerc
-    price: 700
+    price: 250
     count: 2
   - proto: ClothingOuterVestFlak
-    price: 800
+    price: 300
     count: 2
   - proto: ClothingOuterArmorPunkRandomized
-    price: 1200
+    price: 400
     count: 4
 
 - type: storeCategoryStructured
@@ -273,76 +264,76 @@
     price: 10
     count: 5
   - proto: SyringeSaline
-    price: 30
+    price: 15
     count: 2
   - proto: Brutepack
-    price: 50
+    price: 30
     count: 4
   - proto: Ointment
-    price: 50
+    price: 30
     count: 4
   - proto: Gauze
-    price: 20
+    price: 10
     count: 3
   - proto: Bloodpack
-    price: 150
-    count: 2
-  - proto: EmergencyMedipen
-    price: 80
-    count: 3
-  - proto: Joint
-    price: 30
-    count: 8
-  - proto: PillCanisterChloralHydrate
-    price: 400
-    count: 2
-  - proto: PillCanisterIron
-    price: 150
-    count: 3
-  - proto: PillCanisterCopper
-    price: 150
-    count: 2
-  - proto: PillCanisterSpaceDrugs
-    price: 500
-    count: 3
-  - proto: CigPackGreen
-    price: 40
-    count: 3
-  - proto: CigPackBlack
-    price: 40
-    count: 3
-  - proto: CigPackMixedMedical
     price: 60
     count: 2
+  - proto: EmergencyMedipen
+    price: 40
+    count: 3
+  - proto: Joint
+    price: 15
+    count: 8
+  - proto: PillCanisterChloralHydrate
+    price: 120
+    count: 2
+  - proto: PillCanisterIron
+    price: 40
+    count: 3
+  - proto: PillCanisterCopper
+    price: 40
+    count: 2
+  - proto: PillCanisterSpaceDrugs
+    price: 150
+    count: 3
+  - proto: CigPackGreen
+    price: 15
+    count: 3
+  - proto: CigPackBlack
+    price: 15
+    count: 3
+  - proto: CigPackMixedMedical
+    price: 25
+    count: 2
   - proto: CigPackMixed
-    price: 50
+    price: 20
     count: 2
   - proto: EphedrineChemistryBottle
-    price: 300
+    price: 100
     count: 2
   - proto: EpinephrineChemistryBottle
-    price: 350
+    price: 120
     count: 2
   - proto: DrinkVodkaBottleFull
-    price: 250
+    price: 80
     count: 2
   - proto: DrinkGrapeCan
-    price: 15
+    price: 5
     count: 6
   - proto: DrinkBeerCan
-    price: 20
+    price: 8
     count: 3
   - proto: DrinkIcedTeaCan
-    price: 15
+    price: 5
     count: 4
   - proto: DrinkChocolateJuicebox
-    price: 15
+    price: 5
     count: 3
   - proto: DrinkColaCan
-    price: 15
+    price: 5
     count: 3
   - proto: DrinkSodaWaterCan
-    price: 10
+    price: 5
     count: 5
 
 - type: storePresetStructured

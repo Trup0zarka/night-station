@@ -4,7 +4,7 @@
   description: 'Относится к рядовому составу, стоит на ровне с Оперативниками в иерархии.'
   playTimeTracker: JobBiotechnicaParamedic
   weight: 60
-  salary: 1200
+  salary: 150
   icon: "JobIconBiotechParamed"
   startingGear: BiotechnicaParamedicGear
   access:

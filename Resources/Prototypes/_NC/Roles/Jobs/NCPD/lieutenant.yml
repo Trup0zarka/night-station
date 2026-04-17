@@ -4,7 +4,7 @@
   description: Стандартный младший руководитель сил NCPD. Относится к старшему офицерскому составу
   playTimeTracker: JobNCPDLieutenant
   weight: 85
-  salary: 800
+  salary: 220
   icon: "JobIconNCPDLiutenant"
   startingGear: NCPDLieutenantGear
   supervisors: Коммандер

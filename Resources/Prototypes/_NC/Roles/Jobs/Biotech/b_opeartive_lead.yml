@@ -4,7 +4,7 @@
   description: 'Относится к Офицерскому составу, в иерархии стоит ниже Старшего Офицера но выше всего остального СБ.'
   playTimeTracker: JobBiotechnicaOperativeLead
   weight: 80
-  salary: 2000
+  salary: 350
   icon: "JobIconBiotechOfficer"
   startingGear: BiotechnicaOperativeLeadGear
   access:

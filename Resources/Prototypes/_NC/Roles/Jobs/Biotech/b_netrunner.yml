@@ -4,7 +4,7 @@
   description: 'Относится к рядовому составу, в иерархии стоит на ровне с Оперативниками. Может быть как пауком так и оказывать поддержку Оперативникам.'
   playTimeTracker: JobBiotechnicaNetrunner
   weight: 60
-  salary: 2500
+  salary: 400
   icon: "JobIconBiotechNetrunner"
   startingGear: BiotechnicaNetrunnerGear
   access:

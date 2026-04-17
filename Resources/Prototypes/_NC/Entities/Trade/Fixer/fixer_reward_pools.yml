@@ -37,6 +37,18 @@
     id: MagazinePistolCheesemaker
     amount: { min: 2, max: 4 }
     weight: 3
+  - type: Item
+    id: WeaponPistolHelloCutie
+    weight: 3
+  - type: Item
+    id: WeaponPistolOverlord
+    weight: 2
+  - type: Item
+    id: CombatKnife
+    weight: 3
+  - type: Item
+    id: CyberwareInternalVampireFangsBasic
+    weight: 1
 
 # Тир Medium — серьёзное вооружение и экипировка
 - type: ncContractRewardPool
@@ -72,6 +84,27 @@
   - type: Item
     id: PillCanisterDexalin
     weight: 2
+  - type: Item
+    id: WeaponRifleNomadGvozdemet
+    weight: 1
+  - type: Item
+    id: WeaponPistolBoomerBuster
+    weight: 1
+  - type: Item
+    id: NCWeaponRevolverSternmeyerP35
+    weight: 2
+  - type: Item
+    id: Katana
+    weight: 1
+  - type: Item
+    id: CyberwareImplantAntiglare
+    weight: 2
+  - type: Item
+    id: CyberwareInternalPolymerSkeleton
+    weight: 1
+  - type: Item
+    id: CyberwareExternalKevlarSublayer
+    weight: 1
 
 # Тир Hard — элитное снаряжение и прототипы
 - type: ncContractRewardPool
@@ -103,4 +136,19 @@
     weight: 1
   - type: Item
     id: PillCanisterTricordrazine
+    weight: 1
+  - type: Item
+    id: CyberwareNeuroKerenzikovMk1
+    weight: 2
+  - type: Item
+    id: CyberwareNeuroSandevistanMk1
+    weight: 1
+  - type: Item
+    id: CyberwareExternalThermoplasticArmor
+    weight: 1
+  - type: Item
+    id: CyberwareInternalTitaniumReinforcement
+    weight: 1
+  - type: Item
+    id: CyberwareNeuroBioInhibitorStoic
     weight: 1

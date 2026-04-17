@@ -30,6 +30,8 @@
     weight: 20
   - id: fixer_contract_GunOrder
     weight: 25
+  - id: fixer_contract_StreetChrome
+    weight: 20
   # Hard
   - id: fixer_contract_ArasakaPrototypes
     weight: 10
@@ -39,6 +41,8 @@
     weight: 10
   - id: fixer_contract_NarcoBatch
     weight: 15
+  - id: fixer_contract_MilitaryChrome
+    weight: 10
 
 # --- Пресет контрактов ---
 - type: storeContractsPreset
@@ -319,6 +323,44 @@
   - type: Currency
     id: Credit
     amount: { min: 15000, max: 22000 }
+  - type: Pool
+    amount: { min: 2, max: 3 }
+    options:
+    - type: Pool
+      id: fixer_hard
+
+- type: storeContract
+  id: fixer_contract_StreetChrome
+  name: "Уличный Хром"
+  description: "Местная клиника нуждается в базовых имплантах для своих пациентов. Оптика и укрепление скелета всегда в цене."
+  difficulty: Medium
+  targets:
+  - id: CyberwareImplantAntiglare
+    required: { min: 2, max: 3 }
+  - id: CyberwareInternalPolymerSkeleton
+    required: 1
+  rewards:
+  - type: Currency
+    id: Credit
+    amount: { min: 6000, max: 9000 }
+  - type: Pool
+    amount: { min: 1, max: 2 }
+    options:
+    - type: Pool
+      id: fixer_medium
+
+- type: storeContract
+  id: fixer_contract_MilitaryChrome
+  name: "Военный Хром"
+  description: "Анонимный клиент ищет боевые нейро-импланты через черный ход. Если достанешь Керензиков — озолотишься."
+  difficulty: Hard
+  targets:
+  - id: CyberwareNeuroKerenzikovMk1
+    required: { min: 1, max: 2 }
+  rewards:
+  - type: Currency
+    id: Credit
+    amount: { min: 16000, max: 24000 }
   - type: Pool
     amount: { min: 2, max: 3 }
     options:

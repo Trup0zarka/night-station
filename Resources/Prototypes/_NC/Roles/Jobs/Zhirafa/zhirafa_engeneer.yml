@@ -3,7 +3,7 @@
   name: Инженер
   description: job-description-zhirafa_engeneer
   playTimeTracker: JobZhirafaEngeneer
-  salary: 1200
+  salary: 180
   icon: "JobIconCivilRipper"
   access:
     - NC_General

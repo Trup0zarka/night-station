@@ -4,7 +4,7 @@
   description: job-description-citizen
   playTimeTracker: JobNCCitizen
   icon: "JobIconCivilCitizen"
-  salary: 200
+  salary: 50
   startingGear: NCCitizenGear
   access:
     - NC_General

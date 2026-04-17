@@ -4,7 +4,7 @@
   description: Посредник между заказчиками и исполнителями. Торговец.
   playTimeTracker: JobFixer
   icon: "JobIconCivilFixer"
-  salary: 200
+  salary: 30
   access:
     - NC_General
     - Fixer

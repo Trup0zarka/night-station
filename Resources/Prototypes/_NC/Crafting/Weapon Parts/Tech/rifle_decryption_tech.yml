@@ -35,3 +35,41 @@
     moduleCost: 450
     recipeCost: 600
     maxUses: 2
+
+- type: entity
+  parent: BaseItem
+  id: NCTechRifleNowaki
+  name: Технология (Rifle Arasaka NOWAKI)
+  description: Технология для создания модуля "Arasaka NOWAKI". Т3.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    layers:
+    - state: datadisk_base
+    - state: datadisk_label
+  - type: DecryptionTechnology
+    tier: Legendary
+    modulePrototype: NCBlueprintNowaki
+    recipePrototype: NCRecipePaperNowaki
+    moduleCost: 400
+    recipeCost: 550
+    maxUses: 3
+
+- type: entity
+  parent: BaseItem
+  id: NCTechRifleNokota
+  name: Технология (Rifle Nokota D5 Copperhead)
+  description: Технология для создания модуля "Nokota D5 Copperhead". Т2.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    layers:
+    - state: datadisk_base
+    - state: datadisk_label
+  - type: DecryptionTechnology
+    tier: Rare
+    modulePrototype: NCBlueprintNokota
+    recipePrototype: NCRecipePaperNokota
+    moduleCost: 250
+    recipeCost: 350
+    maxUses: 4

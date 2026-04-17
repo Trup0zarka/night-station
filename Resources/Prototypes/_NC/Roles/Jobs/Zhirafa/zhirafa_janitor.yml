@@ -3,7 +3,7 @@
   name: Уборщик
   description: job-description-zhirafa_janitor
   playTimeTracker: JobZhirafaJanitor
-  salary: 800
+  salary: 80
   icon: "JobIconCivilCitizen"
   startingGear: ZhirafaJanitorGear
   access:

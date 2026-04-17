@@ -4,7 +4,7 @@
   description: 'Научный персонал, растит и перегоняет овощи в пищу, выводит новые сорта растений'
   playTimeTracker: JobBiotechnicaBotanist
   weight: 10
-  salary: 1100
+  salary: 150
   icon: "JobIconBiotechAgrarian"
   startingGear: BiotechnicaBotanistGear
   access:

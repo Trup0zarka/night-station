@@ -4,7 +4,7 @@
   description: Врач занимающийся спасением випов но не всегда успешно
   playTimeTracker: JobTraumaTeamParamedic
   weight: 70
-  salary: 850
+  salary: 350
   icon: "JobIconTraumaParamed"
   startingGear: TraumaTeamParamedicGear
   supervisors: Главный врач Trauma Team

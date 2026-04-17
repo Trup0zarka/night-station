@@ -4,7 +4,7 @@
   description: 'Относится к рядовому составу. Стоит выше обычного патрульного в иерархии.'
   playTimeTracker: JobBiotechnicaOperative
   weight: 70
-  salary: 1500
+  salary: 250
   icon: "JobIconBiotechOfficer"
   startingGear: BiotechnicaOperativeGear
   access:

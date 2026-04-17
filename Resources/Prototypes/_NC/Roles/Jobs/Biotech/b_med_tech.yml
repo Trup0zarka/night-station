@@ -4,7 +4,7 @@
   description: 'Научный персонал, Выполняет Медицинские операции, варит химикаты и производит медикаменты '
   playTimeTracker: JobBiotechnicaMedTech
   weight: 55
-  salary: 1400
+  salary: 200
   icon: "JobIconBiotechMedTech"
   startingGear: BiotechnicaMedTechGear
   access:

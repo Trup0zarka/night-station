@@ -4,7 +4,7 @@
   description: Стандартный наёмник. Ищите нанимателя. Исполняйте заказы защита, убийство, сбор информации, поиск, похищение и многое другое.
   playTimeTracker: JobEdgeRunnerSolo
   icon: "JobIconCivilEdgerunner"
-  salary: 200
+  salary: 15
   access:
     - NC_General
     - EdgeRunner

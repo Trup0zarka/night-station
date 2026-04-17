@@ -4,7 +4,7 @@
   description: Заместитель шефа полиции. Относится к младшему командному составу.
   playTimeTracker: JobNCPDCommander
   weight: 90
-  salary: 1000
+  salary: 300
   icon: "JobIconNCPDCommander"
   startingGear: NCPDCommanderGear
   supervisors: Начальник департамента полиции
