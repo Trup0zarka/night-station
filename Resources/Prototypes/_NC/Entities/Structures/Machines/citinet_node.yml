@@ -43,12 +43,15 @@
       NCTechPistolAvenger: 8
       NCTechPistolStukachTommy: 8
       NCTechPistolSternmeyerP35: 8
-      NCTechRifleM04: 10
-      NCTechRifleArasakaProto: 5
+      NCTechRifleM04: 5
+      NCTechRifleNokota: 15
+      NCTechRifleNowaki: 10
 
     # Пул "Сырых данных". Сюда можно добавить Tier2, Tier3 мусор с разными весами.
     rawDataPool:
-      NCRawDataTier1: 100
+      NCRawDataTier1: 50
+      NCRawDataTier2: 30
+      NCRawDataTier3: 20
   - type: ApcPowerReceiver
   - type: ExtensionCableReceiver
   - type: Appearance

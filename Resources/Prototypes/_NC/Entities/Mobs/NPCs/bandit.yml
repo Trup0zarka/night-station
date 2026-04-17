@@ -77,3 +77,10 @@
   components:
   - type: Loadout
     prototypes: [NCBanditGearBoss]
+  - type: Cyberware
+  - type: StartingCyberware
+    loseHum: false
+    cyberware:
+    - CyberwareNeuroKerenzikovMk3
+    - CyberwareNeuroTacticalSpartan
+    - CyberwareInternalEnhancedAntibodies
