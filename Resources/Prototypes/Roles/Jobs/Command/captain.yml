@@ -28,6 +28,13 @@
   accessGroups:
   - AllAccess
   special:
+  - !type:AddCyberwareSpecial
+    loseHum: false
+    cyberware:
+    - CyberwareExternalReactiveSublayer
+    - CyberwareNeuroKerenzikovMaxTac
+    - CyberwareNeuroTacticalSpartan
+    - CyberwareNeuroSandevistanMaxTac
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
   - !type:AddComponentSpecial

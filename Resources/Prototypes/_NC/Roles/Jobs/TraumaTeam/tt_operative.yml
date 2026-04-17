@@ -13,11 +13,6 @@
     - Trauma_Hangar
     - Trauma_Morgue
     - NC_General
-  special:
-  - !type:AddComponentSpecial
-    components:
-    - type: TraumaSubscriber
-      tier: Silver
 
 - type: startingGear
   id: TraumaTeamOperativeGear

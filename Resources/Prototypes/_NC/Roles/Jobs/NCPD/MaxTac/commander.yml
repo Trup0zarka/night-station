@@ -27,6 +27,13 @@
       visibleInWorld: false
     - type: TraumaSubscriber
       tier: Silver
+  - !type:AddCyberwareSpecial
+    loseHum: false
+    cyberware:
+    - CyberwareExternalReactiveSublayer
+    - CyberwareNeuroKerenzikovMaxTac
+    - CyberwareNeuroTacticalSpartan
+    - CyberwareNeuroSandevistanMaxTac
 
 - type: startingGear
   id: MaxTacCommanderGear

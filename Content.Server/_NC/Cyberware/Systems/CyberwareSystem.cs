@@ -36,7 +36,7 @@ public sealed class CyberwareSystem : EntitySystem
     /// <summary>
     ///     Установка импланта в цель. Автоматически находит свободный слот по категории.
     /// </summary>
-    public bool TryInstallImplant(EntityUid target, EntityUid implant, CyberwareComponent? cyberware = null, CyberwareImplantComponent? implantComp = null)
+    public bool TryInstallImplant(EntityUid target, EntityUid implant, CyberwareComponent? cyberware = null, CyberwareImplantComponent? implantComp = null, bool deductHumanity = true)
     {
         if (!Resolve(target, ref cyberware, false) || !Resolve(implant, ref implantComp, false))
             return false;
@@ -73,8 +73,11 @@ public sealed class CyberwareSystem : EntitySystem
         Dirty(target, cyberware);
 
         // Списываем человечность
-        _humanitySystem.DeductHumanity(target, implantComp.HumanityCost);
-        _neuroTherapy.AssignWords(target, 2, 1);
+        if (deductHumanity)
+        {
+            _humanitySystem.DeductHumanity(target, implantComp.HumanityCost);
+            _neuroTherapy.AssignWords(target, 2, 1);
+        }
 
         // Обновляем статы носителя
         _cyberwareRelay.RefreshCyberwareStats(target, cyberware);

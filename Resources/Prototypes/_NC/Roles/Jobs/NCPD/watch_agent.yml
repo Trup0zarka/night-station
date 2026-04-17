@@ -23,12 +23,26 @@
     - type: TraumaSubscriber
       tier: Silver
 
+
 - type: startingGear
   id: NCPDWatchAgentGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitDetective
-    back: ClothingBackpackSatchelSecurity
+    back: ClothingBackpackWatchAgentFilled
     shoes: ClothingShoesColorBlack
     head: ClothingHeadHatFedoraBrown
     id: NCPDWatchAgentPDA
     outerClothing: ClothingOuterCoatDetective
+
+
+- type: entity
+  parent: ClothingBackpackSatchelSecurity
+  id: ClothingBackpackWatchAgentFilled
+  name: Рюкзак Агента Дозора
+  components:
+  - type: StorageFill
+    contents:
+    - id: NCCyberdeck
+    - id: NCProgramHighJack
+    - id: NCProgramPing
+    - id: NCProgramShock

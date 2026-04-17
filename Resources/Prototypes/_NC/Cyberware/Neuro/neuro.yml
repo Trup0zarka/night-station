@@ -102,7 +102,7 @@
   - type: CyberwareImplant
     category: Neuroport
     humanityCost: 14
-    cyberFamily: Neuroport
+    cyberFamily: NeuroportSecond
   - type: CyberwareAntiGlare
   - type: CritModifier
     critThresholdModifier: 100
