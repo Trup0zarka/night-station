@@ -14,13 +14,3 @@
     tags:
     - Magazine622mmCaseless
 
-# --- EMPTY VARIANTS ---
-
-- type: entity
-  id: Magazine622mmCaselessEmpty
-  name: "пустой магазин (6.22мм безгильзовые, пустой)"
-  parent: Magazine622mmCaseless
-  suffix: пустой
-  components:
-  - type: BallisticAmmoProvider
-    proto: null

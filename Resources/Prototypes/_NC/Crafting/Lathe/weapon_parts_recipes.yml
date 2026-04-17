@@ -13,21 +13,21 @@
   - NCBlankElectronicsCircuit
   - NCBlankElectronicsNeuro
   - NCBlankDrive
-  - NCRecipeMagazine622mmCaselessEmpty
-  - NCRecipeMagazinePistolStukachEmpty
-  - NCRecipeMagazinePistolOverlordEmpty
-  - NCRecipeMagazinePistolAvengerEmpty
-  - NCRecipeMagazinePistolHelloCutieEmpty
-  - NCRecipeMagazinePistolStreetMasterEmpty
-  - NCRecipeMagazinePistolMarkIIIEmpty
-  - NCRecipeMagazinePistolCheesemakerEmpty
-  - NCRecipeMagazinePistolFederalX9Empty
-  - NCRecipeMagazinePistolBoomerBusterEmpty
-  - NCRecipeMagazineRifleNomadEmpty
-  - NCRecipeMagazineRifleArasakaEmpty
-  - NCRecipeMagazineRifleM04Empty
-  - NCRecipeMagazineRifleNokotaEmpty
-  - NCRecipeMagazineRifleNowakiEmpty
+  - NCRecipeMagazinePistolStukach
+  - NCRecipeMagazinePistolOverlord
+  - NCRecipeMagazinePistolAvenger
+  - NCRecipeMagazinePistolHelloCutie
+  - NCRecipeMagazinePistolStreetMaster
+  - NCRecipeMagazinePistolMarkIII
+  - NCRecipeMagazinePistolCheesemaker
+  - NCRecipeMagazinePistolFederalX9
+  - NCRecipeMagazinePistolBoomerBuster
+  - NCRecipeMagazineRifleNomad
+  - NCRecipeMagazineRifleArasaka
+  - NCRecipeMagazineRifleM04
+  - NCRecipeMagazineRifleNokota
+  - NCRecipeMagazineRifleNowaki
+  - NCRecipeMagazine622mmCaseless
 
 
 # ==========================================
@@ -132,125 +132,127 @@
     Plasteel: 1500
     Gold: 500
 
+
 # ==========================================
-# ПУСТЫЕ МАГАЗИНЫ
+# МАГАЗИНЫ (MAGAZINES)
 # ==========================================
 
+
 - type: latheRecipe
-  id: NCRecipeMagazine622mmCaselessEmpty
-  result: Magazine622mmCaselessEmpty
+  id: NCRecipeMagazinePistolStukach
+  result: MagazinePistolStukach
   comms: true
   materials:
     Plastic: 100
     Metal: 100
 
 - type: latheRecipe
-  id: NCRecipeMagazinePistolStukachEmpty
-  result: MagazinePistolStukachEmpty
+  id: NCRecipeMagazinePistolOverlord
+  result: MagazinePistolOverlord
   comms: true
   materials:
     Plastic: 100
     Metal: 100
 
 - type: latheRecipe
-  id: NCRecipeMagazinePistolOverlordEmpty
-  result: MagazinePistolOverlordEmpty
+  id: NCRecipeMagazinePistolAvenger
+  result: MagazinePistolAvenger
   comms: true
   materials:
     Plastic: 100
     Metal: 100
 
 - type: latheRecipe
-  id: NCRecipeMagazinePistolAvengerEmpty
-  result: MagazinePistolAvengerEmpty
+  id: NCRecipeMagazinePistolHelloCutie
+  result: MagazinePistolHelloCutie
   comms: true
   materials:
     Plastic: 100
     Metal: 100
 
 - type: latheRecipe
-  id: NCRecipeMagazinePistolHelloCutieEmpty
-  result: MagazinePistolHelloCutieEmpty
+  id: NCRecipeMagazinePistolStreetMaster
+  result: MagazinePistolStreetMaster
   comms: true
   materials:
     Plastic: 100
     Metal: 100
 
 - type: latheRecipe
-  id: NCRecipeMagazinePistolStreetMasterEmpty
-  result: MagazinePistolStreetMasterEmpty
+  id: NCRecipeMagazinePistolMarkIII
+  result: MagazinePistolMarkIII
   comms: true
   materials:
     Plastic: 100
     Metal: 100
 
 - type: latheRecipe
-  id: NCRecipeMagazinePistolMarkIIIEmpty
-  result: MagazinePistolMarkIIIEmpty
+  id: NCRecipeMagazinePistolCheesemaker
+  result: MagazinePistolCheesemaker
   comms: true
   materials:
     Plastic: 100
     Metal: 100
 
 - type: latheRecipe
-  id: NCRecipeMagazinePistolCheesemakerEmpty
-  result: MagazinePistolCheesemakerEmpty
+  id: NCRecipeMagazinePistolFederalX9
+  result: MagazinePistolFederalX9
   comms: true
   materials:
     Plastic: 100
     Metal: 100
 
 - type: latheRecipe
-  id: NCRecipeMagazinePistolFederalX9Empty
-  result: MagazinePistolFederalX9Empty
+  id: NCRecipeMagazinePistolBoomerBuster
+  result: MagazinePistolBoomerBuster
   comms: true
   materials:
     Plastic: 100
     Metal: 100
 
 - type: latheRecipe
-  id: NCRecipeMagazinePistolBoomerBusterEmpty
-  result: MagazinePistolBoomerBusterEmpty
+  id: NCRecipeMagazineRifleNomad
+  result: MagazineRifleNomad
   comms: true
   materials:
     Plastic: 100
     Metal: 100
 
 - type: latheRecipe
-  id: NCRecipeMagazineRifleNomadEmpty
-  result: MagazineRifleNomadEmpty
+  id: NCRecipeMagazineRifleArasaka
+  result: MagazineRifleArasaka
   comms: true
   materials:
     Plastic: 100
     Metal: 100
 
 - type: latheRecipe
-  id: NCRecipeMagazineRifleArasakaEmpty
-  result: MagazineRifleArasakaEmpty
+  id: NCRecipeMagazineRifleM04
+  result: MagazineRifleM04
   comms: true
   materials:
     Plastic: 100
     Metal: 100
 
 - type: latheRecipe
-  id: NCRecipeMagazineRifleM04Empty
-  result: MagazineRifleM04Empty
+  id: NCRecipeMagazineRifleNokota
+  result: MagazineRifleNokota
   comms: true
   materials:
     Plastic: 100
     Metal: 100
 
 - type: latheRecipe
-  id: NCRecipeMagazineRifleNokotaEmpty
-  result: MagazineRifleNokotaEmpty
+  id: NCRecipeMagazineRifleNowaki
+  result: MagazineRifleNowaki
   comms: true
   materials:
     Plastic: 100
     Metal: 100
 
 - type: latheRecipe
-  id: NCRecipeMagazineRifleNowakiEmpty
-  result: MagazineRifleNowakiEmpty
+  id: NCRecipeMagazine622mmCaseless
+  result: Magazine622mmCaseless
   comms: true
   materials:
     Plastic: 100
