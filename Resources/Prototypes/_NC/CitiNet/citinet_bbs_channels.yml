@@ -21,6 +21,7 @@
   color: "#2f5c9e"
   access:
     - NCPD_Patrol
+    - Trauma_Medical
   isHidden: false
 
 # NCPD Detectives — канал для расследований и детективов

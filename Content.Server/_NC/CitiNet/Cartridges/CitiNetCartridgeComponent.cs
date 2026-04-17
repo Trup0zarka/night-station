@@ -135,5 +135,24 @@ public sealed partial class CitiNetCartridgeComponent : Component
     [ViewVariables]
     public Content.Shared._NC.CitiNet.CitiNetTab ActiveTab =
         Content.Shared._NC.CitiNet.CitiNetTab.BBS;
-}
 
+    // ========== Экстренные вызовы ==========
+
+    /// <summary>
+    ///     Время (сервер) последнего вызова полиции. Нужно для cooldown.
+    /// </summary>
+    [ViewVariables]
+    public TimeSpan LastPoliceCalled = TimeSpan.Zero;
+
+    /// <summary>
+    ///     Время (сервер) последнего вызова Trauma Team. Нужно для cooldown.
+    /// </summary>
+    [ViewVariables]
+    public TimeSpan LastTraumaCalled = TimeSpan.Zero;
+
+    /// <summary>
+    ///     Cooldown (секунды) между экстренными вызовами.
+    /// </summary>
+    [DataField]
+    public double EmergencyCooldownSeconds = 60.0;
+}

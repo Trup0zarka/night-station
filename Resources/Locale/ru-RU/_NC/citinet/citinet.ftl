@@ -75,3 +75,7 @@ citinet-sender-system = СИСТЕМА
 citinet-sender-flatline = FLATLINE
 citinet-call-busy = >> ЛИНИЯ ЗАНЯТА. ПОВТОРИТЕ ПОЗЖЕ.
 citinet-call-connection-lost = >> ОБРЫВ СВЯЗИ. СИГНАЛ RELAY ПОТЕРЯН.
+
+
+citinet-emergency-police-desc =  SOS: { $caller } вызов Траума.
+citinet-emergency-trauma-desc =  SOS: { $caller } вызов патрульных в { $sector }.

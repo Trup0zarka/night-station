@@ -52,7 +52,7 @@
         type: CitiNetMapConsoleBoundUserInterface
   - type: AccessReader
     access:
-      - ["Medical"]
+      - ["Trauma_Medical"]
 
 - type: entity
   id: CitiNetConsoleBiotechnica

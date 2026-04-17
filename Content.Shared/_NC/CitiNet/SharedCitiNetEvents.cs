@@ -39,7 +39,8 @@ public enum CitiNetTab : byte
 {
     P2P,
     Group,
-    BBS
+    BBS,
+    Contacts   // Список всех игроков на сервере + кнопки экстренных вызовов
 }
 
 /// <summary>
@@ -74,7 +75,11 @@ public enum CitiNetUiMessageType : byte
     LeaveChannel,
     SendBBSMessage,
     SelectChannel,
-    InviteToChannel  // Пригласить агента в BBS-канал по номеру
+    InviteToChannel,  // Пригласить агента в BBS-канал по номеру
+
+    // Экстренные вызовы (из вкладки Contacts)
+    CallPolice,    // Вызов НСПД — создаёт запись в диспетчерской
+    CallTrauma     // Вызов Trauma Team — создаёт запись в консоли Trauma
 }
 
 // ========== UI Message (Client → Server) ==========
@@ -261,6 +266,13 @@ public sealed class CitiNetUiState : BoundUserInterfaceState
     // Глобальная база агентов
     public readonly List<CitiNetContact> GlobalDirectory;
 
+    // Все игроки на сервере (для вкладки Contacts)
+    public readonly List<CitiNetContact> AllPlayers;
+
+    // Cooldown экстренных вызовов: -1 = не использовался, 0+ = секунд осталось
+    public readonly float PoliceCooldown;
+    public readonly float TraumaCooldown;
+
     public CitiNetUiState(
         string ownNumber,
         bool hasRelay,
@@ -277,7 +289,10 @@ public sealed class CitiNetUiState : BoundUserInterfaceState
         List<CitiNetChannelInfo> channels,
         string? currentChannelId,
         List<CitiNetBBSMessage> channelMessages,
-        List<CitiNetContact> globalDirectory)
+        List<CitiNetContact> globalDirectory,
+        List<CitiNetContact> allPlayers,
+        float policeCooldown = 0f,
+        float traumaCooldown = 0f)
     {
         OwnNumber = ownNumber;
         HasRelay = hasRelay;
@@ -295,5 +310,8 @@ public sealed class CitiNetUiState : BoundUserInterfaceState
         CurrentChannelId = currentChannelId;
         ChannelMessages = channelMessages;
         GlobalDirectory = globalDirectory;
+        AllPlayers = allPlayers;
+        PoliceCooldown = policeCooldown;
+        TraumaCooldown = traumaCooldown;
     }
 }

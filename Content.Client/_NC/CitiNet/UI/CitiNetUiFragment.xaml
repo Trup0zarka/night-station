@@ -32,7 +32,7 @@
                 <Button Name="MenuDirectCallsBtn" Text="[1] DIRECT CALLS" Margin="0 2 0 0" HorizontalAlignment="Left" StyleClasses="OpenRight"/>
                 <Button Name="MenuChatRoomsBtn" Text="[2] CHAT ROOMS" Margin="0 2 0 0" HorizontalAlignment="Left" StyleClasses="OpenRight"/>
                 <Button Name="MenuDataPoolBtn" Text="[3] DATA POOL" Margin="0 2 0 0" HorizontalAlignment="Left" StyleClasses="OpenRight"/>
-                <Button Name="MenuNetworkStatusBtn" Text="[4] NETWORK STATUS" Margin="0 2 0 0" HorizontalAlignment="Left" StyleClasses="OpenRight"/>
+                <Button Name="MenuContactsBtn" Text="[4] CONTACTS" Margin="0 2 0 0" HorizontalAlignment="Left" StyleClasses="OpenRight"/>
             </BoxContainer>
         </PanelContainer>
 

@@ -52,7 +52,7 @@ public sealed partial class CitiNetUiFragment : BoxContainer
         MenuDirectCallsBtn.OnPressed += _ => SwitchTab(0);
         MenuChatRoomsBtn.OnPressed += _ => SwitchTab(1);
         MenuDataPoolBtn.OnPressed += _ => SwitchTab(2);
-        MenuNetworkStatusBtn.OnPressed += _ => SwitchTab(3);
+        MenuContactsBtn.OnPressed += _ => SwitchTab(3);
 
         // --- CHAT MESSAGE BINDINGS ---
         ChatSendButton.OnPressed += _ =>
@@ -102,6 +102,7 @@ public sealed partial class CitiNetUiFragment : BoxContainer
         CitiNetTab.P2P => 0,
         CitiNetTab.BBS => 1,
         CitiNetTab.Group => 2,
+        CitiNetTab.Contacts => 3,
         _ => 0
     };
 
@@ -110,6 +111,7 @@ public sealed partial class CitiNetUiFragment : BoxContainer
         0 => CitiNetTab.P2P,
         1 => CitiNetTab.BBS,
         2 => CitiNetTab.Group,
+        3 => CitiNetTab.Contacts,
         _ => null
     };
 
@@ -131,7 +133,7 @@ public sealed partial class CitiNetUiFragment : BoxContainer
         MenuDirectCallsBtn.Modulate = tab == 0 ? activeColor : inactiveColor;
         MenuChatRoomsBtn.Modulate = tab == 1 ? activeColor : inactiveColor;
         MenuDataPoolBtn.Modulate = tab == 2 ? activeColor : inactiveColor;
-        MenuNetworkStatusBtn.Modulate = tab == 3 ? activeColor : inactiveColor;
+        MenuContactsBtn.Modulate = tab == 3 ? activeColor : inactiveColor;
 
         ListContainer.RemoveAllChildren();
         ContentMessagesContainer.RemoveAllChildren();
@@ -214,8 +216,8 @@ public sealed partial class CitiNetUiFragment : BoxContainer
             case 2: // DATA POOL (Group)
                 RenderDataPool(state);
                 break;
-            case 3: // NETWORK STATUS
-                RenderNetworkStatus(state);
+            case 3: // CONTACTS
+                RenderContacts(state);
                 break;
                 // case 4: // LIVE // Removed as per instruction
                 //     RenderLive(state); // Removed as per instruction
@@ -447,22 +449,73 @@ public sealed partial class CitiNetUiFragment : BoxContainer
         }
     }
 
-    private void RenderNetworkStatus(CitiNetUiState state)
+    private void RenderContacts(CitiNetUiState state)
     {
-        ListTitleLabel.Text = "[ NETWORK STATUS ]";
-        ListSubtitleLabel.Text = "DIAGNOSTICS:";
-        ContentHeaderLabel.Text = "[color=#51f542]● ROOT DIAGNOSTICS[/color]";
+        ListTitleLabel.Text = "[ CONTACTS ]";
+        ListSubtitleLabel.Text = "ACTIVE CITIZENS:";
+        ContentHeaderLabel.Text = "[color=#51f542]● GLOBAL DIRECTORY[/color]";
 
-        AddListEntry("INFRASTRUCTURE:", ColorCyberBlue);
-        AddListEntry(state.HasRelay ? "● CITINET RELAY: OK" : "○ CITINET RELAY: ERR", state.HasRelay ? ColorNeonGreen : ColorAlertRed);
+        // Render All Players list in the middle
+        if (state.AllPlayers.Count == 0)
+        {
+            AddListEntry("[ NO PLAYERS ONLINE ]", ColorDarkGrey);
+        }
+        else
+        {
+            foreach (var player in state.AllPlayers)
+            {
+                var escapedName = Robust.Shared.Utility.FormattedMessage.EscapeText(player.Name);
+                var btn = new Button
+                {
+                    Text = $"{escapedName} (ID: {player.Number})",
+                    Modulate = player.Number == "N/A" ? ColorDarkGrey : ColorCyberBlue,
+                    StyleClasses = { "OpenBoth" },
+                    Margin = new Thickness(0, 0, 0, 2)
+                };
 
-        AddListEntry("", Color.Transparent);
-        AddListEntry("CURRENT SESSION:", ColorCyberBlue);
-        AddListEntry($"● AGENT ID: {state.OwnNumber}", ColorNeonGreen);
+                if (player.Number != "N/A" && player.Number != state.OwnNumber)
+                {
+                    btn.OnPressed += _ =>
+                    {
+                        SwitchTab(0, true);
+                        OnSendMessage?.Invoke(CitiNetUiMessageType.StartChat, player.Number, null);
+                    };
+                }
 
-        AddMessage($"[color=#42e3f5]>> SYS-OP:[/color] Welcome to CitiNet v4.5 Local Node.");
-        if (!state.HasRelay)
-            AddMessage($"[color=#f54242]>> FATAL:[/color] Missing connection to telecom relay. Voice and Text services are paused.");
+                ListContainer.AddChild(btn);
+            }
+        }
+
+        // Render Emergency Buttons in the right panel
+        AddMessage("[color=#51f542]>> SYSTEM:[/color] Emergency services are available 24/7.");
+        AddMessage("[color=#42e3f5]>> NCPD:[/color] Dispatch police to your current location.");
+        AddMessage("[color=#4bdc99]>> TRAUMA TEAM:[/color] Request medical assistance (Platinum/Gold only).");
+
+        var policeBtn = new Button
+        {
+            Text = state.PoliceCooldown > 0 
+                ? $"[ CALL POLICE ({((int)state.PoliceCooldown)}) ]" 
+                : "[ CALL POLICE ]",
+            Modulate = state.PoliceCooldown > 0 ? ColorDarkGrey : ColorAlertRed,
+            Disabled = state.PoliceCooldown > 0,
+            Margin = new Thickness(0, 10, 0, 4)
+        };
+        policeBtn.OnPressed += _ => OnSendMessage?.Invoke(CitiNetUiMessageType.CallPolice, null, null);
+        ContentMessagesContainer.AddChild(policeBtn);
+
+        var traumaBtn = new Button
+        {
+            Text = state.TraumaCooldown > 0 
+                ? $"[ CALL TRAUMA ({((int)state.TraumaCooldown)}) ]" 
+                : "[ CALL TRAUMA ]",
+            Modulate = state.TraumaCooldown > 0 ? ColorDarkGrey : Color.FromHex("#4bdc99"),
+            Disabled = state.TraumaCooldown > 0,
+            Margin = new Thickness(0, 4, 0, 4)
+        };
+        traumaBtn.OnPressed += _ => OnSendMessage?.Invoke(CitiNetUiMessageType.CallTrauma, null, null);
+        ContentMessagesContainer.AddChild(traumaBtn);
+
+        AddMessage("\n[color=#444444]Note: False alarms are punishable by Night City law.[/color]");
     }
 
     private void AddListEntry(string text, Color color)

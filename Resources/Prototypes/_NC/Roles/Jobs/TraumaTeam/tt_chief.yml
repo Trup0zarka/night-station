@@ -16,6 +16,11 @@
   special:
   - !type:AddComponentSpecial
     components:
+    - type: MapBeacon
+      group: TraumaTeam
+      color: "#4bdc99"
+      icon: /Textures/Interface/VerbIcons/trauma_team.png
+      visibleInWorld: false
     - type: TraumaSubscriber
       tier: Platinum
 

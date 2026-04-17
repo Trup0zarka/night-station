@@ -133,13 +133,29 @@ namespace Content.Server._NC.Dispatch
                         dispatchCoords = Transform(camUid).Coordinates;
                     }
 
-                    _dispatchSystem.AddCall(
-                        alert.Type,
-                        alert.Sector,
-                        Loc.GetString("nspd-call-desc-camera", ("name", alert.CameraName)),
-                        GetNetCoordinates(dispatchCoords),
-                        $"overwatch_{msg.AlertId}",
-                        trackTarget);
+                    var desc = (alert.Type == "TRAUMA SOS" || alert.Type == "CIVILIAN SOS") 
+                        ? alert.CameraName 
+                        : Loc.GetString("nspd-call-desc-camera", ("name", alert.CameraName));
+
+                    if (alert.Type == "TRAUMA SOS")
+                    {
+                        var traumaSys = EntityManager.System<Content.Server._NC.Trauma.TraumaComputerSystem>();
+                        traumaSys.AddEmergencyCall(
+                            "Overwatch",
+                            alert.Sector,
+                            desc
+                        );
+                    }
+                    else
+                    {
+                        _dispatchSystem.AddCall(
+                            alert.Type,
+                            alert.Sector,
+                            desc,
+                            GetNetCoordinates(dispatchCoords),
+                            $"overwatch_{msg.AlertId}",
+                            trackTarget);
+                    }
                     alert.Dispatched = true;
                     break;
             }

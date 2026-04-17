@@ -68,6 +68,14 @@ namespace Content.Shared._NC.Trauma
         public string Target;
         public TraumaSubscriptionTier OldTier;
         public TraumaSubscriptionTier NewTier;
+        /// <summary>
+        ///     Помечает запись как экстренный вызов с CitiNet (не изменение подписки).
+        /// </summary>
+        public bool IsEmergency;
+        /// <summary>
+        ///     Описание экстренного вызова (для отображения в UI).
+        /// </summary>
+        public string? EmergencyDescription;
     }
 
     // Сообщение о смене подписки (Клиент -> Сервер)

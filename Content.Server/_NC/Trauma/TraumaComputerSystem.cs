@@ -232,5 +232,32 @@ namespace Content.Server._NC.Trauma
         {
             UpdateUserInterface(uid, component?.Logs ?? new List<TraumaLogEntry>(), TraumaComputerUiKey.Key, component?.PendingCompletions);
         }
+
+        /// <summary>
+        ///     Публичный API для внешних систем (CitiNet).
+        ///     Добавляет экстренный вызов во все консоли Trauma Team как лог-запись.
+        /// </summary>
+        public void AddEmergencyCall(string callerName, string sector, string description)
+        {
+            var entry = new TraumaLogEntry
+            {
+                Time = _timing.CurTime,
+                Editor = callerName,
+                Target = sector,
+                OldTier = TraumaSubscriptionTier.None,
+                NewTier = TraumaSubscriptionTier.None,
+                IsEmergency = true,
+                EmergencyDescription = description
+            };
+
+            // Добавляем в лог всех консолей Trauma Team
+            var query = EntityQueryEnumerator<TraumaComputerComponent>();
+            while (query.MoveNext(out var uid, out var comp))
+            {
+                comp.Logs.Add(entry);
+                if (comp.Logs.Count > 50) comp.Logs.RemoveAt(0);
+                UpdateUserInterface(uid, comp);
+            }
+        }
     }
 }

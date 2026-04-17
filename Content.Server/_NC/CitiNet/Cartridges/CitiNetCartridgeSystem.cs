@@ -1,4 +1,6 @@
 using System.Linq;
+using Robust.Shared.Map;
+using Robust.Shared.Player;
 using Content.Shared.Access.Components;
 using Content.Server.CartridgeLoader;
 using Content.Server.Power.Components;
@@ -22,6 +24,11 @@ using Content.Server._NC.CitiNet.Live;
 using Content.Shared._NC.CitiNet.Live;
 using Content.Server.PowerCell;
 using Content.Shared.Inventory;
+using Content.Server._NC.Ncpd;
+using Content.Server._NC.Trauma;
+using Content.Shared._NC.Ncpd;
+using Content.Shared.Mind.Components;
+using Robust.Server.Player;
 
 namespace Content.Server._NC.CitiNet.Cartridges;
 
@@ -43,6 +50,10 @@ public sealed class CitiNetCartridgeSystem : EntitySystem
     [Dependency] private readonly CitiNetStreamSystem _liveStream = default!;
     [Dependency] private readonly BankSystem _bank = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly NcpdDispatchSystem _ncpdDispatch = default!;
+    [Dependency] private readonly CitiNetMapSystem _citiNetMap = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly Content.Server._NC.Dispatch.OverwatchSystem _overwatch = default!;
 
     // Интервал проверки Relay (в секундах)
     private const float RelayCheckInterval = 2.0f;
@@ -224,6 +235,14 @@ public sealed class CitiNetCartridgeSystem : EntitySystem
                 break;
             case CitiNetUiMessageType.InviteToChannel:
                 HandleInviteToChannel(ent, msg);
+                break;
+
+            // Экстренные вызовы
+            case CitiNetUiMessageType.CallPolice:
+                HandleCallPolice(ent);
+                break;
+            case CitiNetUiMessageType.CallTrauma:
+                HandleCallTrauma(ent);
                 break;
         }
 
@@ -579,6 +598,82 @@ public sealed class CitiNetCartridgeSystem : EntitySystem
         if (!ent.Comp.InGroup) return;
         ent.Comp.InGroupVoice = false;
         UpdateUIForGroup(ent.Comp.GroupMembers);
+    }
+
+    // ========== BBS-каналы ==========
+
+    // ========== Экстренные вызовы ==========
+
+    private void HandleCallPolice(Entity<CitiNetCartridgeComponent> ent)
+    {
+        // Проверяем cooldown
+        var elapsed = _timing.CurTime - ent.Comp.LastPoliceCalled;
+        if (ent.Comp.LastPoliceCalled != TimeSpan.Zero && elapsed.TotalSeconds < ent.Comp.EmergencyCooldownSeconds)
+            return;
+
+        if (!HasActiveCitiNetRelay(ent))
+            return;
+
+        ent.Comp.LastPoliceCalled = _timing.CurTime;
+
+        var callerName = GetOwnerName(ent);
+        var coords = GetPdaCoordinates(ent);
+
+        // Определяем сектор через MapSectorComponent
+        var sector = "Unknown Sector";
+        if (TryComp<CartridgeComponent>(ent, out var cart) && cart.LoaderUid != null)
+        {
+            var loaderXform = Transform(cart.LoaderUid.Value);
+            var loaderPos = _transform.GetWorldPosition(cart.LoaderUid.Value);
+            var sectorQuery = EntityQueryEnumerator<MapSectorComponent>();
+            while (sectorQuery.MoveNext(out _, out var sec))
+            {
+                if (sec.Bounds.Contains(loaderPos))
+                {
+                    sector = sec.SectorName;
+                    break;
+                }
+            }
+        }
+
+        // Получаем сетевые координаты для метки на карте
+        NetCoordinates netCoords = default;
+        if (TryComp<CartridgeComponent>(ent, out var cartComp) && cartComp.LoaderUid != null)
+            netCoords = GetNetCoordinates(Transform(cartComp.LoaderUid.Value).Coordinates);
+
+        _overwatch.AddEntityAlert(ent.Owner, "CIVILIAN SOS", Loc.GetString("citinet-emergency-police-desc", ("caller", callerName)));
+    }
+
+    private void HandleCallTrauma(Entity<CitiNetCartridgeComponent> ent)
+    {
+        var elapsed = _timing.CurTime - ent.Comp.LastTraumaCalled;
+        if (ent.Comp.LastTraumaCalled != TimeSpan.Zero && elapsed.TotalSeconds < ent.Comp.EmergencyCooldownSeconds)
+            return;
+
+        if (!HasActiveCitiNetRelay(ent))
+            return;
+
+        ent.Comp.LastTraumaCalled = _timing.CurTime;
+
+        var callerName = GetOwnerName(ent);
+
+        // Определяем сектор
+        var sector = "Unknown Sector";
+        if (TryComp<CartridgeComponent>(ent, out var cart) && cart.LoaderUid != null)
+        {
+            var loaderPos = _transform.GetWorldPosition(cart.LoaderUid.Value);
+            var sectorQuery = EntityQueryEnumerator<MapSectorComponent>();
+            while (sectorQuery.MoveNext(out _, out var sec))
+            {
+                if (sec.Bounds.Contains(loaderPos))
+                {
+                    sector = sec.SectorName;
+                    break;
+                }
+            }
+        }
+
+        _overwatch.AddEntityAlert(ent.Owner, "TRAUMA SOS", Loc.GetString("citinet-emergency-trauma-desc", ("caller", callerName), ("sector", sector)));
     }
 
     // ========== BBS-каналы ==========
@@ -1112,7 +1207,7 @@ public sealed class CitiNetCartridgeSystem : EntitySystem
             channelMessages = msgs;
         }
 
-        // Глобальный справочник всех активных агентов
+        // Глобальный справочник всех активных агентов (CitiNet картриджи)
         var globalDirectory = new List<CitiNetContact>();
         var agentQuery = EntityQueryEnumerator<CitiNetCartridgeComponent>();
         while (agentQuery.MoveNext(out var agUid, out var agComp))
@@ -1123,6 +1218,29 @@ public sealed class CitiNetCartridgeSystem : EntitySystem
             var agentName = GetOwnerName((agUid, agComp));
             globalDirectory.Add(new CitiNetContact(agComp.AgentNumber, agentName));
         }
+
+        // Все подключённые игроки (для вкладки Contacts) — через ActorComponent
+        var allPlayers = new List<CitiNetContact>();
+        var actorQuery = EntityQueryEnumerator<ActorComponent, MetaDataComponent>();
+        while (actorQuery.MoveNext(out var actorUid, out var actor, out var meta))
+        {
+            // Ищем CitiNet номер этого игрока, если есть
+            var citiNumber = "N/A";
+            var citiCart = FindCartridgeByOwner(actorUid);
+            if (citiCart != null && !string.IsNullOrEmpty(citiCart.Value.Comp.AgentNumber))
+                citiNumber = citiCart.Value.Comp.AgentNumber;
+
+            allPlayers.Add(new CitiNetContact(citiNumber, meta.EntityName));
+        }
+
+        // Рассчитываем оставшийся cooldown для кнопок экстренных вызовов
+        var now = _timing.CurTime;
+        var policeCd = ent.Comp.LastPoliceCalled == TimeSpan.Zero
+            ? 0f
+            : (float)Math.Max(0, ent.Comp.EmergencyCooldownSeconds - (now - ent.Comp.LastPoliceCalled).TotalSeconds);
+        var traumaCd = ent.Comp.LastTraumaCalled == TimeSpan.Zero
+            ? 0f
+            : (float)Math.Max(0, ent.Comp.EmergencyCooldownSeconds - (now - ent.Comp.LastTraumaCalled).TotalSeconds);
 
         var state = new CitiNetUiState(
             ent.Comp.AgentNumber,
@@ -1140,7 +1258,10 @@ public sealed class CitiNetCartridgeSystem : EntitySystem
             channels,
             ent.Comp.CurrentChannel,
             channelMessages,
-            globalDirectory);
+            globalDirectory,
+            allPlayers,
+            policeCd,
+            traumaCd);
 
         _cartridge.UpdateCartridgeUiState(loader, state);
     }
