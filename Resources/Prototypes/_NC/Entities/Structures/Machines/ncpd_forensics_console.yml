@@ -14,5 +14,4 @@
     interfaces:
       enum.NcpdForensicsConsoleUiKey.Key:
         type: NcpdForensicsConsoleBoundUserInterface
-  - type: AccessReader
-    access: [["Security"]]
+

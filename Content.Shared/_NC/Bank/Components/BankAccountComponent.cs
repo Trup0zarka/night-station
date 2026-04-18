@@ -12,6 +12,6 @@ namespace Content.Shared._NC.Bank.Components
         /// Атрибут AutoNetworkedField сам отправит значение клиенту, когда мы изменим его на сервере.
         /// </summary>
         [DataField, AutoNetworkedField]
-        public int Balance = 3000;
+        public int Balance = 300;
     }
 }

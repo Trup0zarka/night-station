@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Content.Server.Station.Systems;
 using Content.Shared._NC.Forensics;
@@ -96,12 +96,11 @@ public sealed class NcpdForensicsSystem : EntitySystem
 
     private void OnMobStateChanged(MobStateChangedEvent args)
     {
-        if (args.NewMobState != MobState.Critical)
-            return;
+        if (args.NewMobState != MobState.Dead) return;
 
         var target = args.Target;
 
-        // Find owning station
+        // Ищем станцию, чтобы записать туда алерт
         var stationUid = _stationSystem.GetOwningStation(target);
         if (stationUid == null && _stationSystem.GetStationsSet().Count > 0)
         {
@@ -111,9 +110,12 @@ public sealed class NcpdForensicsSystem : EntitySystem
         if (stationUid == null)
             return;
 
-        // Require ID card present
-        if (!_idCardSystem.TryFindIdCard(target, out var idCard))
-            return;
+        // Пытаемся получить имя с ID карты, если её нет - берем базовое имя сущности
+        string victimName = Name(target);
+        if (_idCardSystem.TryFindIdCard(target, out var idCard) && !string.IsNullOrWhiteSpace(idCard.Comp.FullName))
+        {
+            victimName = idCard.Comp.FullName;
+        }
 
         var coords = _transformSystem.GetMapCoordinates(target);
         var mapUid = _mapManager.GetMapEntityId(coords.MapId);
@@ -123,7 +125,7 @@ public sealed class NcpdForensicsSystem : EntitySystem
 
         var alert = new ForensicsAlertData
         {
-            Victim = idCard.Comp.FullName ?? Name(target),
+            Victim = victimName,
             Location = locString,
             X = (float)Math.Round(pos.X, 1),
             Y = (float)Math.Round(pos.Y, 1),
@@ -134,6 +136,18 @@ public sealed class NcpdForensicsSystem : EntitySystem
         station.Alerts.Insert(0, alert);
         if (station.Alerts.Count > 50)
             station.Alerts.RemoveAt(station.Alerts.Count - 1);
+
+        // Обновляем все открытые консоли на этой станции, чтобы запись появилась мгновенно
+        var query = EntityQueryEnumerator<NcpdForensicsConsoleComponent>();
+        while (query.MoveNext(out var consoleUid, out var _))
+        {
+            var consoleStation = _stationSystem.GetOwningStation(consoleUid);
+            if (consoleStation == null && _stationSystem.GetStationsSet().Count > 0)
+                consoleStation = _stationSystem.GetStationsSet().First();
+                
+            if (consoleStation == stationUid)
+                UpdateConsoleUi(consoleUid);
+        }
     }
 
     private void OnConsoleOpened(EntityUid uid, NcpdForensicsConsoleComponent component, BoundUIOpenedEvent args)
@@ -141,4 +155,3 @@ public sealed class NcpdForensicsSystem : EntitySystem
         UpdateConsoleUi(uid);
     }
 }
-
