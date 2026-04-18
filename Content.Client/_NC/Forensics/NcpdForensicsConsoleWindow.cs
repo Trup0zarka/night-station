@@ -32,6 +32,9 @@ public sealed class NcpdForensicsConsoleWindow : DefaultWindow
         for (int i = 0; i < state.Alerts.Count; i++)
         {
             var alert = state.Alerts[i];
+            if (alert.Archived)
+                continue;
+
             var index = i;
             var row = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical, Margin = new Thickness(5) };
             
@@ -41,6 +44,7 @@ public sealed class NcpdForensicsConsoleWindow : DefaultWindow
             var actions = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal, SeparationOverride = 4 };
             var dispatchBtn = new Button { Text = "В Планшет", Modulate = Color.FromHex("#4DD0E1") };
             var printBtn = new Button { Text = "Печать" };
+            var archiveBtn = new Button { Text = "Архив", Modulate = Color.FromHex("#D0E14D") };
 
             if (alert.Dispatched)
             {
@@ -51,9 +55,11 @@ public sealed class NcpdForensicsConsoleWindow : DefaultWindow
 
             dispatchBtn.OnPressed += _ => OnAlertAction?.Invoke(index, NcpdForensicsAlertAction.DispatchToTablet);
             printBtn.OnPressed += _ => OnAlertAction?.Invoke(index, NcpdForensicsAlertAction.PrintTicket);
+            archiveBtn.OnPressed += _ => OnAlertAction?.Invoke(index, NcpdForensicsAlertAction.Archive);
 
             actions.AddChild(dispatchBtn);
             actions.AddChild(printBtn);
+            actions.AddChild(archiveBtn);
             header.AddChild(actions);
 
             row.AddChild(header);

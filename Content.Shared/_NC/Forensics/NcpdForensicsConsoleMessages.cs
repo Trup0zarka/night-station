@@ -1,4 +1,4 @@
-﻿using Robust.Shared.Network;
+using Robust.Shared.Network;
 using Robust.Shared.Serialization;
 using System;
 using System.Collections.Generic;
@@ -26,7 +26,8 @@ public sealed class NcpdForensicsConsoleBuiState : BoundUserInterfaceState
 public enum NcpdForensicsAlertAction : byte
 {
     DispatchToTablet,
-    PrintTicket
+    PrintTicket,
+    Archive
 }
 
 [Serializable, NetSerializable]
@@ -51,4 +52,5 @@ public struct ForensicsAlertData
     public float Y;
     public TimeSpan Time;
     public bool Dispatched;
+    public bool Archived;
 }

@@ -74,6 +74,10 @@ public sealed class NcpdForensicsSystem : EntitySystem
                 var call = new NcpdCallData(0, Loc.GetString("nspd-call-type-flatline"), alert.Location, Loc.GetString("nspd-call-desc-victim", ("name", alert.Victim)), default, alert.Time);
                 _dispatchSystem.SpawnDispatchTicket(uid, call);
                 break;
+            case NcpdForensicsAlertAction.Archive:
+                alert.Archived = true;
+                station.Alerts[msg.AlertIndex] = alert;
+                break;
         }
         UpdateConsoleUi(uid); 
     }
