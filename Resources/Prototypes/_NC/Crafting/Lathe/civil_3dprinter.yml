@@ -1,6 +1,6 @@
 - type: entity
   id: NC3dPrinterCivilian
-  parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
+  parent: [Protolathe, BaseMaterialSiloUtilizer]
   name: 3д принтер общего назначения
   description: Конвертирует сырье в продвинутые предметы.
   components:
@@ -17,18 +17,6 @@
       map: ["enum.MaterialStorageVisualLayers.Inserting"]
     - state: getto_panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-  - type: Machine
-    board: ProtolatheMachineCircuitboard
-  - type: MaterialStorage
-    whitelist:
-      tags:
-      - Sheet
-      - RawMaterial
-      - Ingot
-      - Wooden
-      - ClothMade
-      - Gauze
-      - Metal
   - type: Lathe
     idleState: getto_icon
     runningState: getto_building
