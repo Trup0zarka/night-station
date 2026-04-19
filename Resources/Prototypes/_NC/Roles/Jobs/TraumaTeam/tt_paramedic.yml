@@ -12,6 +12,7 @@
     - Trauma_Medical
     - Trauma_Morgue
     - Trauma_Hangar
+    - Trauma_Operative
     - NC_General
   special:
   - !type:AddComponentSpecial

@@ -7,11 +7,12 @@
   salary: 400
   icon: "JobIconTraumaOperator"
   startingGear: TraumaTeamOperativeGear
-  supervisors: Главный врач Trauma Team, Парамедик Trauma Team
+  supervisors: Главный врач Trauma Team и Парамедик Trauma Team
   access:
     - Trauma_Medical
     - Trauma_Hangar
     - Trauma_Morgue
+    - Trauma_Operative
     - NC_General
   special:
   - !type:AddComponentSpecial

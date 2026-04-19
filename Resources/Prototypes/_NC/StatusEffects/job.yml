@@ -168,6 +168,13 @@
 
 - type: jobIcon
   parent: JobIcon
+  id: JobIconTraumaIntern
+  icon:
+    sprite: /Textures/_NC/Interface/Misc/job_icons.rsi
+    state: trauma
+
+- type: jobIcon
+  parent: JobIcon
   id: JobIconTraumaParamed
   icon:
     sprite: /Textures/_NC/Interface/Misc/job_icons.rsi

@@ -38,13 +38,13 @@
 - type: playTimeTracker
   id: JobTraumaTeamOperative
 - type: playTimeTracker
-  id: JobTraumaTeamTech
-- type: playTimeTracker
   id: JobTraumaTeamCoroner
 - type: playTimeTracker
   id: JobTraumaTeamPsych
 - type: playTimeTracker
   id: JobTraumaTeamTech
+- type: playTimeTracker
+  id: JobTraumaTeamIntern
 
 # Jobs Biotech
 - type: playTimeTracker

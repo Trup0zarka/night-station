@@ -8,8 +8,8 @@
   icon: "JobIconBiotechAgrarian"
   startingGear: BiotechnicaBotanistGear
   access:
-    - NC_General
     - Biotech_Staff
+    - Biotech_Lab
     - Biotech_General
 
 - type: startingGear

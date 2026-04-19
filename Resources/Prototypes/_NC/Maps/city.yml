@@ -37,6 +37,8 @@
           TraumaTeamOperative: [4, 4]
           TraumaTeamCoroner: [1, 1]
           TraumaTeamPsych: [1, 1]
+          TraumaTeamTech: [3, 3]
+          TraumaTeamIntern: [5, 5]
           # === Biotechnica ===
           BiotechnicaChief: [1, 1]
           BiotechnicaOperativeLead: [1, 1]

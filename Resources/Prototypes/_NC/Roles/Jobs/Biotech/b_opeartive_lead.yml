@@ -1,25 +1,19 @@
 - type: job
   id: BiotechnicaOperativeLead
-  name: Младший офицер Biotechnica
-  description: 'Относится к Офицерскому составу, в иерархии стоит ниже Старшего Офицера но выше всего остального СБ.'
+  name: Офицер Biotechnica
+  description: 'Относится к Офицерскому составу корпорации Биотехника. Руководит оперативниками, парамедиками и нетраннерами.'
   playTimeTracker: JobBiotechnicaOperativeLead
   weight: 80
   salary: 350
   icon: "JobIconBiotechOfficer"
   startingGear: BiotechnicaOperativeLeadGear
   access:
-    - NC_General
-    - Biotech_Director
     - Biotech_HeadOfDepartment
-    - Biotech_MedTech
     - Biotech_Operative
     - Biotech_Staff
+    - Biotech_Security
     - Biotech_General
-  special:
-  - !type:AddComponentSpecial
-    components:
-    - type: TraumaSubscriber
-      tier: Silver
+    - NC_General
 
 - type: startingGear
   id: BiotechnicaOperativeLeadGear

@@ -331,6 +331,26 @@
 
 - type: entity
   parent: IDCardStandard
+  id: TraumaTeamInternIDCard
+  name: идентификационная карта интерна Trauma Team
+  components:
+    - type: Sprite
+      layers:
+        - state: default
+        - state: department
+          color: '#4bdc99'
+        - state: subdepartment
+          color: '#4bdc99'
+        - state: paramedic
+    - type: Access
+      tags:
+        - Trauma_Medical
+        - NC_General
+    - type: PresetIdCard
+      job: TraumaTeamIntern
+
+- type: entity
+  parent: IDCardStandard
   id: TraumaTeamOperativeIDCard
   name: идентификационная карта оперативника Trauma Team
   components:

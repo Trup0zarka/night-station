@@ -295,6 +295,22 @@
       accentVColor: '#4bdc99'
 
 - type: entity
+  parent: BaseMedicalPDA
+  id: TraumaTeamInternPDA
+  name: КПК интерна Trauma Team
+  description: Высокотехнологичный медицинский терминал сотрудника Trauma Team.
+  components:
+    - type: Pda
+      id: TraumaTeamInternIDCard
+    - type: Sprite
+      sprite: _White/Objects/Devices/Pda/medical.rsi
+      color: '#aaffcc'
+    - type: PdaBorderColor
+      borderColor: '#e6e6e6'
+      accentHColor: '#4bdc99'
+      accentVColor: '#4bdc99'
+
+- type: entity
   parent: BasePDA
   id: CitizenPDA
   name: КПК жителя
