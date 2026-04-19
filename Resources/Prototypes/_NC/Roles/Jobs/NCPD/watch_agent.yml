@@ -26,7 +26,7 @@
   id: NCPDWatchAgentGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitDetective
-    back: ClothingBackpackWatchAgentFilled
+    back: ClothingBackpackCyberdeckFilled
     shoes: ClothingShoesColorBlack
     head: ClothingHeadHatFedoraBrown
     eyes: ClothingEyesGlassesSecurityVisor
@@ -36,8 +36,8 @@
 
 - type: entity
   parent: ClothingBackpackSatchelSecurity
-  id: ClothingBackpackWatchAgentFilled
-  name: Рюкзак Агента Дозора
+  id: ClothingBackpackCyberdeckFilled
+  name: Рюкзак с декой
   components:
   - type: StorageFill
     contents:
