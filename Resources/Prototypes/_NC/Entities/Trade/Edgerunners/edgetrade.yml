@@ -12,8 +12,6 @@
     - TradeEdge_Sell
     contractPresets:
     - PresetBazar
-  - type: AccessReader
-    access: [["EdgeRunner"]]
 
 - type: storeCategoryStructured
   id: EdgeMarket_Melee
@@ -51,42 +49,22 @@
   id: EdgeMarket_Ranged
   name: "Дальний бой"
   entries:
-  - proto: WeaponPistolAvenger
-    price: 350
-    count: 2
-  - proto: WeaponPistolCheesemaker
-    price: 180
-    count: 2
   - proto: WeaponPistolFederalX9
     price: 150
     count: 2
   - proto: WeaponPistolHelloCutie
     price: 60
-    count: 3
-  - proto: WeaponPistolBoomerBuster
-    price: 250
-    count: 2
-  - proto: WeaponPistolMarkIII
-    price: 120
-    count: 2
+    count: 1
   - proto: WeaponShotgunSvakha
     price: 120
     count: 5
   - proto: WeaponPistolStreetMaster
     price: 120
-    count: 2
+    count: 1
   - proto: WeaponPistolOverlord
     price: 80
-    count: 2
-  - proto: WeaponRifleNokotaD5Copperhead
-    price: 1000
-    count: 2
-  - proto: WeaponRifleArasakaNOWAKI
-    price: 1500
-    count: 2
-  - proto: WeaponRifleNomadGvozdemet
-    price: 800
-    count: 2
+    count: 1
+
 
 - type: storeCategoryStructured
   id: EdgeMarket_Ammo
@@ -94,40 +72,31 @@
   entries:
   - proto: MagazinePistolAvenger
     price: 45
-    count: 15
+    count: 5
   - proto: MagazinePistolCheesemaker
     price: 40
-    count: 10
+    count: 5
   - proto: MagazinePistolFederalX9
     price: 35
-    count: 15
+    count: 5
   - proto: MagazinePistolHelloCutie
     price: 20
-    count: 20
+    count: 5
   - proto: MagazinePistolBoomerBuster
     price: 50
-    count: 10
-  - proto: MagazinePistolMarkIII
-    price: 30
-    count: 15
+    count: 3
   - proto: BoxLethalshot
     price: 80
     count: 2
   - proto: BoxShotgunSlug
     price: 60
     count: 1
-  - proto: MagazineRifleM04
-    price: 120
-    count: 5
   - proto: MagazinePistolStreetMaster
     price: 30
-    count: 10
+    count: 4
   - proto: MagazinePistolOverlord
     price: 25
-    count: 20
-  - proto: MagazinePistolStukach
-    price: 60
-    count: 5
+    count: 2
   - proto: AmmoBox9mm
     price: 100
     count: 5

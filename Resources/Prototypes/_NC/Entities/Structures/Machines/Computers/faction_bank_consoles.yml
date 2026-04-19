@@ -33,8 +33,7 @@
       state: command
     - map: ["computerLayerKeys"]
       state: generic_keys
-  - type: AccessReader
-    access: [["Command"]]
+
 
 - type: entity
   id: NCConsoleTraumaTeam

@@ -21,8 +21,6 @@
     - NightMarket_Buy
     contractPresets:
     - PresetFixer
-  - type: AccessReader
-    access: [["Fixer"]]
 
 - type: storeCategoryStructured
   id: NightMarket_Weapons
@@ -37,9 +35,6 @@
   - proto: WeaponPistolStreetMaster
     price: 120
     count: 3
-  - proto: WeaponPistolMarkIII
-    price: 120
-    count: 2
   - proto: WeaponPistolFederalX9
     price: 150
     count: 2

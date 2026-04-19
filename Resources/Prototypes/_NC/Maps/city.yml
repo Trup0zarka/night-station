@@ -1,10 +1,10 @@
 - type: gameMap
   id: Aldente
   mapName: 'New Aldenteе'
-  mapPath: /Maps/_NC/aldente_remap.yml
+  mapPath: /Maps/_NC/aldente_fix.yml
   maxRandomOffset: 0
   randomPainting: false
-  minPlayers: 0 # TempChange 0 (10)
+  minPlayers: 0 
   maxPlayers: 90
   stations:
     City:

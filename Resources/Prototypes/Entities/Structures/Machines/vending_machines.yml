@@ -980,8 +980,6 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-  - type: AccessReader
-    access: [["Biotech_General"]]
   - type: PointLight
     radius: 2
     energy: 1.6
@@ -1074,9 +1072,6 @@
   parent: VendingMachineSeedsUnlocked
   id: VendingMachineSeeds
   suffix: Hydroponics
-  components:
-  - type: AccessReader
-    access: [["Biotech_General"]]
 
 - type: entity
   parent: VendingMachine
@@ -1726,8 +1721,6 @@
     radius: 1.5
     energy: 1.6
     color: "#326e3f"
-  - type: AccessReader
-    access: [["Biotech_General"]]
 
 - type: entity
   parent: VendingMachine
@@ -1924,8 +1917,6 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-  - type: AccessReader
-    access: [["Biotech_General"]]
 
 - type: entity
   parent: VendingMachine
@@ -2358,8 +2349,6 @@
       map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-  - type: AccessReader
-    access: [["Biotech_General"]]
   - type: GuideHelp
     guides:
     - Chemicals
