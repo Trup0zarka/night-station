@@ -30,5 +30,6 @@
     back: ClothingBackpackSecurity
     shoes: ClothingShoesBootsJack
     head: ClothingHeadHatBeretSecurity
+    eyes: ClothingEyesGlassesSecurityVisor
     id: NCPDInspectorPDA
     belt: ClothingBeltSecurityFilled

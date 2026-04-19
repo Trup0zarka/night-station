@@ -34,6 +34,7 @@
     - CyberwareNeuroKerenzikovMaxTac
     - CyberwareNeuroTacticalSpartan
     - CyberwareNeuroSandevistanMaxTac
+    - CyberwareImplantAntiglare
 
 - type: startingGear
   id: MaxTacCommanderGear
@@ -42,7 +43,7 @@
     back: ClothingBackpackSecurity
     shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHelmetHardsuitSecurityRed
-    eyes: ClothingEyesGlassesSunglasses
+    eyes: ClothingEyesGlassesSecurityVisor
     id: MaxTacCommanderPDA
     belt: ClothingBeltSecurityFilled
     outerClothing: ClothingOuterHardsuitMilitech

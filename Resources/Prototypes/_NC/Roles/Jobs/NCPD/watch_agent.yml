@@ -29,6 +29,7 @@
     back: ClothingBackpackWatchAgentFilled
     shoes: ClothingShoesColorBlack
     head: ClothingHeadHatFedoraBrown
+    eyes: ClothingEyesGlassesSecurityVisor
     id: NCPDWatchAgentPDA
     outerClothing: ClothingOuterCoatDetective
 
@@ -41,6 +42,6 @@
   - type: StorageFill
     contents:
     - id: NCCyberdeck
-    - id: NCProgramHighJack
-    - id: NCProgramPing
+    - id: NCProgramBlind
+    - id: NCProgramDrop
     - id: NCProgramShock
