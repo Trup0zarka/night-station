@@ -28,7 +28,11 @@ using Content.Server._NC.Ncpd;
 using Content.Server._NC.Trauma;
 using Content.Shared._NC.Ncpd;
 using Content.Shared.Mind.Components;
+using Content.Shared.Mind;
+using Content.Shared.Roles.Jobs;
 using Robust.Server.Player;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 
 namespace Content.Server._NC.CitiNet.Cartridges;
 
@@ -54,6 +58,9 @@ public sealed class CitiNetCartridgeSystem : EntitySystem
     [Dependency] private readonly CitiNetMapSystem _citiNetMap = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly Content.Server._NC.Dispatch.OverwatchSystem _overwatch = default!;
+    [Dependency] private readonly SharedMindSystem _mindSystem = default!;
+    [Dependency] private readonly SharedJobSystem _jobSystem = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     // Интервал проверки Relay (в секундах)
     private const float RelayCheckInterval = 2.0f;
@@ -762,11 +769,13 @@ public sealed class CitiNetCartridgeSystem : EntitySystem
     /// </summary>
     private void HandleInviteToChannel(Entity<CitiNetCartridgeComponent> ent, CitiNetUiMessageEvent msg)
     {
-        // msg.TargetId = номер агента, msg.Content = ID канала
-        if (msg.TargetId == null || msg.Content == null)
+        // msg.TargetId = номер агента
+        if (msg.TargetId == null)
             return;
 
-        var channelId = msg.Content;
+        var channelId = ent.Comp.CurrentChannel;
+        if (channelId == null)
+            return;
 
         // Проверяем что канал существует
         if (!_prototype.TryIndex<CitiNetBBSChannelPrototype>(channelId, out var channel))
@@ -857,6 +866,23 @@ public sealed class CitiNetCartridgeSystem : EntitySystem
 
             // Обновляем UI получателя
             UpdateUIForCartridge((uid, comp));
+
+            if (comp.CurrentChannel == ent.Comp.CurrentChannel)
+            {
+                var holder = GetPdaHolderUid((uid, comp));
+                if (holder != null && _playerManager.TryGetSessionByEntity(holder.Value, out var session))
+                {
+                    _chatManager.DispatchServerMessage(session, Loc.GetString("citinet-bbs-game-chat",
+                        ("channel", channel.LocalizedName),
+                        ("sender", senderName),
+                        ("message", content)));
+                }
+
+                if (holder != null)
+                {
+                    _audio.PlayPvs(new SoundPathSpecifier("/Audio/Machines/chime.ogg"), holder.Value);
+                }
+            }
         }
     }
 
@@ -962,6 +988,17 @@ public sealed class CitiNetCartridgeSystem : EntitySystem
 
         var worldPos = _transform.GetWorldPosition(cart.LoaderUid.Value);
         return worldPos;
+    }
+
+    private string GetRoleName(EntityUid actorUid)
+    {
+        if (_mindSystem.TryGetMind(actorUid, out var mindId, out _) &&
+            _jobSystem.MindTryGetJobName(mindId, out var roleName))
+        {
+            return roleName;
+        }
+
+        return Loc.GetString("generic-unknown-title");
     }
 
     /// <summary>
@@ -1230,7 +1267,8 @@ public sealed class CitiNetCartridgeSystem : EntitySystem
             if (citiCart != null && !string.IsNullOrEmpty(citiCart.Value.Comp.AgentNumber))
                 citiNumber = citiCart.Value.Comp.AgentNumber;
 
-            allPlayers.Add(new CitiNetContact(citiNumber, meta.EntityName));
+            var roleName = GetRoleName(actorUid);
+            allPlayers.Add(new CitiNetContact(citiNumber, $"{meta.EntityName} ({roleName})"));
         }
 
         // Рассчитываем оставшийся cooldown для кнопок экстренных вызовов

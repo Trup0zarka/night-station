@@ -78,6 +78,12 @@ namespace Content.Server._NC.Bank
             var balance = GetBalance(ev.Mob);
             var bankComp = EnsureComp<BankAccountComponent>(ev.Mob);
             bankComp.Balance = balance;
+
+            if (_playerManager.TryGetSessionByEntity(ev.Mob, out var session))
+            {
+                var prefs = _prefsManager.GetPreferences(session.UserId);
+                bankComp.ProfileSlot = prefs.SelectedCharacterIndex;
+            }
             
             if (string.IsNullOrEmpty(bankComp.AccountNumber))
             {

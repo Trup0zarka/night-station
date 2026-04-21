@@ -40,14 +40,16 @@ namespace Content.Shared._NC.Bank.Components
         public readonly bool IsLoggedIn;
         public readonly float TaxRate;
         public readonly int DepositAmount;
+        public readonly string OwnAccountNumber;
 
-        public AtmBoundUserInterfaceState(int bankBalance, string accountName, bool isLoggedIn, float taxRate, int depositAmount)
+        public AtmBoundUserInterfaceState(int bankBalance, string accountName, bool isLoggedIn, float taxRate, int depositAmount, string ownAccountNumber)
         {
             BankBalance = bankBalance;
             AccountName = accountName;
             IsLoggedIn = isLoggedIn;
             TaxRate = taxRate;
             DepositAmount = depositAmount;
+            OwnAccountNumber = ownAccountNumber;
         }
     }
 

@@ -22,7 +22,7 @@
         <!-- ======================= -->
         <!-- COLUMN 1: SIDEBAR (MENU)-->
         <!-- ======================= -->
-        <PanelContainer StyleClasses="BorderedWindowPanel" MinWidth="170" Margin="0 0 4 0">
+        <PanelContainer Name="LeftPanel" StyleClasses="BorderedWindowPanel" MinWidth="170" Margin="0 0 4 0">
             <BoxContainer Orientation="Vertical" Margin="4">
                 <RichTextLabel Name="UsernameLabel" Margin="0 0 0 8"/>
                 <RichTextLabel Margin="0 0 0 4" Name="OnlineStatusLabel" />
@@ -39,7 +39,7 @@
         <!-- ======================= -->
         <!-- COLUMN 2: LIST (MIDDLE) -->
         <!-- ======================= -->
-        <PanelContainer StyleClasses="BorderedWindowPanel" MinWidth="220" Margin="0 0 4 0">
+        <PanelContainer Name="MiddlePanel" StyleClasses="BorderedWindowPanel" MinWidth="220" Margin="0 0 4 0">
             <BoxContainer Orientation="Vertical" Margin="4" VerticalExpand="True">
                 <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="0 0 0 4">
                     <Label Name="ListTitleLabel" Text="[ CHAT ROOMS ]" FontColorOverride="#51f542" HorizontalExpand="True"/>
@@ -56,7 +56,7 @@
         <!-- ======================= -->
         <!-- COLUMN 3: CONTENT (RIGHT) -->
         <!-- ======================= -->
-        <PanelContainer StyleClasses="BorderedWindowPanel" HorizontalExpand="True" MinWidth="350">
+        <PanelContainer Name="RightPanel" StyleClasses="BorderedWindowPanel" HorizontalExpand="True" MinWidth="350">
             <BoxContainer Orientation="Vertical" Margin="4" VerticalExpand="True">
 
                 <!-- Chat Window Header -->
