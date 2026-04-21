@@ -102,33 +102,43 @@ namespace Content.Server._NC.Trauma
         {
             var targetEntity = GetEntity(args.TargetEntity);
 
-            if (TryComp<TraumaSubscriberComponent>(targetEntity, out var subscriber))
+            // Пытаемся получить старый ранг для логов
+            var oldTier = TraumaSubscriptionTier.None;
+            if (TryComp<TraumaSubscriberComponent>(targetEntity, out var existingSub))
             {
-                var oldTier = subscriber.Tier;
-                subscriber.Tier = args.NewTier;
-                Dirty(targetEntity, subscriber);
-
-                // Logging
-                if (args.Actor.Valid)
-                {
-                    var editorName = Name(args.Actor);
-                    var targetName = Name(targetEntity);
-
-                    var log = new TraumaLogEntry
-                    {
-                        Time = _timing.CurTime,
-                        Editor = editorName,
-                        Target = targetName,
-                        OldTier = oldTier,
-                        NewTier = args.NewTier
-                    };
-
-                    component.Logs.Add(log);
-                    if (component.Logs.Count > 50) component.Logs.RemoveAt(0);
-                }
-
-                UpdateUserInterface(uid, component.Logs, TraumaComputerUiKey.Key, component.PendingCompletions);
+                oldTier = existingSub.Tier;
             }
+            else if (HasComp<ActorComponent>(targetEntity))
+            {
+                // Если компонента нет, но это игрок — он считается Бронзовым по умолчанию
+                oldTier = TraumaSubscriptionTier.Bronze;
+            }
+
+            // Гарантируем наличие компонента перед сменой ранга
+            var subscriber = EnsureComp<TraumaSubscriberComponent>(targetEntity);
+            subscriber.Tier = args.NewTier;
+            Dirty(targetEntity, subscriber);
+
+            // Логирование изменений
+            if (args.Actor.Valid)
+            {
+                var editorName = Name(args.Actor);
+                var targetName = Name(targetEntity);
+
+                var log = new TraumaLogEntry
+                {
+                    Time = _timing.CurTime,
+                    Editor = editorName,
+                    Target = targetName,
+                    OldTier = oldTier,
+                    NewTier = args.NewTier
+                };
+
+                component.Logs.Add(log);
+                if (component.Logs.Count > 50) component.Logs.RemoveAt(0);
+            }
+
+            UpdateUserInterface(uid, component.Logs, TraumaComputerUiKey.Key, component.PendingCompletions);
         }
 
         private void OnDispatch(EntityUid uid, TraumaComputerComponent component, TraumaDispatchMsg args)
