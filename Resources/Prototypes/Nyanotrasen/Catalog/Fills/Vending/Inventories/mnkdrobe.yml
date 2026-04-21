@@ -2,7 +2,6 @@
   id: MNKDrobeInventory
   startingInventory:
     ClothingUniformMNKUnderGarment: 3
-    ClothingUniformMNKDressBlack: 3
     ClothingUniformMNKGymBra: 3
     ClothingUniformMNKBlackOveralls: 3
     ClothingUniformMNKTracksuitBlack: 3

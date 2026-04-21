@@ -194,17 +194,6 @@
     sprite: Nyanotrasen/Clothing/Misc/gym_bra.rsi
 
 - type: entity
-  parent: ClothingUniformSkirtBase
-  id: ClothingUniformMNKDressBlack
-  name: MNK black dress
-  description: A sleek black dress sporting a MNK window.
-  components:
-  - type: Sprite
-    sprite: Nyanotrasen/Clothing/Misc/black_dress.rsi
-  - type: Clothing
-    sprite: Nyanotrasen/Clothing/Misc/black_dress.rsi
-
-- type: entity
   parent: ClothingUniformBase
   id: ClothingUniformMNKBlackOveralls
   name: MNK black overalls

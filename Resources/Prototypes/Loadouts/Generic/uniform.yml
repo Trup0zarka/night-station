@@ -690,21 +690,6 @@
         - Command
 
 - type: loadout
-  id: LoadoutClothingMNKDressBlack
-  category: Uniform
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingUniformMNKDressBlack
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsCivilian
-    - !type:CharacterDepartmentRequirement
-      inverted: true
-      departments:
-        - Command
-
-- type: loadout
   id: LoadoutClothingMNKBlackOveralls
   category: Uniform
   cost: 0
