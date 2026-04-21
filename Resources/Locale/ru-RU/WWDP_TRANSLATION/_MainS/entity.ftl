@@ -10346,12 +10346,12 @@ ent-UniformMaid = форма горничной
     .desc = Прямиком из Космической Франции!
 
 
-ent-ClothingCostumeMioSkirt = жёлтая юбка и розовый худи
+ent-ClothingCostumeMioSkirt = жёлтая юбка и розовое худи
     .desc = Мягкая и уютная одежда с яркими цветами и аккуратным бантиком у шеи.
 
 
-ent-ClothingCostumeNaota = бирюзовая худи и шорты
-    .desc = Уютная худи с маленьким кармашком кенгуру.
+ent-ClothingCostumeNaota = бирюзовое худи и шорты
+    .desc = Уютное худи с маленьким кармашком кенгуру.
 
 
 ent-ClothingUniformRat = форма фаната крысиных королей
