@@ -82842,26 +82842,6 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformSwimsuitBlue
-  entities:
-  - uid: 11124
-    components:
-    - type: Transform
-      parent: 11109
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 11125
-    components:
-    - type: Transform
-      parent: 11109
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: ClownCircuitBoard
   entities:
   - uid: 23470
