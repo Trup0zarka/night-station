@@ -3,6 +3,8 @@ using Content.Shared.Inventory;
 using Content.Shared.Hands.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Interaction.Components;
+using Content.Shared.Weapons.Ranged;
+using Content.Shared.Weapons.Ranged.Components;
 using Robust.Shared.Containers;
 
 namespace Content.Server._NC.NPC.Systems;
@@ -20,6 +22,14 @@ public sealed class NpcUnlootableSystem : EntitySystem
 
     private void OnItemInserted(EntityUid uid, NpcUnlootableComponent component, EntInsertedIntoContainerMessage args)
     {
+        // Don't prevent removal for ammo/magazines so NPCs can reload
+        if (HasComp<AmmoComponent>(args.Entity) || 
+            HasComp<BallisticAmmoProviderComponent>(args.Entity) ||
+            HasComp<MagazineAmmoProviderComponent>(args.Entity))
+        {
+            return;
+        }
+
         // Add UnremoveableComponent with DeleteOnDrop so if it somehow drops, it gets deleted.
         EnsureComp<UnremoveableComponent>(args.Entity).DeleteOnDrop = true;
     }
