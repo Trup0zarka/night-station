@@ -153,7 +153,7 @@ public sealed class CitiNetStreamSystem : EntitySystem
         var reason = reasonLocKey != null
             ? Loc.GetString(reasonLocKey)
             : Loc.GetString("citinet-live-signal-lost");
-        AddChatMessage(comp, new LiveChatMessage(_timing.CurTime, Loc.GetString("citinet-live-sender-system"), reason, true));
+        AddChatMessage(cam, comp, new LiveChatMessage(_timing.CurTime, Loc.GetString("citinet-live-sender-system"), reason, true));
 
         _liveCartridge.UpdateAllLiveUIs();
     }
@@ -223,17 +223,37 @@ public sealed class CitiNetStreamSystem : EntitySystem
             Loc.GetString("citinet-live-donate-chat-prefix"),
             $"${amount} — {message}",
             true);
-        AddChatMessage(comp, chatMsg);
+        AddChatMessage(cam, comp, chatMsg);
 
         return true;
     }
 
     /// <summary>Добавить сообщение в чат стрима.</summary>
-    public void AddChatMessage(StreamCamComponent comp, LiveChatMessage message)
+    public void AddChatMessage(EntityUid camUid, StreamCamComponent comp, LiveChatMessage message)
     {
         comp.ChatMessages.Add(message);
         if (comp.ChatMessages.Count > comp.MaxChatMessages)
             comp.ChatMessages.RemoveAt(0);
+
+        // NC — Звук для стримера и всех зрителей
+        var audio = EntityManager.System<Robust.Shared.Audio.Systems.SharedAudioSystem>();
+        var soundPath = (message.IsSystem && message.Sender == Loc.GetString("citinet-live-donate-chat-prefix"))
+            ? "/Audio/Effects/kaching.ogg"
+            : "/Audio/Machines/chime.ogg";
+
+        // Стример
+        if (comp.HolderUid != null)
+            audio.PlayPvs(new Robust.Shared.Audio.SoundPathSpecifier(soundPath), comp.HolderUid.Value);
+
+        // Зрители (SurveillanceCamera active viewers)
+        if (TryComp<SurveillanceCameraComponent>(camUid, out var camComp))
+        {
+            foreach (var viewer in camComp.ActiveViewers)
+            {
+                // PlayGlobal for viewer so only they hear it
+                audio.PlayGlobal(soundPath, Robust.Shared.Player.Filter.Entities(viewer), false);
+            }
+        }
     }
 
     /// <summary>Получить список всех активных стримов для UI-листа.</summary>

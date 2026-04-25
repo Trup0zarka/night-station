@@ -8,8 +8,6 @@ using Content.Shared._NC.CitiNet.Live;
 using Content.Shared.CartridgeLoader;
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
-using Robust.Shared.Audio.Systems;
-using Robust.Shared.Player;
 
 namespace Content.Client._NC.CitiNet.UI;
 
@@ -45,20 +43,8 @@ public sealed partial class CitiNetLiveUi : UIFragment
         if (state is not CitiNetLiveUiState cast || _fragment == null)
             return;
 
-        // Звук на новое сообщение/донат
-        var chatCount = cast.ChatMessages.Count;
-        if (chatCount > _lastChatCount)
-        {
-            var entManager = IoCManager.Resolve<IEntityManager>();
-            var audio = entManager.System<SharedAudioSystem>();
-
-            var lastMsg = cast.ChatMessages[^1];
-            if (lastMsg.IsSystem && lastMsg.Sender == Loc.GetString("citinet-live-donate-chat-prefix"))
-                audio.PlayGlobal("/Audio/Effects/coinpull.ogg", Filter.Local(), false);
-            else
-                audio.PlayGlobal("/Audio/Machines/chime.ogg", Filter.Local(), false);
-        }
-        _lastChatCount = chatCount;
+        // Звук на новое сообщение/донат — ТЕПЕРЬ НА СЕРВЕРЕ
+        _lastChatCount = cast.ChatMessages.Count;
 
         // Обновляем Eye камеры если смотрим стрим
         if (cast.WatchedCamNetEntity.HasValue)

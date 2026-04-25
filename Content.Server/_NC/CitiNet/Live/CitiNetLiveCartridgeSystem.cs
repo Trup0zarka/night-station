@@ -128,7 +128,7 @@ public sealed class CitiNetLiveCartridgeSystem : EntitySystem
                 if (TryComp<StreamCamComponent>(targetCam.Value, out var tcComp))
                 {
                     var senderName = Name(ownerUid.Value);
-                    _liveStream.AddChatMessage(tcComp,
+                    _liveStream.AddChatMessage(targetCam.Value, tcComp,
                         new LiveChatMessage(_timing.CurTime, senderName, msg.Content, false));
                 }
                 UpdateAllLiveUIs();

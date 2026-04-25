@@ -110,7 +110,7 @@ public sealed class CitiNetCartridgeSystem : EntitySystem
         _ui.OpenUi(pdaUid.Value, PdaUiKey.Key, user.Value);
     }
 
-    // ========== Fix 3: Периодическая проверка Relay ==========
+    // ========== Периодическая проверка Relay ==========
 
     public override void Update(float frameTime)
     {
@@ -304,7 +304,7 @@ public sealed class CitiNetCartridgeSystem : EntitySystem
         if (!HasActiveCitiNetRelay(target))
             return;
 
-        // Fix 2: Если цель уже в звонке — отклоняем с уведомлением "Занято"
+        // Если цель уже в звонке — отклоняем с уведомлением "Занято"
         if (targetComp.CallState != CitiNetCallState.None)
         {
             var busyMsg = new CitiNetCallMessage(_timing.CurTime, Loc.GetString("citinet-sender-system"),
@@ -328,6 +328,11 @@ public sealed class CitiNetCartridgeSystem : EntitySystem
         // Инициализируем историю чата у вызываемого, если ещё нет
         if (!target.Comp.ChatHistories.ContainsKey(ent.Owner))
             target.Comp.ChatHistories[ent.Owner] = new List<CitiNetCallMessage>();
+
+        // NC — Звук входящего вызова для цели
+        var holder = GetPdaHolderUid(target);
+        if (holder != null)
+            _audio.PlayPvs(new SoundPathSpecifier("/Audio/Machines/double_ring.ogg"), holder.Value);
 
         // Обновляем UI цели и звонящего
         UpdateUIForCartridge(target);
@@ -353,6 +358,11 @@ public sealed class CitiNetCartridgeSystem : EntitySystem
         callerComp.CallState = CitiNetCallState.Active;
         callerComp.ActiveCallPartner = ent.Owner;
 
+        // NC — Звук принятия вызова
+        var holder = GetPdaHolderUid(ent);
+        if (holder != null)
+            _audio.PlayPvs(new SoundPathSpecifier("/Audio/Machines/button.ogg"), holder.Value);
+
         // Обновляем UI звонящего
         UpdateUIForCartridge((callerUid, callerComp));
     }
@@ -367,6 +377,12 @@ public sealed class CitiNetCartridgeSystem : EntitySystem
         {
             callerComp.CallState = CitiNetCallState.None;
             callerComp.ActiveCallPartner = null;
+
+            // NC — Звук сброса
+            var callerHolder = GetPdaHolderUid((ent.Comp.IncomingCaller.Value, callerComp));
+            if (callerHolder != null)
+                _audio.PlayPvs(new SoundPathSpecifier("/Audio/Machines/button.ogg"), callerHolder.Value);
+
             UpdateUIForCartridge((ent.Comp.IncomingCaller.Value, callerComp));
         }
 
@@ -386,6 +402,12 @@ public sealed class CitiNetCartridgeSystem : EntitySystem
                 targetComp.CallState = CitiNetCallState.None;
                 targetComp.ActiveCallPartner = null;
                 targetComp.IncomingCaller = null;
+
+                // NC — Звук завершения
+                var targetHolder = GetPdaHolderUid((targetUid.Value, targetComp));
+                if (targetHolder != null)
+                    _audio.PlayPvs(new SoundPathSpecifier("/Audio/Machines/button.ogg"), targetHolder.Value);
+
                 UpdateUIForCartridge((targetUid.Value, targetComp));
             }
         }
@@ -420,6 +442,11 @@ public sealed class CitiNetCartridgeSystem : EntitySystem
         {
             var targetEnt = new Entity<CitiNetCartridgeComponent>(targetUid, targetComp);
             AddP2PMessage(targetEnt, ent.Owner, message);
+
+            // NC — Звук сообщения для получателя
+            var targetHolder = GetPdaHolderUid(targetEnt);
+            if (targetHolder != null)
+                _audio.PlayPvs(new SoundPathSpecifier("/Audio/Machines/chime.ogg"), targetHolder.Value);
 
             UpdateUIForCartridge(targetEnt);
         }
@@ -589,6 +616,21 @@ public sealed class CitiNetCartridgeSystem : EntitySystem
         // Добавляем в общую историю (shared reference)
         ent.Comp.GroupMessages.Add(message);
 
+        // NC — Звук сообщения для всех участников (кроме отправителя)
+        foreach (var memberUid in ent.Comp.GroupMembers)
+        {
+            if (memberUid == ent.Owner)
+                continue;
+
+            if (!TryComp<CitiNetCartridgeComponent>(memberUid, out var memberComp))
+                continue;
+
+            var memberEnt = new Entity<CitiNetCartridgeComponent>(memberUid, memberComp);
+            var holder = GetPdaHolderUid(memberEnt);
+            if (holder != null)
+                _audio.PlayPvs(new SoundPathSpecifier("/Audio/Machines/chime.ogg"), holder.Value);
+        }
+
         // Обновляем UI всех участников
         UpdateUIForGroup(ent.Comp.GroupMembers);
     }
@@ -731,7 +773,7 @@ public sealed class CitiNetCartridgeSystem : EntitySystem
 
         // Always select it upon joining
         ent.Comp.CurrentChannel = msg.TargetId;
-            
+
         ent.Comp.ActiveTab = CitiNetTab.BBS;
         ent.Comp.ActiveChatTarget = null;
 
@@ -1275,10 +1317,10 @@ public sealed class CitiNetCartridgeSystem : EntitySystem
         var now = _timing.CurTime;
         var policeCd = ent.Comp.LastPoliceCalled == TimeSpan.Zero
             ? 0f
-            : (float)Math.Max(0, ent.Comp.EmergencyCooldownSeconds - (now - ent.Comp.LastPoliceCalled).TotalSeconds);
+            : (float) Math.Max(0, ent.Comp.EmergencyCooldownSeconds - (now - ent.Comp.LastPoliceCalled).TotalSeconds);
         var traumaCd = ent.Comp.LastTraumaCalled == TimeSpan.Zero
             ? 0f
-            : (float)Math.Max(0, ent.Comp.EmergencyCooldownSeconds - (now - ent.Comp.LastTraumaCalled).TotalSeconds);
+            : (float) Math.Max(0, ent.Comp.EmergencyCooldownSeconds - (now - ent.Comp.LastTraumaCalled).TotalSeconds);
 
         var state = new CitiNetUiState(
             ent.Comp.AgentNumber,
