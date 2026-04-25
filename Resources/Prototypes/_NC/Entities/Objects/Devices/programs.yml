@@ -41,7 +41,7 @@
     programType: Quickhack
     quickhackType: Blind
     ramCost: 40
-    uploadTime: 5.0
+    uploadTime: 3.0
     duration: 20.0
     beamColor: "#000000"
 
@@ -55,7 +55,7 @@
     programType: Quickhack
     quickhackType: WeaponDrop
     ramCost: 30
-    uploadTime: 2.0
+    uploadTime: 1.0
     beamColor: "#FFFF00"
 
 - type: entity
@@ -68,9 +68,9 @@
     programType: Quickhack
     quickhackType: Damage
     ramCost: 50
-    uploadTime: 3.0
-    damage: 15
-    stunDuration: 5.0
+    uploadTime: 2.0
+    damage: 30
+    stunDuration: 10.0
     beamColor: "#0000FF"
 
 - type: entity

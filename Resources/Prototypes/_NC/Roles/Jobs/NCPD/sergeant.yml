@@ -5,7 +5,7 @@
   playTimeTracker: JobNCPDSergeant
   weight: 45
   salary: 160
-  icon: "JobIconNCPDPolice"
+  icon: "JobIconNCPDPoliceSerg"
   startingGear: NCPDSergeantGear
   supervisors: Лейтенант
   access:
@@ -23,10 +23,11 @@
 - type: startingGear
   id: NCPDSergeantGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitWarden
+    jumpsuit: ClothingUniformNSPDNormis
     back: ClothingBackpackSecurity
     shoes: ClothingShoesBootsJack
     head: ClothingHeadHatWarden
     id: NCPDSergeantPDA
+    eyes: ClothingEyesGlassesSecurityVisor
     belt: ClothingBeltSecurityFilled
     outerClothing: ClothingOuterCoatWarden

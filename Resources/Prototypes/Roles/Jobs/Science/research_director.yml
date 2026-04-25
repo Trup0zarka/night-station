@@ -4,8 +4,6 @@
   description: job-description-rd
   playTimeTracker: JobResearchDirector
   requirements:
-  - !type:CharacterItemGroupRequirement
-    group: TraitsCasterType
   - !type:CharacterLogicOrRequirement
     requirements:
     - !type:CharacterSpeciesRequirement
@@ -49,17 +47,8 @@
   special:
   - !type:AddComponentSpecial
     components:
-    - type: BibleUser
-    - type: Psionic
-      powerSlots: 3
-      baselinePowerCost: 75
-      nextPowerCost: 75
     - type: CommandStaff
-    - type: InnatePsionicPowers
-      powersToAdd:
-      - DispelPower
-      - MetapsionicPower
-      - TelepathyPower
+    - type: BibleUser
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
   afterLoadoutSpecial:
@@ -78,7 +67,7 @@
     shoes: ClothingShoesColorBrown
     id: RnDPDA
     ears: ClothingHeadsetAltScience
-    pocket1: BookPsionicsGuidebook
+    # pocket1: BookPsionicsGuidebook
     pocket2: BibleMystagogue
   storage:
     back:

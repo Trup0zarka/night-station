@@ -26,10 +26,11 @@
 - type: startingGear
   id: NCPDLieutenantGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitWarden
+    jumpsuit: ClothingUniformNSPDCool
     back: ClothingBackpackSecurity
     shoes: ClothingShoesBootsJack
     head: ClothingHeadHatWarden
+    eyes: ClothingEyesGlassesSecurityVisor
     id: NCPDLieutenantPDA
     belt: ClothingBeltSecurityFilled
     outerClothing: ClothingOuterCoatWarden

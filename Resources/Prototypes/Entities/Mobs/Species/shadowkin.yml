@@ -225,11 +225,6 @@
     - type: Speech
       allowedEmotes: ['Mars', 'Wurble']
     - type: Shadowkin
-    - type: Psionic
-      mindbreakingFeedback: shadowkin-blackeye
-    - type: InnatePsionicPowers
-      powersToAdd:
-        - TelepathyPower
     - type: LanguageKnowledge
       speaks:
         - TauCetiBasic
@@ -237,8 +232,6 @@
       understands:
         - TauCetiBasic
         - Marish
-    - type: PotentiaModifier
-      potentiaMultiplier: 1.25
     - type: Tag
       tags:
       - CanPilot

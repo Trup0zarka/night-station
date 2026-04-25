@@ -145,6 +145,7 @@ namespace Content.Server._NC.Bank.ATM
                 return;
             }
 
+            _atmOccupiedBy[uid] = player; // Занимаем банкомат при открытии UI
             UpdateUi(uid, component);
         }
 
@@ -233,15 +234,24 @@ namespace Content.Server._NC.Bank.ATM
             int balance = 0;
             bool isLoggedIn = false;
             int depositAmount = 0;
+            string ownAccountNumber = string.Empty;
 
             // Берем того, кто сейчас занял банкомат
-            if (_atmOccupiedBy.TryGetValue(uid, out var user) && IsLoggedIn(user, out var accountUid) && TryComp<BankAccountComponent>(accountUid, out var bankAcc))
+            if (_atmOccupiedBy.TryGetValue(uid, out var user))
             {
-                isLoggedIn = true;
-                accountName = bankAcc.AccountNumber;
-                
-                // ЧИТАЕМ ПРЯМО ИЗ КОМПОНЕНТА (который мы обновили в BankSystem)
-                balance = bankAcc.Balance;
+                // Для автозаполнения: находим номер счета самого пользователя
+                if (TryComp<BankAccountComponent>(user, out var ownBankAcc))
+                {
+                    ownAccountNumber = ownBankAcc.AccountNumber;
+                }
+
+                // Информация об авторизации
+                if (IsLoggedIn(user, out var accountUid) && TryComp<BankAccountComponent>(accountUid, out var bankAcc))
+                {
+                    isLoggedIn = true;
+                    accountName = bankAcc.AccountNumber;
+                    balance = bankAcc.Balance;
+                }
             }
 
             if (_containerSystem.TryGetContainer(uid, AtmComponent.CashSlotId, out var cashContainer) &&
@@ -260,7 +270,8 @@ namespace Content.Server._NC.Bank.ATM
                 accountName,
                 isLoggedIn,
                 component.TaxRate,
-                depositAmount
+                depositAmount,
+                ownAccountNumber
             );
 
             _uiSystem.SetUiState(uid, AtmUiKey.Key, state);

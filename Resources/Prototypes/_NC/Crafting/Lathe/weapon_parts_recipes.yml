@@ -42,7 +42,7 @@
   result: NCBlankBarrelPipe
   comms: true
   materials:
-    Metal: 500
+    Steel: 500
 
 - type: latheRecipe
   id: NCBlankBarrelAlloy
@@ -72,7 +72,7 @@
   result: NCBlankFrameMilled
   comms: true
   materials:
-    Metal: 1000
+    Steel: 1000
     Plastic: 500
 
 - type: latheRecipe
@@ -90,14 +90,14 @@
   result: NCBlankInternalsScrap
   comms: true
   materials:
-    Metal: 300
+    Steel: 300
 
 - type: latheRecipe
   id: NCBlankInternalsBolt
   result: NCBlankInternalsBolt
   comms: true
   materials:
-    Metal: 500
+    Steel: 500
     Plasteel: 500
 
 - type: latheRecipe
@@ -115,7 +115,7 @@
   comms: true
   materials:
     Glass: 500
-    Metal: 200
+    Steel: 200
 
 - type: latheRecipe
   id: NCBlankElectronicsNeuro
@@ -146,7 +146,7 @@
   comms: true
   materials:
     Plastic: 100
-    Metal: 100
+    Steel: 100
 
 - type: latheRecipe
   id: NCRecipeMagazinePistolOverlord
@@ -154,7 +154,7 @@
   comms: true
   materials:
     Plastic: 100
-    Metal: 100
+    Steel: 100
 
 - type: latheRecipe
   id: NCRecipeMagazinePistolAvenger
@@ -162,7 +162,7 @@
   comms: true
   materials:
     Plastic: 100
-    Metal: 100
+    Steel: 100
 
 - type: latheRecipe
   id: NCRecipeMagazinePistolHelloCutie
@@ -170,7 +170,7 @@
   comms: true
   materials:
     Plastic: 100
-    Metal: 100
+    Steel: 100
 
 - type: latheRecipe
   id: NCRecipeMagazinePistolStreetMaster
@@ -178,7 +178,7 @@
   comms: true
   materials:
     Plastic: 100
-    Metal: 100
+    Steel: 100
 
 - type: latheRecipe
   id: NCRecipeMagazinePistolMarkIII
@@ -186,7 +186,7 @@
   comms: true
   materials:
     Plastic: 100
-    Metal: 100
+    Steel: 100
 
 - type: latheRecipe
   id: NCRecipeMagazinePistolCheesemaker
@@ -194,7 +194,7 @@
   comms: true
   materials:
     Plastic: 100
-    Metal: 100
+    Steel: 100
 
 - type: latheRecipe
   id: NCRecipeMagazinePistolFederalX9
@@ -202,7 +202,7 @@
   comms: true
   materials:
     Plastic: 100
-    Metal: 100
+    Steel: 100
 
 - type: latheRecipe
   id: NCRecipeMagazinePistolBoomerBuster
@@ -210,7 +210,7 @@
   comms: true
   materials:
     Plastic: 100
-    Metal: 100
+    Steel: 100
 
 - type: latheRecipe
   id: NCRecipeMagazineRifleNomad
@@ -218,7 +218,7 @@
   comms: true
   materials:
     Plastic: 100
-    Metal: 100
+    Steel: 100
 
 - type: latheRecipe
   id: NCRecipeMagazineRifleArasaka
@@ -226,7 +226,7 @@
   comms: true
   materials:
     Plastic: 100
-    Metal: 100
+    Steel: 100
 
 - type: latheRecipe
   id: NCRecipeMagazineRifleM04
@@ -234,7 +234,7 @@
   comms: true
   materials:
     Plastic: 100
-    Metal: 100
+    Steel: 100
 
 - type: latheRecipe
   id: NCRecipeMagazineRifleNokota
@@ -242,7 +242,7 @@
   comms: true
   materials:
     Plastic: 100
-    Metal: 100
+    Steel: 100
 
 - type: latheRecipe
   id: NCRecipeMagazineRifleNowaki
@@ -250,7 +250,7 @@
   comms: true
   materials:
     Plastic: 100
-    Metal: 100
+    Steel: 100
 
 - type: latheRecipe
   id: NCRecipeMagazine622mmCaseless

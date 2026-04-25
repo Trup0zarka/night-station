@@ -76,10 +76,9 @@ public sealed partial class CitiNetCartridgeComponent : Component
 
     /// <summary>
     /// Максимальное количество участников группового звонка.
-    /// 3 для дешёвых Агентов, 10 для корпоративных.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public int MaxGroupParticipants = 3;
+    public int MaxGroupParticipants = 6;
 
     /// <summary>
     /// История сообщений группового звонка.

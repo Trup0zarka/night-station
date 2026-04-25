@@ -32,7 +32,7 @@
     back: ClothingBackpackSatchelMedical
     shoes: ClothingShoesColorWhite
     head: ClothingHeadHatBeretSeniorPhysician
-    eyes: ClothingEyesGlassesSunglasses
+    eyes: ClothingEyesGlassesCorpsman
     id: TraumaTeamChiefPDA
     belt: ClothingBeltMedicalFilled
     outerClothing: ClothingOuterCoatLabCmo

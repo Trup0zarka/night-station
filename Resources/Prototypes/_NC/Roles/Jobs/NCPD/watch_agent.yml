@@ -5,7 +5,7 @@
   playTimeTracker: JobNCPDWatchAgent
   weight: 50
   salary: 200
-  icon: "JobIconNCPDPolice"
+  icon: "JobIconWatchAgent"
   startingGear: NCPDWatchAgentGear
   supervisors: Начальник департамента полиции
   access:
@@ -26,21 +26,22 @@
   id: NCPDWatchAgentGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitDetective
-    back: ClothingBackpackWatchAgentFilled
+    back: ClothingBackpackCyberdeckFilled
     shoes: ClothingShoesColorBlack
     head: ClothingHeadHatFedoraBrown
+    eyes: ClothingEyesGlassesSecurityVisor
     id: NCPDWatchAgentPDA
     outerClothing: ClothingOuterCoatDetective
 
 
 - type: entity
   parent: ClothingBackpackSatchelSecurity
-  id: ClothingBackpackWatchAgentFilled
-  name: Рюкзак Агента Дозора
+  id: ClothingBackpackCyberdeckFilled
+  name: Рюкзак с декой
   components:
   - type: StorageFill
     contents:
     - id: NCCyberdeck
-    - id: NCProgramHighJack
-    - id: NCProgramPing
+    - id: NCProgramBlind
+    - id: NCProgramDrop
     - id: NCProgramShock

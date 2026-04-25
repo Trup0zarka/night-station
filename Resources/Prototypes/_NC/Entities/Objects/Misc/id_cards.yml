@@ -106,6 +106,7 @@
     - type: Access
       tags:
         - NCPD_Patrol
+        - NCPD_Armory
         - NC_General
     - type: PresetIdCard
       job: NCPDSergeant

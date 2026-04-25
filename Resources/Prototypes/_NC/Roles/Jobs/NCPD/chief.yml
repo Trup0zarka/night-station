@@ -29,11 +29,11 @@
 - type: startingGear
   id: NCPDChiefGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSheriff
+    jumpsuit: ClothingUniformNSPDCoolWhite
     back: ClothingBackpackSatchelSecurity
     shoes: ClothingShoesBootsJack
     head: ClothingHeadHatBeretHoS
-    eyes: ClothingEyesGlassesSunglasses
+    eyes: ClothingEyesGlassesSecurity
     id: NCPDChiefPDA
     belt: ClothingBeltSecurityFilled
     outerClothing: ClothingOuterCoatHoSTrench

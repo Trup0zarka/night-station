@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Content.Server._NC.Forensics;
@@ -7,7 +7,9 @@ namespace Content.Server._NC.Forensics;
 public sealed partial class NeuralPortBufferComponent : Component
 {
     public readonly List<NeuralPortLogLine> Lines = new();
-    public int MaxLines = 5;
+
+    [DataField("maxLines")]
+    public int MaxLines = 10;
 
     public TimeSpan? TimeOfDeath;
     public string LastCriticalDamage = "Unknown";

@@ -29,6 +29,7 @@
     jumpsuit: ClothingUniformJumpsuitMedicalGreen
     back: ClothingBackpackSecurity
     shoes: ClothingShoesBootsCombat
+    eyes: ClothingEyesHudMedSec
     id: TraumaTeamOperativePDA
     belt: ClothingBeltSecurityFilled
     outerClothing: ClothingOuterHardsuitTraumaTeamOperative

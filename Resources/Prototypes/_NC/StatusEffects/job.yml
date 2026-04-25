@@ -126,6 +126,13 @@
 
 - type: jobIcon
   parent: JobIcon
+  id: JobIconNCPDPoliceSerg
+  icon:
+    sprite: /Textures/_NC/Interface/Misc/job_icons.rsi
+    state: ncpd_policer_serg
+
+- type: jobIcon
+  parent: JobIcon
   id: JobIconNCPDPolice
   icon:
     sprite: /Textures/_NC/Interface/Misc/job_icons.rsi
@@ -147,6 +154,13 @@
 
 - type: jobIcon
   parent: JobIcon
+  id: JobIconWatchAgent
+  icon:
+    sprite: /Textures/_NC/Interface/Misc/job_icons.rsi
+    state: dozor_3
+
+- type: jobIcon
+  parent: JobIcon
   id: JobIconTraumaCMO
   icon:
     sprite: /Textures/_NC/Interface/Misc/job_icons.rsi
@@ -162,13 +176,6 @@
 - type: jobIcon
   parent: JobIcon
   id: JobIconTraumaDoctor
-  icon:
-    sprite: /Textures/_NC/Interface/Misc/job_icons.rsi
-    state: trauma
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconTraumaIntern
   icon:
     sprite: /Textures/_NC/Interface/Misc/job_icons.rsi
     state: trauma
@@ -200,4 +207,11 @@
   icon:
     sprite: /Textures/_NC/Interface/Misc/job_icons.rsi
     state: traumator
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconTraumaIntern
+  icon:
+    sprite: /Textures/_NC/Interface/Misc/job_icons.rsi
+    state: trauma-intern
 

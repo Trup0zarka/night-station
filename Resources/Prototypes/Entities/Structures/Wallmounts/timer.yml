@@ -54,6 +54,8 @@
   components:
   - type: SignalTimer
     canEditLabel: true
+  - type: AccessReader
+    access: [["NCPD_Patrol"]]
   - type: TextScreenVisuals
     color: FloralWhite
     textOffset: 0,8
@@ -76,7 +78,7 @@
   description: It's a timer for brig cells.
   components:
   - type: AccessReader
-    access: [["Security"]]
+    access: [["NCPD_Patrol"]]
   - type: Construction
     graph: Timer
     node: brig

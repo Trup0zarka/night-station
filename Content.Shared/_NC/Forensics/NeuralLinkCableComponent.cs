@@ -1,4 +1,4 @@
-﻿using Robust.Shared.GameStates;
+using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._NC.Forensics;
@@ -13,7 +13,7 @@ public sealed partial class NeuralLinkCableComponent : Component
     public float MaxDeathMinutes = 15f;
 
     [DataField("maxLogLines")]
-    public int MaxLogLines = 5;
+    public int MaxLogLines = 10;
 }
 
 

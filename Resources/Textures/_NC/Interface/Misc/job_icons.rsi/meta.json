@@ -65,11 +65,20 @@
         {
             "name": "ncpd_policer"
         },
+		{
+            "name": "ncpd_policer_serg"
+        },
         {
             "name": "ncpd_policer_commander"
         },
         {
             "name": "ncpd_Tac"
+        },
+		{
+            "name": "dozor_3"
+        },
+		{
+            "name": "trauma-intern"
         },
         {
             "name": "trauma"

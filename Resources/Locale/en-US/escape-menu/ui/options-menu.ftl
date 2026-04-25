@@ -139,6 +139,7 @@ ui-options-header-text-chat = Chat
 ui-options-header-text-other = Text input other
 
 ui-options-hotkey-keymap = Use US QWERTY Keys
+ui-options-combat-mode-action = Vanilla Combat Mode (key 1)
 ui-options-hotkey-toggle-walk = Toggle Speed
 ui-options-hotkey-default-walk = Walk by default
 

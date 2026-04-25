@@ -20,6 +20,14 @@ namespace Content.Client._NC.CitiNet.UI;
 [GenerateTypedNameReferences]
 public sealed partial class CitiNetUiFragment : BoxContainer
 {
+    private enum ActionMode : byte
+    {
+        None,
+        StartP2P,
+        GroupAction,
+        InviteToChannel
+    }
+
     public Action<CitiNetUiMessageType, string?, string?>? OnSendMessage;
     // NC Live: отправка Live-сообщений
     // public Action<CitiNetLiveMessageType, string?>? OnSendLiveMessage; // Removed as per instruction
@@ -30,6 +38,8 @@ public sealed partial class CitiNetUiFragment : BoxContainer
     // Cache the state so we can rebuild the UI when switching tabs
     private CitiNetUiState? _lastState;
     private EntityUid? _currentCamera;
+    private ActionMode _actionMode = ActionMode.None;
+    private string? _actionChannelId;
 
     // Cyberpunk specific colors
     private static readonly Color ColorNeonGreen = Color.FromHex("#51f542");
@@ -37,6 +47,11 @@ public sealed partial class CitiNetUiFragment : BoxContainer
     private static readonly Color ColorAlertRed = Color.FromHex("#f54242");
     private static readonly Color ColorCyberBlue = Color.FromHex("#42e3f5");
     private static readonly Color ColorDarkGrey = Color.FromHex("#444444");
+    private const int LeftColumnWidth = 170;
+    private const int MiddleColumnDefault = 220;
+    private const int RightColumnDefault = 350;
+    private const int MiddleColumnContacts = 240;
+    private const int RightColumnContacts = 280;
     // private readonly FixedEye _defaultEye = new(); // Removed as per instruction
 
     public CitiNetUiFragment()
@@ -141,6 +156,8 @@ public sealed partial class CitiNetUiFragment : BoxContainer
         PasswordPanel.Visible = false;
         ChatInputPanel.Visible = false;
         CallControlsPanel.Visible = false;
+        _actionMode = ActionMode.None;
+        _actionChannelId = null;
 
         if (_lastState != null)
         {
@@ -151,7 +168,8 @@ public sealed partial class CitiNetUiFragment : BoxContainer
     private void HandleActionButton(BaseButton.ButtonEventArgs args)
     {
         var input = ActionInput.Text.Trim();
-        if (_currentTab == 0) // Start Chat
+
+        if (_actionMode == ActionMode.StartP2P)
         {
             if (!string.IsNullOrEmpty(input))
             {
@@ -159,7 +177,7 @@ public sealed partial class CitiNetUiFragment : BoxContainer
                 ActionInput.Text = string.Empty;
             }
         }
-        else if (_currentTab == 2) // Group Actions
+        else if (_actionMode == ActionMode.GroupAction)
         {
             if (_lastState != null && !_lastState.InGroup)
             {
@@ -168,6 +186,14 @@ public sealed partial class CitiNetUiFragment : BoxContainer
             else if (!string.IsNullOrEmpty(input))
             {
                 OnSendMessage?.Invoke(CitiNetUiMessageType.InviteToGroup, input, null);
+                ActionInput.Text = string.Empty;
+            }
+        }
+        else if (_actionMode == ActionMode.InviteToChannel)
+        {
+            if (!string.IsNullOrEmpty(input) && !string.IsNullOrEmpty(_actionChannelId))
+            {
+                OnSendMessage?.Invoke(CitiNetUiMessageType.InviteToChannel, input, _actionChannelId);
                 ActionInput.Text = string.Empty;
             }
         }
@@ -204,6 +230,9 @@ public sealed partial class CitiNetUiFragment : BoxContainer
         CallControlsPanel.Visible = false;
         PasswordPanel.Visible = false;
         ChatInputPanel.Visible = false;
+        _actionMode = ActionMode.None;
+        _actionChannelId = null;
+        ConfigureColumnsForCurrentTab();
 
         switch (_currentTab)
         {
@@ -225,6 +254,22 @@ public sealed partial class CitiNetUiFragment : BoxContainer
         }
     }
 
+    private void ConfigureColumnsForCurrentTab()
+    {
+        var leftPanel = FindControl<PanelContainer>("LeftPanel");
+        var middlePanel = FindControl<PanelContainer>("MiddlePanel");
+        var rightPanel = FindControl<PanelContainer>("RightPanel");
+
+        var contactsTab = _currentTab == 3;
+
+        leftPanel.MinWidth = LeftColumnWidth;
+        middlePanel.MinWidth = contactsTab ? MiddleColumnContacts : MiddleColumnDefault;
+        rightPanel.MinWidth = contactsTab ? RightColumnContacts : RightColumnDefault;
+
+        middlePanel.HorizontalExpand = contactsTab;
+        rightPanel.HorizontalExpand = !contactsTab;
+    }
+
     private void RenderDirectCalls(CitiNetUiState state)
     {
         ListTitleLabel.Text = "[ DIRECT CALLS ]";
@@ -237,7 +282,7 @@ public sealed partial class CitiNetUiFragment : BoxContainer
         ActionInput.PlaceHolder = "NEW AGENT NUMBER...";
         ActionInput.Visible = true;
         ActionButton.Text = "[START CHAT]";
-
+        _actionMode = ActionMode.StartP2P;
         if (state.Contacts.Count == 0)
         {
             AddListEntry("[ NO ACTIVE CONTACTS ]", ColorDarkGrey);
@@ -322,7 +367,7 @@ public sealed partial class CitiNetUiFragment : BoxContainer
         {
             var btn = new Button
             {
-                Text = $"{(channel.IsJoined ? "●" : "○")} {channel.Name}",
+                Text = $"{(state.CurrentChannelId == channel.Id ? ">" : channel.IsJoined ? "+" : " ")} {channel.Name}",
                 HorizontalAlignment = HAlignment.Left,
                 HorizontalExpand = true,
                 Margin = new Thickness(0, 0, 0, 2)
@@ -371,18 +416,8 @@ public sealed partial class CitiNetUiFragment : BoxContainer
                     ActionInput.Visible = true;
                     ActionInput.PlaceHolder = "AGENT NUMBER...";
                     ActionButton.Text = "[INVITE TO CHANNEL]";
-
-                    // Переопределяем действие кнопки для инвайта
-                    ActionButton.OnPressed -= HandleActionButton;
-                    ActionButton.OnPressed += _ =>
-                    {
-                        var input = ActionInput.Text.Trim();
-                        if (!string.IsNullOrEmpty(input))
-                        {
-                            OnSendMessage?.Invoke(CitiNetUiMessageType.InviteToChannel, input, curChannel.Id);
-                            ActionInput.Text = string.Empty;
-                        }
-                    };
+                    _actionMode = ActionMode.InviteToChannel;
+                    _actionChannelId = curChannel.Id;
                 }
             }
         }
@@ -401,6 +436,7 @@ public sealed partial class CitiNetUiFragment : BoxContainer
             ActionControlsPanel.Visible = true;
             ActionInput.Visible = false;
             ActionButton.Text = "[CREATE TACTICAL BRIDGE]";
+            _actionMode = ActionMode.GroupAction;
             return;
         }
 
@@ -409,7 +445,7 @@ public sealed partial class CitiNetUiFragment : BoxContainer
         ActionInput.Visible = true;
         ActionInput.PlaceHolder = "AGENT NUMBER...";
         ActionButton.Text = "[INVITE AGENT]";
-
+        _actionMode = ActionMode.GroupAction;
         ChatInputPanel.Visible = true;
         CallControlsPanel.Visible = true;
         CallPingLocationButton.Visible = true;
@@ -453,7 +489,7 @@ public sealed partial class CitiNetUiFragment : BoxContainer
     {
         ListTitleLabel.Text = "[ CONTACTS ]";
         ListSubtitleLabel.Text = "ACTIVE CITIZENS:";
-        ContentHeaderLabel.Text = "[color=#51f542]● GLOBAL DIRECTORY[/color]";
+        ContentHeaderLabel.Text = "[color=#51f542]● DIRECTORY[/color]";
 
         // Render All Players list in the middle
         if (state.AllPlayers.Count == 0)
@@ -487,9 +523,9 @@ public sealed partial class CitiNetUiFragment : BoxContainer
         }
 
         // Render Emergency Buttons in the right panel
-        AddMessage("[color=#51f542]>> SYSTEM:[/color] Emergency services are available 24/7.");
-        AddMessage("[color=#42e3f5]>> NCPD:[/color] Dispatch police to your current location.");
-        AddMessage("[color=#4bdc99]>> TRAUMA TEAM:[/color] Request medical assistance (Platinum/Gold only).");
+        AddMessage("[color=#51f542]>> SYSTEM:[/color] Emergency line online.");
+        AddMessage("[color=#42e3f5]>> NCPD:[/color] Dispatch to your position.");
+        AddMessage("[color=#4bdc99]>> TRAUMA:[/color] Medical assistance.");
 
         var policeBtn = new Button
         {
@@ -515,7 +551,7 @@ public sealed partial class CitiNetUiFragment : BoxContainer
         traumaBtn.OnPressed += _ => OnSendMessage?.Invoke(CitiNetUiMessageType.CallTrauma, null, null);
         ContentMessagesContainer.AddChild(traumaBtn);
 
-        AddMessage("\n[color=#444444]Note: False alarms are punishable by Night City law.[/color]");
+        AddMessage("[color=#444444]False alarms are punishable.[/color]");
     }
 
     private void AddListEntry(string text, Color color)

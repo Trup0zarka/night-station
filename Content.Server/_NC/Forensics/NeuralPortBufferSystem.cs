@@ -36,13 +36,18 @@ public sealed class NeuralPortBufferSystem : EntitySystem
 
     private void OnMobStateChanged(MobStateChangedEvent args)
     {
-        if (args.NewMobState != MobState.Dead)
-            return;
-
         if (!TryComp<NeuralPortBufferComponent>(args.Target, out var buffer))
             return;
 
-        buffer.TimeOfDeath = _timing.CurTime;
+        if (args.NewMobState == MobState.Dead)
+        {
+            buffer.TimeOfDeath = _timing.CurTime;
+        }
+        else if (args.OldMobState == MobState.Dead)
+        {
+            // Reset if revived
+            buffer.TimeOfDeath = null;
+        }
     }
 
     private void OnDamageChanged(EntityUid uid, DamageableComponent component, DamageChangedEvent args)
@@ -96,6 +101,10 @@ public sealed class NeuralPortBufferSystem : EntitySystem
         foreach (var uid in entities)
         {
             if (!TryComp<NeuralPortBufferComponent>(uid, out var buffer))
+                continue;
+
+            // Don't record if already dead.
+            if (buffer.TimeOfDeath.HasValue)
                 continue;
 
             var line = new NeuralPortLogLine(time, speakerName, message, speaker == uid);

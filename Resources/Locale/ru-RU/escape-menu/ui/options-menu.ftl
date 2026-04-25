@@ -136,6 +136,7 @@ ui-options-header-dev = Разработка
 ui-options-header-general = Основное
 
 ui-options-hotkey-keymap = Использовать клавиши QWERTY (США)
+ui-options-combat-mode-action = Ванильный боевой режим (на 1)
 ui-options-hotkey-toggle-walk = Переключать шаг\бег
 ui-options-hotkey-default-walk = Ходить по умолчанию
 

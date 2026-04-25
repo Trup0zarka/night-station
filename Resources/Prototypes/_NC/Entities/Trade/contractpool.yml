@@ -1,44 +1,41 @@
 - type: ncContractRewardPool
-  id: caravan_easy
+  id: ncbase_easy
   entries:
   - type: Item
-    id: WeaponPistolStreetMaster
-    weight: 1
+    id: CircuitImprinterMachineCircuitboard
+    weight: 3
   - type: Item
     id: WeaponPistolCheesemaker
     weight: 1
   - type: Item
-    id: SheetSteel
-    amount: { min: 4, max: 8 }
+    id: ClothingHeadHatWelding
     weight: 3
   - type: Item
-    id: SheetGlass
-    amount: { min: 4, max: 8 }
-    weight: 3
-  - type: Item
-    id: IngotGold
-    amount: { min: 1, max: 2 }
+    id: Wristwatch
     weight: 1
   - type: Item
-    id: IngotSilver
-    amount: { min: 2, max: 4 }
-    weight: 3
+    id: SurvivalKnife
+    weight: 2
+  - type: Item
+  - type: Item
+    id: KukriKnife
+    weight: 1
   - type: Item
     id: Syringe
     amount: { min: 1, max: 3 }
     weight: 3
   - type: Item
-    id: ClothingOuterArmorBasic
+    id: ClothingHandsGlovesColorYellow
+    weight: 2
+  - type: Item
+    id: PowerCellSmall
     weight: 3
   - type: Item
-    id: ClothingHeadHelmetBasic
-    weight: 3
-  - type: Item
-    id: ClothingOuterCoatTrench
-    weight: 3
+    id: CapacitorStockPart
+    weight: 2
 
 - type: ncContractRewardPool
-  id: caravan_medium
+  id: ncbase_medium
   entries:
   - type: Item
     id: MedkitFilled
@@ -47,10 +44,10 @@
     id: WeaponShotgunSvakha
     weight: 1
   - type: Item
-    id: ClothingOuterArmorVest
+    id: ClothingOuterArmorPunkRandomized
     weight: 2
   - type: Item
-    id: ClothingHeadHelmetRiot
+    id: ClothingOuterArmorElitePunkRandomized
     weight: 2
   - type: Item
     id: WeaponRifleNokotaD5Copperhead
@@ -60,7 +57,7 @@
     weight: 1
 
 - type: ncContractRewardPool
-  id: caravan_hard
+  id: ncbase_hard
   entries:
   - type: Item
     id: MedkitCombatFilled
@@ -72,10 +69,10 @@
     id: WeaponRifleArasakaProto
     weight: 1
   - type: Item
-    id: ClothingOuterArmorRiot
+    id: ClothingUniformJumpsuitClown
     weight: 1
   - type: Item
-    id: ClothingHeadHelmetHardsuitSecurity
+    id: ClothingHeadHelmetMerc
     weight: 1
   - type: Item
     id: WeaponRifleM04

@@ -27,6 +27,7 @@
     jumpsuit: ClothingUniformJumpsuitMedicalGreen
     back: ClothingBackpackMedical
     shoes: ClothingShoesColorWhite
+    eyes: ClothingEyesHudMedical
     id: TraumaTeamDoctorPDA
     belt: ClothingBeltMedicalFilled
     outerClothing: ClothingOuterCoatLab

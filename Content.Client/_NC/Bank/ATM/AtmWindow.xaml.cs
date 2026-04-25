@@ -94,6 +94,12 @@ namespace Content.Client._NC.Bank.ATM
                 
                 _loginContainer.Visible = true;
                 _accountContainer.Visible = false;
+
+                // Автозаполнение номера счета, если поле пустое
+                if (string.IsNullOrEmpty(_accountNumberEdit.Text))
+                {
+                    _accountNumberEdit.Text = state.OwnAccountNumber;
+                }
             }
 
             _taxLabel.Text = $"{state.TaxRate * 100:0}%"; 

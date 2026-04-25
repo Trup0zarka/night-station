@@ -1,6 +1,6 @@
 - type: entity
   id: NC3dPrinterBiotechnica
-  parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
+  parent: [Protolathe, BaseMaterialSiloUtilizer]
   name: 3д принтер Биотехники
   description: Конвертирует сырье в продвинутые предметы.
   components:
@@ -17,18 +17,6 @@
       map: ["enum.MaterialStorageVisualLayers.Inserting"]
     - state: biotech_panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-  - type: Machine
-    board: ProtolatheMachineCircuitboard
-  - type: MaterialStorage
-    whitelist:
-      tags:
-      - Sheet
-      - RawMaterial
-      - Ingot
-      - Wooden
-      - ClothMade
-      - Gauze
-      - Metal
   - type: Lathe
     idleState: biotech_icon
     runningState: biotech_building
