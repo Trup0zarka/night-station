@@ -258,7 +258,7 @@
   comms: true
   materials:
     Plastic: 100
-    Metal: 100
+    Steel: 100
 
 - type: latheRecipe
   id: NCRecipeMagazineShotgunMilitechCrusher
@@ -267,7 +267,7 @@
   categories:
   - Ammo
   materials:
-    Metal: 500
+    Steel: 500
     Plastic: 200
 
 - type: latheRecipe
@@ -277,7 +277,7 @@
   categories:
   - Ammo
   materials:
-    Metal: 300
+    Steel: 300
     Plastic: 200
     Plasteel: 100
 
@@ -288,5 +288,5 @@
   categories:
   - Ammo
   materials:
-    Metal: 200
+    Steel: 200
     Plastic: 150
