@@ -98,3 +98,10 @@
   id: MagazineRifleNokota
   name: MagazineRifleNokota
 
+- type: Tag
+  id: MagazineShotgunMilitechCrusher
+  name: MagazineShotgunMilitechCrusher
+
+- type: Tag
+  id: MagazinePistolSubMachineGunShingen
+  name: MagazinePistolSubMachineGunShingen

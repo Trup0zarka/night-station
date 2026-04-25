@@ -2,7 +2,7 @@
   parent: BaseItem
   id: NCTechRifleM04
   name: Технология (Rifle Steinmeyer M-04)
-  description: Технология для создания модуля "Штейнмейер М-04". Т2.
+  description: Технология для создания модуля "Штейнмейер М-04". Т3.
   components:
   - type: Sprite
     sprite: Objects/Misc/module.rsi
@@ -67,7 +67,7 @@
     - state: datadisk_base
     - state: datadisk_label
   - type: DecryptionTechnology
-    tier: Rare
+    tier: Excellent
     modulePrototype: NCBlueprintNokota
     recipePrototype: NCRecipePaperNokota
     moduleCost: 250

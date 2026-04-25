@@ -1,0 +1,24 @@
+- type: entity
+  id: MagazinePistolSubMachineGunShingen
+  name: магазин Arasaka TKI20 Shingen (12.7мм)
+  description: Удлинённый магазин для ПП Arasaka TKI20 Shingen. Вмещает 30 патронов калибра 12.7мм.
+  parent: BaseMagazinePistolSubMachineGun
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    capacity: 45
+    proto: Cartridge127mm
+    whitelist:
+      tags:
+      - Cartridge127mm
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/bullet_insert.ogg
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Tag
+    tags:
+    - MagazinePistolSubMachineGunShingen

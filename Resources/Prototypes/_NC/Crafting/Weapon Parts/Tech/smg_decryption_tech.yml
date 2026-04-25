@@ -1,0 +1,18 @@
+- type: entity
+  parent: BaseItem
+  id: NCTechSMGShingen
+  name: Технология (Arasaka TKI20 Shingen)
+  description: Технология для создания модуля "Arasaka TKI20 Shingen". Т3.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    layers:
+    - state: datadisk_base
+    - state: datadisk_label
+  - type: DecryptionTechnology
+    tier: Legendary
+    modulePrototype: NCBlueprintShingen
+    recipePrototype: NCRecipePaperShingen
+    moduleCost: 400
+    recipeCost: 550
+    maxUses: 2

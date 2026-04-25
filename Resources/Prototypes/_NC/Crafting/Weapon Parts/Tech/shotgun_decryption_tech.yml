@@ -16,3 +16,22 @@
     moduleCost: 60
     recipeCost: 90
     maxUses: 4
+
+- type: entity
+  parent: BaseItem
+  id: NCTechShotgunMilitechCrusher
+  name: Технология (Militech Crusher)
+  description: Технология для создания модуля "Militech Crusher". Т2.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    layers:
+    - state: datadisk_base
+    - state: datadisk_label
+  - type: DecryptionTechnology
+    tier: Advanced
+    modulePrototype: NCBlueprintMilitechCrusher
+    recipePrototype: NCRecipePaperMilitechCrusher
+    moduleCost: 150
+    recipeCost: 200
+    maxUses: 2

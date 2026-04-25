@@ -8,7 +8,6 @@ using Robust.Shared.Containers;
 using Content.Shared.DoAfter;
 using Robust.Shared.Audio;
 using Robust.Shared.Random;
-using Content.Server.Explosion.EntitySystems;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using System.Numerics;
@@ -18,16 +17,17 @@ namespace Content.Server._NC.Crafting.WeaponAssembly;
 /// <summary>
 /// Серверная система финальной сборки оружия (Этап 3).
 /// Игрок кликает по Чертежу (Blueprint) либо деталью, либо инструментом,
-/// согласно строгой последовательности шагов. При ошибке - фатальный взрыв с осколками.
 /// </summary>
 public sealed class NCWeaponAssemblySystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedToolSystem _toolSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly ExplosionSystem _explosion = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+
+    // Звук поломки чертежа при неправильной сборке
+    private static readonly SoundSpecifier FailSound = new SoundPathSpecifier("/Audio/Effects/metal_break1.ogg");
 
     public override void Initialize()
     {
@@ -175,16 +175,8 @@ public sealed class NCWeaponAssemblySystem : EntitySystem
             QueueDel(usedUid);
         }
 
-        // Взрыв Чертежа (Слабый взрыв: 30 интенсивность, 2 наклон, макс 5 = взрыв на ~2-3 тайла)
-        _explosion.QueueExplosion(blueprintUid, ExplosionSystem.DefaultExplosionPrototypeId, 30, 2, 5);
-
-        // Спавн "осколков" - разбрасываем мусор вокруг
-        int shrapnelCount = _random.Next(3, 7);
-        for (int i = 0; i < shrapnelCount; i++)
-        {
-            var offset = new Vector2(_random.NextFloat(-0.8f, 0.8f), _random.NextFloat(-0.8f, 0.8f));
-            Spawn(garbageId, coords.Offset(offset));
-        }
+        // Звук поломки чертежа (играем по координатам, т.к. сущность сейчас будет удалена)
+        _audio.PlayPvs(FailSound, coords);
 
         // Удаляем чертеж
         QueueDel(blueprintUid);

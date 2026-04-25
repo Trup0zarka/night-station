@@ -17,6 +17,9 @@
     slots:
     - Back
     - SuitStorage
+  - type: Item
+    sprite: _NC/Objects/Weapons/Guns/Rifles/NokotaD5Copperhead/tiny.rsi
+    size: Huge
   - type: AmmoCounter
   - type: Wieldable
   - type: GunRequiresWield

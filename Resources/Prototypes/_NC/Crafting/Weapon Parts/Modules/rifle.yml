@@ -89,7 +89,7 @@
         - tool: Screwing
           doAfterTime: 2.5
 
-# Nokota "KABUKI" (Tier 2)
+# Nokota (Tier 2)
 - type: entity
   id: NCBlueprintNokota
   name: модуль "Nokota D5 Copperhead"
