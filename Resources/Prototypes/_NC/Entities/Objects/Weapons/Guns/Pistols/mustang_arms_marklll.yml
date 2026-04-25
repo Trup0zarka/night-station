@@ -5,7 +5,7 @@
   description: 'Пистолет Mustang Arms "Mark III" — это стандартный по качеству тяжёлый пистолет. Он был разработан как преемник Mustang Arms Mark II, но спешка с его выпуском во время Четвёртой корпоративной войны привела к тому, что он оказался даже хуже.'
   components:
   - type: Sprite
-    sprite: _NC/Objects/Weapons/Guns/Pistol/Mustang_Arms_MarkIII.rsi
+    sprite: _NC/Objects/Weapons/Guns/Pistol/mustang_arms_markIII.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]

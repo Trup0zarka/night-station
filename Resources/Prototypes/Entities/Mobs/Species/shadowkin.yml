@@ -74,6 +74,7 @@
       normalBodyTemperature: 310.15
       thermalRegulationTemperatureThreshold: 0.4 # WWDP
     - type: Perishable
+      rotAfter: 1200
     - type: FireVisuals
       alternateState: Standing
     - type: OfferItem

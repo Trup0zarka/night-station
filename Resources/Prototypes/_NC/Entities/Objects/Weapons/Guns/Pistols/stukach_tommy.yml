@@ -6,7 +6,6 @@
   id: WeaponPistolStukachTommy
   description: Экзотическая комбинация крупнокалиберного пистолета и дробовика от Centurian Essentials. Невероятно непрактичен, но выглядит круто. Требует удержания двумя руками — иначе вылетит из рук при выстреле.
   components:
-  # Спрайт — пока placeholder, можно заменить на свой
   - type: Sprite
     sprite: _NC/Objects/Weapons/Guns/Pistol/stukach.rsi
     layers:
