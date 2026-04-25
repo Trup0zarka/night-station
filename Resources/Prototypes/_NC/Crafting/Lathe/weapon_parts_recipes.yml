@@ -28,9 +28,9 @@
   - NCRecipeMagazineRifleNokota
   - NCRecipeMagazineRifleNowaki
   - NCRecipeMagazine622mmCaseless
-  - NCRecipeWeaponShotgunMilitechCrusher
   - NCRecipeMagazineShotgunMilitechCrusher
   - NCRecipeMagazineSMGShingen
+  - NCRecipeMagazineSMGSaratoga
 
 # ==========================================
 # РЕЦЕПТЫ ПРИНТЕРА (BLANK RECIPES)
@@ -280,3 +280,13 @@
     Metal: 300
     Plastic: 200
     Plasteel: 100
+
+- type: latheRecipe
+  id: NCRecipeMagazineSMGSaratoga
+  result: MagazinePistolSubMachineGunSaratoga
+  comms: true
+  categories:
+  - Ammo
+  materials:
+    Metal: 200
+    Plastic: 150

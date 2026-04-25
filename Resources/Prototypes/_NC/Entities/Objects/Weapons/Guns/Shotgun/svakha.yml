@@ -28,3 +28,17 @@
     autoWield: false
   - type: StaticPrice
     price: 350
+
+- type: entity
+  name: Сваха
+  suffix: Empty
+  parent: WeaponShotgunSvakha
+  id: WeaponShotgunSvakhaEmpty
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 1
+    proto: null
+    whitelist:
+      tags:
+      - ShellShotgun
+      - Flare

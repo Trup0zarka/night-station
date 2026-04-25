@@ -13,7 +13,7 @@
       sprite: Objects/Tools/blueprint.rsi
       state: icon
     - type: NCBlueprint
-      resultEntity: WeaponPistolHelloCutie
+      resultEntity: WeaponPistolHelloCutieEmpty
       garbageEntity: Wrench
       steps:
         - part: Frame
@@ -41,7 +41,7 @@
       sprite: Objects/Tools/blueprint.rsi
       state: icon
     - type: NCBlueprint
-      resultEntity: WeaponPistolOverlord
+      resultEntity: WeaponPistolOverlordEmpty
       garbageEntity: Wrench
       steps:
         - part: Frame
@@ -69,7 +69,7 @@
       sprite: Objects/Tools/blueprint.rsi
       state: icon
     - type: NCBlueprint
-      resultEntity: WeaponPistolStukachTommy
+      resultEntity: WeaponPistolStukachTommyEmpty
       garbageEntity: Wrench
       steps:
         - part: Frame
@@ -100,7 +100,7 @@
       sprite: Objects/Tools/blueprint.rsi
       state: icon
     - type: NCBlueprint
-      resultEntity: WeaponPistolStreetMaster
+      resultEntity: WeaponPistolStreetMasterEmpty
       garbageEntity: Wrench
       steps:
         - part: Frame
@@ -128,7 +128,7 @@
       sprite: Objects/Tools/blueprint.rsi
       state: icon
     - type: NCBlueprint
-      resultEntity: WeaponPistolAvenger
+      resultEntity: WeaponPistolAvengerEmpty
       garbageEntity: Wrench
       steps:
         - part: Frame
@@ -159,7 +159,7 @@
       sprite: Objects/Tools/blueprint.rsi
       state: icon
     - type: NCBlueprint
-      resultEntity: WeaponPistolCheesemaker
+      resultEntity: WeaponPistolCheesemakerEmpty
       garbageEntity: Wrench
       steps:
         - part: Frame
@@ -187,7 +187,7 @@
       sprite: Objects/Tools/blueprint.rsi
       state: icon
     - type: NCBlueprint
-      resultEntity: WeaponPistolFederalX9
+      resultEntity: WeaponPistolFederalX9Empty
       garbageEntity: Wrench
       steps:
         - part: Frame
@@ -215,7 +215,7 @@
       sprite: Objects/Tools/blueprint.rsi
       state: icon
     - type: NCBlueprint
-      resultEntity: WeaponPistolBoomerBuster
+      resultEntity: WeaponPistolBoomerBusterEmpty
       garbageEntity: Wrench
       steps:
         - part: Frame
@@ -243,7 +243,7 @@
       sprite: Objects/Tools/blueprint.rsi
       state: icon
     - type: NCBlueprint
-      resultEntity: WeaponPistolMarkIII
+      resultEntity: WeaponPistolMarkIIIEmpty
       garbageEntity: Wrench
       steps:
         - part: Frame
@@ -271,7 +271,7 @@
       sprite: Objects/Tools/blueprint.rsi
       state: icon
     - type: NCBlueprint
-      resultEntity: NCWeaponRevolverSternmeyerP35
+      resultEntity: NCWeaponRevolverSternmeyerP35Empty
       garbageEntity: Wrench
       steps:
         - part: Frame

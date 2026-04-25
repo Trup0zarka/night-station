@@ -116,7 +116,7 @@
     degradationRate: 2
     jamChance: 0.08
     unjamTime: 1
-    breakChance: 0.25      # 25% шанс рассыпаться за выстрел
+    breakChance: 0.15      # 15% шанс рассыпаться за выстрел
     isRepairable: false
     breakSound:
       collection: MetalBreak

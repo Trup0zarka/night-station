@@ -87,3 +87,40 @@
 
   - type: StaticPrice
     price: 2500
+
+- type: entity
+  name: Штейнмейер М-04
+  suffix: Empty
+  parent: WeaponRifleM04
+  id: WeaponRifleM04Empty
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: null
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        whitelist:
+          tags:
+          - MagazineRifle
+  - type: DualAmmoProvider
+    currentMode: 0
+    modes:
+    - prototype: Cartridge622mmCaseless
+      usesMagazine: true
+      modeName: dual-ammo-mode-rifle
+      fireRate: 5
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Gunshots/batrifle.ogg
+      whitelistTags:
+      - MagazineRifle
+    - prototype: GrenadeFrag
+      capacity: 2
+      count: 0
+      modeName: dual-ammo-mode-grenade
+      fireRate: 1
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+      whitelistTags:
+      - Grenade

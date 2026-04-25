@@ -13,7 +13,7 @@
       sprite: Objects/Tools/blueprint.rsi
       state: icon
     - type: NCBlueprint
-      resultEntity: WeaponRifleM04
+      resultEntity: WeaponRifleM04Empty
       garbageEntity: Wrench
       steps:
         - part: Frame
@@ -72,7 +72,7 @@
       sprite: Objects/Tools/blueprint.rsi
       state: icon
     - type: NCBlueprint
-      resultEntity: WeaponRifleArasakaNOWAKI
+      resultEntity: WeaponRifleArasakaNOWAKIEmpty
       garbageEntity: Wrench
       steps:
         - part: Frame
@@ -100,7 +100,7 @@
       sprite: Objects/Tools/blueprint.rsi
       state: icon
     - type: NCBlueprint
-      resultEntity: WeaponRifleNokotaD5Copperhead
+      resultEntity: WeaponRifleNokotaD5CopperheadEmpty
       garbageEntity: Wrench
       steps:
         - part: Frame

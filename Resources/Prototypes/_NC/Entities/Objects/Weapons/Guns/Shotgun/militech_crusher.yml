@@ -20,3 +20,17 @@
           tags:
           - MagazineShotgun
           - MagazineShotgunMilitechCrusher
+
+- type: entity
+  name: Militech Crusher
+  suffix: Empty
+  parent: WeaponShotgunMilitechCrusher
+  id: WeaponShotgunMilitechCrusherEmpty
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        whitelist:
+          tags:
+          - MagazineShotgun
+          - MagazineShotgunMilitechCrusher

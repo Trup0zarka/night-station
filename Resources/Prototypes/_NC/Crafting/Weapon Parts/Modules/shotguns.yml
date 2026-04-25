@@ -13,7 +13,7 @@
       sprite: Objects/Tools/blueprint.rsi
       state: icon
     - type: NCBlueprint
-      resultEntity: WeaponShotgunSvakha
+      resultEntity: WeaponShotgunSvakhaEmpty
       garbageEntity: Wrench
       steps:
         - part: Frame
@@ -40,7 +40,7 @@
       sprite: Objects/Tools/blueprint.rsi
       state: icon
     - type: NCBlueprint
-      resultEntity: WeaponShotgunMilitechCrusher
+      resultEntity: WeaponShotgunMilitechCrusherEmpty
       garbageEntity: Wrench
       steps:
         - part: Frame

@@ -19,3 +19,17 @@
     chambers: [ True, True, True, True, True, True, True, True ]
     ammoSlots: [ null, null, null, null, null, null, null, null ]
 
+- type: entity
+  name: Sternmeyer P35
+  suffix: Empty
+  parent: NCWeaponRevolverSternmeyerP35
+  id: NCWeaponRevolverSternmeyerP35Empty
+  components:
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+      - Cartridge127mm
+    proto: null
+    capacity: 8
+    chambers: [ True, True, True, True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null, null, null, null ]
