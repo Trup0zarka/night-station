@@ -11,7 +11,6 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-    - state: blue
   - type: Clothing
     sprite: _NC/Objects/Weapons/Guns/SMG/Militech_M221_Saratoga.rsi
   # WD EDIT START
@@ -105,3 +104,17 @@
       map: ["enum.GunVisualLayers.Mag"]
     - state: blue
 
+- type: entity
+  name: Militech Saratoga
+  suffix: RED
+  parent: WeaponSubMachineGunMilitechSaratoga
+  id: WeaponSubMachineGunMilitechSaratogaNCPD
+  components:
+  - type: Sprite
+    sprite: _NC/Objects/Weapons/Guns/SMG/Militech_M221_Saratoga.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: red
