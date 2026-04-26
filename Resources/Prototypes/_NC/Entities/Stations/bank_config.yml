@@ -18,5 +18,5 @@
         balance: 15000
         increasePerSecond: 6
       Ncpd:
-        balance: 5000
+        balance: 10000
         increasePerSecond: 0

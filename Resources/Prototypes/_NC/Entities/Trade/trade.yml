@@ -235,9 +235,6 @@
   - proto: ClothingUniformJumpsuitNanotrasenRepresentative
     price: 800
     count: 1
-  - proto: ClothingCostumeBunnySuit
-    price: 1000
-    count: 1
 
 - type: storeCategoryStructured
   id: Cat_City_Weapons_Sell
