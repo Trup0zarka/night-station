@@ -4,10 +4,8 @@
   description: Один из сотен членов уличных банд. Твоя жизнь дешевле твоего хрома. РОЛЬ ДЛЯ НАКАЗАНИЯ, ИГРАТЬ НА СВОЙ СТРАХ И РИСК.
   playTimeTracker: JobNCBooster
   icon: "JobIconCivilCitizen"
-  salary: 40
+  salary: 0
   startingGear: NCBoosterGear
-  access:
-    - NC_General
 
 - type: startingGear
   id: NCBoosterGear
