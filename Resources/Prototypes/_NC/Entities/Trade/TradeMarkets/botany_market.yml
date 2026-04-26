@@ -12,6 +12,8 @@
     - TradeBotany_Sell
     contractPresets:
     - PresetBotany
+  - type: AccessReader
+    access: [["NC_General"]]
 
 - type: storeCategoryStructured
   id: TradeBotany_Equipment

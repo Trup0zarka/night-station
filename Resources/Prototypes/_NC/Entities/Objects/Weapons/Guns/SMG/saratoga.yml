@@ -108,7 +108,7 @@
   name: Militech Saratoga
   suffix: RED
   parent: WeaponSubMachineGunMilitechSaratoga
-  id: WeaponSubMachineGunMilitechSaratogaNCPD
+  id: WeaponSubMachineGunMilitechSaratogaRED
   components:
   - type: Sprite
     sprite: _NC/Objects/Weapons/Guns/SMG/Militech_M221_Saratoga.rsi

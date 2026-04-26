@@ -21,6 +21,8 @@
     - NightMarket_Buy
     contractPresets:
     - PresetFixer
+  - type: AccessReader
+    access: [["NC_General"]]
 
 - type: storeCategoryStructured
   id: NightMarket_Weapons
@@ -51,7 +53,7 @@
     price: 250
     count: 2
   - proto: WeaponPistolStukachTommy
-    price: 600
+    price: 6000
     count: 1
   - proto: WeaponShotgunSvakha
     price: 120
@@ -65,6 +67,21 @@
   - proto: WeaponRifleArasakaNOWAKI
     price: 1500
     count: 2
+  - proto: WeaponSubMachineGunMilitechSaratoga
+    price: 700
+    count: 2
+  - proto: WeaponSubMachineGunMilitechSaratogaNCPD
+    price: 1600
+    count: 1
+  - proto: WeaponSubMachineGunMilitechSaratogaRED
+    price: 1200
+    count: 2
+  - proto: WeaponSubMachineGunArasakaShingen
+    price: 1100
+    count: 2
+  - proto: WeaponShotgunMilitechCrusher
+    price: 1400
+    count: 1
 
 - type: storeCategoryStructured
   id: NightMarket_Armor
@@ -185,6 +202,15 @@
   - proto: BoxShotgunSlug
     price: 60
     count: 4
+  - proto: MagazinePistolSubMachineGunSaratoga
+    price: 50
+    count: 10
+  - proto: MagazinePistolSubMachineGunShingen
+    price: 60
+    count: 10
+  - proto: MagazineShotgunMilitechCrusher
+    price: 75
+    count: 5
 
 - type: storeCategoryStructured
   id: NightMarket_Medical

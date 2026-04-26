@@ -19,3 +19,10 @@
     id: EdgeRunnerPDA
     gloves: ClothingHandsGlovesColorBlack
     outerClothing: ClothingOuterArmorBasic
+  storage:
+    back:
+    - MagazinePistolSubMachineGunSaratoga
+    - MagazinePistolSubMachineGunSaratoga
+    - MagazinePistolSubMachineGunSaratoga
+  inhand:
+  - WeaponSubMachineGunMilitechSaratogaRED

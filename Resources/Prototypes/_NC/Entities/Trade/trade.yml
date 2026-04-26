@@ -43,6 +43,8 @@
     color: "#b34747"
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
+  - type: AccessReader
+    access: [["NC_General"]]
 
 - type: entity
   id: TrademachineCity
@@ -83,22 +85,6 @@
 # ----------------------------
 # TradeCity Categories (Standard Currency)
 # ----------------------------
-
-- type: storeCategoryStructured
-  id: Cat_City_Weapons
-  name: "Оружие"
-  entries:
-  - proto: WeaponPistolStreetMaster
-    price: 150
-    count: 2
-
-- type: storeCategoryStructured
-  id: Cat_City_Ammo
-  name: "Патроны"
-  entries:
-  - proto: MagazinePistolStreetMaster
-    price: 35
-    count: 6
 
 - type: storeCategoryStructured
   id: Cat_City_Melee
@@ -287,6 +273,12 @@
     price: 200
   - proto: WeaponShotgunSvakha
     price: 30
+  - proto: WeaponSubMachineGunMilitechSaratoga
+    price: 200
+  - proto: WeaponSubMachineGunArasakaShingen
+    price: 220
+  - proto: WeaponShotgunMilitechCrusher
+    price: 350
 
 - type: storeCategoryStructured
   id: Cat_City_Ammo_Sell
@@ -607,8 +599,6 @@
   id: TradeCity_Buy
   currency: Credit
   categories:
-  - Cat_City_Weapons
-  - Cat_City_Ammo
   - Cat_City_Melee
   - Cat_City_Medical
   - Cat_City_Apparel
@@ -620,8 +610,6 @@
   id: TradeCity_Sell
   currency: Credit
   categories:
-  - Cat_City_Weapons
-  - Cat_City_Ammo
   - Cat_City_Melee
   - Cat_City_Apparel
   - Cat_City_Clothing
@@ -632,36 +620,3 @@
   - Cat_City_Clothing_Extra_Sell
   - Cat_City_Chemistry_Sell
   - Cat_City_Devices_Sell
-
-# ----------------------------
-# TradeTickets Categories (Prize Tickets)
-# ----------------------------
-
-- type: storeCategoryStructured
-  id: Cat_Tickets_Exotic
-  name: "Элитное Снаряжение"
-  entries:
-  - proto: WeaponPistolCobra
-    price: 5
-  - proto: WeaponRevolverPython
-    price: 4
-  - proto: WeaponRifleLecter
-    price: 8
-  - proto: ClothingOuterArmorRiot
-    price: 6
-  - proto: ClothingOuterHardsuitSecurity
-    price: 15
-
-- type: storePresetStructured
-  id: TradeTickets_Buy
-  currency: PrizeTicket
-  categories:
-  - Cat_Tickets_Exotic
-  - Cat_City_Ammo
-  - Cat_City_Medical
-
-- type: storePresetStructured
-  id: TradeTickets_Sell
-  currency: PrizeTicket
-  categories:
-  - Cat_Tickets_Exotic
