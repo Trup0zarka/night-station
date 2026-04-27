@@ -9,12 +9,12 @@
   - type: Clothing
     sprite: _NC/Objects/Weapons/Guns/Pistol/Sternmeyer_P35.rsi
   - type: Gun
-    fireRate: 1
+    fireRate: 2
   - type: RevolverAmmoProvider
     whitelist:
       tags:
-      - Cartridge127mm
-    proto: Cartridge127mm
+      - Cartridge13x23
+    proto: Cartridge13x23
     capacity: 8
     chambers: [ True, True, True, True, True, True, True, True ]
     ammoSlots: [ null, null, null, null, null, null, null, null ]
@@ -28,7 +28,7 @@
   - type: RevolverAmmoProvider
     whitelist:
       tags:
-      - Cartridge127mm
+      - Cartridge13x23
     proto: null
     capacity: 8
     chambers: [ True, True, True, True, True, True, True, True ]

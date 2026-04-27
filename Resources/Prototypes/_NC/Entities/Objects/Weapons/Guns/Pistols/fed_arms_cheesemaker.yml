@@ -37,7 +37,7 @@
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
   - type: Gun
-    fireRate: 1.5
+    fireRate: 3
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto

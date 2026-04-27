@@ -1,13 +1,13 @@
 - type: entity
-  id: Cartridge9mm
-  name: патрон (9мм)
+  id: Cartridge9x19
+  name: патрон (9x19)
   parent: BaseCartridge
   components:
   - type: Tag
     tags:
-    - Cartridge9mm
+    - Cartridge9x19
   - type: CartridgeAmmo
-    proto: Bullet9mm
+    proto: Bullet9x19
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
     layers:
@@ -17,15 +17,15 @@
   - type: SpentAmmoVisuals
 
 - type: entity
-  id: Cartridge114mm
-  name: патрон (11.4мм)
+  id: Cartridge11x20
+  name: патрон (11x20)
   parent: BaseCartridge
   components:
   - type: Tag
     tags:
-    - Cartridge114mm
+    - Cartridge11x20
   - type: CartridgeAmmo
-    proto: Bullet114mm
+    proto: Bullet11x20
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
     layers:
@@ -35,15 +35,15 @@
   - type: SpentAmmoVisuals
 
 - type: entity
-  id: Cartridge127mm
-  name: патрон (12.7мм)
+  id: Cartridge13x23
+  name: патрон (13x23)
   parent: BaseCartridge
   components:
   - type: Tag
     tags:
-    - Cartridge127mm
+    - Cartridge13x23
   - type: CartridgeAmmo
-    proto: Bullet127mm
+    proto: Bullet13x23
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
     layers:
@@ -53,16 +53,15 @@
   - type: SpentAmmoVisuals
 
 - type: entity
-  id: Cartridge622mmCaseless
-  name: патрон (6.22мм, безгильзовый)
+  id: Cartridge9x19CL
+  name: патрон (9x19 CL)
   parent: BaseCartridge
   components:
   - type: Tag
     tags:
-    - Cartridge622mm
-    - Cartridge622mmCaseless
+    - Cartridge9x19CL
   - type: CartridgeAmmo
-    proto: Bullet622mmCaseless
+    proto: Bullet9x19
     deleteOnSpawn: true
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
@@ -73,15 +72,54 @@
   - type: SpentAmmoVisuals
 
 - type: entity
-  id: Cartridge152mm
-  name: патрон (15.2мм)
+  id: Cartridge11x20CL
+  name: патрон (11x20 CL)
   parent: BaseCartridge
   components:
   - type: Tag
     tags:
-    - Cartridge152mm
+    - Cartridge11x20CL
   - type: CartridgeAmmo
-    proto: Bullet152mm
+    proto: Bullet11x20
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+
+- type: entity
+  id: Cartridge13x23CL
+  name: патрон (13x23 CL)
+  parent: BaseCartridge
+  components:
+  - type: Tag
+    tags:
+    - Cartridge13x23CL
+  - type: CartridgeAmmo
+    proto: Bullet13x23
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+
+- type: entity
+  id: Cartridge556x45CL
+  name: патрон (5.56×45 CL)
+  parent: BaseCartridge
+  components:
+  - type: Tag
+    tags:
+    - Cartridge556x45CL
+  - type: CartridgeAmmo
+    proto: Bullet556x45
+    deleteOnSpawn: true
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
     layers:

@@ -23,17 +23,17 @@
 
 - type: entity
   id: MagazineRifleArasaka
-  name: магазин штурмовой винтовки Арасака (6.22мм безгильзовые)
+  name: магазин штурмовой винтовки Арасака (5.56×45 CL)
   description: Высокотехнологичный магазин для винтовки Арасака. Вмещает 30 безгильзовых патронов калибра 6.22мм.
   parent: BaseMagazineRifle
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true
     capacity: 30
-    proto: Cartridge622mmCaseless
+    proto: Cartridge556x45CL
     whitelist:
       tags:
-      - Cartridge622mmCaseless
+      - Cartridge556x45CL
   - type: Sprite
     layers:
     - state: red
@@ -46,17 +46,17 @@
 
 - type: entity
   id: MagazineRifleM04
-  name: магазин М-04 (6.22мм безгильзовые)
+  name: магазин М-04 (5.56×45 CL)
   description: Высокотехнологичный магазин для карабина Штейнмейер М-04. Вмещает 20 безгильзовых патронов калибра 6.22мм.
   parent: BaseMagazineRifle
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true
     capacity: 20
-    proto: Cartridge622mmCaseless
+    proto: Cartridge556x45CL
     whitelist:
       tags:
-      - Cartridge622mmCaseless
+      - Cartridge556x45CL
   - type: Sprite
     layers:
     - state: red
@@ -69,17 +69,17 @@
 
 - type: entity
   id: MagazineRifleNokota
-  name: магазин Nokota (6.22мм безгильзовые)
+  name: магазин Nokota (5.56×45 CL)
   description: Стандартный магазин для винтовок Nokota D5. Вмещает 30 безгильзовых патронов калибра 6.22мм.
   parent: BaseMagazineRifle
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true
     capacity: 30
-    proto: Cartridge622mmCaseless
+    proto: Cartridge556x45CL
     whitelist:
       tags:
-      - Cartridge622mmCaseless
+      - Cartridge556x45CL
   - type: Sprite
     sprite: _NC/Objects/Weapons/Guns/Rifles/NokotaD5Copperhead/mag.rsi
     layers:
@@ -93,17 +93,17 @@
 
 - type: entity
   id: MagazineRifleNowaki
-  name: магазин Nokota (6.22мм безгильзовые)
+  name: магазин Nokota (5.56×45 CL)
   description: Стандартный магазин для винтовок Nokota D5. Вмещает 30 безгильзовых патронов калибра 6.22мм.
   parent: BaseMagazineRifle
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true
     capacity: 25
-    proto: Cartridge622mmCaseless
+    proto: Cartridge556x45CL
     whitelist:
       tags:
-      - Cartridge622mmCaseless
+      - Cartridge556x45CL
   - type: Sprite
     layers:
     - state: red
@@ -112,4 +112,4 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: Tag
     tags:
-    - MagazineRifle
+    - MagazineRifleNowaki
