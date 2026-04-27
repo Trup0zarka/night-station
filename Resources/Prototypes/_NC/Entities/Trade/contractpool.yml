@@ -5,9 +5,6 @@
     id: CircuitImprinterMachineCircuitboard
     weight: 3
   - type: Item
-    id: WeaponPistolCheesemaker
-    weight: 1
-  - type: Item
     id: ClothingHeadHatWelding
     weight: 3
   - type: Item
@@ -50,9 +47,6 @@
     id: ClothingOuterArmorElitePunkRandomized
     weight: 2
   - type: Item
-    id: WeaponRifleNokotaD5Copperhead
-    weight: 2
-  - type: Item
     id: WeaponPistolFederalX9
     weight: 1
 
@@ -63,19 +57,10 @@
     id: MedkitCombatFilled
     weight: 1
   - type: Item
-    id: WeaponRifleArasakaNOWAKI
-    weight: 1
-  - type: Item
-    id: WeaponRifleArasakaProto
-    weight: 1
-  - type: Item
     id: ClothingUniformJumpsuitClown
     weight: 1
   - type: Item
     id: ClothingHeadHelmetMerc
-    weight: 1
-  - type: Item
-    id: WeaponRifleM04
     weight: 1
 
 - type: ncContractRewardPool
