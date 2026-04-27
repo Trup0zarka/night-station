@@ -18,11 +18,10 @@
       coefficients:
         Blunt: 0.75
         Slash: 0.75
-        Piercing: 0.75
+        Piercing: 0.55
         Heat: 0.5
         Radiation: 0.5
         Caustic: 0.3
-        Shock: 1.3
   - type: NoSlip
   - type: StaminaDamageResistance
     coefficient: 0.8
@@ -56,11 +55,10 @@
       coefficients:
         Blunt: 0.5
         Slash: 0.5
-        Piercing: 0.5
+        Piercing: 0.35
         Heat: 0.6
         Radiation: 0.6
         Caustic: 0.6
-        Shock: 1.5
   - type: ClothingSpeedModifier
     walkModifier: 0.85
     sprintModifier: 1

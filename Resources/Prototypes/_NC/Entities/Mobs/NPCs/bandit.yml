@@ -8,10 +8,10 @@
     jumpsuit: ClothingUniformJumpsuitAncient
     outerClothing: ClothingOuterArmorMilitechBulletproof
     shoes: ClothingShoesColorBlack
-    pocket1: MagazinePistolAvenger
-    pocket2: MagazinePistolAvenger
+    pocket1: MagazinePistolFederalX9
+    pocket2: MagazinePistolFederalX9
   inhand:
-  - WeaponPistolAvenger
+  - WeaponPistolFederalX9
 
 - type: startingGear
   id: NCBanditGearRifle
@@ -19,10 +19,10 @@
     jumpsuit: ClothingUniformJumpsuitAncient
     outerClothing: ClothingOuterArmorMilitechBulletproof
     shoes: ClothingShoesColorBlack
-    pocket1: MagazineRifleNokota
-    pocket2: MagazineRifleNokota
+    pocket1: MagazinePistolSubMachineGunSaratoga
+    pocket2: MagazinePistolSubMachineGunSaratoga
   inhand:
-  - WeaponRifleNokotaD5Copperhead
+  - WeaponSubMachineGunMilitechSaratoga
 
 - type: startingGear
   id: NCBanditGearBoss
