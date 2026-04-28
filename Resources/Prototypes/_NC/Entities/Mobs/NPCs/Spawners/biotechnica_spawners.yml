@@ -1,0 +1,89 @@
+- type: entity
+  name: Biotechnica Spawner
+  parent: MarkerBase
+  id: SpawnMobNCBiotechnica
+  suffix: NC Biotechnica
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Aliens/Xenos/burrower.rsi
+      state: walking
+    - state: ai
+  - type: RandomSpawner
+    # Simulation of weights (4:3:2:1)
+    prototypes:
+    - MobNCBiotechnicaAvenger
+    - MobNCBiotechnicaAvenger
+    - MobNCBiotechnicaAvenger
+    - MobNCBiotechnicaAvenger
+    - MobNCBiotechnicaBoomerBuster
+    - MobNCBiotechnicaBoomerBuster
+    - MobNCBiotechnicaBoomerBuster
+    - MobNCBiotechnicaSaratoga
+    - MobNCBiotechnicaSaratoga
+    - MobNCBiotechnicaCrusher
+
+- type: entity
+  name: Biotechnica Spawner (Avenger)
+  parent: MarkerBase
+  id: SpawnMobNCBiotechnicaAvenger
+  suffix: NC Biotechnica Avenger
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Aliens/Xenos/burrower.rsi
+      state: walking
+    - state: ai
+  - type: RandomSpawner
+    prototypes:
+    - MobNCBiotechnicaAvenger
+
+- type: entity
+  name: Biotechnica Spawner (Boomer)
+  parent: MarkerBase
+  id: SpawnMobNCBiotechnicaBoomerBuster
+  suffix: NC Biotechnica Boomer
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Aliens/Xenos/burrower.rsi
+      state: walking
+    - state: ai
+  - type: RandomSpawner
+    prototypes:
+    - MobNCBiotechnicaBoomerBuster
+
+- type: entity
+  name: Biotechnica Spawner (Saratoga)
+  parent: MarkerBase
+  id: SpawnMobNCBiotechnicaSaratoga
+  suffix: NC Biotechnica Saratoga
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Aliens/Xenos/burrower.rsi
+      state: walking
+    - state: ai
+  - type: RandomSpawner
+    prototypes:
+    - MobNCBiotechnicaSaratoga
+
+- type: entity
+  name: Biotechnica Spawner (Crusher)
+  parent: MarkerBase
+  id: SpawnMobNCBiotechnicaCrusher
+  suffix: NC Biotechnica Crusher
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Aliens/Xenos/burrower.rsi
+      state: walking
+    - state: ai
+  - type: RandomSpawner
+    prototypes:
+    - MobNCBiotechnicaCrusher

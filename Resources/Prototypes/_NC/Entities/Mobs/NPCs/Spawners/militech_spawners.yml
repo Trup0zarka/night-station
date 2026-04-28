@@ -1,0 +1,89 @@
+- type: entity
+  name: Militech Spawner
+  parent: MarkerBase
+  id: SpawnMobNCMilitech
+  suffix: NC Militech
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Aliens/Xenos/burrower.rsi
+      state: walking
+    - state: ai
+  - type: RandomSpawner
+    # Simulation of weights (4:3:2:1)
+    prototypes:
+    - MobNCMilitechAvenger
+    - MobNCMilitechAvenger
+    - MobNCMilitechAvenger
+    - MobNCMilitechAvenger
+    - MobNCMilitechBoomer
+    - MobNCMilitechBoomer
+    - MobNCMilitechBoomer
+    - MobNCMilitechSaratoga
+    - MobNCMilitechSaratoga
+    - MobNCMilitechCrusher
+
+- type: entity
+  name: Militech Spawner (Avenger)
+  parent: MarkerBase
+  id: SpawnMobNCMilitechAvenger
+  suffix: NC Militech Avenger
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Aliens/Xenos/burrower.rsi
+      state: walking
+    - state: ai
+  - type: RandomSpawner
+    prototypes:
+    - MobNCMilitechAvenger
+
+- type: entity
+  name: Militech Spawner (Boomer)
+  parent: MarkerBase
+  id: SpawnMobNCMilitechBoomer
+  suffix: NC Militech Boomer
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Aliens/Xenos/burrower.rsi
+      state: walking
+    - state: ai
+  - type: RandomSpawner
+    prototypes:
+    - MobNCMilitechBoomer
+
+- type: entity
+  name: Militech Spawner (Saratoga)
+  parent: MarkerBase
+  id: SpawnMobNCMilitechSaratoga
+  suffix: NC Militech Saratoga
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Aliens/Xenos/burrower.rsi
+      state: walking
+    - state: ai
+  - type: RandomSpawner
+    prototypes:
+    - MobNCMilitechSaratoga
+
+- type: entity
+  name: Militech Spawner (Crusher)
+  parent: MarkerBase
+  id: SpawnMobNCMilitechCrusher
+  suffix: NC Militech Crusher
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Aliens/Xenos/burrower.rsi
+      state: walking
+    - state: ai
+  - type: RandomSpawner
+    prototypes:
+    - MobNCMilitechCrusher

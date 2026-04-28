@@ -35,6 +35,44 @@
   inhand:
   - WeaponRifleArasakaProto
 
+- type: startingGear
+  id: NCBanditGearCrusher
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAncient
+    outerClothing: ClothingOuterArmorMilitechBulletproof
+    shoes: ClothingShoesColorBlack
+    pocket1: MagazineShotgunMilitechCrusher
+    pocket2: MagazineShotgunMilitechCrusher
+  inhand:
+  - WeaponShotgunMilitechCrusher
+
+- type: startingGear
+  id: NCBanditGearMeleeSledge
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAncient
+    outerClothing: ClothingOuterArmorMilitechBulletproof
+    shoes: ClothingShoesColorBlack
+  inhand:
+  - Sledgehammer
+
+- type: startingGear
+  id: NCBanditGearMeleeChainsaw
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAncient
+    outerClothing: ClothingOuterArmorMilitechBulletproof
+    shoes: ClothingShoesColorBlack
+  inhand:
+  - Chainsaw
+
+- type: startingGear
+  id: NCBanditGearMeleeFireAxe
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAncient
+    outerClothing: ClothingOuterArmorMilitechBulletproof
+    shoes: ClothingShoesColorBlack
+  inhand:
+  - FireAxe
+
 # --- Bandit Variations ---
 
 - type: entity
@@ -86,3 +124,39 @@
     - CyberwareNeuroKerenzikovMk3
     - CyberwareNeuroTacticalSpartan
     - CyberwareInternalEnhancedAntibodies
+
+- type: entity
+  parent: MobNCBandit
+  id: MobNCBanditCrusher
+  suffix: NC Crusher
+  components:
+  - type: Loadout
+    prototypes: [NCBanditGearCrusher]
+  - type: NpcUnlootable
+
+- type: entity
+  parent: MobNCBandit
+  id: MobNCBanditMeleeSledge
+  suffix: NC Sledge
+  components:
+  - type: Loadout
+    prototypes: [NCBanditGearMeleeSledge]
+  - type: NpcUnlootable
+
+- type: entity
+  parent: MobNCBandit
+  id: MobNCBanditMeleeChainsaw
+  suffix: NC Chainsaw
+  components:
+  - type: Loadout
+    prototypes: [NCBanditGearMeleeChainsaw]
+  - type: NpcUnlootable
+
+- type: entity
+  parent: MobNCBandit
+  id: MobNCBanditMeleeFireAxe
+  suffix: NC Fireaxe
+  components:
+  - type: Loadout
+    prototypes: [NCBanditGearMeleeFireAxe]
+  - type: NpcUnlootable
