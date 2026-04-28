@@ -68,6 +68,9 @@
   abstract: true
   IdleRange: !type:Single 10
   components:
+  - type: NpcFactionMember
+    factions:
+    - NCMilitech
   - type: HTN
     rootTask:
       task: NCBanditTier3RootCompound

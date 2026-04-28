@@ -12,7 +12,7 @@
   components:
   - type: NpcFactionMember
     factions:
-    - Syndicate
+    - NCBandit
   - type: HTN
     rootTask:
       task: NCBanditRootCompound

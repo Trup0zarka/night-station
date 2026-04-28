@@ -68,6 +68,9 @@
   abstract: true
   IdleRange: !type:Single 8
   components:
+  - type: NpcFactionMember
+    factions:
+    - NCBiotechnica
   - type: HTN
     rootTask:
       task: NCBanditTier2RootCompound
