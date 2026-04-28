@@ -28,11 +28,11 @@
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
-        startingItem: Cartridge127mm
+        startingItem: Cartridge13x23CL
         priority: 1
         whitelist:
           tags:
-            - Cartridge127mm
+            - Cartridge13x23CL
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
