@@ -27,7 +27,6 @@
   - NCRecipeMagazineRifleM04
   - NCRecipeMagazineRifleNokota
   - NCRecipeMagazineRifleNowaki
-  - NCRecipeMagazine622mmCaseless
   - NCRecipeMagazineShotgunMilitechCrusher
   - NCRecipeMagazineSMGShingen
   - NCRecipeMagazineSMGSaratoga
@@ -247,14 +246,6 @@
 - type: latheRecipe
   id: NCRecipeMagazineRifleNowaki
   result: MagazineRifleNowaki
-  comms: true
-  materials:
-    Plastic: 100
-    Steel: 100
-
-- type: latheRecipe
-  id: NCRecipeMagazine622mmCaseless
-  result: Magazine622mmCaseless
   comms: true
   materials:
     Plastic: 100
