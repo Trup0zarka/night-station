@@ -36,24 +36,3 @@ ent-BrutepackAdvanced1 = продвинутый набор для ушибов
 
 ent-Bloodpack = пакет с кровью
    .desc = Содержит инновационный универсальный заменитель крови, созданный передовой медицинской наукой Nanotrasen.
-
-ent-PillDermaline = дермалиновая таблетка (10ед.)
-   .desc = { ent-Pill.desc }
-
-ent-PillBicaridine = таблетка бикаридина (10ед.)
-   .desc = { ent-Pill.desc }
-
-ent-PillAmbuzol = таблетка амбузола
-   .desc = { ent-Pill.desc }
-
-ent-PillAmbuzolPlus = таблетка амбузола плюс
-   .desc = { ent-Pill.desc }
-
-ent-SyringeBicaridine = шприц с бикаридином
-   .desc = { ent-BaseSyringe.desc }
-
-ent-SyringeDermaline = шприц с дермалином
-   .desc = { ent-BaseSyringe.desc }
-
-ent-SyringeHyronalin = шприц с хироналином
-   .desc = { ent-BaseSyringe.desc }

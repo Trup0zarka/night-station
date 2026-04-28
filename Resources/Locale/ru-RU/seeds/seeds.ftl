@@ -1,10 +1,10 @@
 # Nouns
-# Nouns
+
 seeds-noun-seeds = семян
 seeds-noun-spores = спор
 
 # Seeds
-# Seeds
+
 seeds-wheat-name = пшеница
 seeds-wheat-display-name = стебли пшеницы
 seeds-meatwheat-name = мясница
@@ -51,8 +51,8 @@ seeds-bluetomato-name = синий томат
 seeds-bluetomato-display-name = куст синего томата
 seeds-bloodtomato-name = кровяной томат
 seeds-bloodtomato-display-name = куст кровяного томата
-seeds-killertomato-name = tomato killer
-seeds-killertomato-display-name = tomato killer plant
+seeds-killertomato-name = томат-убийца
+seeds-killertomato-display-name = куст томата-убийцы
 seeds-eggplant-name = баклажан
 seeds-eggplant-display-name = баклажан
 seeds-apple-name = яблоко
@@ -108,11 +108,11 @@ seeds-gatfruit-display-name = гатфруктовое дерево
 seeds-rice-name = рис
 seeds-rice-display-name = стебли риса
 seeds-soybeans-name = соя
-seeds-soybeans-display-name = соя
+seeds-soybeans-display-name = соевое дерево
 seeds-spacemans-trumpet-name = космонавтская труба
 seeds-spacemans-trumpet-display-name = космонавтская труба
 seeds-koibean-name = коибобы
-seeds-koibean-display-name = растение коибоб
+seeds-koibean-display-name = коибобовое дерево
 seeds-watermelon-name = арбуз
 seeds-watermelon-display-name = стебель арбуза
 seeds-holymelon-name = святой арбуз
@@ -130,16 +130,16 @@ seeds-pea-display-name = гороховая лоза
 seeds-worldpea-name = горох мира
 seeds-worldpea-display-name = лоза гороха мира
 seeds-pumpkin-name = тыква
-seeds-pumpkin-display-name = тыква
-seeds-blue-pumpkin-name = blue pumpkin
-seeds-blue-pumpkin-display-name = blue pumpkins
+seeds-pumpkin-display-name = стебель тыквы
+seeds-blue-pumpkin-name = синетыква
+seeds-blue-pumpkin-display-name = стебель синетыквы
 seeds-cotton-name = хлопок
 seeds-cotton-display-name = куст хлопка
-seeds-pyrotton-name = пирохлопок
-seeds-pyrotton-display-name = куст пирохлопка
+seeds-pyrotton-name = огненный хлопок
+seeds-pyrotton-display-name = куст огненного хлопка
 seeds-capfruit-name = пистофрукт
 seeds-capfruit-display-name = пистофруктовое дерево
 seeds-cherry-name = вишня
 seeds-cherry-display-name = вишнёвое дерево
-seeds-anomaly-berry-name = anomaly berry
-seeds-anomaly-berry-display-name = anomaly berries
+seeds-anomaly-berry-name = аномальная ягода
+seeds-anomaly-berry-display-name = аномальная ягода

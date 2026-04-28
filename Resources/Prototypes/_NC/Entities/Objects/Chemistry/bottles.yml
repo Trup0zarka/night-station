@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseChemistryBottleFilled
   id: YeastChemistryBottle
-  name: мензурка (дрожжи)
+  name: бутылочка (дрожжи)
   components:
   - type: SolutionContainerManager
     solutions:
@@ -13,7 +13,7 @@
 - type: entity
   parent: BaseChemistryBottleFilled
   id: CornSmoothieChemistryBottle
-  name: мензурка (кукурузный смузи)
+  name: бутылочка (кукурузный смузи)
   components:
   - type: SolutionContainerManager
     solutions:
@@ -25,7 +25,7 @@
 - type: entity
   parent: BaseChemistryBottleFilled
   id: WheatSmoothieChemistryBottle
-  name: мензурка (пшеничный смузи)
+  name: бутылочка (пшеничный смузи)
   components:
   - type: SolutionContainerManager
     solutions:
@@ -37,7 +37,7 @@
 - type: entity
   parent: BaseChemistryBottleFilled
   id: WhiteMatterChemistryBottle
-  name: мензурка (белое вещество)
+  name: бутылочка (белое вещество)
   components:
   - type: SolutionContainerManager
     solutions:
@@ -49,7 +49,7 @@
 - type: entity
   parent: BaseChemistryBottleFilled
   id: NeuroStimChemistryBottle
-  name: мензурка (нейростим)
+  name: бутылочка (нейростим)
   components:
   - type: SolutionContainerManager
     solutions:
@@ -61,7 +61,7 @@
 - type: entity
   parent: BaseChemistryBottleFilled
   id: PrimeTimeChemistryBottle
-  name: мензурка (прайм тайм)
+  name: бутылочка (прайм тайм)
   components:
   - type: SolutionContainerManager
     solutions:
@@ -73,7 +73,7 @@
 - type: entity
   parent: BaseChemistryBottleFilled
   id: SixGunChemistryBottle
-  name: мензурка (шестистволка)
+  name: бутылочка (шестистволка)
   components:
   - type: SolutionContainerManager
     solutions:
@@ -85,7 +85,7 @@
 - type: entity
   parent: BaseChemistryBottleFilled
   id: NitroPolymerChemistryBottle
-  name: мензурка (нитро-полимер)
+  name: бутылочка (нитро-полимер)
   components:
   - type: SolutionContainerManager
     solutions:
@@ -97,7 +97,7 @@
 - type: entity
   parent: BaseChemistryBottleFilled
   id: BioEthanolChemistryBottle
-  name: мензурка (био-этанол)
+  name: бутылочка (био-этанол)
   components:
   - type: SolutionContainerManager
     solutions:

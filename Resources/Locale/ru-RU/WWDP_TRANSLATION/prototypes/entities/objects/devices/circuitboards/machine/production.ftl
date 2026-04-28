@@ -86,6 +86,14 @@ ent-SeedExtractorMachineCircuitboard = экстрактор семян (маши
     .desc = Печатная плата экстрактора семян.
     .suffix = { "" }
 
+ent-BiofabricatorMachineCircuitboard = биофабрикатор (машинная плата)
+    .desc = Печатная плата машины печати органических тканей.
+    .suffix = { "" }
+
+ent-BiogeneratorMachineCircuitboard = биогенератор (машинная плата)
+    .desc = Печатная плата машины преобразования органики в биомассу.
+    .suffix = { "" }
+
 ent-SMESMachineCircuitboard = СМЕС (машинная плата)
     .desc = { ent-BaseMachineCircuitboard.desc }
     .suffix = { "" }

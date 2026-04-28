@@ -4,30 +4,8 @@ ent-EnergyShield = энергетический щит
 ent-BrokenEnergyShield = сломанный энергетический щит
    .desc = Что-то внутри сгорело, оно больше не работает.
 
-
-ent-CognizineChemistryBottle = бутылка когнизина
-   .desc = { ent-BaseChemistryEmptyBottle.desc }
-
-ent-ToxinChemistryBottle = бутылка с токсином
-   .desc = { ent-BaseChemistryEmptyBottle.desc }
-
-ent-BaseBeakerMetallic = ""
-   .desc = ""
-
-ent-CryoxadoneBeakerSmall = стакан криоксадона
-   .desc = Заполнен реагентом, используемым в криогенных пробирках.
-
-ent-SyringeBluespace = блюспейс шприц
-   .desc = Внедрение передовой технологии bluespace.
-
 ent-SyndicateSponge = куб обезьяны
    .desc = Просто добавь воды!
-
-ent-WatermelonSeeds = пакет арбузных семечек
-   .desc = { ent-SeedBase.desc }
-
-ent-GrapeSeeds = пакет виноградных косточек
-   .desc = { ent-SeedBase.desc }
 
 ent-MopBucketFull = Ведро для мытья пола
    .desc = { ent-MopBucket.desc }
