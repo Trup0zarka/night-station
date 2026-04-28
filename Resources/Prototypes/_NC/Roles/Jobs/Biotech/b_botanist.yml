@@ -12,15 +12,15 @@
     - Biotech_Lab
     - Biotech_General
     - NC_General
-    
+
 - type: startingGear
   id: BiotechnicaBotanistGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitBiotech
-    back: ClothingBackpackSatchelMedical
+    jumpsuit: ClothingUniformJumpsuitBiotechnica
+    back: ClothingBackpackSatchelBiotechnica
     shoes: ClothingShoesColorWhite
-    head: ClothingHeadHatBeretSeniorPhysician
-    eyes: ClothingEyesGlassesSunglasses
+    mask: ClothingMaskSterile
+    gloves: ClothingHandsGlovesEnviroglovesBiotechnicaBotany
     id: BiotechnicaBotanistPDA
-    belt: ClothingBeltMedicalFilled
-    outerClothing: ClothingOuterCoatLabCmo
+    belt: ClothingBeltBiotechnicaBotanyFilled
+    outerClothing: ClothingOuterApronBiotechnicaBotany

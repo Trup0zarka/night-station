@@ -1,7 +1,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitArmoredBusinessSuit
-  name: Деловой костюм с кевларом
+  name: деловой костюм с кевларом
   description: Деловой костюм, усиленный кевларовыми вставками для дополнительной защиты. Идеально подходит для профессионалов, которым требуется сочетание стиля и безопасности в городской среде.
   components:
   - type: Sprite
@@ -19,7 +19,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitMilitech
-  name: Одежда работника Militech
+  name: одежда работника Militech
   description: Одежда, разработанная для сотрудников корпорации Militech. Практичный и функциональный костюм, обеспечивающий комфорт и защиту в различных условиях работы.
   components:
   - type: Sprite
@@ -34,9 +34,9 @@
 
 - type: entity
   parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitBiotech
-  name: Одежда работника Biotech
-  description: Одежда сотрудника Biotech, разработанная с учётом передовых технологий и комфорта. Идеально подходит для работы в лабораторных и полевых условиях, обеспечивая защиту и функциональность.
+  id: ClothingUniformJumpsuitBiotechnica
+  name: одежда работника Biotechnica
+  description: Одежда сотрудника Biotechnica, разработанная с учётом передовых технологий и комфорта. Идеально подходит для работы в лабораторных и полевых условиях, обеспечивая защиту и функциональность.
   components:
   - type: Sprite
     sprite: _NC/Clothing/Uniforms/Jumpsuits/biotech_jumpsuit.rsi

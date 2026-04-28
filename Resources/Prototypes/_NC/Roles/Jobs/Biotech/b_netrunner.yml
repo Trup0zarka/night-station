@@ -17,7 +17,7 @@
 - type: startingGear
   id: BiotechnicaNetrunnerGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitBiotech
+    jumpsuit: ClothingUniformJumpsuitBiotechnica
     back: ClothingBackpackCyberdeckFilled
     shoes: ClothingShoesColorWhite
     head: ClothingHeadHatBeretSeniorPhysician

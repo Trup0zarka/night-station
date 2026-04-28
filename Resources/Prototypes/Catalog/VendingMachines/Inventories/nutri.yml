@@ -17,25 +17,26 @@
     EZNutrientChemistryBottle: 3
     Bucket: 3
     DiseaseSwab: 20
-    BoxAgrichem: 1
+    # BoxAgrichem: 1  # This was commented out, so doing the same here
   startingItemPrices:
     HydroponicsToolSpade: 20
     HydroponicsToolMiniHoe: 20
     HydroponicsToolClippers: 20
-    HydroponicsToolScythe: 20
-    HydroponicsToolHatchet: 20
+    HydroponicsToolScythe: 40
+    HydroponicsToolHatchet: 60
+    HandLabeler: 140
     Dropper: 10
-    PlantAnalyzer: 50
-    PlantBag: 20
+    PlantAnalyzer: 400
+    PlantBag: 100
     PlantBGoneSpray: 20
-    WeedSpray: 20
-    PestSpray: 20
+    WeedSpray: 40
+    PestSpray: 40
     Syringe: 20
-    RobustHarvestChemistryBottle: 20
-    EZNutrientChemistryBottle: 20
+    RobustHarvestChemistryBottle: 80
+    EZNutrientChemistryBottle: 60
     Bucket: 10
     DiseaseSwab: 10
-    BoxAgrichem: 50
+    # BoxAgrichem: 50  # This was commented out, so doing the same here
   contrabandInventory:
     UnstableMutagenChemistryBottle: 1
     Joint: 1

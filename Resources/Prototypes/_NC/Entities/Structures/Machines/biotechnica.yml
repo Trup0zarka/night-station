@@ -1,0 +1,87 @@
+# region Abstract
+
+- type: entity
+  id: VendingMachineBiotechnica
+  abstract: true
+  components:
+  - type: PointLight
+    radius: 2
+    energy: 1.6
+    color: "#6facac"  # Biotechnica palette
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+
+# region Botany
+
+- type: entity
+  parent: [VendingMachineBiotechnica, VendingMachineNutri]
+  id: VendingMachineBiotechnicaBotany
+  name: Интрументы Biotechnica
+  description: Корпоративный автомат, содержащий средства и инструменты для работы с растениями.
+  suffix: Гидропоника, Ботаника
+  components:
+  - type: VendingMachine
+    pack: BiotechnicaBotanyInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: Sprite
+    sprite: _NC/Structures/Machines/Biotechnica/botany.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+
+- type: entity
+  parent: [VendingMachineBiotechnica, VendingMachineHydrobe]
+  id: VendingMachineBiotechnicaBotanyDrobe
+  name: БотаШкаф Biotechnica
+  description: Корпоративный автомат, содержащий экипировку для работы с растениями.
+  suffix: Гидропоника, Ботаника
+  components:
+  - type: VendingMachine
+    pack: BiotechnicaBotanyDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Sprite
+    sprite: _NC/Structures/Machines/Biotechnica/botany_drobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+
+- type: entity
+  parent: [VendingMachineBiotechnica, VendingMachineSeeds]
+  id: VendingMachineBiotechnicaSeeds
+  name: Семена Biotechnica
+  description: Корпоративный раздатчик эксклюзивных семян Biotechnica.
+  suffix: Гидропоника, Ботаника
+  components:
+  - type: VendingMachine
+    pack: BiotechnicaSeedsInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: Sprite
+    sprite: _NC/Structures/Machines/Biotechnica/seeds.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]

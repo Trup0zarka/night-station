@@ -1,0 +1,194 @@
+- type: vendingMachineInventory
+  id: BiotechnicaBotanyInventory
+  startingInventory:
+    BiotechnicaHoe: 2
+    BiotechnicaSpade: 2
+    BiotechnicaClippers: 2
+    BiotechnicaScythe: 2
+    BiotechnicaHatchet: 2
+    BiotechnicaLabeler: 2
+    BiotechnicaDropper: 4
+    BiotechnicaPlantAnalyzer: 2
+    BiotechnicaPlantBag: 3
+    BiotechnicaPlantBagHolding: 1
+    PlantBGoneSpray: 20
+    WeedSpray: 20
+    PestSpray: 20
+    Syringe: 5
+    RobustHarvestChemistryBottle: 3
+    EZNutrientChemistryBottle: 3
+    Bucket: 3
+    DiseaseSwab: 20
+    BoxMouthSwab: 1
+  startingItemPrices:
+    BiotechnicaHoe: 20
+    BiotechnicaSpade: 20
+    BiotechnicaClippers: 20
+    BiotechnicaScythe: 40
+    BiotechnicaHatchet: 60
+    BiotechnicaLabeler: 140
+    BiotechnicaDropper: 10
+    BiotechnicaPlantAnalyzer: 400
+    BiotechnicaPlantBag: 100
+    BiotechnicaPlantBagHolding: 1000
+    PlantBGoneSpray: 20
+    WeedSpray: 40
+    PestSpray: 40
+    Syringe: 20
+    RobustHarvestChemistryBottle: 80
+    EZNutrientChemistryBottle: 60
+    Bucket: 20
+    DiseaseSwab: 10
+    BoxMouthSwab: 200  # Cheaper than buying swabs separately
+  contrabandInventory:
+    UnstableMutagenChemistryBottle: 1
+    Joint: 1
+    Blunt: 1
+  contrabandItemPrices:
+    UnstableMutagenChemistryBottle: 100
+    Joint: 50
+    Blunt: 50
+  emaggedInventory:
+    Left4ZedChemistryBottle: 1
+    Chainsaw: 1
+  emaggedItemPrices:
+    Left4ZedChemistryBottle: 100
+    Chainsaw: 1000
+
+- type: vendingMachineInventory
+  id: BiotechnicaBotanyDrobeInventory
+  startingInventory:
+    ClothingBackpackBiotechnica: 2
+    ClothingBackpackSatchelBiotechnica: 2
+    ClothingBackpackDuffelBiotechnica: 2
+    ClothingUniformJumpsuitBiotechnica: 3
+    ClothingOuterApronBiotechnicaBotany: 2
+    ClothingBeltBiotechnicaBotany: 2
+    ClothingHeadBandBotany: 2
+    ClothingHeadHatBiotechnicaCap: 2
+    ClothingMaskSterile: 2
+    ClothingHeadEnvirohelmBiotechnicaBotany: 2
+    ClothingUniformEnvirosuitBiotechnicaBotany: 2
+    ClothingHandsGlovesEnviroglovesBiotechnicaBotany: 3
+  contrabandInventory:
+    ClothingOuterWinterHydro: 2
+    ClothingShoesBootsWinterHydro: 2
+  startingItemPrices:
+    ClothingBackpackBiotechnica: 100
+    ClothingBackpackSatchelBiotechnica: 100
+    ClothingBackpackDuffelBiotechnica: 100
+    ClothingUniformJumpsuitBiotechnica: 100
+    ClothingOuterApronBiotechnicaBotany: 50
+    ClothingBeltBiotechnicaBotany: 100
+    ClothingHeadBandBotany: 50
+    ClothingHeadHatBiotechnicaCap: 50
+    ClothingMaskSterile: 50
+    ClothingHeadEnvirohelmBiotechnicaBotany: 300
+    ClothingUniformEnvirosuitBiotechnicaBotany: 300
+    ClothingHandsGlovesEnviroglovesBiotechnicaBotany: 200
+  contrabandItemPrices:
+    ClothingOuterWinterHydro: 200
+    ClothingShoesBootsWinterHydro: 100
+
+- type: vendingMachineInventory
+  id: BiotechnicaSeedsInventory
+  startingInventory:
+    AloeSeeds: 3
+    AmbrosiaVulgarisSeeds: 3
+    AppleSeeds: 5
+    BananaSeeds: 5
+    BerrySeeds: 5
+    CarrotSeeds: 5
+    CabbageSeeds: 5
+    ChanterelleSeeds: 5
+    CherrySeeds: 5
+    ChiliSeeds: 5
+    CocoaSeeds: 3
+    CornSeeds: 5
+    CottonSeeds: 5
+    EggplantSeeds: 5
+    EggySeeds: 5
+    GalaxythistleSeeds: 3
+    GarlicSeeds: 3
+    GrapeSeeds: 5
+    LemonSeeds: 5
+    LimeSeeds: 5
+    PineappleSeeds: 5
+    LingzhiSeeds: 3
+    OatSeeds: 5
+    OnionSeeds: 5
+    OnionRedSeeds: 5
+    OrangeSeeds: 5
+    PeaSeeds: 5
+    PoppySeeds: 3
+    PotatoSeeds: 5
+    PumpkinSeeds: 5
+    RiceSeeds: 5
+    SoybeanSeeds: 5
+    SugarcaneSeeds: 5
+    TeaPlantSeeds: 5
+    TomatoSeeds: 5
+    TowercapSeeds: 5
+    WheatSeeds: 5
+    WatermelonSeeds: 5
+  emaggedInventory:
+    FlyAmanitaSeeds: 1
+    NettleSeeds: 1
+    KillerTomatoSeeds: 1
+  contrabandInventory:
+    EggySeeds: 2
+    TobaccoSeeds: 2
+    CannabisSeeds: 2
+    NettleSeeds: 2
+    FlyAmanitaSeeds: 2
+    BungoSeeds: 2
+  startingItemPrices:
+    AloeSeeds: 300
+    AmbrosiaVulgarisSeeds: 800
+    AppleSeeds: 500
+    BananaSeeds: 500
+    BerrySeeds: 400
+    CarrotSeeds: 250
+    CabbageSeeds: 250
+    ChanterelleSeeds: 350
+    CherrySeeds: 500
+    ChiliSeeds: 350
+    CocoaSeeds: 800
+    CornSeeds: 150
+    CottonSeeds: 200
+    EggplantSeeds: 300
+    EggySeeds: 300
+    GalaxythistleSeeds: 600
+    GarlicSeeds: 300
+    GrapeSeeds: 450
+    LemonSeeds: 400
+    LimeSeeds: 400
+    PineappleSeeds: 500
+    LingzhiSeeds: 600
+    OatSeeds: 150
+    OnionSeeds: 250
+    OnionRedSeeds: 300
+    OrangeSeeds: 500
+    PeaSeeds: 200
+    PoppySeeds: 800
+    PotatoSeeds: 150
+    PumpkinSeeds: 300
+    RiceSeeds: 150
+    SoybeanSeeds: 150
+    SugarcaneSeeds: 300
+    TeaPlantSeeds: 600
+    TomatoSeeds: 350
+    TowercapSeeds: 400
+    WheatSeeds: 150
+    WatermelonSeeds: 400
+  emaggedItemPrices:
+    FlyAmanitaSeeds: 1500
+    NettleSeeds: 1000
+    KillerTomatoSeeds: 2000
+  contrabandItemPrices:
+    EggySeeds: 800
+    TobaccoSeeds: 1200
+    CannabisSeeds: 1200
+    NettleSeeds: 1000
+    FlyAmanitaSeeds: 1500
+    BungoSeeds: 600

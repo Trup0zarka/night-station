@@ -494,6 +494,6 @@ portableChemicalMixer: null
 
 WallRockBasaltBSCrystal: WallRockBasaltBluespace
 AirlockHydroponics: AirlockHydroponicsLocked
-Biogenerator: null
+# Biogenerator: null  # NC edit: Bring back biogenerator
 FloraGreyStalagmite: null
 FelinidCube: TajaranCube
