@@ -1,7 +1,9 @@
 using Content.Server.NPC.Components;
 using Content.Shared.NPC;
+using Content.Shared.NPC.Components;
 using Content.Shared.NPC.Systems;
 using Content.Server.NPC.HTN;
+using Robust.Shared.GameObjects;
 
 namespace Content.Server.NPC.HTN.Preconditions;
 
@@ -24,7 +26,9 @@ public sealed partial class AllyCombatTargetPrecondition : HTNPrecondition
         foreach (var ally in lookup.GetEntitiesInRange(owner, Range))
         {
             if (ally == owner) continue;
-            if (!factionSystem.IsEntityFriendly(owner, ally)) continue;
+            
+            // Explicitly create Entity<T> for the method call
+            if (!factionSystem.IsEntityFriendly((owner, null), (ally, null))) continue;
 
             EntityUid? target = null;
             if (_entManager.TryGetComponent<NPCRangedCombatComponent>(ally, out var ranged))

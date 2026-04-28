@@ -5,6 +5,8 @@ using Content.Shared.Physics;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Components;
 using Content.Server.NPC.HTN;
+using Robust.Shared.GameObjects;
+using Robust.Shared.Maths;
 
 namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Combat;
 
