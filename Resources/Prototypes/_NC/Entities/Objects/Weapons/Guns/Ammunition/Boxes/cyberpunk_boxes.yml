@@ -1,11 +1,11 @@
 - type: entity
-  id: AmmoBox114mm
-  name: коробка патронов (11.4мм)
+  id: AmmoBox11x20
+  name: коробка патронов (11x20)
   parent: BaseMagazineBoxPistol
   components:
   - type: BallisticAmmoProvider
     capacity: 30
-    proto: Cartridge114mm
+    proto: Cartridge11x20
   - type: Sprite
     layers:
     - state: base
@@ -14,13 +14,13 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  id: AmmoBox127mm
-  name: коробка патронов (12.7мм)
+  id: AmmoBox13x23
+  name: коробка патронов (13x23)
   parent: BaseMagazineBoxPistol
   components:
   - type: BallisticAmmoProvider
     capacity: 20
-    proto: Cartridge127mm
+    proto: Cartridge13x23
   - type: Sprite
     layers:
     - state: base
@@ -29,13 +29,13 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  id: AmmoBox622mmCaseless
-  name: коробка патронов (6.22мм, безгильзовые)
+  id: AmmoBox556x45CL
+  name: коробка патронов (5.56×45 CL)
   parent: BaseMagazineBoxRifle
   components:
   - type: BallisticAmmoProvider
     capacity: 60
-    proto: Cartridge622mmCaseless
+    proto: Cartridge556x45CL
   - type: Sprite
     layers:
     - state: base
@@ -75,13 +75,13 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  id: AmmoBox9mm
-  name: коробка патронов (9мм)
+  id: AmmoBox9x19
+  name: коробка патронов (9x19)
   parent: BaseMagazineBoxPistol
   components:
   - type: BallisticAmmoProvider
     capacity: 30
-    proto: Cartridge9mm
+    proto: Cartridge9x19
   - type: Sprite
     layers:
     - state: base

@@ -2,8 +2,8 @@
 # Переделка Protolathe под станок снаряжения патронов
 
 - type: latheRecipe
-  id: NCAmmoBox114mm
-  result: AmmoBox114mm
+  id: NCAmmoBox11x20
+  result: AmmoBox11x20
   completetime: 5
   materials:
     NCBulletTipMat: 3000
@@ -11,8 +11,8 @@
     Gunpowder: 3000
 
 - type: latheRecipe
-  id: NCAmmoBox127mm
-  result: AmmoBox127mm
+  id: NCAmmoBox13x23
+  result: AmmoBox13x23
   completetime: 5
   materials:
     NCBulletTipMat: 2000
@@ -20,22 +20,13 @@
     Gunpowder: 2000
 
 - type: latheRecipe
-  id: NCAmmoBox622mmCaseless
-  result: AmmoBox622mmCaseless
+  id: NCAmmoBox556x45CL
+  result: AmmoBox556x45CL
   completetime: 5
   materials:
     NCBulletTipMat: 3000
     NCCasingMat: 3000
     Gunpowder: 3000
-
-- type: latheRecipe
-  id: NCAmmoBox152mm
-  result: AmmoBox152mm
-  completetime: 5
-  materials:
-    NCBulletTipMat: 1000
-    NCCasingMat: 1000
-    Gunpowder: 1000
 
 - type: latheRecipe
   id: NCAmmoBoxNomadSpike
@@ -46,14 +37,33 @@
     NCCasingMat: 1200
     Gunpowder: 1200
 
+- type: latheRecipe
+  id: NCAmmoBox9x19
+  result: AmmoBox9x19
+  completetime: 5
+  materials:
+    NCBulletTipMat: 3000
+    NCCasingMat: 3000
+    Gunpowder: 3000
+
+- type: latheRecipe
+  id: NCAmmoBoxShotgunBuckshot
+  result: AmmoBoxShotgunBuckshot
+  completetime: 5
+  materials:
+    NCBulletTipMat: 2000
+    NCCasingMat: 2000
+    Gunpowder: 2000
+
 - type: latheRecipePack
   id: NCCyberpunkAmmoPack
   recipes:
-  - NCAmmoBox114mm
-  - NCAmmoBox127mm
-  - NCAmmoBox622mmCaseless
-  - NCAmmoBox152mm
+  - NCAmmoBox11x20
+  - NCAmmoBox13x23
+  - NCAmmoBox556x45CL
   - NCAmmoBoxNomadSpike
+  - NCAmmoBox9x19
+  - NCAmmoBoxShotgunBuckshot
 
 
 # ==========================================

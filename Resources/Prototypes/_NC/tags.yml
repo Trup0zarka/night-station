@@ -39,28 +39,32 @@
   name: MagazinePistolStreetMaster
 
 - type: Tag
-  id: Cartridge114mm
-  name: Cartridge114mm
+  id: Cartridge9x19
+  name: Cartridge9x19
 
 - type: Tag
-  id: Cartridge127mm
-  name: Cartridge127mm
+  id: Cartridge11x20
+  name: Cartridge11x20
 
 - type: Tag
-  id: Cartridge622mm
-  name: Cartridge622mm
+  id: Cartridge13x23
+  name: Cartridge13x23
 
 - type: Tag
-  id: Cartridge622mmCaseless
-  name: Cartridge622mmCaseless
+  id: Cartridge9x19CL
+  name: Cartridge9x19CL
 
 - type: Tag
-  id: Cartridge152mm
-  name: Cartridge152mm
+  id: Cartridge11x20CL
+  name: Cartridge11x20CL
 
 - type: Tag
-  id: Magazine622mmCaseless
-  name: Magazine622mmCaseless
+  id: Cartridge13x23CL
+  name: Cartridge13x23CL
+
+- type: Tag
+  id: Cartridge556x45CL
+  name: Cartridge556x45CL
 
 - type: Tag
   id: CartridgeNomadSpike
@@ -97,6 +101,10 @@
 - type: Tag
   id: MagazineRifleNokota
   name: MagazineRifleNokota
+
+- type: Tag
+  id: MagazineRifleNowaki
+  name: MagazineRifleNowaki
 
 - type: Tag
   id: MagazineShotgunMilitechCrusher
