@@ -59,11 +59,11 @@
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
-        startingItem: Cartridge9mm
+        startingItem: Cartridge9x19
         priority: 1
         whitelist:
           tags:
-          - Cartridge9mm
+          - Cartridge9x19
 
 - type: entity
   name: Arasaka TKI20 Shingen
@@ -87,6 +87,6 @@
         priority: 1
         whitelist:
           tags:
-          - Cartridge9mm
+          - Cartridge9x19
 
 

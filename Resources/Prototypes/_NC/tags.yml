@@ -87,14 +87,6 @@
   name: MagazinePistolFederalX9
 
 - type: Tag
-  id: Cartridge9mm
-  name: Cartridge9mm
-
-- type: Tag
-  id: Bullet9mm
-  name: Bullet9mm
-
-- type: Tag
   id: MagazinePistolBoomerBuster
   name: MagazinePistolBoomerBuster
 

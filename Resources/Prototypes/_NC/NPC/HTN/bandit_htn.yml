@@ -70,7 +70,7 @@
           operator: !type:CirclingOperator
           duration: 3
       preconditions:
-        - !type:TargetInRangePrecondition
+        - !type:NCTargetInRangePrecondition
           minRange: 3
           maxRange: 8
 
