@@ -64,7 +64,7 @@
   - type: DualAmmoProvider
     currentMode: 0
     modes:
-    - prototype: Cartridge127mm
+    - prototype: CartridgePistol
       usesMagazine: true
       modeName: dual-ammo-mode-pistol
       fireRate: 4
