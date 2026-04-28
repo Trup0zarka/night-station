@@ -52,6 +52,7 @@
     - CyberwareNeuroKerenzikovMk3
     - CyberwareNeuroTacticalSpartan
     - CyberwareInternalEnhancedAntibodies
+    - CyberwareInternalEnhancedAntibodiesTier3
   - type: NpcUnlootable
 
 - type: entity

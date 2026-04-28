@@ -116,3 +116,21 @@
       reagents:
       - ReagentId: Omnizine
         Quantity: 1
+
+# --- ENHANCED ANTIBODIES TIER 3 ---
+- type: entity
+  id: CyberwareInternalEnhancedAntibodiesTier3
+  parent: BaseCyberwareImplant
+  name: "Enhanced Antibodies"
+  description: "Genetically enhanced immune system that accelerates natural regeneration processes."
+  components:
+  - type: CyberwareImplant
+    category: Internal
+    humanityCost: 7
+    cyberFamily: Immune
+  - type: SolutionRegeneration
+    solution: blood
+    generated:
+      reagents:
+      - ReagentId: Omnizine
+        Quantity: 5

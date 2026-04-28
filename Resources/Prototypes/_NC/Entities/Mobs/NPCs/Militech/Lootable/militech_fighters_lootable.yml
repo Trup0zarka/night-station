@@ -92,6 +92,7 @@
     - CyberwareNeuroKerenzikovMk1
     - CyberwareExternalKevlarSublayer
     - CyberwareInternalNasalFilters
+    - CyberwareInternalEnhancedAntibodiesTier3
 
 - type: entity
   parent: MobNCMilitechLootable
@@ -106,7 +107,7 @@
     cyberware:
     - CyberwareNeuroKerenzikovMk2
     - CyberwareExternalKevlarSublayer
-    - CyberwareInternalEnhancedAntibodies
+    - CyberwareInternalEnhancedAntibodiesTier3
     - CyberwareInternalNasalFilters
 
 - type: entity
@@ -124,6 +125,7 @@
     - CyberwareExternalThermoplasticArmor
     - CyberwareImplantMicroOptics
     - CyberwareInternalNasalFilters
+    - CyberwareInternalEnhancedAntibodiesTier3
 
 - type: entity
   parent: MobNCMilitechLootable
@@ -140,3 +142,4 @@
     - CyberwareExternalReactiveSublayer
     - CyberwareNeuroTacticalSpartan
     - CyberwareInternalNasalFilters
+    - CyberwareInternalEnhancedAntibodiesTier3
