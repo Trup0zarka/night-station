@@ -13344,13 +13344,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -81.5,25.5
       parent: 2
-- proto: AmmoBox114mm
-  entities:
-  - uid: 248
-    components:
-    - type: Transform
-      pos: -8.462076,-78.787674
-      parent: 2
   - uid: 249
     components:
     - type: Transform
@@ -13360,13 +13353,6 @@ entities:
     components:
     - type: Transform
       pos: -9.704076,-76.492676
-      parent: 2
-- proto: AmmoBox127mm
-  entities:
-  - uid: 251
-    components:
-    - type: Transform
-      pos: -9.488076,-78.49068
       parent: 2
   - uid: 252
     components:
@@ -89526,22 +89512,6 @@ entities:
     - type: Transform
       pos: -68.5,7.5
       parent: 2
-- proto: SpawnMobNCBanditBoss
-  entities:
-  - uid: 12724
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 4.5,-80.5
-      parent: 2
-- proto: SpawnMobNCBanditPistol
-  entities:
-  - uid: 12725
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -1.5,-97.5
-      parent: 2
   - uid: 12726
     components:
     - type: Transform
@@ -89668,14 +89638,6 @@ entities:
     components:
     - type: Transform
       pos: -48.5,-88.5
-      parent: 2
-- proto: SpawnMobNCBanditRifle
-  entities:
-  - uid: 12748
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 13.5,-69.5
       parent: 2
   - uid: 12749
     components:
