@@ -97,16 +97,16 @@
   - proto: MagazinePistolOverlord
     price: 25
     count: 2
-  - proto: AmmoBox9mm
+  - proto: AmmoBox9x19
     price: 100
     count: 5
-  - proto: AmmoBox114mm
+  - proto: AmmoBox11x20
     price: 150
     count: 5
-  - proto: AmmoBox127mm
+  - proto: AmmoBox13x23
     price: 200
     count: 3
-  - proto: AmmoBox622mmCaseless
+  - proto: AmmoBox556x45CL
     price: 250
     count: 2
   - proto: MagazineRifleNokota

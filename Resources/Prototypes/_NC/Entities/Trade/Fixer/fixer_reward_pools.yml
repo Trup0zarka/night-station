@@ -10,7 +10,7 @@
     id: WeaponPistolCheesemaker
     weight: 2
   - type: Item
-    id: AmmoBox9mm
+    id: AmmoBox9x19
     weight: 3
   - type: Item
     id: Brutepack
@@ -70,7 +70,7 @@
     id: ClothingOuterArmorBulletproof
     weight: 2
   - type: Item
-    id: AmmoBox114mm
+    id: AmmoBox11x20
     weight: 3
   - type: Item
     id: WeaponPistolAvenger

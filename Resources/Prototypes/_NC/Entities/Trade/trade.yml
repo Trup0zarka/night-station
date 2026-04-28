@@ -322,17 +322,17 @@
     price: 15
   - proto: MagazineRifleNowaki
     price: 20
-  - proto: AmmoBox114mm
+  - proto: AmmoBox11x20
     price: 35
-  - proto: AmmoBox127mm
+  - proto: AmmoBox13x23
     price: 50
-  - proto: AmmoBox622mmCaseless
+  - proto: AmmoBox556x45CL
     price: 60
   - proto: AmmoBox152mm
     price: 75
   - proto: AmmoBoxNomadSpike
     price: 25
-  - proto: AmmoBox9mm
+  - proto: AmmoBox9x19
     price: 25
 
 - type: storeCategoryStructured
