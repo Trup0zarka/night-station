@@ -15,8 +15,8 @@
   - type: CitiNetNode
     downloadDuration: 120
     cooldownDuration: 60
-    idlePower: 1000
-    activePower: 5000
+    idlePower: 100
+    activePower: 500
 
     # --- Настройки взаимодействия ---
     connectDelay: 5.0 # Время в секундах на подключение диска
@@ -33,19 +33,23 @@
 
     # Пул "Чистых Технологий". Используется система весов (Weights).
     cleanTechPool:
-      NCTechPistolStreetMaster: 10
-      NCTechPistolHelloCutie: 10
-      NCTechPistolOverlord: 10
-      NCTechPistolCheesemaker: 10
-      NCTechPistolFederalX9: 10
-      NCTechPistolBoomerBuster: 10
-      NCTechPistolMarkIII: 10
-      NCTechPistolAvenger: 8
-      NCTechPistolStukachTommy: 8
-      NCTechPistolSternmeyerP35: 8
-      NCTechRifleM04: 5
-      NCTechRifleNokota: 15
-      NCTechRifleNowaki: 10
+      NCTechPistolStreetMaster: 6
+      NCTechPistolHelloCutie: 6
+      NCTechPistolOverlord: 6
+      NCTechPistolCheesemaker: 6
+      NCTechPistolFederalX9: 6
+      NCTechPistolBoomerBuster: 6
+      NCTechPistolMarkIII: 6
+      NCTechPistolAvenger: 5
+      NCTechPistolStukachTommy: 5
+      NCTechPistolSternmeyerP35: 5
+      NCTechRifleM04: 3
+      NCTechRifleNokota: 10
+      NCTechRifleNowaki: 6
+      NCTechSMGShingen: 4
+      NCTechSMGSaratoga: 4
+      NCTechShotgunSvakha: 8
+      NCTechShotgunMilitechCrusher: 4
 
     # Пул "Сырых данных". Сюда можно добавить Tier2, Tier3 мусор с разными весами.
     rawDataPool:
