@@ -69,7 +69,7 @@ NPC получают HTN-компонент, где устанавливаетс
    - **Текущий rootTask**: NCBanditRootCompound (RackGun → SimpleHumanoidHostile → Idle).
    - **Улучшения**:
      - Расширить IdleCompound: Увеличить range в PickAccessibleOperator для "патрулирования" (случайное движение по большей области, имитируя охрану). Добавить precondition на отсутствие целей для более частого патрулирования.
-     - Улучшить RackGunCompound: Добавить branch для проверки ammo (если есть precondition на low ammo, использовать NPCUseInHandOperator для перезарядки из инвентаря, но это требует нового operator — *NPCReloadOperator (этого нет)*).
+     -!!Вот это не надо!! ( Улучшить RackGunCompound: Добавить branch для проверки ammo (если есть precondition на low ammo, использовать NPCUseInHandOperator для перезарядки из инвентаря, но это требует нового operator — *NPCReloadOperator (этого нет)*). )
      - Добавить branch в SimpleHumanoidHostileCompound: После стрельбы — движение назад (новый compound на основе Idle, но с precondition на recent combat).
      - Результат: Более мобильные бандиты, лучше обслуживают оружие, но остаются простыми.
 
@@ -84,7 +84,8 @@ NPC получают HTN-компонент, где устанавливаетс
 #### 3. Сильные NPC: Militech
    - **Текущий rootTask**: NCBanditRootCompound.
    - **Улучшения**:
-     - Сделать SimpleHumanoidHostileCompound более агрессивным: Убрать Idle из branches, приоритет на RangedCombat (стрельба до конца ammo). Добавить branch для бросания гранат (*GrenadeThrowOperator (этого нет)*) с precondition на группу врагов.
+     - Сделать SimpleHumanoidHostileCompound более агрессивным: Убрать Idle из branches, приоритет на RangedCombat (стрельба до конца ammo). 
+     - !!Вот это не надо пока что!!(Добавить branch для бросания гранат (*GrenadeThrowOperator (этого нет)*) с precondition на группу врагов.)
      - Добавить "FlankCompound": Новый compound с branches: Выбрать цель (UtilityService), двигаться сбоку (MoveToOperator с offset), атаковать (GunOperator). *Фланговая тактика (этого нет)*.
      - Улучшить RackGunCompound: Добавить branch для использования медикаментов (NPCUseInHandOperator с precondition на damage).
      - Добавить precondition в rootTask: Если HP низкое, приоритет на retreat (новый compound на основе Idle с движением от цели).
