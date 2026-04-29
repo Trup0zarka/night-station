@@ -4,11 +4,12 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 04/26/2026 11:01:42
-  entityCount: 23949
+  time: 04/28/2026 17:42:10
+  entityCount: 23953
 maps:
 - 1
 grids:
+- 1
 - 2
 orphans: []
 nullspace: []
@@ -12231,7 +12232,7 @@ entities:
       pos: -114.5,-81.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -1077.4484
+      secondsUntilStateChange: -1315.0304
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -13347,17 +13348,17 @@ entities:
   - uid: 249
     components:
     - type: Transform
-      pos: -8.435076,-78.76068
+      pos: -8.5,-78.5
       parent: 2
   - uid: 250
     components:
     - type: Transform
-      pos: -9.704076,-76.492676
+      pos: -9.5,-76.5
       parent: 2
   - uid: 252
     components:
     - type: Transform
-      pos: -8.354076,-76.70868
+      pos: -8.5,-76.5
       parent: 2
 - proto: AmmoniaCanister
   entities:
@@ -13620,6 +13621,11 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -76.5,-3.5
+      parent: 2
+  - uid: 5915
+    components:
+    - type: Transform
+      pos: -81.5,-90.5
       parent: 2
 - proto: AtmosDeviceFanTiny
   entities:
@@ -15818,19 +15824,12 @@ entities:
     - type: Transform
       pos: -85.53437,48.568695
       parent: 2
-- proto: Biofabricator
+- proto: Biogenerator
   entities:
-  - uid: 5915
+  - uid: 13600
     components:
     - type: Transform
       pos: -76.5,-97.5
-      parent: 2
-- proto: BiomassReclaimer
-  entities:
-  - uid: 676
-    components:
-    - type: Transform
-      pos: -80.5,-93.5
       parent: 2
 - proto: BiotechDirectorAirlock
   entities:
@@ -16231,8 +16230,12 @@ entities:
   - uid: 756
     components:
     - type: Transform
-      pos: -79.55794,-91.17347
+      pos: -84.57627,-97.46167
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+    - type: RenderOrder
 - proto: BookChemicalCompendium
   entities:
   - uid: 757
@@ -16908,13 +16911,6 @@ entities:
       canCollide: False
     - type: RenderOrder
     - type: InsideEntityStorage
-- proto: BoxMouthSwab
-  entities:
-  - uid: 867
-    components:
-    - type: Transform
-      pos: -89.39695,-83.47319
-      parent: 2
 - proto: BoxNitrileGloves
   entities:
   - uid: 868
@@ -45188,6 +45184,11 @@ entities:
       parent: 2
 - proto: ChairGreyscale
   entities:
+  - uid: 251
+    components:
+    - type: Transform
+      pos: -84.5,-96.5
+      parent: 2
   - uid: 6415
     components:
     - type: Transform
@@ -45280,6 +45281,18 @@ entities:
     components:
     - type: Transform
       pos: 13.5,7.5
+      parent: 2
+  - uid: 7281
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -76.5,-96.5
+      parent: 2
+  - uid: 12228
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -79.5,-91.5
       parent: 2
 - proto: ChairOfficeDark
   entities:
@@ -48260,7 +48273,7 @@ entities:
     - type: Transform
       pos: 11.430889,-26.890686
       parent: 2
-- proto: ClothingHeadHatBiotechCap
+- proto: ClothingHeadHatBiotechnicaCap
   entities:
   - uid: 6571
     components:
@@ -49428,7 +49441,7 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpsuitBiotech
+- proto: ClothingUniformJumpsuitBiotechnica
   entities:
   - uid: 6573
     components:
@@ -51197,31 +51210,6 @@ entities:
     - type: Transform
       pos: -80.5,-0.5
       parent: 2
-- proto: CrateHydroponicsSeeds
-  entities:
-  - uid: 7279
-    components:
-    - type: Transform
-      pos: -83.5,-91.5
-      parent: 2
-- proto: CrateHydroponicsSeedsExotic
-  entities:
-  - uid: 7280
-    components:
-    - type: Transform
-      pos: -82.5,-91.5
-      parent: 2
-    - type: Lock
-      locked: False
-- proto: CrateHydroponicsSeedsMedicinal
-  entities:
-  - uid: 7281
-    components:
-    - type: Transform
-      pos: -84.5,-91.5
-      parent: 2
-    - type: Lock
-      locked: False
 - proto: CrateHydroSecure
   entities:
   - uid: 7282
@@ -51807,7 +51795,7 @@ entities:
       pos: -72.5,14.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -26123.994
+      secondsUntilStateChange: -26361.576
       state: Opening
   - uid: 7346
     components:
@@ -54687,6 +54675,20 @@ entities:
     components:
     - type: Transform
       pos: -89.5,52.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 23951
+    components:
+    - type: Transform
+      pos: -84.5,-93.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 23952
+    components:
+    - type: Transform
+      pos: -84.5,-95.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -57849,7 +57851,7 @@ entities:
       pos: 19.5,-4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -396640.44
+      secondsUntilStateChange: -396878.03
       state: Opening
   - uid: 8126
     components:
@@ -57864,7 +57866,7 @@ entities:
       pos: -151.5,-31.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -247146.03
+      secondsUntilStateChange: -247383.61
       state: Opening
   - uid: 8128
     components:
@@ -57930,7 +57932,7 @@ entities:
       pos: -185.5,67.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -333921
+      secondsUntilStateChange: -334158.6
       state: Closing
   - uid: 8139
     components:
@@ -57939,7 +57941,7 @@ entities:
       pos: -184.5,67.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -333921.47
+      secondsUntilStateChange: -334159.06
       state: Closing
   - uid: 8140
     components:
@@ -58541,6 +58543,11 @@ entities:
     components:
     - type: Transform
       pos: -80.5,-4.5
+      parent: 2
+  - uid: 13592
+    components:
+    - type: Transform
+      pos: -76.5,-93.5
       parent: 2
 - proto: KitchenReagentGrinder
   entities:
@@ -60115,6 +60122,27 @@ entities:
     - type: Transform
       pos: -70.5,-3.5
       parent: 2
+- proto: LockerBiotechnicaBotany
+  entities:
+  - uid: 12231
+    components:
+    - type: Transform
+      pos: -77.25,-91.5
+      parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+  - uid: 12724
+    components:
+    - type: Transform
+      pos: -77.75,-91.5
+      parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+    - type: Pullable
+      nextPullAttempt: 118.5998829
+      prevFixedRotation: True
 - proto: LockerBoozeFilled
   entities:
   - uid: 8486
@@ -62312,7 +62340,7 @@ entities:
     - type: Construction
       defaultTarget: start
     - type: Door
-      secondsUntilStateChange: -178156.84
+      secondsUntilStateChange: -178394.42
       state: Opening
 - proto: MicrophoneInstrument
   entities:
@@ -66033,7 +66061,7 @@ entities:
       pos: 10.5,8.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -48688.504
+      secondsUntilStateChange: -48926.086
       state: Opening
   - uid: 9165
     components:
@@ -66069,7 +66097,7 @@ entities:
       pos: -10.5,-92.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -286752.72
+      secondsUntilStateChange: -286990.3
       state: Opening
 - proto: N14DoorMetalBar
   entities:
@@ -66079,7 +66107,7 @@ entities:
       pos: -13.5,34.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -429381.97
+      secondsUntilStateChange: -429619.56
       state: Opening
   - uid: 9172
     components:
@@ -66087,7 +66115,7 @@ entities:
       pos: -6.5,-71.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -35051.42
+      secondsUntilStateChange: -35289.004
       state: Opening
 - proto: N14DoorMetalBlueAltTall
   entities:
@@ -66098,7 +66126,7 @@ entities:
       pos: -41.5,-35.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -115839.36
+      secondsUntilStateChange: -116076.94
       state: Opening
 - proto: N14DoorMetalBlueSlanted
   entities:
@@ -66120,7 +66148,7 @@ entities:
       pos: -13.5,40.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -349601.44
+      secondsUntilStateChange: -349839.03
       state: Opening
   - uid: 9177
     components:
@@ -66138,7 +66166,7 @@ entities:
       pos: -93.5,56.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -315322.28
+      secondsUntilStateChange: -315559.88
       state: Opening
   - uid: 9180
     components:
@@ -66146,7 +66174,7 @@ entities:
       pos: -91.5,56.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -98076.73
+      secondsUntilStateChange: -98314.305
       state: Opening
   - uid: 9181
     components:
@@ -66166,7 +66194,7 @@ entities:
       pos: -82.5,20.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -340994.22
+      secondsUntilStateChange: -341231.8
       state: Opening
   - uid: 9184
     components:
@@ -66187,7 +66215,7 @@ entities:
       pos: -147.5,-20.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -315584.5
+      secondsUntilStateChange: -315822.1
       state: Opening
   - uid: 9187
     components:
@@ -66216,7 +66244,7 @@ entities:
       pos: -91.5,6.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -464232.47
+      secondsUntilStateChange: -464470.06
       state: Opening
 - proto: N14DoorMetalFenceBarbedTall
   entities:
@@ -66226,7 +66254,7 @@ entities:
       pos: -93.5,-2.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -354668.2
+      secondsUntilStateChange: -354905.78
       state: Opening
   - uid: 9192
     components:
@@ -66235,7 +66263,7 @@ entities:
       pos: -92.5,-2.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -354667.75
+      secondsUntilStateChange: -354905.34
       state: Opening
 - proto: N14DoorMetalRedSlanted
   entities:
@@ -66246,7 +66274,7 @@ entities:
       pos: -180.5,72.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -333637.7
+      secondsUntilStateChange: -333875.28
       state: Opening
   - uid: 9194
     components:
@@ -66274,7 +66302,7 @@ entities:
       pos: -48.5,-30.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -402590.44
+      secondsUntilStateChange: -402828.03
       state: Opening
 - proto: N14DoorMetalSecureBrotherhood
   entities:
@@ -66314,7 +66342,7 @@ entities:
       pos: -166.5,-37.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -182204.81
+      secondsUntilStateChange: -182442.39
       state: Opening
   - uid: 9204
     components:
@@ -66389,7 +66417,7 @@ entities:
       pos: -17.5,-4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -397998.88
+      secondsUntilStateChange: -398236.47
       state: Opening
   - uid: 9216
     components:
@@ -66404,7 +66432,7 @@ entities:
       pos: -71.5,-59.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -177016
+      secondsUntilStateChange: -177253.58
       state: Opening
   - uid: 9218
     components:
@@ -66413,7 +66441,7 @@ entities:
       pos: -70.5,-59.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -177016.61
+      secondsUntilStateChange: -177254.19
       state: Opening
   - uid: 9219
     components:
@@ -66422,7 +66450,7 @@ entities:
       pos: -73.5,-59.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -177015.27
+      secondsUntilStateChange: -177252.84
       state: Opening
   - uid: 9220
     components:
@@ -66431,7 +66459,7 @@ entities:
       pos: -69.5,-59.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -177014.7
+      secondsUntilStateChange: -177252.28
       state: Opening
   - uid: 9221
     components:
@@ -66440,7 +66468,7 @@ entities:
       pos: -72.5,-59.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -177015.58
+      secondsUntilStateChange: -177253.16
       state: Opening
   - uid: 9222
     components:
@@ -66449,7 +66477,7 @@ entities:
       pos: -68.5,-59.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -177014.44
+      secondsUntilStateChange: -177252.02
       state: Opening
 - proto: N14DoorWoodHousePainted
   entities:
@@ -66460,7 +66488,7 @@ entities:
       pos: 32.5,-42.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -24451.463
+      secondsUntilStateChange: -24689.045
       state: Opening
   - uid: 9224
     components:
@@ -73306,7 +73334,7 @@ entities:
       pos: -122.5,-48.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -338738.2
+      secondsUntilStateChange: -338975.78
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -73334,7 +73362,7 @@ entities:
       pos: -85.5,38.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -314902.4
+      secondsUntilStateChange: -315140
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -73446,7 +73474,7 @@ entities:
       pos: -38.5,26.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -307274.03
+      secondsUntilStateChange: -307511.62
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -73553,7 +73581,7 @@ entities:
       pos: -117.5,-36.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -259585.67
+      secondsUntilStateChange: -259823.25
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -73636,7 +73664,7 @@ entities:
       pos: -94.5,-78.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -38167.918
+      secondsUntilStateChange: -38405.5
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -74127,6 +74155,8 @@ entities:
     - type: Transform
       pos: -178.5,69.5
       parent: 2
+    - type: ApcPowerReceiver
+      powerLoad: 100
 - proto: NCConsoleBiotechnica
   entities:
   - uid: 10493
@@ -76110,9 +76140,9 @@ entities:
       parent: 2
     - type: Paper
       content: >+
-        — Стой, ты что взял фамилию «МакТрахер»? 
+        — Стой, ты что взял фамилию «МакТрахер»?
 
-        — Ага. 
+        — Ага.
 
         — МакТрахер? Я не понял, это что за прикол. Ты что, шотландский секс-символ?!
 
@@ -76140,11 +76170,11 @@ entities:
       - stampedColor: '#2F4F4FFF'
         stampedName: Остин Стюарт
       content: >-
-        Доски синдерева 2 шт. 
+        Доски синдерева 2 шт.
 
-        Цена 3999 евродолларов 
+        Цена 3999 евродолларов
 
-        Дата покупки 12/03/2036 
+        Дата покупки 12/03/2036
 
         Произведено компанией БиоСинк™
 
@@ -76298,7 +76328,7 @@ entities:
       parent: 2
     - type: Paper
       content: >-
-        А что ты тут ожидал увидеть? 
+        А что ты тут ожидал увидеть?
 
         Неужели... ВУЛЬПУ?!
     - type: Physics
@@ -76310,6 +76340,16 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -49.50274,-98.829124
+      parent: 2
+  - uid: 23601
+    components:
+    - type: Transform
+      pos: -80.62016,-91.268524
+      parent: 2
+  - uid: 23950
+    components:
+    - type: Transform
+      pos: -80.409225,-91.456024
       parent: 2
 - proto: PaperBin10
   entities:
@@ -81191,11 +81231,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -10.5,-33.5
       parent: 2
-  - uid: 11468
-    components:
-    - type: Transform
-      pos: -79.5,-91.5
-      parent: 2
   - uid: 11469
     components:
     - type: Transform
@@ -81778,6 +81813,11 @@ entities:
     components:
     - type: Transform
       pos: -90.5,-96.5
+      parent: 2
+  - uid: 13588
+    components:
+    - type: Transform
+      pos: -83.5,-97.5
       parent: 2
 - proto: RadioHandheldSecurity
   entities:
@@ -85667,11 +85707,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -45.45167,-31.426016
       parent: 2
-  - uid: 12228
-    components:
-    - type: Transform
-      pos: -79.37044,-91.57972
-      parent: 2
   - uid: 12229
     components:
     - type: Transform
@@ -85690,10 +85725,10 @@ entities:
       parent: 2
 - proto: SeedExtractor
   entities:
-  - uid: 12231
+  - uid: 13591
     components:
     - type: Transform
-      pos: -80.5,-94.5
+      pos: -77.5,-97.5
       parent: 2
 - proto: ShardGlassUranium
   entities:
@@ -88998,7 +89033,7 @@ entities:
       pos: -11.5,25.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -37276.22
+      secondsUntilStateChange: -37513.8
       state: Opening
   - uid: 12634
     components:
@@ -89634,11 +89669,6 @@ entities:
     - type: Transform
       pos: -181.5,58.5
       parent: 2
-  - uid: 23933
-    components:
-    - type: Transform
-      pos: -48.5,-88.5
-      parent: 2
   - uid: 12749
     components:
     - type: Transform
@@ -89727,6 +89757,11 @@ entities:
     components:
     - type: Transform
       pos: -24.5,-77.5
+      parent: 2
+  - uid: 23933
+    components:
+    - type: Transform
+      pos: -48.5,-88.5
       parent: 2
 - proto: SpawnPointBiotechnicaBotanist
   entities:
@@ -92442,6 +92477,31 @@ entities:
       parent: 2
 - proto: TableGlass
   entities:
+  - uid: 248
+    components:
+    - type: Transform
+      pos: -76.5,-93.5
+      parent: 2
+  - uid: 7280
+    components:
+    - type: Transform
+      pos: -84.5,-97.5
+      parent: 2
+  - uid: 11468
+    components:
+    - type: Transform
+      pos: -76.5,-94.5
+      parent: 2
+  - uid: 12725
+    components:
+    - type: Transform
+      pos: -76.5,-95.5
+      parent: 2
+  - uid: 12748
+    components:
+    - type: Transform
+      pos: -80.5,-91.5
+      parent: 2
   - uid: 13212
     components:
     - type: Transform
@@ -92670,6 +92730,11 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -74.5,5.5
+      parent: 2
+  - uid: 13580
+    components:
+    - type: Transform
+      pos: -82.5,-91.5
       parent: 2
 - proto: TableReinforced
   entities:
@@ -94447,6 +94512,11 @@ entities:
     - type: Transform
       pos: -82.5,0.5
       parent: 2
+  - uid: 23600
+    components:
+    - type: Transform
+      pos: -78.5,-91.5
+      parent: 2
 - proto: TraumaCommandAirlock
   entities:
   - uid: 13488
@@ -95020,6 +95090,27 @@ entities:
     - type: Transform
       pos: -177.5,-21.5
       parent: 2
+- proto: VendingMachineBiotechnicaBotany
+  entities:
+  - uid: 7279
+    components:
+    - type: Transform
+      pos: -83.5,-91.5
+      parent: 2
+- proto: VendingMachineBiotechnicaBotanyDrobe
+  entities:
+  - uid: 867
+    components:
+    - type: Transform
+      pos: -76.5,-91.5
+      parent: 2
+- proto: VendingMachineBiotechnicaSeeds
+  entities:
+  - uid: 676
+    components:
+    - type: Transform
+      pos: -84.5,-91.5
+      parent: 2
 - proto: VendingMachineBooze
   entities:
   - uid: 13542
@@ -95254,13 +95345,6 @@ entities:
     - type: Transform
       pos: -72.5,-20.5
       parent: 2
-- proto: VendingMachineHydrobe
-  entities:
-  - uid: 13580
-    components:
-    - type: Transform
-      pos: -76.5,-91.5
-      parent: 2
 - proto: VendingMachineJaniDrobe
   entities:
   - uid: 13581
@@ -95304,13 +95388,6 @@ entities:
     - type: Transform
       pos: -88.5,-36.5
       parent: 2
-- proto: VendingMachineNutri
-  entities:
-  - uid: 13588
-    components:
-    - type: Transform
-      pos: -79.5,-94.5
-      parent: 2
 - proto: VendingMachineRestockBooze
   entities:
   - uid: 13589
@@ -95324,20 +95401,6 @@ entities:
     components:
     - type: Transform
       pos: -72.319176,-75.37836
-      parent: 2
-- proto: VendingMachineRestockNutriMax
-  entities:
-  - uid: 13591
-    components:
-    - type: Transform
-      pos: -79.35481,-91.26722
-      parent: 2
-- proto: VendingMachineRestockSeeds
-  entities:
-  - uid: 13592
-    components:
-    - type: Transform
-      pos: -79.65169,-91.376595
       parent: 2
 - proto: VendingMachineSec
   entities:
@@ -95381,11 +95444,6 @@ entities:
       parent: 2
 - proto: VendingMachineSeeds
   entities:
-  - uid: 13600
-    components:
-    - type: Transform
-      pos: -81.5,-94.5
-      parent: 2
   - uid: 13601
     components:
     - type: Transform
@@ -148070,18 +148128,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 1.5,-83.5
       parent: 2
-- proto: WardrobeBotanistFilled
-  entities:
-  - uid: 23600
-    components:
-    - type: Transform
-      pos: -78.5,-91.5
-      parent: 2
-  - uid: 23601
-    components:
-    - type: Transform
-      pos: -77.5,-91.5
-      parent: 2
 - proto: WardrobeChemistryFilled
   entities:
   - uid: 23602
@@ -148265,6 +148311,13 @@ entities:
     components:
     - type: Transform
       pos: -118.5,-74.5
+      parent: 2
+- proto: WaterTankFull
+  entities:
+  - uid: 23953
+    components:
+    - type: Transform
+      pos: -84.5,-93.5
       parent: 2
 - proto: WeaponAntiqueLaser
   entities:
@@ -148591,6 +148644,8 @@ entities:
     components:
     - type: Transform
       parent: 859
+    - type: Gun
+      fireRate: 4
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -148605,6 +148660,8 @@ entities:
     - type: Transform
       pos: -87.44884,-96.03521
       parent: 2
+    - type: Gun
+      fireRate: 4
     - type: MagazineAmmoProvider
       soundAutoEject: !type:SoundPathSpecifier
         path: /Audio/Weapons/Guns/EmptyAlarm/smg_empty_alarm.ogg
@@ -149050,7 +149107,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -288314
+      secondsUntilStateChange: -288551.6
       state: Opening
   - uid: 23670
     components:
@@ -149068,7 +149125,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -247413.66
+      secondsUntilStateChange: -247651.23
       state: Opening
 - proto: WindoorSecure
   entities:
@@ -149147,7 +149204,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -179555.66
+      secondsUntilStateChange: -179793.23
       state: Opening
   - uid: 23684
     components:
@@ -149188,7 +149245,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -179556.12
+      secondsUntilStateChange: -179793.7
       state: Opening
   - uid: 23690
     components:

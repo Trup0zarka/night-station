@@ -28,7 +28,7 @@
   id: BiotechnicaChiefGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitArmoredBusinessSuit
-    back: ClothingBackpackSatchelMedical
+    back: ClothingBackpackBiotechnica
     shoes: ClothingShoesColorWhite
     eyes: ClothingEyesGlassesSunglasses
     id: BiotechnicaChiefPDA

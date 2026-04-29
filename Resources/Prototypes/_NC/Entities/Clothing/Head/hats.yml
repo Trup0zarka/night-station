@@ -1,7 +1,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatMilitechCap
-  name: Кепка Militech
+  name: кепка Militech
   description: Кепка с логотипом Militech, популярная среди сотрудников корпорации и её сторонников. Практичный и стильный аксессуар для повседневного ношения.
   components:
   - type: Sprite
@@ -11,9 +11,9 @@
 
 - type: entity
   parent: ClothingHeadBase
-  id: ClothingHeadHatBiotechCap
-  name: Кепка Biotech
-  description: Кепка с логотипом Biotech, популярная среди сотрудников корпорации и её сторонников. Практичный и стильный аксессуар для повседневного ношения.
+  id: ClothingHeadHatBiotechnicaCap
+  name: кепка Biotechnica
+  description: Кепка с логотипом Biotechnica, популярная среди сотрудников корпорации и её сторонников. Практичный и стильный аксессуар для повседневного ношения.
   components:
   - type: Sprite
     sprite: _NC/Clothing/Head/Hats/biotech_cap.rsi

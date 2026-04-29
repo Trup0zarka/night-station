@@ -465,11 +465,11 @@
     price: 25
   - proto: ClothingHeadHatMilitechCap
     price: 10
-  - proto: ClothingHeadHatBiotechCap
+  - proto: ClothingHeadHatBiotechnicaCap
     price: 10
   - proto: ClothingUniformJumpsuitMilitech
     price: 30
-  - proto: ClothingUniformJumpsuitBiotech
+  - proto: ClothingUniformJumpsuitBiotechnica
     price: 30
   - proto: ClothingUniformNSPDCool
     price: 20

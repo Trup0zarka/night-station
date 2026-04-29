@@ -17,8 +17,8 @@
 - type: startingGear
   id: BiotechnicaMedTechGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitBiotech
-    back: ClothingBackpackSatchelMedical
+    jumpsuit: ClothingUniformJumpsuitBiotechnica
+    back: ClothingBackpackBiotechnica
     shoes: ClothingShoesColorWhite
     head: ClothingHeadHatBeretSeniorPhysician
     eyes: ClothingEyesGlassesSunglasses

@@ -1,0 +1,226 @@
+# region Category
+
+- type: loadoutCategory
+  id: JobsBiotechnica
+
+# region Backpack
+
+- type: characterItemGroup
+  id: LoadoutBiotechnicaBackpacks
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBackpackBiotechnica
+    - type: loadout
+      id: LoadoutBackpackSatchelBiotechnica
+    - type: loadout
+      id: LoadoutBackpackDuffelBiotechnica
+
+- type: loadout
+  id: LoadoutBackpackBiotechnica
+  category: JobsBiotechnica
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackBiotechnica
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBiotechnicaBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - BiotechnicaBotanist
+        - BiotechnicaChief
+        - BiotechnicaOperativeLead
+        - BiotechnicaOperative
+        - BiotechnicaMedTech
+        - BiotechnicaTech
+        - BiotechnicaBotanist
+
+- type: loadout
+  id: LoadoutBackpackSatchelBiotechnica
+  category: JobsBiotechnica
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelBiotechnica
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBiotechnicaBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - BiotechnicaChief
+        - BiotechnicaOperativeLead
+        - BiotechnicaOperative
+        - BiotechnicaMedTech
+        - BiotechnicaTech
+        - BiotechnicaBotanist
+
+- type: loadout
+  id: LoadoutBackpackDuffelBiotechnica
+  category: JobsBiotechnica
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelBiotechnica
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBiotechnicaBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - BiotechnicaChief
+        - BiotechnicaOperativeLead
+        - BiotechnicaOperative
+        - BiotechnicaMedTech
+        - BiotechnicaTech
+        - BiotechnicaBotanist
+
+# region Uniform
+
+- type: characterItemGroup
+  id: LoadoutBiotechnicaUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBiotechnicaUniform
+    - type: loadout
+      id: LoadoutBiotechnicaBotanyEnvirosuit
+
+- type: loadout
+  id: LoadoutBiotechnicaUniform
+  category: JobsBiotechnica
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBiotechnicaUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - BiotechnicaChief
+        - BiotechnicaOperativeLead
+        - BiotechnicaOperative
+        - BiotechnicaMedTech
+        - BiotechnicaTech
+        - BiotechnicaBotanist
+  items:
+    - ClothingUniformJumpsuitBiotechnica
+
+- type: loadout
+  id: LoadoutBiotechnicaBotanyEnvirosuit
+  category: JobsBiotechnica
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBiotechnicaUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - BiotechnicaBotanist
+  items:
+    - ClothingUniformEnvirosuitBiotechnicaBotany
+
+# region Hat
+
+- type: characterItemGroup
+  id: LoadoutBiotechnicaHats
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBiotechnicaHat
+    - type: loadout
+      id: LoadoutBiotechnicaBotanyEnvirohelm
+
+- type: loadout
+  id: LoadoutBiotechnicaHat
+  category: JobsBiotechnica
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBiotechnicaHats
+    - !type:CharacterJobRequirement
+      jobs:
+        - BiotechnicaChief
+        - BiotechnicaOperativeLead
+        - BiotechnicaOperative
+        - BiotechnicaMedTech
+        - BiotechnicaTech
+        - BiotechnicaBotanist
+  items:
+    - ClothingHeadHatBiotechnicaCap
+
+- type: loadout
+  id: LoadoutBiotechnicaBotanyEnvirohelm
+  category: JobsBiotechnica
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBiotechnicaHats
+    - !type:CharacterJobRequirement
+      jobs:
+        - BiotechnicaBotanist
+  items:
+    - ClothingHeadEnvirohelmBiotechnicaBotany
+
+# region Botany: Apron
+
+- type: characterItemGroup
+  id: LoadoutBiotechnicaBotanyAprons
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBiotechnicaBotanyAprons
+
+- type: loadout
+  id: LoadoutBiotechnicaBotanyAprons
+  category: JobsBiotechnica
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBiotechnicaBotanyAprons
+    - !type:CharacterJobRequirement
+      jobs:
+        - BiotechnicaBotanist
+  items:
+    - ClothingOuterApronBiotechnicaBotany
+
+# region Botany: Gloves
+
+- type: characterItemGroup
+  id: LoadoutBiotechnicaGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBiotechnicaBotanyGloves
+    - type: loadout
+      id: LoadoutBiotechnicaNitrileGloves
+
+- type: loadout
+  id: LoadoutBiotechnicaBotanyGloves
+  category: JobsBiotechnica
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBiotechnicaGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - BiotechnicaBotanist
+  items:
+    - ClothingHandsGlovesEnviroglovesBiotechnicaBotany
+
+- type: loadout
+  id: LoadoutBiotechnicaNitrileGloves
+  category: JobsBiotechnica
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBiotechnicaGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - BiotechnicaBotanist
+        - BiotechnicaMedTech
+  items:
+    - ClothingHandsGlovesNitrile

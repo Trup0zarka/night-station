@@ -41152,7 +41152,7 @@ entities:
     - type: Transform
       pos: 11.430889,-26.890686
       parent: 2
-- proto: ClothingHeadHatBiotechCap
+- proto: ClothingHeadHatBiotechnicaCap
   entities:
   - uid: 5354
     components:
@@ -42049,7 +42049,7 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpsuitBiotech
+- proto: ClothingUniformJumpsuitBiotechnica
   entities:
   - uid: 5356
     components:
@@ -65968,11 +65968,11 @@ entities:
       - stampedColor: '#2F4F4FFF'
         stampedName: Остин Стюарт
       content: >-
-        Доски синдерева 2 шт. 
+        Доски синдерева 2 шт.
 
-        Цена 3999 евродолларов 
+        Цена 3999 евродолларов
 
-        Дата покупки 12/03/2036 
+        Дата покупки 12/03/2036
 
         Произведено компанией БиоСинк™
 
@@ -67150,9 +67150,9 @@ entities:
       parent: 2
     - type: Paper
       content: >+
-        — Стой, ты что взял фамилию «МакТрахер»? 
+        — Стой, ты что взял фамилию «МакТрахер»?
 
-        — Ага. 
+        — Ага.
 
         — МакТрахер? Я не понял, это что за прикол. Ты что, шотландский секс-символ?!
 
