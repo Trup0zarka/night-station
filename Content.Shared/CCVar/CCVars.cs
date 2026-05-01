@@ -1,4 +1,4 @@
-﻿using Content.Shared.Administration;
+using Content.Shared.Administration;
 using Content.Shared.CCVar.CVarAccess;
 using Robust.Shared;
 using Robust.Shared.Configuration;
@@ -36,8 +36,5 @@ public sealed partial class CCVars : CVars
     /// Set to true to disable parallel processing in the pow3r solver.
     /// </summary>
     public static readonly CVarDef<bool> DebugPow3rDisableParallel =
-        CVarDef.Create("debug.pow3r_disable_parallel", false, CVar.SERVERONLY);
-
-    public static readonly CVarDef<float> IngameMusicVolume =
-        CVarDef.Create("audio.ingame_music_volume", 1.0f, CVar.CLIENT | CVar.ARCHIVE);
+        CVarDef.Create("debug.pow3r_disable_parallel", true, CVar.SERVERONLY);
 }
