@@ -104,8 +104,16 @@
   name: access-level-biotech-head-of-department
 
 - type: accessLevel
+  id: Biotech_Botany
+  name: access-level-biotech-botany
+
+- type: accessLevel
   id: Biotech_MedTech
   name: access-level-biotech-medtech
+
+- type: accessLevel
+  id: Biotech_Tech
+  name: access-level-biotech-tech
 
 - type: accessLevel
   id: Biotech_Operative
@@ -124,7 +132,9 @@
   tags:
   - Biotech_Director
   - Biotech_HeadOfDepartment
+  - Biotech_Botany
   - Biotech_MedTech
+  - Biotech_Tech
   - Biotech_Operative
   - Biotech_Staff
   - Biotech_General

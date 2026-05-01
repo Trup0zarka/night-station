@@ -9,7 +9,9 @@
     allowedDepartments:
     - Biotech_Director
     - Biotech_HeadOfDepartment
+    - Biotech_Botany
     - Biotech_MedTech
+    - Biotech_Tech
     - Biotech_Operative
     - Biotech_Staff
     - Biotech_General
@@ -101,8 +103,8 @@
 - type: entity
   parent: BiotechnicaPlantBag
   id: BiotechnicaPlantBagHolding
-  name: бездонная сумка для растений
-  description: Расширенная экспериментальная переносная сумка для хранения плодов растений и их семян Biotechnica.
+  name: вместительная сумка для растений
+  description: Расширенная экспериментальная переносная сумка для хранения плодов растений и семян Biotechnica.
   suffix: Biotechnica, Гидропоника, Ботаника
   components:
   - type: Sprite
@@ -129,151 +131,150 @@
     - state: analyzer
       shader: unshaded
 
-- type: entity
-  parent: [ClothingBeltPlant, BiotechnicaContraband]
-  id: ClothingBeltBiotechnicaBotany
-  name: ботанический пояс
-  description: Корпоративный ботанический пояс, подходящий для большинства соответственного снаряжения.
-  suffix: Biotechnica, Гидропоника, Ботаника
-  components:
-  - type: Sprite
-    sprite: _NC/Clothing/Uniforms/Belts/Biotechnica/botany.rsi
-  - type: Clothing
-    sprite: _NC/Clothing/Uniforms/Belts/Biotechnica/botany.rsi
-
-- type: entity
-  parent: ClothingBeltBiotechnicaBotany
-  id: ClothingBeltBiotechnicaBotanyFilled
-  name: ботанический пояс
-  description: Корпоративный ботанический пояс, подходящий для большинства соответственного снаряжения.
-  suffix: Заполненный, Biotechnica, Гидропоника, Ботаника
-  components:
-  - type: StorageFill
-    contents:
-    - id: BiotechnicaHoe
-    - id: BiotechnicaSpade
-    - id: BiotechnicaClippers
-
-- type: entity
-  parent: ClothingBeltBiotechnicaBotany
-  id: ClothingBeltBiotechnicaBotanyFilledFull
-  name: ботанический пояс
-  description: Корпоративный ботанический пояс, подходящий для большинства соответственного снаряжения.
-  suffix: Заполненный максимально, Biotechnica, Гидропоника, Ботаника
-  components:
-  - type: StorageFill
-    contents:
-    - id: BiotechnicaHoe
-    - id: BiotechnicaSpade
-    - id: BiotechnicaClippers
-    - id: BiotechnicaScythe
-    - id: BiotechnicaHatchet
-    - id: BiotechnicaLabeler
-    - id: BiotechnicaDropper
-    - id: RobustHarvestChemistryBottle
-    - id: BiotechnicaPlantAnalyzer
-
-- type: entity
-  parent: [ClothingOuterApronBotanist, BiotechnicaContraband]
-  id: ClothingOuterApronBiotechnicaBotany
-  name: ботанический фартук
-  description: Корпоративный фартук для защиты униформы от любых растительных неприятностей.
-  suffix: Biotechnica, Гидропоника, Ботаника
-  components:
-  - type: Sprite
-    sprite: _NC/Clothing/OuterClothing/Biotechnica/Botany/apron.rsi
-  - type: Clothing
-    sprite: _NC/Clothing/OuterClothing/Biotechnica/Botany/apron.rsi
-
-- type: entity
-  parent: [ClothingUniformEnvirosuitHydroponics, BiotechnicaContraband]
-  id: ClothingUniformEnvirosuitBiotechnicaBotany
-  name: ботанический эко-комбинезон
-  description: Часть сплошного экологического костюма для защиты от вредоносных газов.
-  suffix: Biotechnica, Гидропоника, Ботаника
-  components:
-  - type: Sprite
-    sprite: _NC/Clothing/Uniforms/Envirosuits/biotechnica.rsi
-  - type: Clothing
-    sprite: _NC/Clothing/Uniforms/Envirosuits/biotechnica.rsi
-
-- type: entity
-  parent: [ClothingHeadEnvirohelmHydroponics, BiotechnicaContraband]
-  id: ClothingHeadEnvirohelmBiotechnicaBotany
-  name: ботанический эко-шлем
-  description: Часть сплошного экологического костюма для защиты от вредоносных газов.
-  suffix: Biotechnica, Гидропоника, Ботаника
-  components:
-  - type: Sprite
-    sprite: _NC/Clothing/Head/Envirohelms/biotechnica.rsi
-  - type: Clothing
-    sprite: _NC/Clothing/Head/Envirohelms/biotechnica.rsi
-
-- type: entity
-  parent: [ClothingHandsGlovesEnviroglovesLeather, BiotechnicaContraband]
-  id: ClothingHandsGlovesEnviroglovesBiotechnicaBotany
-  name: ботанические эко-перчатки
-  description: Корпоративные агрономные перчатки для работы с растениями в стерильных условиях.
-  suffix: Biotechnica, Гидропоника, Ботаника
-  components:
-  - type: Sprite
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
-    layers:
-    - state: icon
-      color: "#00d26d"  # Biotechnica palette
-  - type: Item
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#00d26d"
-      right:
-      - state: inhand-right
-        color: "#00d26d"
-  - type: Clothing
-    sprite: Clothing/Hands/Gloves/Color/color.rsi
-    clothingVisuals:
-      gloves:
-      - state: equipped-HAND
-        color: "#00d26d"
-  - type: Fiber
-    fiberMaterial: fibers-leather
-    fiberColor: fibers-blue
-
-- type: entity
-  id: LockerBiotechnicaBotany
-  parent: LockerBase
-  name: шкаф Biotechnica
-  description: Запертый шкаф для стдержания корпоративного снаряжения под защитой.
-  suffix: Biotechnica, Гидропоника, Ботаника
-  components:
-  - type: Appearance
-  - type: EntityStorageVisuals
-    stateBaseClosed: hydro
-    stateDoorOpen: hydro_open
-    stateDoorClosed: hydro_door
-  - type: AccessReader
-    access: [ [ "Biotech_Staff" ] ]
-
-# region Chemistry
+# region MedTech
 
 - type: entity
   parent: [Dropper, BiotechnicaContraband]
   id: BiotechnicaDropper
   name: пипетка
   description: Корпоративная пипетка для переноса маленьких объемов жидкости в стерильных условиях.
-  suffix: Biotechnica, Химия, Гидропоника, Ботаника
+  suffix: Biotechnica, МедТех, Гидропоника, Ботаника
   components:
   - type: Sprite
-    sprite: _NC/Objects/Tools/Biotechnica/Chemistry/dropper.rsi
-    layers:
-      - state: dropper
-      - state: dropper1
-        map: ["enum.SolutionContainerLayers.Fill"]
-        visible: false
+    sprite: _NC/Objects/Tools/Biotechnica/MedTech/dropper.rsi
   - type: Item
-    sprite: _NC/Objects/Tools/Biotechnica/Chemistry/dropper.rsi
+    sprite: _NC/Objects/Tools/Biotechnica/MedTech/dropper.rsi
+
+- type: entity
+  parent: [ChemBag, BiotechnicaContraband]
+  id: BiotechnicaChemBag
+  name: сумка для химикатов
+  description: Корпоративная переносная сумка для хранения химикатов. Спереди виднеется лого Biotechnica.
+  suffix: Biotechnica, МедТех
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _NC/Objects/Tools/Biotechnica/MedTech/chem_bag.rsi
+    state: icon
+
+- type: entity
+  parent: BiotechnicaChemBag
+  id: BiotechnicaChemBagHolding
+  name: вместительная сумка для химикатов
+  description: Расширенная экспериментальная переносная сумка для хранения химикатов Biotechnica.
+  suffix: Biotechnica, МедТех
+  components:
+  - type: Sprite
+    sprite: _NC/Objects/Tools/Biotechnica/MedTech/chem_bag_of_holding.rsi
+    state: icon
+  - type: Item
+    size: Large
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,19,9
+
+# region Tech
+
+- type: entity
+  parent: [WelderMini, BiotechnicaContraband]
+  id: BiotechnicaWelderMini
+  name: сварочный минитул
+  description: Компактный сварочный аппарат Биотехники с уменьшенным объемом топлива. Требует защиты глаз.
+  suffix: Biotechnica, Тех
+  components:
+  - type: Sprite
+    sprite: _NC/Objects/Tools/Biotechnica/Tech/welder_mini.rsi
+  - type: Item
+    sprite: _NC/Objects/Tools/Biotechnica/Tech/welder_mini.rsi
+
+- type: entity
+  parent: [Welder, BiotechnicaContraband]
+  id: BiotechnicaWelder
+  name: сварочный аппарат
+  description: Корпоративный инструмент сварки стандартной мощности и объема топлива. Требует защиты глаз.
+  suffix: Biotechnica, Тех
+  components:
+  - type: Sprite
+    sprite: _NC/Objects/Tools/Biotechnica/Tech/welder.rsi
+  - type: Item
+    sprite: _NC/Objects/Tools/Biotechnica/Tech/welder.rsi
+
+- type: entity
+  parent: [Wirecutter, BiotechnicaContraband]
+  id: BiotechnicaWirecutter
+  name: кусачки
+  description: Корпоративный инструмент для перерезания проводов.
+  suffix: Biotechnica, Тех
+  components:
+  - type: Sprite
+    sprite: _NC/Objects/Tools/Biotechnica/Tech/wirecutters.rsi
+  - type: Item
+    sprite: _NC/Objects/Tools/Biotechnica/Tech/wirecutters.rsi
+
+- type: entity
+  parent: [Screwdriver, BiotechnicaContraband]
+  id: BiotechnicaScrewdriverMini
+  name: отвёртка
+  description: Копмпактная корпоративная отвёртка со сменной резьбой.
+  suffix: Biotechnica, Тех
+  components:
+  - type: Sprite
+    sprite: _NC/Objects/Tools/Biotechnica/Tech/screwdriver.rsi
+  - type: Item
     size: Tiny
+    sprite: _NC/Objects/Tools/Biotechnica/Tech/screwdriver.rsi
+
+- type: entity
+  parent: [Wrench, BiotechnicaContraband]
+  id: BiotechnicaWrench
+  name: гаечный ключ
+  description: Корпоративный инструмент для закрепления предметов. И наоборот.
+  suffix: Biotechnica, Тех
+  components:
+  - type: Sprite
+    sprite: _NC/Objects/Tools/Biotechnica/Tech/wrench.rsi
+  - type: Item
+    sprite: _NC/Objects/Tools/Biotechnica/Tech/wrench.rsi
+    storedSprite:
+      sprite: _NC/Objects/Tools/Biotechnica/Tech/wrench.rsi
+      state: storage
+
+- type: entity
+  parent: [BaseCrowbar, BiotechnicaContraband]
+  id: BiotechnicaCrowbar
+  name: монтировка
+  description: Карманная корпоративная монтировка для разборки вещей и вскрытия заклинивших механизмов.
+  suffix: Biotechnica, Тех
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/crowbar.rsi
+    layers:
+    - state: icon
+    - state: cover-icon
+      color: "#e6d600"
+  - type: Item
+    sprite: Objects/Tools/crowbar.rsi
+    storedSprite:
+      state: yellow-storage
+      sprite: Objects/Tools/crowbar.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      - state: cover-inhand-left
+        color: "#e6d600"
+      right:
+      - state: inhand-right
+      - state: cover-inhand-right
+        color: "#e6d600"
+  - type: Clothing
+    sprite: Objects/Tools/crowbar.rsi
+    clothingVisuals:
+      belt:
+      - state: equipped-BELT
+      - state: cover-equipped-BELT
+        color: "#e6d600"
 
 # region Mixed
 
@@ -282,41 +283,23 @@
   id: BiotechnicaLabeler
   name: этикетировщик
   description: Корпоративное устройство печати распознавательных этикеток. Маркируйте им ящики, бутылочки и прочие емкости для легкого распознавания.
-  suffix: Biotechnica, Карго, Химия, Гидропоника, Ботаника
+  suffix: Biotechnica, Карго, МедТех, Гидропоника, Ботаника
   components:
     - type: Sprite
       sprite: _NC/Objects/Tools/Biotechnica/labeler.rsi
-      state: hand_labeler
     - type: Item
       sprite: _NC/Objects/Tools/Biotechnica/labeler.rsi
-      storedRotation: -90
 
 - type: entity
-  parent: [ClothingBackpackHydroponics, BiotechnicaContraband]
-  id: ClothingBackpackBiotechnica
-  name: рюкзак работника Biotechnica
-  description: Простой рюкзак из натуральной ткани, выращенной Biotechnica.
-  suffix: Biotechnica
+  parent: [AppraisalTool, BiotechnicaContraband]
+  id: BiotechnicaAppraisalTool
+  name: оценочный аппарат
+  description: Корпоративный инструмент для оценки продаваемого товара.
+  suffix: Biotechnica, Карго
   components:
   - type: Sprite
-    sprite: _NC/Clothing/Back/Backpacks/biotechnica.rsi
-
-- type: entity
-  parent: [ClothingBackpackSatchelHydroponics, BiotechnicaContraband]
-  id: ClothingBackpackSatchelBiotechnica
-  name: сумка работника Biotechnica
-  description: Простая рабочая сумка из натуральной ткани, выращенной Biotechnica.
-  suffix: Biotechnica
-  components:
-  - type: Sprite
-    sprite: _NC/Clothing/Back/Satchels/biotechnica.rsi
-
-- type: entity
-  parent: [ClothingBackpackDuffelHydroponics, BiotechnicaContraband]
-  id: ClothingBackpackDuffelBiotechnica
-  name: вещмешок работника Biotechnica
-  description: Большой вещмешок из натуральной ткани, выращенной Biotechnica.
-  suffix: Biotechnica
-  components:
-    - type: Sprite
-      sprite: _NC/Clothing/Back/Duffels/biotechnica.rsi
+    sprite: _NC/Objects/Tools/Biotechnica/appraisal.rsi
+  - type: Item
+    sprite: _NC/Objects/Tools/Biotechnica/appraisal.rsi
+  - type: Clothing
+    sprite: _NC/Objects/Tools/Biotechnica/appraisal.rsi

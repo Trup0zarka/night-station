@@ -1,13 +1,14 @@
 - type: job
   id: BiotechnicaTech
   name: Техник Biotechnica
-  description: 'Научный персонал. Производит снаряжение и импланты, занимается тех обслуживанием объекта.'
+  description: 'Научный персонал. Производит снаряжение и импланты, занимается тех. обслуживанием объекта.'
   playTimeTracker: JobBiotechnicaTech
   weight: 50
   salary: 200
   icon: "JobIconBiotechTechnician"
   startingGear: BiotechnicaTechGear
   access:
+    - Biotech_Tech
     - Biotech_Staff
     - Biotech_Lab
     - Biotech_General
@@ -19,8 +20,6 @@
     jumpsuit: ClothingUniformJumpsuitBiotechnica
     back: ClothingBackpackBiotechnica
     shoes: ClothingShoesColorWhite
-    head: ClothingHeadHatBeretSeniorPhysician
     eyes: ClothingEyesGlassesSunglasses
     id: BiotechnicaTechPDA
-    belt: ClothingBeltMedicalFilled
-    outerClothing: ClothingOuterCoatLabCmo
+    belt: ClothingBeltBiotechnicaTechFilled

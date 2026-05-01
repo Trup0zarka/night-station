@@ -554,6 +554,7 @@
     - type: Access
       tags:
         - NC_General
+        - Biotech_Botany
         - Biotech_Staff
         - Biotech_General
     - type: PresetIdCard
@@ -685,6 +686,7 @@
     - type: Access
       tags:
         - NC_General
+        - Biotech_Tech
         - Biotech_Staff
         - Biotech_General
     - type: PresetIdCard

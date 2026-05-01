@@ -16,7 +16,7 @@
   name: шлюз МедТех Биотехника
   components:
   - type: AccessReader
-    access: [["Biotech_MedTech"]]
+    access: [["Biotech_MedTech"], ["Biotech_Tech"]]
 
 # Шлюз оперативников Биотехники
 - type: entity

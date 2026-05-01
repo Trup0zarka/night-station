@@ -10,7 +10,9 @@
   access:
     - Biotech_Director
     - Biotech_HeadOfDepartment
+    - Biotech_Botany
     - Biotech_MedTech
+    - Biotech_Tech
     - Biotech_Operative
     - Biotech_Staff
     - Biotech_General

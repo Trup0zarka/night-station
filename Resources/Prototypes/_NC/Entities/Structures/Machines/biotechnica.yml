@@ -38,7 +38,7 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [ [ "Biotech_Staff" ] ]
+    access: [ [ "Biotech_Botany" ] ]
 
 - type: entity
   parent: [VendingMachineBiotechnica, VendingMachineHydrobe]
@@ -63,7 +63,7 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [ [ "Biotech_Staff" ] ]
+    access: [ [ "Biotech_Botany" ] ]
 
 - type: entity
   parent: [VendingMachineBiotechnica, VendingMachineSeeds]
@@ -90,4 +90,122 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [ [ "Biotech_Staff" ] ]
+    access: [ [ "Biotech_Botany" ] ]
+
+# region MedTech
+
+- type: entity
+  parent: [VendingMachineBiotechnica, VendingMachineNutri]
+  id: VendingMachineBiotechnicaMedTech
+  name: Лабораторная Biotechnica
+  description: Корпоративный автомат, содержащий средства и инструменты для научных исследований.
+  suffix: МедТех
+  components:
+  - type: VendingMachine
+    pack: BiotechnicaMedTechInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: Sprite
+    sprite: _NC/Structures/Machines/Biotechnica/med_tech.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [ [ "Biotech_MedTech" ] ]
+
+- type: entity
+  parent: [VendingMachineBiotechnica, VendingMachineChemDrobe]
+  id: VendingMachineBiotechnicaMedTechDrobe
+  name: МедТехШкаф Biotechnica
+  description: Корпоративный автомат, содержащий экипировку для научных исследований.
+  suffix: МедТех
+  components:
+  - type: VendingMachine
+    pack: BiotechnicaMedTechDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Sprite
+    sprite: _NC/Structures/Machines/Biotechnica/med_tech_drobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [ [ "Biotech_MedTech" ] ]
+
+- type: entity
+  parent: DVSmartFridge
+  id: BiotechnicaSmartFridge
+  name: умный холодильник
+  description: Охлаждающий шкаф для химикатов с умным поиском и системой доступа.
+  suffix: Biotechnica, МедТех
+  components:
+  - type: AccessReader
+    access: [ [ "Biotech_MedTech" ] ]
+
+# region Tech
+
+- type: entity
+  parent: [VendingMachineBiotechnica, VendingMachineNutri]
+  id: VendingMachineBiotechnicaTech
+  name: Инвентарь Biotechnica
+  description: Корпоративный автомат, содержащий средства и инструменты для научных исследований.
+  suffix: Тех
+  components:
+  - type: VendingMachine
+    pack: BiotechnicaTechInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: Sprite
+    sprite: _NC/Structures/Machines/Biotechnica/tech.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [ [ "Biotech_Tech" ] ]
+
+- type: entity
+  parent: [VendingMachineBiotechnica, VendingMachineChemDrobe]
+  id: VendingMachineBiotechnicaTechDrobe
+  name: ТехШкаф Biotechnica
+  description: Корпоративный автомат, содержащий экипировку для научных исследований.
+  suffix: Тех
+  components:
+  - type: VendingMachine
+    pack: BiotechnicaTechDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Sprite
+    sprite: _NC/Structures/Machines/Biotechnica/tech_drobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [ [ "Biotech_Tech" ] ]

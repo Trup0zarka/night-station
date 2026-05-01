@@ -1,0 +1,511 @@
+# region Botany
+
+# Belts
+
+- type: entity
+  parent: [ClothingBeltPlant, BiotechnicaContraband]
+  id: ClothingBeltBiotechnicaBotany
+  name: ботанический пояс
+  description: Корпоративный ботанический пояс, подходящий для большинства соответственного снаряжения.
+  suffix: Biotechnica, Гидропоника, Ботаника
+  components:
+  - type: Sprite
+    sprite: _NC/Clothing/Uniforms/Belts/Biotechnica/botany.rsi
+  - type: Clothing
+    sprite: _NC/Clothing/Uniforms/Belts/Biotechnica/botany.rsi
+
+- type: entity
+  parent: ClothingBeltBiotechnicaBotany
+  id: ClothingBeltBiotechnicaBotanyFilled
+  name: ботанический пояс
+  description: Корпоративный ботанический пояс, подходящий для большинства соответственного снаряжения.
+  suffix: Заполненный, Biotechnica, Гидропоника, Ботаника
+  components:
+  - type: StorageFill
+    contents:
+    - id: BiotechnicaHoe
+    - id: BiotechnicaSpade
+    - id: BiotechnicaClippers
+
+- type: entity
+  parent: ClothingBeltBiotechnicaBotany
+  id: ClothingBeltBiotechnicaBotanyFilledFull
+  name: ботанический пояс
+  description: Корпоративный ботанический пояс, подходящий для большинства соответственного снаряжения.
+  suffix: Заполненный максимально, Biotechnica, Гидропоника, Ботаника
+  components:
+  - type: StorageFill
+    contents:
+    - id: BiotechnicaHoe
+    - id: BiotechnicaSpade
+    - id: BiotechnicaClippers
+    - id: BiotechnicaScythe
+    - id: BiotechnicaHatchet
+    - id: BiotechnicaLabeler
+    - id: BiotechnicaDropper
+    - id: RobustHarvestChemistryBottle
+    - id: BiotechnicaPlantAnalyzer
+
+# Aprons
+
+- type: entity
+  parent: [ClothingOuterApronBotanist, BiotechnicaContraband]
+  id: ClothingOuterApronBiotechnicaBotany
+  name: ботанический фартук
+  description: Корпоративный фартук для защиты униформы от любых растительных неприятностей.
+  suffix: Biotechnica, Гидропоника, Ботаника
+  components:
+  - type: Sprite
+    sprite: _NC/Clothing/OuterClothing/Biotechnica/Botany/apron.rsi
+  - type: Clothing
+    sprite: _NC/Clothing/OuterClothing/Biotechnica/Botany/apron.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.95
+
+# Envirosuit
+
+- type: entity
+  parent: [ClothingUniformEnvirosuitHydroponics, BiotechnicaContraband]
+  id: ClothingUniformEnvirosuitBiotechnicaBotany
+  name: ботанический эко-комбинезон
+  description: Часть сплошного экологического костюма для защиты от вредоносных газов.
+  suffix: Biotechnica, Гидропоника, Ботаника
+  components:
+  - type: Sprite
+    sprite: _NC/Clothing/Uniforms/Envirosuits/biotechnica_botany.rsi
+  - type: Clothing
+    sprite: _NC/Clothing/Uniforms/Envirosuits/biotechnica_botany.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.95
+        Caustic: 0.85
+
+- type: entity
+  parent: [ClothingHeadEnvirohelmHydroponics, BiotechnicaContraband]
+  id: ClothingHeadEnvirohelmBiotechnicaBotany
+  name: ботанический эко-шлем
+  description: Часть сплошного экологического костюма для защиты от вредоносных газов.
+  suffix: Biotechnica, Гидропоника, Ботаника
+  components:
+  - type: Sprite
+    sprite: _NC/Clothing/Head/Envirohelms/biotechnica_botany.rsi
+  - type: Clothing
+    sprite: _NC/Clothing/Head/Envirohelms/biotechnica_botany.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.95
+        Caustic: 0.90
+
+- type: entity
+  parent: [ClothingHandsGlovesEnviroglovesLeather, BiotechnicaContraband]
+  id: ClothingHandsGlovesEnviroglovesBiotechnicaBotany
+  name: ботанические эко-перчатки
+  description: Корпоративные агрономные перчатки для работы с растениями в стерильных условиях.
+  suffix: Biotechnica, Гидропоника, Ботаника
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    layers:
+    - state: icon
+      color: "#00d26d"  # Biotechnica palette
+  - type: Item
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#00d26d"
+      right:
+      - state: inhand-right
+        color: "#00d26d"
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
+        color: "#00d26d"
+  - type: Fiber
+    fiberMaterial: fibers-leather
+    fiberColor: fibers-blue
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.95
+        Caustic: 0.95
+
+# Lockers
+
+- type: entity
+  id: LockerBiotechnicaBotany
+  parent: LockerBase
+  name: шкаф Biotechnica
+  description: Запертый шкаф для стдержания корпоративного снаряжения под защитой.
+  suffix: Biotechnica, Гидропоника, Ботаника
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: hydro
+    stateDoorOpen: hydro_open
+    stateDoorClosed: hydro_door
+  - type: AccessReader
+    access: [ [ "Biotech_Botany" ] ]
+
+# region Tech
+
+# Belts
+
+- type: entity
+  parent: [ClothingBeltUtility, BiotechnicaContraband]
+  id: ClothingBeltBiotechnicaTech
+  name: технический пояс
+  description: Корпоративный технический пояс, подходящий для большинства соответственного снаряжения.
+  suffix: Biotechnica, Тех
+  components:
+  - type: Sprite
+    sprite: _NC/Clothing/Uniforms/Belts/Biotechnica/botany.rsi
+  - type: Clothing
+    sprite: _NC/Clothing/Uniforms/Belts/Biotechnica/botany.rsi
+
+- type: entity
+  parent: ClothingBeltBiotechnicaTech
+  id: ClothingBeltBiotechnicaTechFilled
+  name: технический пояс
+  description: Корпоративный технический пояс, подходящий для большинства соответственного снаряжения.
+  suffix: Заполненный, Biotechnica, Тех
+  components:
+  - type: StorageFill
+    contents:
+    - id: BiotechnicaCrowbar
+    - id: BiotechnicaWrench
+    - id: BiotechnicaWirecutter
+    - id: BiotechnicaScrewdriverMini
+    - id: BiotechnicaWelderMini
+
+- type: entity
+  parent: ClothingBeltBiotechnicaTech
+  id: ClothingBeltBiotechnicaTechFilledFull
+  name: технический пояс
+  description: Корпоративный технический пояс, подходящий для большинства соответственного снаряжения.
+  suffix: Заполненный максимально, Biotechnica, Тех
+  components:
+  - type: StorageFill
+    contents:
+    - id: BiotechnicaCrowbar
+    - id: PowerDrill
+    - id: BiotechnicaWirecutter
+    - id: BiotechnicaWelder
+    - id: FlashlightEmp
+    - id: NetworkConfigurator
+    - id: HandheldGPSBasic
+    - id: AccessConfigurator
+    - id: Multitool
+
+# region MedTech
+
+# Belts
+
+- type: entity
+  parent: [ClothingBeltMedical, BiotechnicaContraband]
+  id: ClothingBeltBiotechnicaMedTech
+  name: медтех пояс
+  description: Корпоративный пояс МедТеха, подходящий для большинства соответственного снаряжения.
+  suffix: Biotechnica, МедТех
+  components:
+  - type: Sprite
+    sprite: _NC/Clothing/Uniforms/Belts/Biotechnica/botany.rsi
+  - type: Clothing
+    sprite: _NC/Clothing/Uniforms/Belts/Biotechnica/botany.rsi
+
+- type: entity
+  parent: ClothingBeltBiotechnicaMedTech
+  id: ClothingBeltBiotechnicaMedTechFilled
+  name: медтех пояс
+  description: Корпоративный пояс МедТеха, подходящий для большинства соответственного снаряжения.
+  suffix: Заполненный, Biotechnica, МедТех
+  components:
+  - type: StorageFill
+    contents:
+    - id: Gauze
+    - id: Beaker
+    - id: BaseChemistryEmptyVial
+    - id: BiotechnicaDropper
+
+- type: entity
+  parent: ClothingBeltBiotechnicaMedTech
+  id: ClothingBeltBiotechnicaMedTechFilledFull
+  name: медтех пояс
+  description: Корпоративный пояс МедТеха, подходящий для большинства соответственного снаряжения.
+  suffix: Заполненный максимально, Biotechnica, МедТех
+  components:
+  - type: StorageFill
+    contents:
+    - id: Gauze
+    - id: Beaker
+    - id: Scalpel
+    - id: Bonesetter
+    - id: PillCanister
+    - id: GeigerCounter
+    - id: GasAnalyzer
+    - id: Syringe
+    - id: BiotechnicaDropper
+    - id: BaseChemistryEmptyVial
+    - id: BaseChemistryEmptyVial
+    - id: ChemistryEmptyBottle01
+
+# Aprons
+
+- type: entity
+  parent: [ClothingOuterStorageBase, BiotechnicaContraband]
+  id: ClothingOuterApronBiotechnica
+  name: лабораторный фартук
+  description: Корпоративный фартук для легкой защиты униформы от химикатов.
+  suffix: Biotechnica, МедТех
+  components:
+  - type: Sprite
+    sprite: _NC/Clothing/OuterClothing/Biotechnica/apron.rsi
+  - type: Clothing
+    sprite: _NC/Clothing/OuterClothing/Biotechnica/apron.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.95
+
+# Coats
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBase, BiotechnicaContraband]
+  id: ClothingOuterCoatBiotechnica
+  name: хим-халат
+  description: Дает дополнительную защиту от пролитых химикатов.
+  suffix: Biotechnica, МедТех
+  components:
+  - type: Sprite
+    sprite: _NC/Clothing/OuterClothing/Biotechnica/MedTech/coat.rsi
+  - type: Clothing
+    sprite: _NC/Clothing/OuterClothing/Biotechnica/MedTech/coat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.75
+  - type: TemperatureProtection
+    heatingCoefficient: 0.95
+    coolingCoefficient: 0.95
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatBiotechnica]
+  id: ClothingOuterCoatBiotechnicaOpened
+  name: хим-халат
+  description: Дает дополнительную защиту от пролитых химикатов.
+  suffix: Открытый, Biotechnica, МедТех
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBase, BiotechnicaContraband]
+  id: ClothingOuterCoatBiotechnicaRad
+  name: антирадиационный хим-халат
+  description: Дает дополнительную защиту от пролитых химикатов и радиационного фона.
+  suffix: Biotechnica, МедТех
+  components:
+  - type: Sprite
+    sprite: _NC/Clothing/OuterClothing/Biotechnica/MedTech/coat_radiation.rsi
+  - type: Clothing
+    sprite: _NC/Clothing/OuterClothing/Biotechnica/MedTech/coat_radiation.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.75
+        Radiation: 0.85
+  - type: TemperatureProtection
+    heatingCoefficient: 0.95
+    coolingCoefficient: 0.95
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatBiotechnicaRad]
+  id: ClothingOuterCoatBiotechnicaRadOpened
+  name: антирадиационный хим-халат
+  description: Дает дополнительную защиту от пролитых химикатов и радиационного фона.
+  suffix: Biotechnica, МедТех
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBase, BiotechnicaContraband]
+  id: ClothingOuterCoatBiotechnicaAdvanced
+  name: продвинутый хим-халат
+  description: Этот корпоративный халат сделан из специальных комбинаций, защищающих от химикатов, а также от слабых ожогов и порезов.
+  suffix: Biotechnica, МедТех
+  components:
+  - type: Sprite
+    sprite: _NC/Clothing/OuterClothing/Biotechnica/MedTech/coat_advanced.rsi
+  - type: Clothing
+    sprite: _NC/Clothing/OuterClothing/Biotechnica/MedTech/coat_advanced.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.95
+        Heat: 0.95
+        Caustic: 0.65
+  - type: TemperatureProtection
+    heatingCoefficient: 0.90
+    coolingCoefficient: 0.90
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatBiotechnicaAdvanced]
+  id: ClothingOuterCoatBiotechnicaAdvancedOpened
+  name: продвинутый хим-халат
+  description: Этот корпоративный халат сделан из специальных комбинаций, защищающих от химикатов, а также от слабых ожогов и порезов.
+  suffix: Biotechnica, МедТех
+
+# Gloves
+
+- type: entity
+  parent: [ClothingHandsBase, BiotechnicaContraband]
+  id: ClothingHandsMittsBiotechnica
+  name: рукавицы
+  description: Теплые рукавицы для работы с химикатами и нагретыми вещами. Защищают от ожогов и перегрева.
+  suffix: Biotechnica, МедТех
+  components:
+  - type: Sprite
+    sprite: _NC/Clothing/Hands/Gloves/Biotechnica/mitts.rsi
+  - type: Clothing
+    sprite: _NC/Clothing/Hands/Gloves/Biotechnica/mitts.rsi
+  - type: Fiber
+    fiberMaterial: fibers-rubber
+    fiberColor: fibers-black
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.35
+  - type: TemperatureProtection
+    heatingCoefficient: 0.3
+    coolingCoefficient: 0.5
+
+# Hats
+
+- type: entity
+  parent: [ClothingHeadBaseButcherable, BiotechnicaContraband]
+  id: ClothingHeadHatBiotechnicaSterile
+  name: стерильная шапочка
+  description: Стерильная шапочка МедТеха для научных исследований.
+  suffix: Biotechnica, МедТех
+  components:
+  - type: Sprite
+    sprite: _NC/Clothing/Head/Hats/biotechnica_sterile.rsi
+  - type: Clothing
+    sprite: _NC/Clothing/Head/Hats/biotechnica_sterile.rsi
+
+# region Mixed
+
+- type: entity
+  parent: [ClothingBackpackHydroponics, BiotechnicaContraband]
+  id: ClothingBackpackBiotechnica
+  name: рюкзак работника Biotechnica
+  description: Простой рюкзак из натуральной ткани, выращенной Biotechnica.
+  suffix: Biotechnica
+  components:
+  - type: Sprite
+    sprite: _NC/Clothing/Back/Backpacks/biotechnica.rsi
+
+- type: entity
+  parent: [ClothingBackpackSatchelHydroponics, BiotechnicaContraband]
+  id: ClothingBackpackSatchelBiotechnica
+  name: сумка работника Biotechnica
+  description: Простая рабочая сумка из натуральной ткани, выращенной Biotechnica.
+  suffix: Biotechnica
+  components:
+  - type: Sprite
+    sprite: _NC/Clothing/Back/Satchels/biotechnica.rsi
+
+- type: entity
+  parent: [ClothingBackpackDuffelHydroponics, BiotechnicaContraband]
+  id: ClothingBackpackDuffelBiotechnica
+  name: вещмешок работника Biotechnica
+  description: Большой вещмешок из натуральной ткани, выращенной Biotechnica.
+  suffix: Biotechnica
+  components:
+    - type: Sprite
+      sprite: _NC/Clothing/Back/Duffels/biotechnica.rsi
+
+# Envirosuit
+
+- type: entity
+  parent: [ClothingUniformEnvirosuitHydroponics, BiotechnicaContraband]
+  id: ClothingUniformEnvirosuitBiotechnica
+  name: эко-комбинезон
+  description: Часть сплошного экологического костюма для защиты от вредоносных химикатов.
+  suffix: Biotechnica, МедТех, Тех
+  components:
+  - type: Sprite
+    sprite: _NC/Clothing/Uniforms/Envirosuits/biotechnica.rsi
+  - type: Clothing
+    sprite: _NC/Clothing/Uniforms/Envirosuits/biotechnica.rsi
+
+- type: entity
+  parent: [ClothingHeadEnvirohelmHydroponics, BiotechnicaContraband]
+  id: ClothingHeadEnvirohelmBiotechnica
+  name: эко-шлем
+  description: Часть сплошного экологического костюма для защиты от вредоносных химикатов.
+  suffix: Biotechnica, МедТех, Тех
+  components:
+  - type: Sprite
+    sprite: _NC/Clothing/Head/Envirohelms/biotechnica.rsi
+  - type: Clothing
+    sprite: _NC/Clothing/Head/Envirohelms/biotechnica.rsi
+
+- type: entity
+  parent: [ClothingHandsGlovesEnviroglovesLeather, BiotechnicaContraband]
+  id: ClothingHandsGlovesEnviroglovesBiotechnica
+  name: эко-перчатки
+  description: Корпоративные защитные перчатки для работы в стерильных условиях.
+  suffix: Biotechnica, МедТех, Тех
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    layers:
+    - state: icon
+      color: "#73c0d7"  # Biotechnica palette
+  - type: Item
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#73c0d7"
+      right:
+      - state: inhand-right
+        color: "#73c0d7"
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
+        color: "#73c0d7"
+  - type: Fiber
+    fiberMaterial: fibers-leather
+    fiberColor: fibers-blue
+
+# Lockers
+
+- type: entity
+  id: LockerBiotechnica
+  parent: LockerBase
+  name: шкаф Biotechnica
+  description: Запертый шкаф для содержания корпоративного снаряжения под защитой.
+  suffix: Biotechnica, МедТех, Тех
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: med
+    stateDoorOpen: med_open
+    stateDoorClosed: chemical_door
+  - type: AccessReader
+    access: [ [ "Biotech_MedTech" ], [ "Biotech_Tech" ] ]
+
+- type: entity
+  parent: LockerFreezer
+  id: LockerBiotechnicaFreezer
+  name: холодильник
+  description: Запертый охлаждаемый шкаф для содержания корпоративных химикатов под защитой.
+  suffix: Biotechnica, МедТех
+  components:
+  - type: AccessReader
+    access: [ [ "Biotech_MedTech" ] ]

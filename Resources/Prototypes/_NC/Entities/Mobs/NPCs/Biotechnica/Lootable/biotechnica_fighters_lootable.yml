@@ -5,7 +5,7 @@
 - type: startingGear
   id: NCBiotechnicaGearAvenger
   equipment:
-    jumpsuit: ClothingUniformJumpsuitBiotech
+    jumpsuit: ClothingUniformJumpsuitBiotechnica
     outerClothing: ClothingOuterArmorBiotechnicaBulletproof
     shoes: ClothingShoesColorBlack
     head: ClothingHeadHatBiotechCap
@@ -19,7 +19,7 @@
 - type: startingGear
   id: NCBiotechnicaGearBoomerBuster
   equipment:
-    jumpsuit: ClothingUniformJumpsuitBiotech
+    jumpsuit: ClothingUniformJumpsuitBiotechnica
     outerClothing: ClothingOuterArmorBiotechnicaBulletproof
     shoes: ClothingShoesColorBlack
     head: ClothingHeadHatBiotechCap
@@ -33,7 +33,7 @@
 - type: startingGear
   id: NCBiotechnicaGearSaratoga
   equipment:
-    jumpsuit: ClothingUniformJumpsuitBiotech
+    jumpsuit: ClothingUniformJumpsuitBiotechnica
     outerClothing: ClothingOuterArmorBiotechnicaBulletproof
     shoes: ClothingShoesColorBlack
     head: ClothingHeadHatBiotechCap
@@ -47,7 +47,7 @@
 - type: startingGear
   id: NCBiotechnicaGearCrusher
   equipment:
-    jumpsuit: ClothingUniformJumpsuitBiotech
+    jumpsuit: ClothingUniformJumpsuitBiotechnica
     outerClothing: ClothingOuterArmorBiotechnicaBulletproof
     shoes: ClothingShoesColorBlack
     head: ClothingHeadHatBiotechCap
