@@ -93,7 +93,7 @@
 
 - type: entity
   id: MagazineRifleNowaki
-  name: магазин Nokota (5.56×45 CL)
+  name: магазин NOWAKI (5.56×45 CL)
   description: Стандартный магазин для винтовок Nokota D5. Вмещает 30 безгильзовых патронов калибра 6.22мм.
   parent: BaseMagazineRifle
   components:
