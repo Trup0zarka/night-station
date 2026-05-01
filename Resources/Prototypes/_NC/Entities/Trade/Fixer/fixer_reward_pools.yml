@@ -56,9 +56,6 @@
     id: SurvivalKnife
     weight: 3
   - type: Item
-    id: FlashlightLight
-    weight: 3
-  - type: Item
     id: Multitool
     weight: 1
 

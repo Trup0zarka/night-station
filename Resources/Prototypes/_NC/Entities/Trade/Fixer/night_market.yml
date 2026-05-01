@@ -21,8 +21,6 @@
     - NightMarket_Buy
     contractPresets:
     - PresetFixer
-  - type: AccessReader
-    access: [["NC_General"]]
 
 - type: storeCategoryStructured
   id: NightMarket_Weapons
