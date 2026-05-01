@@ -68,6 +68,12 @@ namespace Content.Server.Database
             return new PlayerPreferences(profiles, prefs.SelectedCharacterSlot, Color.FromHex(prefs.AdminOOCColor), prefs.GhostId); // WWDP EDIT
         }
 
+        public async Task ResetAllBankBalances(int startingBalance)
+        {
+            await using var db = await GetDb();
+            await db.DbContext.Profile.ExecuteUpdateAsync(s => s.SetProperty(p => p.BankBalance, startingBalance));
+        }
+
         public async Task SaveSelectedCharacterIndexAsync(NetUserId userId, int index)
         {
             await using var db = await GetDb();

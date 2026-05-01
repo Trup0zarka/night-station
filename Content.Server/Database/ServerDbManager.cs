@@ -48,6 +48,8 @@ namespace Content.Server.Database
         // Single method for two operations for transaction.
         Task DeleteSlotAndSetSelectedIndex(NetUserId userId, int deleteSlot, int newSlot);
         Task<PlayerPreferences?> GetPlayerPreferencesAsync(NetUserId userId, CancellationToken cancel);
+
+        Task ResetAllBankBalances(int startingBalance);
         #endregion
 
         #region User Ids
@@ -502,6 +504,12 @@ namespace Content.Server.Database
         {
             DbReadOpsMetric.Inc();
             return RunDbCommand(() => _db.GetPlayerPreferencesAsync(userId, cancel));
+        }
+
+        public Task ResetAllBankBalances(int startingBalance)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.ResetAllBankBalances(startingBalance));
         }
 
         public Task AssignUserIdAsync(string name, NetUserId userId)

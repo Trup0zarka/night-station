@@ -5,6 +5,7 @@ using Content.Shared._NC.Bank;
 using Content.Shared._NC.Bank.Components;
 using Content.Server.Preferences.Managers;
 using Content.Shared.Preferences;
+using Content.Server.Database;
 using Robust.Shared.Player;
 using Content.Shared.GameTicking;
 using Content.Server.Chat.Managers;
@@ -26,6 +27,7 @@ namespace Content.Server._NC.Bank
     {
         // === ЗАВИСИМОСТИ ===
         [Dependency] private readonly IServerPreferencesManager _prefsManager = default!;
+        [Dependency] private readonly IServerDbManager _db = default!;
         [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
         [Dependency] private readonly IChatManager _chatManager = default!;
         [Dependency] private readonly IPrototypeManager _protoManager = default!;
@@ -304,6 +306,30 @@ namespace Content.Server._NC.Bank
             }
 
             return true;
+        }
+
+        /// <summary>
+        /// Сбрасывает баланс ВСЕХ игроков во всей базе данных и в текущем раунде.
+        /// </summary>
+        public async Task ResetAllBalances()
+        {
+            _log.Warning("RESET: Глобальный сброс всех банковских счетов!");
+
+            // 1. Сброс в БД (Bulk update)
+            await _db.ResetAllBankBalances(BankAccountComponent.StartingBalance);
+
+            // 2. Сброс кэша преференций (для всех загруженных игроков)
+            _prefsManager.ResetAllBalances();
+
+            // 3. Обновление всех активных компонентов в раунде
+            var query = EntityQueryEnumerator<BankAccountComponent>();
+            while (query.MoveNext(out var uid, out var bank))
+            {
+                bank.Balance = BankAccountComponent.StartingBalance;
+                Dirty(uid, bank);
+            }
+
+            _log.Info("RESET: Сброс завершен.");
         }
     }
 }

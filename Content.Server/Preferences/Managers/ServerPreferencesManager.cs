@@ -141,6 +141,28 @@ namespace Content.Server.Preferences.Managers
                 await _db.SaveCharacterSlotAsync(userId, profile, slot);
         }
 
+        public void ResetAllBalances()
+        {
+            foreach (var prefData in _cachedPlayerPrefs.Values)
+            {
+                if (prefData.Prefs == null) continue;
+
+                var newCharacters = new Dictionary<int, ICharacterProfile>();
+                foreach (var (slot, profile) in prefData.Prefs.Characters)
+                {
+                    if (profile is HumanoidCharacterProfile humanoid)
+                    {
+                        newCharacters[slot] = humanoid.WithBankBalance(BankAccountComponent.StartingBalance);
+                    }
+                    else
+                    {
+                        newCharacters[slot] = profile;
+                    }
+                }
+                prefData.Prefs = prefData.Prefs.WithCharacters(newCharacters);
+            }
+        }
+
         private async void HandleDeleteCharacterMessage(MsgDeleteCharacter message)
         {
             var slot = message.Slot;
