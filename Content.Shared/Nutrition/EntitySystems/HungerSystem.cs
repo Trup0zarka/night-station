@@ -12,11 +12,21 @@ using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Robust.Shared.Utility;
 using Robust.Shared.Configuration;
+using Content.Shared.Damage.Prototypes;
 
 namespace Content.Shared.Nutrition.EntitySystems;
 
+/// <summary>
+/// NC Hunger System edit:
+/// <list type="bullet">
+/// <item><description>Overfed: positive mood, slower speed</description></item>
+/// <item><description>Okay: nothing</description></item>
+/// <item><description>Peckish: slightly negative mood</description></item>
+/// <item><description>Starving: negative mood, slower speed</description></item>
+/// <item><description>Dead: very negative mood, slower speed, damage over time</description></item>
+/// </list>
+/// </summary>
 public sealed class HungerSystem : EntitySystem
 {
     [Dependency] private readonly IConfigurationManager _config = default!;
@@ -64,10 +74,15 @@ public sealed class HungerSystem : EntitySystem
 
     private void OnRefreshMovespeed(EntityUid uid, HungerComponent component, RefreshMovementSpeedModifiersEvent args)
     {
-        if (_config.GetCVar(CCVars.MoodEnabled)
-            || component.CurrentThreshold > HungerThreshold.Starving
-            || _jetpack.IsUserFlying(uid))
+        // NC edit start: Fix hunger
+        // Hunger effect (when starving or worse, or when overfed): Decrease speed
+        if (
+            component.CurrentThreshold < HungerThreshold.Overfed &&
+            component.CurrentThreshold > HungerThreshold.Starving ||
+            _jetpack.IsUserFlying(uid)
+        )
             return;
+        // NC edit end: Fix hunger
 
         args.ModifySpeed(component.StarvingSlowdownModifier, component.StarvingSlowdownModifier);
     }
@@ -83,7 +98,7 @@ public sealed class HungerSystem : EntitySystem
     public float GetHunger(HungerComponent component)
     {
         var dt = _timing.CurTime - component.LastAuthoritativeHungerChangeTime;
-        var value = component.LastAuthoritativeHungerValue - (float)dt.TotalSeconds * component.ActualDecayRate;
+        var value = component.LastAuthoritativeHungerValue - (float) dt.TotalSeconds * component.ActualDecayRate;
         return ClampHungerWithinThresholds(component, value);
     }
 
@@ -150,17 +165,20 @@ public sealed class HungerSystem : EntitySystem
         if (component.CurrentThreshold == component.LastThreshold && !force)
             return;
 
+        // NC edit start: Fix hunger
+        // Hunger effect: Update speed
         if (GetMovementThreshold(component.CurrentThreshold) != GetMovementThreshold(component.LastThreshold))
         {
-            if (!_config.GetCVar(CCVars.MoodEnabled))
-                _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
-            else if (_net.IsServer)
-            {
-                var ev = new MoodEffectEvent("Hunger" + component.CurrentThreshold);
-                RaiseLocalEvent(uid, ev);
-            }
+            _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
         }
 
+        // Hunger effect: Update mood
+        if (_config.GetCVar(CCVars.MoodEnabled) && _net.IsServer)
+        {
+            RaiseLocalEvent(uid, new MoodEffectEvent("Hunger" + component.CurrentThreshold));
+        }
+
+        // Hunger effect: Update alert
         if (component.HungerThresholdAlerts.TryGetValue(component.CurrentThreshold, out var alertId))
         {
             _alerts.ShowAlert(uid, alertId);
@@ -169,6 +187,7 @@ public sealed class HungerSystem : EntitySystem
         {
             _alerts.ClearAlertCategory(uid, component.HungerAlertCategory);
         }
+        // NC edit end: Fix hunger
 
         if (component.HungerThresholdDecayModifiers.TryGetValue(component.CurrentThreshold, out var modifier))
         {
@@ -184,12 +203,23 @@ public sealed class HungerSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return;
 
-        if (component.CurrentThreshold <= HungerThreshold.Starving &&
-            component.StarvationDamage is { } damage &&
-            !_mobState.IsDead(uid))
+        // NC edit start: Fix hunger
+        // Hunger effect (on dead): Deal damage (if StarvationDamageValue is present)
+        if (component.CurrentThreshold <= HungerThreshold.Dead && !_mobState.IsDead(uid))
         {
-            _damageable.TryChangeDamage(uid, damage, true, false);
+            if (component.StarvationDamageValue is not null && component.StarvationDamageValue > 0)
+            {
+                if (component.StarvationDamage is null)
+                {
+                    component.StarvationDamage = new DamageSpecifier(_prototype.Index<DamageTypePrototype>("Cellular"), (float) component.StarvationDamageValue);
+                }
+                if (component.StarvationDamage is { } damage)
+                {
+                    _damageable.TryChangeDamage(uid, damage, true, false);
+                }
+            }
         }
+        // NC edit end: Fix hunger
     }
 
     /// <summary>
@@ -231,10 +261,10 @@ public sealed class HungerSystem : EntitySystem
     {
         switch (threshold)
         {
-            case HungerThreshold.Overfed:
             case HungerThreshold.Okay:
-                return true;
             case HungerThreshold.Peckish:
+                return true;
+            case HungerThreshold.Overfed:
             case HungerThreshold.Starving:
             case HungerThreshold.Dead:
                 return false;
@@ -280,7 +310,10 @@ public sealed class HungerSystem : EntitySystem
         {
             if (_timing.CurTime < hunger.NextThresholdUpdateTime)
                 continue;
-            hunger.NextThresholdUpdateTime = _timing.CurTime + hunger.ThresholdUpdateRate;
+
+            hunger.NextThresholdUpdateTime += hunger.ThresholdUpdateRate;  // NC edit: Fix hunger
+
+            ModifyHunger(uid, -hunger.ActualDecayRate, hunger);  // NC edit: Fix hunger
 
             UpdateCurrentThreshold(uid, hunger);
             DoContinuousHungerEffects(uid, hunger);

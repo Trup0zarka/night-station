@@ -2,6 +2,7 @@ mood-effect-HungerOverfed = Я так много съел, что чувству
 mood-effect-HungerOkay = Я сыт.
 mood-effect-HungerPeckish = Сейчас бы перекусить.
 mood-effect-HungerStarving = МНЕ НУЖНА ЕДА!
+mood-effect-HungerDead = Я УМИРАЮ ОТ ГОЛОДА!!!
 
 mood-effect-ThirstOverHydrated = Я напился воды вдоволь.
 mood-effect-ThirstOkay = Я чувствую себя бодрым.

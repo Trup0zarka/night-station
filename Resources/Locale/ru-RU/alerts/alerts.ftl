@@ -75,8 +75,11 @@ alerts-hunger-desc = Было бы неплохо перекусить.
 alerts-stamina-name = Выносливость
 alerts-stamina-desc = Вы будете оглушены, если она опустится до нуля.
 
-alerts-starving-name = [color=red]Сильный голод[/color]
-alerts-starving-desc = Вы истощены. Голод вас замедляет.
+alerts-starving-name = [color=orange]Сильный голод[/color]
+alerts-starving-desc = Вы истощены. Голод вас замедляет и понижает настроение.
+
+alerts-hunger-dead-name = [color=red]Смертельный голод[/color]
+alerts-hunger-dead-desc = Вы умираете от голода. Ваше состояние хуже некуда.
 
 alerts-thirsty-name = [color=yellow]Жажда[/color]
 alerts-thirsty-desc = Было бы неплохо чего-нибудь попить.

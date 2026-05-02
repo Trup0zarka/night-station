@@ -286,6 +286,10 @@
         Heat: -0.07
       groups:
         Brute: -0.07
+  # NC edit start: Fix hunger
+  - type: Hunger
+    starvationDamageValue: 0.8
+  # NC edit end: Fix hunger
   - type: Blindable
   # Other
   - type: Temperature
