@@ -10,6 +10,7 @@
     proto: Cartridge11x20CL
     whitelist:
       tags:
+      - Cartridge
       - Cartridge11x20CL
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/bullet_insert.ogg
@@ -35,6 +36,7 @@
     proto: Cartridge9x19CL
     whitelist:
       tags:
+      - Cartridge
       - Cartridge9x19CL
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/bullet_insert.ogg

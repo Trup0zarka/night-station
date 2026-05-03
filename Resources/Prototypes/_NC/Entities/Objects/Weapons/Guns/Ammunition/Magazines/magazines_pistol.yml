@@ -10,6 +10,7 @@
     proto: Cartridge11x20
     whitelist:
       tags:
+      - Cartridge
       - Cartridge11x20
   - type: Sprite
     layers:
@@ -33,6 +34,7 @@
     proto: Cartridge13x23
     whitelist:
       tags:
+      - Cartridge
       - Cartridge13x23
   - type: Sprite
     layers:
@@ -56,6 +58,7 @@
     proto: Cartridge9x19CL
     whitelist:
       tags:
+      - Cartridge
       - Cartridge9x19CL
   - type: Sprite
     layers:
@@ -81,6 +84,7 @@
     proto: Cartridge9x19
     whitelist:
       tags:
+      - Cartridge
       - Cartridge9x19
     capacity: 12
   - type: Item
@@ -111,6 +115,7 @@
     proto: Cartridge9x19
     whitelist:
       tags:
+      - Cartridge
       - Cartridge9x19
   - type: Sprite
     layers:
@@ -134,6 +139,7 @@
     proto: Cartridge11x20CL
     whitelist:
       tags:
+      - Cartridge
       - Cartridge11x20CL
   - type: Sprite
     layers:
@@ -157,6 +163,7 @@
     proto: Cartridge11x20CL
     whitelist:
       tags:
+      - Cartridge
       - Cartridge11x20CL
   - type: Sprite
     layers:
@@ -180,6 +187,7 @@
     proto: Cartridge9x19CL
     whitelist:
       tags:
+      - Cartridge
       - Cartridge9x19CL
   - type: Sprite
     layers:
@@ -203,6 +211,7 @@
     proto: Cartridge13x23CL
     whitelist:
       tags:
+      - Cartridge
       - Cartridge13x23CL
   - type: Sprite
     layers:

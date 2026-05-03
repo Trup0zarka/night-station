@@ -5,6 +5,7 @@
   components:
   - type: Tag
     tags:
+    - Cartridge
     - Cartridge9x19
   - type: CartridgeAmmo
     proto: Bullet9x19
@@ -23,6 +24,7 @@
   components:
   - type: Tag
     tags:
+    - Cartridge
     - Cartridge11x20
   - type: CartridgeAmmo
     proto: Bullet11x20
@@ -41,6 +43,7 @@
   components:
   - type: Tag
     tags:
+    - Cartridge
     - Cartridge13x23
   - type: CartridgeAmmo
     proto: Bullet13x23
@@ -59,6 +62,7 @@
   components:
   - type: Tag
     tags:
+    - Cartridge
     - Cartridge9x19CL
   - type: CartridgeAmmo
     proto: Bullet9x19
@@ -78,6 +82,7 @@
   components:
   - type: Tag
     tags:
+    - Cartridge
     - Cartridge11x20CL
   - type: CartridgeAmmo
     proto: Bullet11x20
@@ -97,6 +102,7 @@
   components:
   - type: Tag
     tags:
+    - Cartridge
     - Cartridge13x23CL
   - type: CartridgeAmmo
     proto: Bullet13x23
@@ -116,6 +122,7 @@
   components:
   - type: Tag
     tags:
+    - Cartridge
     - Cartridge556x45CL
   - type: CartridgeAmmo
     proto: Bullet556x45
@@ -137,6 +144,7 @@
   components:
   - type: Tag
     tags:
+    - Cartridge
     - CartridgeNomadSpike
   - type: CartridgeAmmo
     proto: BulletNomadSpike

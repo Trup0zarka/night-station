@@ -10,6 +10,7 @@
     proto: CartridgeNomadSpike
     whitelist:
       tags:
+      - Cartridge
       - CartridgeNomadSpike
   - type: Sprite
     layers:
@@ -33,6 +34,7 @@
     proto: Cartridge556x45CL
     whitelist:
       tags:
+      - Cartridge
       - Cartridge556x45CL
   - type: Sprite
     layers:
@@ -56,6 +58,7 @@
     proto: Cartridge556x45CL
     whitelist:
       tags:
+      - Cartridge
       - Cartridge556x45CL
   - type: Sprite
     layers:
@@ -79,6 +82,7 @@
     proto: Cartridge556x45CL
     whitelist:
       tags:
+      - Cartridge
       - Cartridge556x45CL
   - type: Sprite
     sprite: _NC/Objects/Weapons/Guns/Rifles/NokotaD5Copperhead/mag.rsi
@@ -103,6 +107,7 @@
     proto: Cartridge556x45CL
     whitelist:
       tags:
+      - Cartridge
       - Cartridge556x45CL
   - type: Sprite
     layers:
