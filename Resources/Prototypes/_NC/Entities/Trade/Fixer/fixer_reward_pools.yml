@@ -133,10 +133,7 @@
   entries:
   - type: Item
     id: WeaponRifleArasakaNOWAKI
-    weight: 1
-  - type: Item
-    id: WeaponRifleArasakaProto
-    weight: 1
+    weight: 2
   - type: Item
     id: WeaponRifleM04
     weight: 1
@@ -145,40 +142,40 @@
     weight: 1
   - type: Item
     id: NCCyberdeck
-    weight: 1
+    weight: 2
   - type: Item
     id: ClothingOuterArmorRiot
     weight: 2
   - type: Item
     id: Defibrillator
-    weight: 1
+    weight: 4
   - type: Item
     id: WeaponPistolStukachTommy
-    weight: 1
+    weight: 3
   - type: Item
     id: PillCanisterTricordrazine
-    weight: 1
+    weight: 5
   - type: Item
     id: CyberwareNeuroKerenzikovMk1
-    weight: 2
+    weight: 6
   - type: Item
     id: CyberwareNeuroSandevistanMk1
-    weight: 1
+    weight: 4
   - type: Item
     id: CyberwareExternalThermoplasticArmor
-    weight: 1
+    weight: 4
   - type: Item
     id: CyberwareInternalTitaniumReinforcement
-    weight: 1
+    weight: 4
   - type: Item
     id: CyberwareNeuroBioInhibitorStoic
-    weight: 1
+    weight: 4
   - type: Item
     id: CyberwareNeuroKerenzikovMk2
-    weight: 1
+    weight: 3
   - type: Item
     id: CyberwareNeuroKerenzikovMk3
-    weight: 1
+    weight: 2
   - type: Item
     id: CyberwareNeuroSandevistanApogee
     weight: 1

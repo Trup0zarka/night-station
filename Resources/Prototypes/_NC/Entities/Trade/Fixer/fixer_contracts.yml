@@ -19,6 +19,17 @@
     weight: 50
   - id: fixer_contract_MedicalSmuggling
     weight: 40
+    - id: NC_contract_MaterialSheetSteel
+    weight: 50
+  - id: NC_contract_MaterialCloth
+    weight: 50
+  - id: NC_contract_MaterialSheetPlastic
+    weight: 50
+  - id: NC_contract_FoodCarrot
+    weight: 50
+  - id: NC_contract_FoodMeat
+    weight: 50
+
   # Medium
   - id: fixer_contract_BarrelsForMaelstrom
     weight: 30
@@ -32,6 +43,18 @@
     weight: 25
   - id: fixer_contract_StreetChrome
     weight: 20
+  - id: NC_contract_OrganHumanLungs
+    weight: 25
+  - id: NC_contract_OrganHumanKidneys
+    weight: 25
+  - id: NC_contract_DrinkVodkaBottleFull
+    weight: 25
+  - id: NC_contract_OrganHumanHeart
+    weight: 25
+  - id: NC_contract_OrganHumanEyes
+    weight: 25
+  - id: NC_contract_PartRodMetal
+    weight: 25
   # Hard
   - id: fixer_contract_ArasakaPrototypes
     weight: 10
@@ -43,14 +66,20 @@
     weight: 15
   - id: fixer_contract_MilitaryChrome
     weight: 10
+  - id: NC_contract_ToyRubberDuck
+    weight: 10
+  - id: NC_contract_C4
+    weight: 10
+  - id: NC_contract_Joint
+    weight: 10
 
 # --- Пресет контрактов ---
 - type: storeContractsPreset
   id: PresetFixer
   limits:
-    Easy: 3
-    Medium: 2
-    Hard: 1
+    Easy: 8
+    Medium: 6
+    Hard: 3
   packs:
   - id: PackFixer
     weight: 1
