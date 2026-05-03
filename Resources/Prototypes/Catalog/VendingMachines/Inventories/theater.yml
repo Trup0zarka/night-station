@@ -173,22 +173,9 @@
     ClothingHeadHatGladiator: 50
     ClothingUniformJumpsuitGladiator: 50
     ClothingUniformSkirtTurtle: 50
-    ClothingUniformSwimsuitBlue: 50
-    ClothingCostumeBunnySuit: 100
     ClothingHeadHatBunny: 50
-    ClothingUniformDressRed: 50
     ClothingHeadHatCake: 50
     ClothingUniformSchoolGakuranBlack: 50
-    UniformSchoolgirlBlack: 50
-    UniformSchoolgirlBlue: 50
-    UniformSchoolgirlCyan: 50
-    UniformSchoolgirlGreen: 50
-    UniformSchoolgirlOrange: 50
-    UniformSchoolgirlPink: 50
-    UniformSchoolgirlPurple: 50
-    UniformSchoolgirlRed: 50
-    UniformSchoolgirlDusk: 50
-    UniformSchoolgirlBlazerTan: 50
     UniformGeisha: 50
     ClothingKimonoBlue: 100
     ClothingKimonoPink: 100
@@ -275,7 +262,7 @@
     ClothingShoesBling: 100
     ClothingShoesBootsCowboyFancy: 100
     ClothingOuterDogi: 100
-    ClothingMaskSexyClown: 100
-    ClothingMaskSexyMime: 100
+    ClothingMaskBlushingClown: 100
+    ClothingMaskBlushingMime: 100
     ClothingHeadHatCowboyBountyHunter: 100
     Katana: 500

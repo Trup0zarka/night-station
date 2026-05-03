@@ -15,9 +15,6 @@
       inverted: true
       species:
       - IPC
-    - !type:CharacterTraitRequirement
-      traits:
-      - AnomalousPositronics
   - !type:CharacterEmployerRequirement
     inverted: true
     employers:

@@ -10,15 +10,12 @@
       inverted: true
       species:
       - IPC
-    - !type:CharacterTraitRequirement
-      traits:
-      - AnomalousPositronics
   - !type:CharacterTraitRequirement
     inverted: true
     traits:
     - Muted
-    - Foreigner
-    - ForeignerLight
+    # - Foreigner
+    # - ForeignerLight
   - !type:CharacterEmployerRequirement
     employers:
     - NanoTrasen

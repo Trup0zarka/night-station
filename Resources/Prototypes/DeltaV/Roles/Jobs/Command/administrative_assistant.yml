@@ -28,8 +28,8 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Foreigner
-        - ForeignerLight
+        # - Foreigner
+        # - ForeignerLight
     - !type:CharacterEmployerRequirement
       employers:
       - IdrisIncorporated

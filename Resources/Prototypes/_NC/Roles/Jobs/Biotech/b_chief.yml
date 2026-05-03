@@ -16,9 +16,9 @@
     - Biotech_Operative
     - Biotech_Staff
     - Biotech_General
-    - Biotech_Lab
-    - Biotech_Security
-    - Biotech_Command
+    # - Biotech_Lab
+    # - Biotech_Security
+    # - Biotech_Command
     - NC_General
   special:
   - !type:AddComponentSpecial
