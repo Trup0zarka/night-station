@@ -13,14 +13,14 @@ reagent-desc-licoxide = Это выглядит... электризующе.
 
 reagent-name-razorium = разориум
 reagent-desc-razorium = Странное неньютоновское химическое вещество. Образуется при объединении двух лекарств от физических повреждений. При попадании в организм образует миллионы крошечных острых лезвий. Очень острых.
-reagent-name-fresium = Фрезиум
+reagent-name-fresium = фрезиум
 reagent-desc-fresium = Загадочное соединение, замедляющее вибрацию атомов и молекул... каким-то образом. По-простому, от него становится холодно... ОЧЕНЬ холодно. При проглатывании может вызвать длительные проблемы с передвижением.
 
-reagent-name-laughter = laughter
-reagent-desc-laughter = Some say that this is the best medicine, but recent studies have proven that to be untrue.
+reagent-name-laughter = смех
+reagent-desc-laughter = Некоторые утверждают, что это лучшее лекарство, но недавние исследования доказали, что это не так.
 
-reagent-name-weh = Сок, заставляющий вас Weh!
+reagent-name-weh = сок, заставляющий вас Weh!
 reagent-desc-weh = Чистая эссенция игрушки ящера. Заставляет вас Weh!
 
-reagent-name-hew = juice that makes you Hew
-reagent-desc-hew = Pure essence of inversed lizard plush. Makes you Hew!
+reagent-name-hew = сок, заставляющий вас Hew!
+reagent-desc-hew = Чистая эссенция игрушки дракончика. Заставляет вас Hew!
