@@ -63,8 +63,11 @@
   - BiotechnicaWelderMini
   - BiotechnicaWelder
   - WelderIndustrial
+  - WelderIndustrialAdvanced
+  - WelderExperimental
   - PowerDrill
   - FlashlightLantern
+  - FlashlightEmp
   - NetworkConfigurator
   - PowerCellSmall
   - PowerCellMedium
@@ -73,10 +76,8 @@
   - AccessConfigurator
   - Multitool
   - TRayScanner
-  - RemoteSignaller
-  - WelderIndustrialAdvanced
-  - WelderExperimental
-  - FlashlightEmp
+  - Signaller
+  - SignallerAdvanced
   # Misc
   - BiotechnicaAppraisalTool
   - BiotechnicaLabeler
