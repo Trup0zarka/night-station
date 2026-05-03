@@ -8,6 +8,7 @@ using Content.Shared.Mobs.Systems;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
 
 namespace Content.Server._NC.CitiNet.Cartridges;
@@ -23,7 +24,7 @@ public sealed class CitiNetMapCartridgeSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     private float _updateTimer = 0f;
-    private const float UpdateInterval = 2.0f; 
+    private const float UpdateInterval = 1.0f; 
 
     [Dependency] private readonly Content.Shared.Inventory.InventorySystem _inventory = default!;
 
@@ -79,13 +80,17 @@ public sealed class CitiNetMapCartridgeSystem : EntitySystem
         var query = EntityQueryEnumerator<CitiNetMapCartridgeComponent, CartridgeLoaderComponent>();
         while (query.MoveNext(out var uid, out var cart, out var loader))
         {
-            UpdateUI(uid, loader.Owner);
+            // Update if someone is looking at the PDA UI
+            if (_uiSystem.GetActors(uid, Content.Shared.PDA.PdaUiKey.Key).Any())
+                UpdateUI(uid, uid);
         }
-        
+
         var consoleQuery = EntityQueryEnumerator<CitiNetMapComponent, UserInterfaceComponent>();
         while (consoleQuery.MoveNext(out var uid, out var config, out var ui))
         {
-            UpdateUI(uid, uid);
+            // Update if someone is looking at the Map UI directly (e.g. wall console)
+            if (_uiSystem.GetActors(uid, CitiNetMapUiKey.Key).Any())
+                UpdateUI(uid, uid);
         }
     }
 
@@ -96,7 +101,8 @@ public sealed class CitiNetMapCartridgeSystem : EntitySystem
 
     private void OnMessage(Entity<CitiNetMapCartridgeComponent> ent, ref CartridgeMessageEvent args)
     {
-        if (args is not CitiNetUiMessageEvent) return;
+        if (args is not CitiNetUiMessageEvent)
+            return;
         UpdateUI(ent, GetEntity(args.LoaderUid));
     }
 
@@ -108,14 +114,26 @@ public sealed class CitiNetMapCartridgeSystem : EntitySystem
 
         // 1. Identify the viewer (person looking at the map)
         EntityUid? viewer = null;
+
+        // Priority 1: Direct Map UI
         foreach (var actor in _uiSystem.GetActors(loader, CitiNetMapUiKey.Key))
         {
             viewer = actor;
             break;
         }
 
+        // Priority 2: PDA/Loader UI
+        if (viewer == null)
+        {
+            foreach (var actor in _uiSystem.GetActors(loader, Content.Shared.PDA.PdaUiKey.Key))
+            {
+                viewer = actor;
+                break;
+            }
+        }
+
         // Fallback: If no actors found via UI, check if the PDA is in someone's inventory/hands
-        if (viewer == null && TryComp<TransformComponent>(loader, out var xformLoader))
+        if (viewer == null && TryComp(loader, out TransformComponent? xformLoader))
         {
             viewer = xformLoader.ParentUid;
         }
@@ -135,13 +153,13 @@ public sealed class CitiNetMapCartridgeSystem : EntitySystem
             allowedGroups = mapConfig.VisibleGroups;
         }
 
-        var xform = EntityManager.GetComponent<TransformComponent>(loader);
+        var xform = Transform(loader);
         var gridUid = xform.GridUid;
 
         if (gridUid != null)
         {
             // 2. Add SELF (Viewer) manually if they are on the grid
-            if (viewer != null && TryComp<TransformComponent>(viewer.Value, out var viewerXform) && viewerXform.GridUid == gridUid)
+            if (viewer != null && TryComp(viewer.Value, out TransformComponent? viewerXform) && viewerXform.GridUid == gridUid)
             {
                 var viewerPos = Vector2.Transform(_transform.GetWorldPosition(viewer.Value), _transform.GetInvWorldMatrix(gridUid.Value));
                 beacons.Add(new CitiNetMapBeaconData(

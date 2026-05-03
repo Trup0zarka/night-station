@@ -3,9 +3,11 @@ using System.Numerics;
 using Content.Client.Pinpointer.UI;
 using Content.Shared._NC.CitiNet;
 using Robust.Client.Graphics;
+using Robust.Client.Player;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
+using Robust.Shared.GameObjects;
 using Robust.Shared.Input;
 using Robust.Shared.IoC;
 using Robust.Shared.Maths;
@@ -15,6 +17,7 @@ namespace Content.Client._NC.CitiNet.UI;
 public sealed partial class CitiNetMapControl : NavMapControl
 {
     [Dependency] private readonly IResourceCache _cache = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
 
     public List<global::Content.Shared._NC.CitiNet.CitiNetMapSectorData> MapSectors = new();
     public List<global::Content.Shared._NC.CitiNet.CitiNetMapBeaconData> MapBeacons = new();
@@ -103,8 +106,7 @@ public sealed partial class CitiNetMapControl : NavMapControl
         // 3. Draw Beacons
         if (ClientBeaconsEnabled)
         {
-            var entManager = IoCManager.Resolve<IEntityManager>();
-            var spriteSys = entManager.System<Robust.Client.GameObjects.SpriteSystem>();
+            var spriteSys = EntManager.System<Robust.Client.GameObjects.SpriteSystem>();
 
             foreach (var beacon in MapBeacons)
                 DrawBeacon(handle, beacon, offset, spriteSys);
@@ -114,6 +116,18 @@ public sealed partial class CitiNetMapControl : NavMapControl
     private void DrawBeacon(DrawingHandleScreen handle, CitiNetMapBeaconData beacon, Vector2 offset, Robust.Client.GameObjects.SpriteSystem spriteSys)
     {
         var pos = ScalePositionFlipY(beacon.LocalPosition - offset);
+
+        // Smooth local position for 'SELF'
+        if (beacon.IsSelf && MapUid != null && _playerManager.LocalSession?.AttachedEntity is { } localPlayer)
+        {
+            if (EntManager.TryGetComponent<TransformComponent>(localPlayer, out var xform) && xform.GridUid == MapUid)
+            {
+                var transformSystem = EntManager.System<SharedTransformSystem>();
+                var localPos = Vector2.Transform(transformSystem.GetWorldPosition(localPlayer), transformSystem.GetInvWorldMatrix(MapUid.Value));
+                pos = ScalePositionFlipY(localPos - offset);
+            }
+        }
+
         var labelPos = pos + new Vector2(10, -5);
         var font = new VectorFont(_cache.GetResource<FontResource>("/Fonts/NotoSans/NotoSans-Bold.ttf"), (int)(beacon.FontSize * UIScale));
 
