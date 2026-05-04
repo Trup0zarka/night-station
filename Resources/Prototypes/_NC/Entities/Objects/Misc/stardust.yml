@@ -276,7 +276,7 @@
   components:
   - type: Sprite
     sprite: _NC/Objects/Misc/stardust.rsi
-    state: item_pill
+    state: pill1
   - type: Label
     currentLabel: reagent-name-stardust-pill
   - type: Produce

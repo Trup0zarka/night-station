@@ -21,7 +21,7 @@
         { "name": "item_produce_equipped-neck", "directions": 4 },
         { "name": "item_produce" },
         { "name": "item_powder" },
-        { "name": "item_pill" },
+        { "name": "pill1" },
         { "name": "item_candy" },
         { "name": "item_candy_cocktail" },
 
