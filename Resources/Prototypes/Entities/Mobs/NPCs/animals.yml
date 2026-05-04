@@ -1752,10 +1752,10 @@
   id: MobMonkeySyndicateAgent
   parent: MobBaseSyndicateMonkey
   suffix: syndicate agent
-  components:
-  # make the player a traitor once its taken
-  - type: AutoTraitor
-    profile: TraitorReinforcement
+  # components:
+  # # make the player a traitor once its taken
+  # - type: AutoTraitor
+  #   profile: TraitorReinforcement
 
 - type: entity
   id: MobMonkeySyndicateAgentNukeops # Reinforcement exclusive to nukeops uplink
@@ -1886,10 +1886,10 @@
   id: MobKoboldSyndicateAgent
   parent: MobBaseSyndicateKobold
   suffix: syndicate agent
-  components:
-  # make the player a traitor once its taken
-  - type: AutoTraitor
-    profile: TraitorReinforcement
+  # components:
+  # # make the player a traitor once its taken
+  # - type: AutoTraitor
+  #   profile: TraitorReinforcement
 
 - type: entity
   id: MobKoboldSyndicateAgentNukeops # Reinforcement exclusive to nukeops uplink

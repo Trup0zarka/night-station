@@ -94,9 +94,10 @@
   id: SpawnPointNCPDCadet
   parent: SpawnPointJobBase
   name: ncpd cadet spawn point
+  suffix: DO NOT MAP
   components:
   - type: SpawnPoint
-    job_id: NCPDCadet
+    job_id: NCPDOfficer
   - type: Sprite
     layers:
       - state: green

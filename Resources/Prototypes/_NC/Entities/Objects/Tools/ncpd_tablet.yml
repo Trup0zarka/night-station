@@ -21,4 +21,8 @@
       enum.NcpdTabletUiKey.Key:
         type: NcpdTabletBoundUserInterface
   - type: AccessReader
-    access: [["NCPD"]]
+    access:
+      - ["NCPD_Patrol"]
+      - ["NCPD_Armory"]
+      - ["NCPD_Detective"]
+      - ["NCPD_Command"]
