@@ -216,7 +216,7 @@ public sealed class HungerSystem : EntitySystem
             {
                 if (component.StarvationDamage is null)
                 {
-                    component.StarvationDamage = new DamageSpecifier(_prototype.Index<DamageTypePrototype>("Cellular"), (float) component.StarvationDamageValue);
+                    component.StarvationDamage = new DamageSpecifier(_prototype.Index<DamageTypePrototype>("Bloodloss"), (float) component.StarvationDamageValue);
                 }
                 if (component.StarvationDamage is { } damage)
                 {
