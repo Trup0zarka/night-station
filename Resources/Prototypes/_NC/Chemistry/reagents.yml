@@ -1,9 +1,9 @@
 - type: reagent
   id: GunpowderNC
-  name: Порох
+  name: reagent-name-GunpowderNC
   group: Elements
-  desc: Взрывчатое вещество для патронов.
-  physicalDesc: Серый порошок.
+  desc: reagent-desc-GunpowderNC
+  physicalDesc: reagent-physicalDesc-powder
   color: "#404040"
   tileReactions:
   - !type:SpillToStackReaction
@@ -11,19 +11,19 @@
 
 - type: reagent
   id: NCPlastic
-  name: Плакстик
+  name: reagent-name-NCPlastic
   group: Elements
-  desc: Пластик.
-  physicalDesc: Серый порошок.
+  desc: reagent-desc-NCPlastic
+  physicalDesc: reagent-physicalDesc-powder
   color: "#404040"
 
 
 - type: reagent
   id: Yeast
-  name: Дрожжи
+  name: reagent-name-Yeast
   group: Foods
-  desc: На вид рассыпчатые и влажные.
-  physicalDesc: Рассыпчатое и влажное.
+  desc: reagent-desc-Yeast
+  physicalDesc: reagent-physicalDesc-yeast
   flavor: bitter
   color: "#d2b48c"
   metabolisms:
@@ -37,10 +37,10 @@
 
 - type: reagent
   id: CornSmoothie
-  name: Кукурузный смузи
+  name: reagent-name-CornSmoothie
   group: Foods
-  desc: На вид как перемолотое растение.
-  physicalDesc: Перемолотое растение.
+  desc: reagent-desc-CornSmoothie
+  physicalDesc: reagent-physicalDesc-grinded
   flavor: leaf
   color: "#e8d382"
   metabolisms:
@@ -56,10 +56,10 @@
 
 - type: reagent
   id: WheatSmoothie
-  name: Пшеничный смузи
+  name: reagent-name-WheatSmoothie
   group: Foods
-  desc: На вид как перемолотое растение.
-  physicalDesc: Перемолотое растение.
+  desc: reagent-desc-WheatSmoothie
+  physicalDesc: reagent-physicalDesc-grinded
   flavor: leaf
   color: "#e8e1bc"
   metabolisms:
@@ -75,19 +75,19 @@
 
 - type: reagent
   id: WhiteMatter
-  name: Белое вещество
+  name: reagent-name-WhiteMatter
   group: Elements
-  desc: Важный компонент нервной системы, богатый миелином.
-  physicalDesc: Белое и маслянистое.
+  desc: reagent-desc-WhiteMatter
+  physicalDesc: reagent-physicalDesc-white
   flavor: metallic
   color: "#f0f0f0"
 
 - type: reagent
   id: NeuroStim
-  name: НейроСтим
+  name: reagent-name-NeuroStim
   group: Narcotics
-  desc: На вид вещество пенное. Служит основой для продвинутых нейростимуляторов.
-  physicalDesc: Пенное.
+  desc: reagent-desc-NeuroStim
+  physicalDesc: reagent-physicalDesc-foamy
   flavor: metallic
   color: "#e0f7fa"
   metabolisms:
@@ -97,10 +97,10 @@
 
 - type: reagent
   id: PrimeTime
-  name: Прайм Тайм
+  name: reagent-name-PrimeTime
   group: Narcotics
-  desc: На вид как последняя надежда. Экстремальный стимулятор с фатальными побочными эффектами.
-  physicalDesc: Ярко-голубое и светящееся.
+  desc: reagent-desc-PrimeTime
+  physicalDesc: reagent-physicalDesc-PrimeTime
   flavor: metallic
   color: "#00ffff"
   metabolisms:
@@ -118,10 +118,10 @@
 
 - type: reagent
   id: SixGun
-  name: Шестистволка
+  name: reagent-name-SixGun
   group: Narcotics
-  desc: На вид как безумство. Дает невероятную скорость ценой собственного тела.
-  physicalDesc: Пульсирующее фиолетовое.
+  desc: reagent-desc-SixGun
+  physicalDesc: reagent-physicalDesc-SixGun
   flavor: bitter
   color: "#4b0082"
   metabolisms:
@@ -143,10 +143,10 @@
 
 - type: reagent
   id: NitroPolymer
-  name: Нитро-полимер
+  name: reagent-name-NitroPolymer
   group: Elements
-  desc: На вид глянцевое. Едкий запах. Используется для производства боеприпасов.
-  physicalDesc: Глянцевое и едкое.
+  desc: reagent-desc-NitroPolymer
+  physicalDesc: reagent-physicalDesc-NitroPolymer
   flavor: chemical
   color: "#3a3a3a"
   metabolisms:
@@ -164,10 +164,10 @@
 
 - type: reagent
   id: BioEthanol
-  name: Био-этанол
+  name: reagent-name-BioEthanol
   group: Foods
-  desc: На вид сильно пахнущее. Получено путем ферментации.
-  physicalDesc: Сильно пахнущее.
+  desc: reagent-desc-BioEthanol
+  physicalDesc: reagent-physicalDesc-BioEthanol
   flavor: alcohol
   color: "#b05b3c"
   metabolisms:

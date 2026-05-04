@@ -3,6 +3,8 @@
   id: YeastChemistryBottle
   name: бутылочка (дрожжи)
   components:
+  - type: Label
+    currentLabel: reagent-name-Yeast
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -15,6 +17,8 @@
   id: CornSmoothieChemistryBottle
   name: бутылочка (кукурузный смузи)
   components:
+  - type: Label
+    currentLabel: reagent-name-CornSmoothie
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -27,6 +31,8 @@
   id: WheatSmoothieChemistryBottle
   name: бутылочка (пшеничный смузи)
   components:
+  - type: Label
+    currentLabel: reagent-name-WheatSmoothie
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -39,6 +45,8 @@
   id: WhiteMatterChemistryBottle
   name: бутылочка (белое вещество)
   components:
+  - type: Label
+    currentLabel: reagent-name-WhiteMatter
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -51,6 +59,8 @@
   id: NeuroStimChemistryBottle
   name: бутылочка (нейростим)
   components:
+  - type: Label
+    currentLabel: reagent-name-NeuroStim
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -63,6 +73,8 @@
   id: PrimeTimeChemistryBottle
   name: бутылочка (прайм тайм)
   components:
+  - type: Label
+    currentLabel: reagent-name-PrimeTime
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -75,6 +87,8 @@
   id: SixGunChemistryBottle
   name: бутылочка (шестистволка)
   components:
+  - type: Label
+    currentLabel: reagent-name-SixGun
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -87,6 +101,8 @@
   id: NitroPolymerChemistryBottle
   name: бутылочка (нитро-полимер)
   components:
+  - type: Label
+    currentLabel: reagent-name-NitroPolymer
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -99,6 +115,8 @@
   id: BioEthanolChemistryBottle
   name: бутылочка (био-этанол)
   components:
+  - type: Label
+    currentLabel: reagent-name-BioEthanol
   - type: SolutionContainerManager
     solutions:
       drink:
