@@ -5,7 +5,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Vehicle
-    renderOver: East, SouthEast, South, SouthWest, West
+    # renderOver: East, SouthEast, South, SouthWest, West
   - type: NCVehicle
     fuelConsumptionPerSecond: 0.5
     idleFuelConsumption: 0.1
@@ -118,15 +118,15 @@
     state: vehicle
     noRot: true
   - type: Vehicle
-    renderOver: North, NorthEast, NorthWest
-    hornSound:
-      collection: DeskBell
-      params:
-        variation: 0.125
-    sirenSound:
-      collection: PoliceSiren
-      params:
-        variation: 0.125
+    # renderOver: North, NorthEast, NorthWest
+    # hornSound:
+    #   collection: DeskBell
+    #   params:
+    #     variation: 0.125
+    # sirenSound:
+    #   collection: PoliceSiren
+    #   params:
+    #     variation: 0.125
   - type: ItemSlots
     slots:
       key_slot:
@@ -150,7 +150,7 @@
   - type: Sprite
     sprite: Objects/Vehicles/syndicatesegway.rsi
     state: vehicle
-    renderOver: North, NorthEast, NorthWest
+    # renderOver: North, NorthEast, NorthWest
     noRot: true
   - type: ItemSlots
     slots:
@@ -177,11 +177,11 @@
     state: vehicle
     noRot: true
   - type: Vehicle
-    hornSound:
-      collection: BikeHorn
-      params:
-        variation: 0.125
-    renderOver: North, NorthEast, East, SouthEast, South, SouthWest, West, NorthWest
+    # hornSound:
+    #   collection: BikeHorn
+    #   params:
+    #     variation: 0.125
+    # renderOver: North, NorthEast, East, SouthEast, South, SouthWest, West, NorthWest
   - type: ItemSlots
     slots:
       key_slot:
@@ -207,7 +207,7 @@
     state: vehicle
     noRot: true
   - type: Vehicle
-    renderOver: North, NorthEast, East, SouthEast, South, SouthWest, West, NorthWest
+    # renderOver: North, NorthEast, East, SouthEast, South, SouthWest, West, NorthWest
   - type: ItemSlots
     slots:
       key_slot:
@@ -246,9 +246,9 @@
       visible: false
     noRot: true
   - type: Vehicle
-    requiredHands: 0
-    engineRunning: true
-    renderOver: South, SouthEast, SouthWest
+    # requiredHands: 0
+    # engineRunning: true
+    # renderOver: South, SouthEast, SouthWest
   - type: MovementSpeedModifier
     acceleration: 10
     friction: 10

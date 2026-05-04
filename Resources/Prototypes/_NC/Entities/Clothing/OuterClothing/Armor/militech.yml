@@ -17,5 +17,6 @@
         Slash: 0.85
         Piercing: 0.7 # 30% reduction. Combined with implants (e.g. 0.8), total is ~0.56.
         Heat: 0.95
+  - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.8
