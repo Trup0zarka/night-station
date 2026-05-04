@@ -24,7 +24,10 @@
         type: CitiNetMapConsoleBoundUserInterface
   - type: AccessReader
     access:
-      - ["NCPD"]
+      - ["NCPD_Patrol"]
+      - ["NCPD_Armory"]
+      - ["NCPD_Detective"]
+      - ["NCPD_Command"]
 
 - type: entity
   id: CitiNetConsoleTrauma
