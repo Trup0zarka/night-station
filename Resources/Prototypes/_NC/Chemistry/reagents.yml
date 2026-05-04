@@ -41,7 +41,7 @@
   group: Foods
   desc: reagent-desc-CornSmoothie
   physicalDesc: reagent-physicalDesc-grinded
-  flavor: leaf
+  flavor: leafy
   color: "#e8d382"
   metabolisms:
     Drink:
@@ -60,7 +60,7 @@
   group: Foods
   desc: reagent-desc-WheatSmoothie
   physicalDesc: reagent-physicalDesc-grinded
-  flavor: leaf
+  flavor: leafy
   color: "#e8e1bc"
   metabolisms:
     Drink:
@@ -147,7 +147,7 @@
   group: Elements
   desc: reagent-desc-NitroPolymer
   physicalDesc: reagent-physicalDesc-NitroPolymer
-  flavor: chemical
+  flavor: medicine
   color: "#3a3a3a"
   metabolisms:
     Poison:

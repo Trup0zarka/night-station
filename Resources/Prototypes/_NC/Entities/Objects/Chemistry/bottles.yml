@@ -1,7 +1,8 @@
 - type: entity
   parent: BaseChemistryBottleFilled
   id: YeastChemistryBottle
-  name: бутылочка (дрожжи)
+  name: бутылочка
+  suffix: дрожжи
   components:
   - type: Label
     currentLabel: reagent-name-Yeast
@@ -15,7 +16,8 @@
 - type: entity
   parent: BaseChemistryBottleFilled
   id: CornSmoothieChemistryBottle
-  name: бутылочка (кукурузный смузи)
+  name: бутылочка
+  suffix: кукурузный смузи
   components:
   - type: Label
     currentLabel: reagent-name-CornSmoothie
@@ -29,7 +31,8 @@
 - type: entity
   parent: BaseChemistryBottleFilled
   id: WheatSmoothieChemistryBottle
-  name: бутылочка (пшеничный смузи)
+  name: бутылочка
+  suffix: пшеничный смузи
   components:
   - type: Label
     currentLabel: reagent-name-WheatSmoothie
@@ -43,7 +46,8 @@
 - type: entity
   parent: BaseChemistryBottleFilled
   id: WhiteMatterChemistryBottle
-  name: бутылочка (белое вещество)
+  name: бутылочка
+  suffix: белое вещество
   components:
   - type: Label
     currentLabel: reagent-name-WhiteMatter
@@ -57,7 +61,8 @@
 - type: entity
   parent: BaseChemistryBottleFilled
   id: NeuroStimChemistryBottle
-  name: бутылочка (нейростим)
+  name: бутылочка
+  suffix: нейростим
   components:
   - type: Label
     currentLabel: reagent-name-NeuroStim
@@ -71,7 +76,8 @@
 - type: entity
   parent: BaseChemistryBottleFilled
   id: PrimeTimeChemistryBottle
-  name: бутылочка (прайм тайм)
+  name: бутылочка
+  suffix: прайм тайм
   components:
   - type: Label
     currentLabel: reagent-name-PrimeTime
@@ -85,7 +91,8 @@
 - type: entity
   parent: BaseChemistryBottleFilled
   id: SixGunChemistryBottle
-  name: бутылочка (шестистволка)
+  name: бутылочка
+  suffix: шестистволка
   components:
   - type: Label
     currentLabel: reagent-name-SixGun
@@ -99,7 +106,8 @@
 - type: entity
   parent: BaseChemistryBottleFilled
   id: NitroPolymerChemistryBottle
-  name: бутылочка (нитро-полимер)
+  name: бутылочка
+  suffix: нитро-полимер
   components:
   - type: Label
     currentLabel: reagent-name-NitroPolymer
@@ -113,7 +121,8 @@
 - type: entity
   parent: BaseChemistryBottleFilled
   id: BioEthanolChemistryBottle
-  name: бутылочка (био-этанол)
+  name: бутылочка
+  suffix: био-этанол
   components:
   - type: Label
     currentLabel: reagent-name-BioEthanol

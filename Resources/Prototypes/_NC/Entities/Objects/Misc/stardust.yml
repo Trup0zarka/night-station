@@ -427,7 +427,6 @@
     sprite: _NC/Objects/Misc/stardust.rsi
     state: item_powder
   - type: Item
-    sprite: _NC/Objects/Misc/stardust.rsi
     size: Tiny
   - type: Material
   - type: Produce  # So we can put it in a plant bag
