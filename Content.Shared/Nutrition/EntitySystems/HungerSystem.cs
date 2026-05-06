@@ -14,6 +14,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Configuration;
 using Content.Shared.Damage.Prototypes;
+using Robust.Shared.Player;
 
 namespace Content.Shared.Nutrition.EntitySystems;
 
@@ -205,13 +206,17 @@ public sealed class HungerSystem : EntitySystem
 
         // NC edit start: Fix hunger
         // Hunger effect (on dead): Deal damage (if StarvationDamageValue is present)
-        if (component.CurrentThreshold <= HungerThreshold.Dead && !_mobState.IsDead(uid))
+        if (
+            component.CurrentThreshold <= HungerThreshold.Dead &&
+            !_mobState.IsDead(uid) && !_mobState.IsCritical(uid) &&
+            HasComp<ActorComponent>(uid)
+        )
         {
             if (component.StarvationDamageValue is not null && component.StarvationDamageValue > 0)
             {
                 if (component.StarvationDamage is null)
                 {
-                    component.StarvationDamage = new DamageSpecifier(_prototype.Index<DamageTypePrototype>("Cellular"), (float) component.StarvationDamageValue);
+                    component.StarvationDamage = new DamageSpecifier(_prototype.Index<DamageTypePrototype>("Bloodloss"), (float) component.StarvationDamageValue);
                 }
                 if (component.StarvationDamage is { } damage)
                 {
@@ -311,13 +316,11 @@ public sealed class HungerSystem : EntitySystem
             if (_timing.CurTime < hunger.NextThresholdUpdateTime)
                 continue;
 
-            hunger.NextThresholdUpdateTime += hunger.ThresholdUpdateRate;  // NC edit: Fix hunger
+            hunger.NextThresholdUpdateTime = _timing.CurTime + hunger.ThresholdUpdateRate;
 
             ModifyHunger(uid, -hunger.ActualDecayRate, hunger);  // NC edit: Fix hunger
-
             UpdateCurrentThreshold(uid, hunger);
             DoContinuousHungerEffects(uid, hunger);
         }
     }
 }
-
