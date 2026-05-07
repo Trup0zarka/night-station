@@ -66,7 +66,6 @@
     startingCharge: 1000
   - type: BatterySelfRecharger # Charges internal battery from cell if implemented, or we just rely on cell?
     autoRecharge: true
-    active: true
 
 #  L-Click: Open/Close Doors, Attack Mobs (with Deck).
 #  R-Click: Bolt Door

@@ -62,7 +62,7 @@
     - prototype: CartridgeArasakaRailgun # Лазерный выстрел (рельсотрон)
       capacity: 8
       count: 8
-      modeName: ammo-provider-mode-railgun
+      modeName: dual-ammo-mode-railgun
       fireRate: 1
       soundGunshot:
         path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
