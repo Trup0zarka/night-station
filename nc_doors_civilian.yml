@@ -1,0 +1,79 @@
+
+- type: entity
+  id: NCAirlockRipper
+  parent: Airlock
+  name: дверь
+  suffix: "Риппер"
+  components:
+  - type: Sprite
+    sprite: _NC/Structures/Doors/Door.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+    - state: closed_unlit
+      map: ["enum.DoorVisualLayers.BaseUnlit"]
+      shader: unshaded
+    - state: welded
+      map: ["enum.WeldableLayers.BaseWelded"]
+    - state: bolted_unlit
+      map: ["enum.DoorVisualLayers.BaseBolted"]
+      shader: unshaded
+    - state: emergency_unlit
+      map: ["enum.DoorVisualLayers.BaseEmergencyAccess"]
+      shader: unshaded
+  - type: AccessReader
+    containerAccessProvider: null
+    access: [["Ripper"]]
+
+- type: entity
+  id: NCAirlockCafeOwner
+  parent: Airlock
+  name: дверь
+  suffix: "Владелец кафе"
+  components:
+  - type: Sprite
+    sprite: _NC/Structures/Doors/Door.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+    - state: closed_unlit
+      map: ["enum.DoorVisualLayers.BaseUnlit"]
+      shader: unshaded
+    - state: welded
+      map: ["enum.WeldableLayers.BaseWelded"]
+    - state: bolted_unlit
+      map: ["enum.DoorVisualLayers.BaseBolted"]
+      shader: unshaded
+    - state: emergency_unlit
+      map: ["enum.DoorVisualLayers.BaseEmergencyAccess"]
+      shader: unshaded
+  - type: AccessReader
+    containerAccessProvider: null
+    access: [["Cafe"]]
+
+- type: entity
+  id: NCAirlockRestaurantOwner
+  parent: Airlock
+  name: дверь
+  suffix: "Владелец ресторана"
+  components:
+  - type: Sprite
+    sprite: _NC/Structures/Doors/Door.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+    - state: closed_unlit
+      map: ["enum.DoorVisualLayers.BaseUnlit"]
+      shader: unshaded
+    - state: welded
+      map: ["enum.WeldableLayers.BaseWelded"]
+    - state: bolted_unlit
+      map: ["enum.DoorVisualLayers.BaseBolted"]
+      shader: unshaded
+    - state: emergency_unlit
+      map: ["enum.DoorVisualLayers.BaseEmergencyAccess"]
+      shader: unshaded
+  - type: AccessReader
+    containerAccessProvider: null
+    access: [["Restaurant"]]
+
