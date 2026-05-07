@@ -196,3 +196,23 @@
       map: [ "enum.AmmoVisualLayers.Base" ]
   - type: Appearance
   - type: SpentAmmoVisuals
+
+- type: entity
+  id: Cartridge127mm
+  name: патрон (12.7мм)
+  parent: BaseCartridge
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - Cartridge127mm
+  - type: CartridgeAmmo
+    proto: Bullet127mm
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: Appearance
+  - type: SpentAmmoVisuals
