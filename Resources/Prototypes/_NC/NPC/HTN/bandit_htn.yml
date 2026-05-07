@@ -91,7 +91,7 @@
         - !type:HTNPrimitiveTask
           operator: !type:WaitOperator
             key: CoverWait
-            wait: 2
+            # wait: 2
 
 - type: htnCompound
   id: NCBanditTier2CombatCompound
