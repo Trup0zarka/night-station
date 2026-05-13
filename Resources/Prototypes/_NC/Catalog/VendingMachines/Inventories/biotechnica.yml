@@ -479,24 +479,32 @@
 - type: vendingMachineInventory
   id: BiotechnicaVendingInventory
   startingInventory:
-    Syringe: 10
-    Beaker: 5
-    LargeBeaker: 3
-    PillCanister: 10
-    ChemistryEmptyBottle01: 15
-    BaseChemistryEmptyVial: 15
-    Gauze: 8
-    BiotechnicaDropper: 5
-    BiotechnicaLabeler: 2
-    BoxMouthSwab: 2
+    NCDrinkCanBiotechnicaMultifruitFake: 4
+    NCDrinkCanBiotechnicaTeaFake: 4
+    NCDrinkCanBiotechnicaTonicMutagen: 4
+    NCDrinkCanBiotechnica: 3
+    NCDrinkCanBiotechnicaRespawn: 5
+    NCDrinkCanBiotechnicaTonicFake: 3
+    NCDrinkCanBiotechnicaBerry: 1
+    NCDrinkCanBiotechnicaCherry: 1
+    NCDrinkCanBiotechnicaBluePumpkin: 1
+    NCDrinkCanBiotechnicaMultifruit: 1
+    NCDrinkCanBiotechnicaBungo: 1
+    NCDrinkCanBiotechnicaVeggie: 1
   startingItemPrices:
-    Syringe: 20
-    Beaker: 20
-    LargeBeaker: 35
-    PillCanister: 10
-    ChemistryEmptyBottle01: 10
-    BaseChemistryEmptyVial: 10
-    Gauze: 40
-    BiotechnicaDropper: 10
-    BiotechnicaLabeler: 140
-    BoxMouthSwab: 200
+    NCDrinkCanBiotechnicaMultifruitFake: 12
+    NCDrinkCanBiotechnicaTeaFake: 12
+    NCDrinkCanBiotechnicaTonicMutagen: 12
+    NCDrinkCanBiotechnica: 10
+    NCDrinkCanBiotechnicaRespawn: 12
+    NCDrinkCanBiotechnicaTonicFake: 14
+    NCDrinkCanBiotechnicaBerry: 25
+    NCDrinkCanBiotechnicaCherry: 25
+    NCDrinkCanBiotechnicaBluePumpkin: 28
+    NCDrinkCanBiotechnicaMultifruit: 28
+    NCDrinkCanBiotechnicaBungo: 27
+    NCDrinkCanBiotechnicaVeggie: 26
+  contrabandInventory:
+    NCDrinkCanBiotechnicaVitamins: 1
+  contrabandItemPrices:
+    NCDrinkCanBiotechnicaVitamins: 40
