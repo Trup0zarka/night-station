@@ -183,6 +183,9 @@
   id: NCVendingMachineCartons
   name: Молоко ОллФудс
   description: Автомат с молочными напитками в мини-упаковках!
+  suffix: профит Кафе
   components:
   - type: VendingMachine
     pack: NCDrinkCartonMiniMachineInventory
+  - type: MoneyCollector
+    access: [ [ "Cafe" ] ]

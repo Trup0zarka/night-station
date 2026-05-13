@@ -814,6 +814,7 @@
   components:
   - type: VendingMachine
     pack: NCSauceOMatInventory
+    initialStockQuality: 1.00
 
 - type: entity
   parent: VendingMachineDinnerware

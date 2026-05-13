@@ -206,6 +206,7 @@
     sprite: _NC/Structures/Machines/Biotechnica/tech.rsi
   - type: VendingMachine
     pack: BiotechnicaVendingInventory
+    initialStockQuality: 0.33
   - type: Advertise
     pack: ChangAds
 

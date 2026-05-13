@@ -1262,9 +1262,12 @@
   id: NCVendingMachineCafe
   name: Кафе-Вендинг
   description: Автомат с напитками в баночках!
+  suffix: профит Кафе
   components:
   - type: VendingMachine
     pack: NCDrinkCanCafeMachineInventory
+  - type: MoneyCollector
+    access: [ [ "Cafe" ] ]
 
 - type: entity
   parent: VendingMachineColaBlack

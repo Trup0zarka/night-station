@@ -400,9 +400,11 @@
   id: VendingMachineSoups
   name: Лучшие горячие супы НайтСити
   description: Подаются кипящими, чтобы оставались горячими весь день!
+  suffix: профит Кафе
   components:
   - type: VendingMachine
     pack: NCDrinkCupSoupMachineInventory
+    screenState: null
   - type: Sprite
     noRot: true
     sprite: Structures/Machines/VendingMachines/soda.rsi
@@ -414,3 +416,5 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: MoneyCollector
+    access: [ [ "Cafe" ] ]

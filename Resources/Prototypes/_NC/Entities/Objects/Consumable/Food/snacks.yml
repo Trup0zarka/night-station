@@ -425,6 +425,9 @@
   id: NCVendingMachineIceCream
   name: Мороженый Рай
   description: Автомат с холоднейшим мороженым!
+  suffix: профит Кафе
   components:
   - type: VendingMachine
     pack: NCIceCreamInventory
+  - type: MoneyCollector
+    access: [ [ "Cafe" ] ]

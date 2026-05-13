@@ -167,3 +167,4 @@
   components:
   - type: VendingMachine
     pack: NCDrinkJugMachineInventory
+    initialStockQuality: 1.00

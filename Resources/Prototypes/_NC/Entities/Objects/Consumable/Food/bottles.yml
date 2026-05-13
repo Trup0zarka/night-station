@@ -232,6 +232,9 @@
   id: NCVendingMachineBottles
   name: Напитки БигСити
   description: Автомат с напитками в больших упаковках большого города!
+  suffix: профит Кафе
   components:
   - type: VendingMachine
     pack: NCDrinkBottleMachineInventory
+  - type: MoneyCollector
+    access: [ [ "Cafe" ] ]
