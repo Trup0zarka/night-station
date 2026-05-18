@@ -50,6 +50,8 @@
     inHandsOnly: false
     singleUser: true
 
+  - type: ActivatableUIRequiresPower
+
   - type: UserInterface
     interfaces:
       enum.AtmUiKey.Key:
