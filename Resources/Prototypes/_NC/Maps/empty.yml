@@ -5,6 +5,7 @@
   minPlayers: 0
   stations:
     Dev:
+      stationProto: StandardNanotrasenStation
       components:
         - type: CEStationZLevels
           mapsAbove:
