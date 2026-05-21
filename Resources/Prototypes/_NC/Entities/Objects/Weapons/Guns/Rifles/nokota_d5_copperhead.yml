@@ -30,8 +30,6 @@
   # WD EDIT START
     minAngle: 21
     maxAngle: 25
-    minAngle: 21
-    maxAngle: 25
     bonusAngleIncreaseMove: 5
     bonusAngleIncreaseTurn: 1
     # WD EDIT END
