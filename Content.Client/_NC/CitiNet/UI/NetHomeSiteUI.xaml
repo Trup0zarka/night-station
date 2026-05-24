@@ -1,0 +1,13 @@
+<BoxContainer xmlns="https://spacestation14.io"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              Orientation="Vertical"
+              HorizontalExpand="True" VerticalExpand="True">
+    <Label Text="Welcome to CitiNet" HorizontalAlignment="Center" Margin="0,20,0,20" />
+    <Label Text="Night City's premier information network." HorizontalAlignment="Center" />
+    <BoxContainer Orientation="Vertical" Margin="20">
+        <Label Text="Latest News:" />
+        <Label Text="- Trauma Team reports record response times." />
+        <Label Text="- Arasaka Tower renovation completed." />
+        <Label Text="- NCPD looking for information on recent cyberpsychosis incident." />
+    </BoxContainer>
+</BoxContainer>

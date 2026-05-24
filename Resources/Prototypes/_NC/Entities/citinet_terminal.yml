@@ -1,0 +1,35 @@
+- type: entity
+  parent: BaseComputer
+  id: CitiNetTerminal
+  name: CitiNet Terminal
+  description: A bulky desktop terminal with a flickering CRT monitor.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/computers.rsi
+    state: computer
+  - type: NetBrowser
+  - type: ItemSlots
+    slots:
+      chip_slot:
+        name: Data Chip Slot
+        whitelist:
+          components:
+          - DataChip
+  - type: ActivatableUI
+    key: enum.NetBrowserUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.NetBrowserUiKey.Key:
+        type: NetBrowserBoundUserInterface
+
+- type: entity
+  parent: BaseItem
+  id: CitiNetDataChipNCPD
+  name: NCPD Access Chip
+  description: A small chip containing encrypted access keys for the NCPD database.
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/cartridge.rsi
+    state: cart-red
+  - type: DataChip
+    unlockedSiteId: NCPDDatabase
