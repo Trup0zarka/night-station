@@ -4,7 +4,7 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 1
+  time: 05/24/2026 03:54:45
   entityCount: 1
 maps:
 - 1
@@ -20,11 +20,13 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: Map Entity
+      name: Mapping Test [3]
     - type: Transform
     - type: Map
       mapPaused: True
+    - type: PhysicsMap
     - type: GridTree
+    - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
     - type: MapGrid
@@ -43,15 +45,36 @@ entities:
         volume: 2500
         immutable: True
         temperature: 293.15
-        #moles:
-        #- Oxygen: 21.824879
-        #- Nitrogen: 82.10312
+        moles:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
     - type: DecalGrid
       chunkCollection:
         version: 2
         nodes: []
     - type: Forensics
       residues: []
-      dnas: []
+      dNAs: []
       fibers: []
       fingerprints: []
+    - type: Roof
+      data: {}
+...
