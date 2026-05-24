@@ -1,15 +1,18 @@
 using Content.Server.CartridgeLoader;
 using Content.Shared._NC.CitiNet;
+using Content.Shared._NC.Forensics;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.Mind;
 using Content.Shared.Roles.Jobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Robust.Shared.Containers;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using Robust.Shared.Map;
 
 namespace Content.Server._NC.CitiNet.Cartridges;
 
@@ -22,6 +25,7 @@ public sealed class CitiNetMapCartridgeSystem : EntitySystem
     [Dependency] private readonly CitiNetMapSystem _citiNet = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
 
     private float _updateTimer = 0f;
     private const float UpdateInterval = 1.0f; 
@@ -192,7 +196,7 @@ public sealed class CitiNetMapCartridgeSystem : EntitySystem
 
                 // Skip if this is the viewer (we already added them as 'YOU')
                 if (bUid == viewer) continue;
-                
+
                 if (!allowedGroups.Contains(beacon.Group))
                     continue;
 
@@ -217,11 +221,35 @@ public sealed class CitiNetMapCartridgeSystem : EntitySystem
                 ));
             }
 
+            // 5. Scan for Forensic Chips in devices
+            var chipQuery = EntityQueryEnumerator<ForensicChipComponent, TransformComponent>();
+            while (chipQuery.MoveNext(out var cUid, out var chip, out var cXform))
+            {
+                // Only show if the chip is inserted into a device with a CartridgeLoader (PDA, etc.)
+                if (!HasComp<CartridgeLoaderComponent>(cXform.ParentUid)) continue;
+
+                var chipGrid = _transform.GetGrid(cUid);
+                if (chipGrid != gridUid) continue;
+
+                // Position extraction from NetCoordinates
+                var deathPos = chip.Coordinates.Position;
+
+                beacons.Add(new CitiNetMapBeaconData(
+                    GetNetEntity(cUid),
+                    Loc.GetString("nc-forensics-map-marker", ("name", chip.VictimName)),
+                    null,
+                    Color.Red,
+                    deathPos,
+                    12,
+                    true,
+                    false
+                ));
+            }
+
             pings.AddRange(_citiNet.GetActivePings(gridUid.Value));
         }
 
-        var state = new CitiNetMapBoundUserInterfaceState(gridUid != null ? GetNetEntity(gridUid.Value) : null, sectors, beacons, pings);
-        
+        var state = new CitiNetMapBoundUserInterfaceState(gridUid != null ? GetNetEntity(gridUid.Value) : null, sectors, beacons, pings);        
         if (HasComp<CitiNetMapCartridgeComponent>(uid))
             _cartridge.UpdateCartridgeUiState(loader, state);
         else

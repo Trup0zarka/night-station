@@ -1,5 +1,6 @@
 using Robust.Shared.Network;
 using Robust.Shared.Serialization;
+using Robust.Shared.Map;
 using System;
 using System.Collections.Generic;
 
@@ -50,6 +51,7 @@ public struct ForensicsAlertData
     public string Location;
     public float X;
     public float Y;
+    public NetCoordinates? Coordinates; // Added for map and printing
     public TimeSpan Time;
     public bool Dispatched;
     public bool Archived;

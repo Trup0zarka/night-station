@@ -7,6 +7,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Access.Systems;
 using Content.Shared.Access.Components;
+using Content.Shared.Paper;
 using Robust.Shared.Timing;
 using Robust.Shared.Player;
 using Robust.Server.GameObjects;
@@ -71,8 +72,7 @@ public sealed class NcpdForensicsSystem : EntitySystem
                 station.Alerts[msg.AlertIndex] = alert; // Update the struct in list
                 break;
             case NcpdForensicsAlertAction.PrintTicket:
-                var call = new NcpdCallData(0, Loc.GetString("nspd-call-type-flatline"), alert.Location, Loc.GetString("nspd-call-desc-victim", ("name", alert.Victim)), default, alert.Time);
-                _dispatchSystem.SpawnDispatchTicket(uid, call);
+                SpawnDispatchTicket(uid, alert);
                 break;
             case NcpdForensicsAlertAction.Archive:
                 alert.Archived = true;
@@ -122,7 +122,10 @@ public sealed class NcpdForensicsSystem : EntitySystem
         }
 
         var coords = _transformSystem.GetMapCoordinates(target);
-        var mapUid = _mapManager.GetMapEntityId(coords.MapId);
+        var gridUid = _transformSystem.GetGrid(target);
+        
+        // Use GridUid if possible for NavMap, otherwise MapEntity
+        var mapUid = gridUid ?? _mapManager.GetMapEntityId(coords.MapId);
         
         var locString = Name(mapUid);
         var pos = coords.Position;
@@ -133,6 +136,7 @@ public sealed class NcpdForensicsSystem : EntitySystem
             Location = locString,
             X = (float)Math.Round(pos.X, 1),
             Y = (float)Math.Round(pos.Y, 1),
+            Coordinates = GetNetCoordinates(_transformSystem.ToCoordinates(mapUid, coords)),
             Time = _timing.CurTime
         };
 
@@ -157,5 +161,24 @@ public sealed class NcpdForensicsSystem : EntitySystem
     private void OnConsoleOpened(EntityUid uid, NcpdForensicsConsoleComponent component, BoundUIOpenedEvent args)
     {
         UpdateConsoleUi(uid);
+    }
+
+    public void SpawnDispatchTicket(EntityUid consoleUid, ForensicsAlertData alert)
+    {
+        var coords = _transformSystem.GetMoverCoordinates(consoleUid);
+        var chip = EntityManager.SpawnEntity("NcpdEvidenceChip", coords);
+        
+        var metaSystem = EntityManager.System<MetaDataSystem>();
+        metaSystem.SetEntityName(chip, Loc.GetString("nc-forensics-chip-name", ("name", alert.Victim)));
+        metaSystem.SetEntityDescription(chip, Loc.GetString("nc-forensics-chip-desc"));
+
+        if (alert.Coordinates != null)
+        {
+            var forensic = EnsureComp<ForensicChipComponent>(chip);
+            forensic.VictimName = alert.Victim;
+            forensic.Coordinates = alert.Coordinates.Value;
+            forensic.Timestamp = alert.Time;
+            Dirty(chip, forensic);
+        }
     }
 }
