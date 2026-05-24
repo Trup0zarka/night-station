@@ -1,6 +1,5 @@
 using System.Linq;
 using Content.Shared._Shitmed.Targeting;
-using Content.Shared._CE.ZLevels.Core.EntitySystems;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Body.Systems;
 using Content.Shared.Database;
@@ -27,7 +26,6 @@ namespace Content.Shared.Throwing
         [Dependency] private readonly SharedPhysicsSystem _physics = default!;
         [Dependency] private readonly SharedGravitySystem _gravity = default!;
         [Dependency] private readonly SharedBodySystem _body = default!;
-        [Dependency] private readonly CESharedZLevelsSystem _zLevels = default!; //CrystallEdge
 
         private const string ThrowingFixture = "throw-fixture";
 
@@ -136,12 +134,6 @@ namespace Content.Shared.Throwing
                 _adminLogger.Add(LogType.Landed, LogImpact.Low, $"{ToPrettyString(uid):entity} thrown by {ToPrettyString(thrownItem.Thrower.Value):thrower} landed.");
 
             _broadphase.RegenerateContacts((uid, physics));
-
-            //CrystallEdge dont call LandEvent if we dont have ground
-            if (_zLevels.DistanceToGround(uid) > 0.5f)
-                return;
-            //CrystallEdge end
-
             var landEvent = new LandEvent(thrownItem.Thrower, playSound);
             RaiseLocalEvent(uid, ref landEvent);
         }
