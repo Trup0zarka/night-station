@@ -5,13 +5,19 @@
   minPlayers: 0
   stations:
     Dev:
-      stationProto: StandardNanotrasenStation
+      stationProto: NightCityStation
       components:
         - type: CEStationZLevels
           mapsAbove:
             - /Maps/_CE/Empty.yml
             - /Maps/_CE/Empty.yml
+            - /Maps/_CE/Empty.yml
+            - /Maps/_CE/Empty.yml
+            - /Maps/_CE/Empty.yml
+            - /Maps/_CE/Empty.yml
           mapsBelow:
+            - /Maps/_CE/Empty.yml
+            - /Maps/_CE/Empty.yml
             - /Maps/_CE/Empty.yml
             - /Maps/_CE/Empty.yml
           # zLevelsComponentOverrides:
