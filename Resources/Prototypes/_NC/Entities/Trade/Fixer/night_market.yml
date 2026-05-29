@@ -459,7 +459,7 @@
     price: 15
     count: 5
   - proto: PlantAnalyzer
-    price: 150
+    price: 400
     count: 2
   - proto: HydroponicsToolHatchet
     price: 80
@@ -479,8 +479,11 @@
   - proto: Bucket
     price: 30
     count: 5
+  - proto: BucketBig
+    price: 200
+    count: 2
   - proto: BoxMouthSwab
-    price: 40
+    price: 200
     count: 2
   - proto: PlantBag
     price: 100

@@ -707,6 +707,8 @@
     DrinkGlassCoupeShaped: 10
     DrinkVacuumFlask: 5
     DrinkShaker: 5
+    DrinkShakerAdvanced: 2
+    DrinkKettleAdvanced: 2
     DrinkJigger: 5
     DrinkIceBucket: 2
     BarSpoon: 3
@@ -728,6 +730,8 @@
     DrinkGlassCoupeShaped: 5
     DrinkVacuumFlask: 20
     DrinkShaker: 20
+    DrinkShakerAdvanced: 180
+    DrinkKettleAdvanced: 180
     DrinkJigger: 10
     DrinkIceBucket: 20
     BarSpoon: 5
@@ -745,8 +749,12 @@
     DrinkMugRed: 5
   contrabandInventory:
     DrinkFlaskBar: 5
+    BluespaceDrinkShakerAdvanced: 1
+    BluespaceDrinkKettleAdvanced: 1
   contrabandItemPrices:
     DrinkFlaskBar: 20
+    BluespaceDrinkShakerAdvanced: 600
+    BluespaceDrinkKettleAdvanced: 600
 
 - type: vendingMachineInventory
   id: NCSauceOMatInventory
@@ -832,6 +840,8 @@
   description: Диспенсер для соусов и приправ.
   suffix: Filled
   components:
+  - type: Sprite
+    state: sauce
   - type: ReagentDispenser
     storageWhitelist:
       tags:

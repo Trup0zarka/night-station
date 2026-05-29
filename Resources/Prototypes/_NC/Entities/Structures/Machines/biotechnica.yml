@@ -197,11 +197,11 @@
 - type: entity
   parent: [VendingMachineBiotechnica, VendingMachineNutri]
   id: VendingMachineBiotechnicaDrinks
-  name: напитки Biotechnica
+  name: Напитки Biotechnica
   description: Вкуснейшие, научно передовые напитки от Biotechnica.
   components:
   - type: MoneyCollector
-    bankAccount: "Biotechnica"
+    bankAccount: Biotechnica
   - type: Sprite
     sprite: _NC/Structures/Machines/Biotechnica/tech.rsi
   - type: VendingMachine
@@ -213,24 +213,24 @@
 - type: entity
   parent: VendingMachineBiotechnicaDrinks
   id: VendingMachineBiotechnicaDrinksCafe
-  name: напитки Biotechnica
+  name: Напитки Biotechnica
   description: Вкуснейшие, научно передовые напитки от Biotechnica. 20% от выручки идет на счет кафе.
   suffix: Кафе, 20% профита
   components:
   - type: MoneyCollector
-    bankAccount: "Biotechnica"
+    bankAccount: Biotechnica
     collectPercentage: 0.2
     access: [ [ "Cafe" ] ]
 
 - type: entity
   parent: VendingMachineBiotechnicaDrinks
   id: VendingMachineBiotechnicaDrinksRestaurant
-  name: напитки Biotechnica
+  name: Напитки Biotechnica
   description: Вкуснейшие, научно передовые напитки от Biotechnica. 20% от выручки идет на счет ресторана.
   suffix: Ресторан, 20% профита
   components:
   - type: MoneyCollector
-    bankAccount: "Biotechnica"
+    bankAccount: Biotechnica
     collectPercentage: 0.2
     access: [ [ "Restaurant" ] ]
 
@@ -277,3 +277,17 @@
     - state: green_bit
       shader: unshaded
     - state: refill_chinese
+
+- type: entity
+  parent: [VendingMachineBiotechnica, VendingMachineNutri]
+  id: VendingMachineBiotechnicaBotanyChemicals
+  name: Фермеромат Biotechnica
+  description: Лучшие хим. удобрения для вашего сада!
+  components:
+  - type: MoneyCollector
+    bankAccount: Biotechnica
+  - type: Sprite
+    sprite: _NC/Structures/Machines/Biotechnica/tech.rsi
+  - type: VendingMachine
+    pack: BiotechnicaBotanyCommercialInventory
+    initialStockQuality: 0.75
