@@ -8,9 +8,6 @@
   id: CitiNetComm
   name: CitiNet Comm
   url: citinet.net
-  icon:
-    sprite: Interface/Misc/program_icons.rsi
-    state: chat
   uiKey: CitiNetComm
 
 - type: netSite
