@@ -2931,3 +2931,234 @@
     collection: FootstepTile
   heatCapacity: 10000
   weather: true
+
+- type: tile
+  id: NCfloorpa
+  name: Простая плитка
+  sprite: /Textures/_NC/Tiles/alze3/pa.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCfloorpa1
+  name: сглаженная плитка влево
+  sprite: /Textures/_NC/Tiles/alze3/pa1.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCfloorpa2
+  name: сглаженная плитка вправо
+  sprite: /Textures/_NC/Tiles/alze3/pa2.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCfloorpa3
+  name: сглаженная плитка вниз
+  sprite: /Textures/_NC/Tiles/alze3/pa3.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCfloorpa4
+  name: сглаженная плитка вверх
+  sprite: /Textures/_NC/Tiles/alze3/pa4.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCfloorpa5
+  name: плитка для дороги поворот влево вверх
+  sprite: /Textures/_NC/Tiles/alze3/pa5.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCfloorpa6
+  name: плитка для дороги поворот вправо вверх
+  sprite: /Textures/_NC/Tiles/alze3/pa6.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCfloorpa7
+  name: плитка для дороги влево вниз
+  sprite: /Textures/_NC/Tiles/alze3/pa7.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCfloorpa8
+  name: плитка для дороги вправо вниз
+  sprite: /Textures/_NC/Tiles/alze3/pa8.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCfloorpa9
+  name: плитка для дороги влево
+  sprite: /Textures/_NC/Tiles/alze3/pa9.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCfloorpa10
+  name: плитка для дороги вправо
+  sprite: /Textures/_NC/Tiles/alze3/pa10.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCfloorpa11
+  name: плитка для дороги вверх
+  sprite: /Textures/_NC/Tiles/alze3/pa11.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCfloorpa12
+  name: плитка для дороги вниз
+  sprite: /Textures/_NC/Tiles/alze3/pa12.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCfloorpa13
+  name: плитка c отступом для дороги поворот влево вверх
+  sprite: /Textures/_NC/Tiles/alze3/pa13.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCfloorpa14
+  name: плитка c отступом для дороги поворот вправо вверх
+  sprite: /Textures/_NC/Tiles/alze3/pa14.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCfloorpa15
+  name: плитка c отступом для дороги поворот влево вниз
+  sprite: /Textures/_NC/Tiles/alze3/pa15.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCfloorpa16
+  name: плитка c отступом для дороги поворот вправо вниз
+  sprite: /Textures/_NC/Tiles/alze3/pa16.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCfloorpa17
+  name: плитка c отступом для дороги вверх
+  sprite: /Textures/_NC/Tiles/alze3/pa17.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCfloorpa18
+  name: плитка c отступом для дороги вниз
+  sprite: /Textures/_NC/Tiles/alze3/pa18.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCfloorpa19
+  name: плитка c отступом для дороги вправо
+  sprite: /Textures/_NC/Tiles/alze3/pa19.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCfloorpa20
+  name: плитка c отступом для дороги влево
+  sprite: /Textures/_NC/Tiles/alze3/pa20.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
