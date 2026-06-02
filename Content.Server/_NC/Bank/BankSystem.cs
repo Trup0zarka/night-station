@@ -32,6 +32,8 @@ namespace Content.Server._NC.Bank
 
         private ISawmill _log = default!;
 
+        private Dictionary<int, int> _factionBalances = new();
+
         // === НАСТРОЙКИ ТАЙМЕРА ===
         private const float PaydayInterval = 1800.0f;
         private float _paydayTimer = 0.0f;
@@ -45,6 +47,20 @@ namespace Content.Server._NC.Bank
             SubscribeLocalEvent<StationBankComponent, MapInitEvent>(OnStationBankInit);
             SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawn);
             SubscribeLocalEvent<BankAccountComponent, Content.Shared.Verbs.GetVerbsEvent<Content.Shared.Verbs.ActivationVerb>>(OnGetVerbs);
+
+            LoadFactionBalances();
+        }
+
+        private async void LoadFactionBalances()
+        {
+            _factionBalances = await _db.GetFactionBankBalancesAsync();
+
+            var query = EntityQueryEnumerator<StationBankComponent>();
+            while (query.MoveNext(out var uid, out var bank))
+            {
+                EnsureDefaultAccounts(bank);
+                Dirty(uid, bank);
+            }
         }
 
         private void OnGetVerbs(EntityUid uid, BankAccountComponent component, Content.Shared.Verbs.GetVerbsEvent<Content.Shared.Verbs.ActivationVerb> args)
@@ -96,22 +112,29 @@ namespace Content.Server._NC.Bank
 
         private void EnsureDefaultAccounts(StationBankComponent component)
         {
-            EnsureAccount(component, SectorBankAccount.CityAdmin, 0, 0);
-            EnsureAccount(component, SectorBankAccount.TraumaTeam, 10000, 5);
-            EnsureAccount(component, SectorBankAccount.Militech, 25000, 8);
-            EnsureAccount(component, SectorBankAccount.Biotechnica, 15000, 6);
-            EnsureAccount(component, SectorBankAccount.Ncpd, 5000, 0);
+            EnsureAccount(component, SectorBankAccount.CityAdmin, 0);
+            EnsureAccount(component, SectorBankAccount.TraumaTeam, 10000);
+            EnsureAccount(component, SectorBankAccount.Militech, 25000);
+            EnsureAccount(component, SectorBankAccount.Biotechnica, 15000);
+            EnsureAccount(component, SectorBankAccount.Ncpd, 5000);
         }
 
-        private void EnsureAccount(StationBankComponent component, SectorBankAccount account, int defaultBalance, int defaultIncrease)
+        private void EnsureAccount(StationBankComponent component, SectorBankAccount account, int defaultBalance)
         {
-            if (!component.Accounts.ContainsKey(account))
+            var balance = defaultBalance;
+            if (_factionBalances.TryGetValue((int)account, out var storedBalance))
+                balance = storedBalance;
+
+            if (!component.Accounts.TryGetValue(account, out var info))
             {
                 component.Accounts[account] = new StationBankAccountInfo
                 {
-                    Balance = defaultBalance,
-                    IncreasePerSecond = defaultIncrease
+                    Balance = balance,
                 };
+            }
+            else
+            {
+                info.Balance = balance;
             }
         }
 
@@ -125,29 +148,6 @@ namespace Content.Server._NC.Bank
                 _paydayTimer -= PaydayInterval;
                 ProcessPayday();
             }
-
-            var query = EntityQueryEnumerator<StationBankComponent>();
-            while (query.MoveNext(out var uid, out var bank))
-            {
-                bank.SecondsSinceLastIncrease += frameTime;
-                if (bank.SecondsSinceLastIncrease >= 1.0f)
-                {
-                    bank.SecondsSinceLastIncrease -= 1.0f;
-
-                    bool changed = false;
-                    foreach (var account in bank.Accounts.Values)
-                    {
-                        if (account.IncreasePerSecond != 0)
-                        {
-                            account.Balance += account.IncreasePerSecond;
-                            changed = true;
-                        }
-                    }
-
-                    if (changed)
-                        Dirty(uid, bank);
-                }
-            }
         }
 
         public bool TryFactionWithdraw(EntityUid stationUid, SectorBankAccount accountType, int amount)
@@ -160,6 +160,8 @@ namespace Content.Server._NC.Bank
             if (account.Balance < amount) return false;
 
             account.Balance -= amount;
+            _factionBalances[(int)accountType] = account.Balance;
+            _db.SaveFactionBankBalanceAsync((int)accountType, account.Balance);
             Dirty(stationUid, bank);
             return true;
         }
@@ -173,6 +175,8 @@ namespace Content.Server._NC.Bank
             if (!bank.Accounts.TryGetValue(accountType, out var account)) return false;
 
             account.Balance += amount;
+            _factionBalances[(int)accountType] = account.Balance;
+            _db.SaveFactionBankBalanceAsync((int)accountType, account.Balance);
             Dirty(stationUid, bank);
             return true;
         }
