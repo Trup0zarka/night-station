@@ -95,6 +95,9 @@
     whitelist:
       tags:
       - RawMaterial
+      - Sheet
+      - Ingot
+      - Metal
   - type: Lathe
     idleState: icon
     runningState: building
