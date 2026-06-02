@@ -29,4 +29,10 @@ public sealed partial class NetSitePrototype : IPrototype
     /// </summary>
     [DataField("uiKey", required: true)]
     public string UiKey { get; private set; } = string.Empty;
+
+    /// <summary>
+    /// Optional store preset associated with this site.
+    /// </summary>
+    [DataField("storePreset")]
+    public string? StorePreset { get; private set; }
 }

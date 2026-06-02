@@ -7,12 +7,6 @@ using System.Collections.Generic;
 namespace Content.Shared._NC.Forensics;
 
 [Serializable, NetSerializable]
-public enum NcpdForensicsConsoleUiKey : byte
-{
-    Key
-}
-
-[Serializable, NetSerializable]
 public sealed class NcpdForensicsConsoleBuiState : BoundUserInterfaceState
 {
     public readonly List<ForensicsAlertData> Alerts;

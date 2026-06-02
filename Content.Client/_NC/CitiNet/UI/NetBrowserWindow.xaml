@@ -1,9 +1,11 @@
 <DefaultWindow xmlns="https://spacestation14.io"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               x:Class="Content.Client._NC.CitiNet.UI.NetBrowserWindow"
                Title="CitiNet Browser"
                MinWidth="800" MinHeight="600">
-    <BoxContainer Orientation="Horizontal">
+    <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
         <!-- Sidebar -->
-        <BoxContainer Orientation="Vertical" MinWidth="200" Name="Sidebar" StyleClasses="Panel">
+        <BoxContainer Orientation="Vertical" MinWidth="200" Name="Sidebar" StyleClasses="Panel" VerticalExpand="True">
             <Label Text="Bookmarks" HorizontalAlignment="Center" Margin="0,5,0,5" />
             <PanelContainer StyleClasses="Separator" MinHeight="2" />
             <ScrollContainer VerticalExpand="True">
@@ -14,7 +16,7 @@
         <PanelContainer StyleClasses="VerticalSeparator" MinWidth="2" />
         
         <!-- Main Content -->
-        <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
             <!-- Address Bar -->
             <BoxContainer Orientation="Horizontal" Margin="5">
                 <LineEdit Name="AddressBar" HorizontalExpand="True" PlaceHolder="Enter URL..." />
@@ -24,9 +26,7 @@
             <PanelContainer StyleClasses="Separator" MinHeight="2" />
             
             <!-- Viewport -->
-            <ScrollContainer VerticalExpand="True" HorizontalExpand="True">
-                <PanelContainer Name="Viewport" Access="Public" VerticalExpand="True" HorizontalExpand="True" />
-            </ScrollContainer>
+            <PanelContainer Name="Viewport" Access="Public" VerticalExpand="True" HorizontalExpand="True" />
         </BoxContainer>
     </BoxContainer>
 </DefaultWindow>

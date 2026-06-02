@@ -26,6 +26,14 @@ public sealed partial class NetBrowserWindow : DefaultWindow
 
     public void UpdateState(NetBrowserUiState state)
     {
+        if (AddressBar == null || SiteList == null)
+        {
+            Logger.ErrorS("citinet.browser", "NetBrowserWindow: AddressBar or SiteList is null in UpdateState!");
+            return;
+        }
+
+        Logger.InfoS("citinet.browser", $"NetBrowserWindow: Updating state. URL: {state.CurrentUrl}, Sites: {state.AvailableSiteIds.Count}");
+
         AddressBar.Text = state.CurrentUrl;
 
         SiteList.RemoveAllChildren();
@@ -33,7 +41,12 @@ public sealed partial class NetBrowserWindow : DefaultWindow
         foreach (var siteId in state.AvailableSiteIds)
         {
             if (!_prototypeManager.TryIndex<NetSitePrototype>(siteId, out var site))
+            {
+                Logger.WarningS("citinet.browser", $"NetBrowserWindow: Failed to index site prototype: {siteId}");
                 continue;
+            }
+
+            Logger.DebugS("citinet.browser", $"NetBrowserWindow: Adding bookmark: {site.Name} ({site.URL})");
 
             var btn = new Button
             {
@@ -46,8 +59,11 @@ public sealed partial class NetBrowserWindow : DefaultWindow
             if (site.URL == state.CurrentUrl)
                 btn.AddStyleClass("FontColorSelected");
 
-            btn.OnPressed += _ => OnNavigate?.Invoke(site.URL);
+            var url = site.URL;
+            btn.OnPressed += _ => OnNavigate?.Invoke(url);
             SiteList.AddChild(btn);
         }
+        
+        Logger.InfoS("citinet.browser", $"NetBrowserWindow: Population complete. SiteList child count: {SiteList.ChildCount}");
     }
 }

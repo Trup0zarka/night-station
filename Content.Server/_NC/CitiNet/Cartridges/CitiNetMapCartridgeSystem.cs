@@ -9,6 +9,8 @@ using Content.Shared.Mobs.Systems;
 using Robust.Shared.Containers;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
+using Content.Shared._NC.CitiNet.Delivery;
+using Robust.Shared.Utility;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -242,6 +244,30 @@ public sealed class CitiNetMapCartridgeSystem : EntitySystem
                     deathPos,
                     12,
                     true,
+                    false
+                ));
+            }
+
+            // 6. Scan for Delivery Chips in devices
+            var deliveryQuery = EntityQueryEnumerator<DeliveryChipComponent, TransformComponent>();
+            while (deliveryQuery.MoveNext(out var cUid, out var chip, out var cXform))
+            {
+                if (!HasComp<CartridgeLoaderComponent>(cXform.ParentUid)) continue;
+                if (chip.TargetDropPoint == null) continue;
+
+                var chipGrid = _transform.GetGrid(cUid);
+                if (chipGrid != gridUid) continue;
+
+                var targetPos = Vector2.Transform(_transform.GetWorldPosition(chip.TargetDropPoint.Value), _transform.GetInvWorldMatrix(gridUid.Value));
+
+                beacons.Add(new CitiNetMapBeaconData(
+                    GetNetEntity(cUid),
+                    Loc.GetString("nc-delivery-map-marker", ("location", chip.LocationName)),
+                    new SpriteSpecifier.Rsi(new ResPath("/Textures/Interface/Misc/gps_icons.rsi"), "waypoint"),
+                    Color.Yellow,
+                    targetPos,
+                    12,
+                    false,
                     false
                 ));
             }
