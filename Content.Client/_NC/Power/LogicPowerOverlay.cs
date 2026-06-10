@@ -3,8 +3,11 @@ using Content.Client.Hands.Systems;
 using Robust.Client.Input;
 using Robust.Client.Player;
 using Robust.Client.Graphics;
+using Robust.Shared.Collections;
 using Robust.Shared.Enums;
 using Robust.Shared.Map;
+using Robust.Shared.Maths;
+using System.Numerics;
 
 namespace Content.Client._NC.Power;
 
@@ -16,6 +19,7 @@ public sealed class LogicPowerOverlay : Overlay
     private readonly IInputManager _input;
     private readonly IEyeManager _eye;
     private readonly IPlayerManager _player;
+    private readonly List<(EntityUid Provider, MapCoordinates End)> _temporaryFrozenPoints = new();
 
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
 
@@ -79,7 +83,76 @@ public sealed class LogicPowerOverlay : Overlay
             }
         }
 
+        DrawTemporaryFrozenPoints(args);
         DrawPendingConnection(args);
+    }
+
+    public void AddTemporaryFrozenPoint(EntityUid providerUid, MapCoordinates endCoordinates)
+    {
+        // Frozen maps do not run the real wiring interaction immediately, so store a visual-only endpoint.
+        foreach (var point in _temporaryFrozenPoints)
+        {
+            if (point.Provider != providerUid || point.End.MapId != endCoordinates.MapId)
+                continue;
+
+            if ((point.End.Position - endCoordinates.Position).LengthSquared() < 0.04f)
+                return;
+        }
+
+        _temporaryFrozenPoints.Add((providerUid, endCoordinates));
+    }
+
+    private void DrawTemporaryFrozenPoints(in OverlayDrawArgs args)
+    {
+        if (_temporaryFrozenPoints.Count == 0)
+            return;
+
+        var stalePoints = new ValueList<(EntityUid Provider, MapCoordinates End)>();
+        foreach (var point in _temporaryFrozenPoints)
+        {
+            if (!_entManager.TryGetComponent<TransformComponent>(point.Provider, out var providerXform))
+            {
+                stalePoints.Add(point);
+                continue;
+            }
+
+            if (providerXform.MapID != args.MapId || point.End.MapId != args.MapId)
+                continue;
+
+            // When the real provider cache becomes available after map init, stop drawing matching visual-only lines.
+            if (HasMatchingRealReceiver(point.Provider, point.End.Position))
+            {
+                stalePoints.Add(point);
+                continue;
+            }
+
+            var startPos = _transform.GetWorldPosition(providerXform);
+            var endPos = point.End.Position;
+            args.WorldHandle.DrawLine(startPos, endPos, Color.Lime.WithAlpha(0.4f));
+            args.WorldHandle.DrawCircle(endPos, 0.12f, Color.Lime.WithAlpha(0.4f));
+        }
+
+        foreach (var point in stalePoints)
+        {
+            _temporaryFrozenPoints.Remove(point);
+        }
+    }
+
+    private bool HasMatchingRealReceiver(EntityUid providerUid, Vector2 endpoint)
+    {
+        if (!_entManager.TryGetComponent<LogicPowerProviderComponent>(providerUid, out var provider))
+            return false;
+
+        foreach (var receiverUid in provider.Receivers)
+        {
+            if (!_entManager.TryGetComponent<TransformComponent>(receiverUid, out var receiverXform))
+                continue;
+
+            if ((_transform.GetWorldPosition(receiverXform) - endpoint).LengthSquared() < 0.49f)
+                return true;
+        }
+
+        return false;
     }
 
     private void DrawPendingConnection(in OverlayDrawArgs args)

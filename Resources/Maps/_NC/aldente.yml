@@ -174,6 +174,7 @@ entities:
     - type: GridTree
     - type: MovedGrids
     - type: Broadphase
+    - type: AlwaysPowered
     - type: OccluderTree
     - type: MapGrid
       chunks: {}
