@@ -163,10 +163,10 @@
   - proto: EmergencyRollerBedSpawnFolded
     price: 200
     count: 3
-  - proto: Brutepack
+  - proto: Brutepack10Lingering
     price: 30
     count: 20
-  - proto: Ointment
+  - proto: Ointment10Lingering
     price: 30
     count: 20
   - proto: Bloodpack
