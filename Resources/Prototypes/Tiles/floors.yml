@@ -3162,3 +3162,47 @@
     collection: FootstepTile
   heatCapacity: 10000
   weather: true
+
+- type: tile
+  id: NCkaf1
+  name: плитка зелёная светлая
+  sprite: /Textures/_NC/Tiles/alze4/kaf1.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCkaf2
+  name: плитка зелёная потемнее
+  sprite: /Textures/_NC/Tiles/alze4/kaf2.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCkaf3
+  name: плитка белая посветлее
+  sprite: /Textures/_NC/Tiles/alze4/kaf3.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCkaf4
+  name: плитка белая потемнее
+  sprite: /Textures/_NC/Tiles/alze4/kaf4.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
