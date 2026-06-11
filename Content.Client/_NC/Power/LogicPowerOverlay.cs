@@ -3,11 +3,8 @@ using Content.Client.Hands.Systems;
 using Robust.Client.Input;
 using Robust.Client.Player;
 using Robust.Client.Graphics;
-using Robust.Shared.Collections;
 using Robust.Shared.Enums;
 using Robust.Shared.Map;
-using Robust.Shared.Maths;
-using System.Numerics;
 
 namespace Content.Client._NC.Power;
 
@@ -107,11 +104,12 @@ public sealed class LogicPowerOverlay : Overlay
         if (_temporaryFrozenPoints.Count == 0)
             return;
 
-        var stalePoints = new ValueList<(EntityUid Provider, MapCoordinates End)>();
+        List<(EntityUid Provider, MapCoordinates End)>? stalePoints = null;
         foreach (var point in _temporaryFrozenPoints)
         {
             if (!_entManager.TryGetComponent<TransformComponent>(point.Provider, out var providerXform))
             {
+                stalePoints ??= new List<(EntityUid Provider, MapCoordinates End)>();
                 stalePoints.Add(point);
                 continue;
             }
@@ -119,40 +117,19 @@ public sealed class LogicPowerOverlay : Overlay
             if (providerXform.MapID != args.MapId || point.End.MapId != args.MapId)
                 continue;
 
-            // When the real provider cache becomes available after map init, stop drawing matching visual-only lines.
-            if (HasMatchingRealReceiver(point.Provider, point.End.Position))
-            {
-                stalePoints.Add(point);
-                continue;
-            }
-
             var startPos = _transform.GetWorldPosition(providerXform);
             var endPos = point.End.Position;
             args.WorldHandle.DrawLine(startPos, endPos, Color.Lime.WithAlpha(0.4f));
             args.WorldHandle.DrawCircle(endPos, 0.12f, Color.Lime.WithAlpha(0.4f));
         }
 
+        if (stalePoints == null)
+            return;
+
         foreach (var point in stalePoints)
         {
             _temporaryFrozenPoints.Remove(point);
         }
-    }
-
-    private bool HasMatchingRealReceiver(EntityUid providerUid, Vector2 endpoint)
-    {
-        if (!_entManager.TryGetComponent<LogicPowerProviderComponent>(providerUid, out var provider))
-            return false;
-
-        foreach (var receiverUid in provider.Receivers)
-        {
-            if (!_entManager.TryGetComponent<TransformComponent>(receiverUid, out var receiverXform))
-                continue;
-
-            if ((_transform.GetWorldPosition(receiverXform) - endpoint).LengthSquared() < 0.49f)
-                return true;
-        }
-
-        return false;
     }
 
     private void DrawPendingConnection(in OverlayDrawArgs args)
