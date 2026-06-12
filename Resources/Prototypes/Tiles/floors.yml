@@ -2449,6 +2449,50 @@
   weather: true
 
 - type: tile
+  id: NCFloora6
+  name: асфальтобетон поворот вправо вниз
+  sprite: /Textures/_NC/Tiles/alze1/a6.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCFloora7
+  name: асфальтобетон поворот влево вниз
+  sprite: /Textures/_NC/Tiles/alze1/a7.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCFloora8
+  name: асфальтобетон поворот вправо ввверх
+  sprite: /Textures/_NC/Tiles/alze1/a8.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCFloora9
+  name: асфальтобетон поворот влево ввверх
+  sprite: /Textures/_NC/Tiles/alze1/a9.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
   id: NCFloorap1
   name: асфальтобетон поворот вниз вправо
   sprite: /Textures/_NC/Tiles/alze1/ap1.png
@@ -2881,6 +2925,17 @@
   id: NCfloorasf8
   name: дорожный бордюр поворот вверх вправо
   sprite: /Textures/_NC/Tiles/alze2/asf8.png
+  baseTurf: FloorDirt
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: NCfloorasf9
+  name: дорожный бордюр сплошняком
+  sprite: /Textures/_NC/Tiles/alze2/asf9.png
   baseTurf: FloorDirt
   isSubfloor: false
   footstepSounds:
