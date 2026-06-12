@@ -46245,8 +46245,6 @@ entities:
           - 5035
           - 5036
           - 5039
-          - invalid
-          - invalid
           - 5040
         paper_label: !type:ContainerSlot
           showEnts: False
@@ -58369,7 +58367,6 @@ entities:
           - 6817
           - 6816
           - 6815
-          - invalid
           - 6810
           - 6811
           - 6812
@@ -58396,7 +58393,6 @@ entities:
           - 6823
           - 6826
           - 6822
-          - invalid
           - 6821
           - 6820
           - 6827
@@ -58418,7 +58414,6 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - invalid
           - 6838
           - 6837
           - 6839
@@ -63492,10 +63487,6 @@ entities:
           - 8390
           - 8391
           - 8392
-          - invalid
-          - invalid
-          - invalid
-          - invalid
           - 8393
           - 8394
           - 8395
@@ -91845,7 +91836,7 @@ entities:
   - uid: 13491
     components:
     - type: Transform
-      pos: -116.5,-49.5
+      pos: -115.5,-49.5
       parent: 2
   - uid: 13561
     components:
