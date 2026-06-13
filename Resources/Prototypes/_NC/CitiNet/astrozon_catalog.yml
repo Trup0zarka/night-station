@@ -1,3 +1,4 @@
+# Бвуэээээ
 - type: citiNetStoreCategory
   id: AstrozonTools
   name: "Инструменты"
@@ -8,9 +9,155 @@
   - proto: Crowbar
     price: 70
     count: 5
+  - proto: Wirecutter
+    price: 65
+    count: 5
+  - proto: Screwdriver
+    price: 80
+    count: 5
+  - proto: Welder
+    price: 80
+    count: 5
+
+- type: citiNetStoreCategory
+  id: AstrozonMed
+  name: "Медицинские принадлежности"
+  entries:
+  - proto: Ointment
+    price: 75
+    count: 25
+  - proto: Brutepack
+    price: 75
+    count: 25
+  - proto: Syringe
+    price: 15
+    count: 10
+  - proto: PillCanisterBicaridine
+    name: бикаридин
+    description: 10 таблеток по 10 унций.
+    price: 180
+    count: 5
+  - proto: PillCanisterKelotane
+    name: Келотан
+    description: 10 таблеток по 10 унций.
+    price: 180
+    count: 5
+  - proto: PillCanisterTricordrazine
+    name: Трикордразин
+    description: 10 таблеток по 10 унций.
+    price: 350
+    count: 5
+  - proto: Beaker
+    price: 25
+    count: 10
+  - proto: LargeBeaker
+    price: 50
+    count: 5
+
+
+
+- type: citiNetStoreCategory
+  id: AstrozonEquipment
+  name: "Оборудование"
+  entries:
+  - proto: StreamCamNC
+    name: Бодикамера
+    description: Нательная камера для прямых трансляций в сеть!
+    price: 300
+    count: 10
+
+
+
+- type: citiNetStoreCategory
+  id: AstrozonClothing
+  name: "Стиль и Мода"
+  entries:
+  - proto: ClothingUniformJumpsuitSuitAristocratic
+    price: 400
+    count: 6
+  - proto: ClothingUniformJumpsuitHawaiRed
+    price: 150
+    count: 2
+  - proto: ClothingUniformJumpsuitHawaiBlue
+    price: 150
+    count: 2
+  - proto: ClothingUniformJumpsuitHawaiYellow
+    price: 150
+    count: 2
+  - proto: ClothingOuterCoatBomberRandomized
+    price: 250
+    count: 3
+  - proto: ClothingOuterCoatLettermanRandomized
+    price: 250
+    count: 3
+  - proto: ClothingUniformJumpsuitNanotrasenRepresentative
+    price: 800
+    count: 1
+  - proto: ClothingUniformJumpsuitSuitBlackMob
+    price: 150
+    count: 2
+  - proto: ClothingEyesGlassesSunglasses
+    price: 20
+    count: 8
+  - proto: ClothingUniformRandomShirt
+    price: 30
+    count: 6
+  - proto: ClothingUniformJumpsuitGreyShirt
+    price: 30
+    count: 6
+  - proto: ClothingUniformJumpsuitLightBlueShirt
+    price: 40
+    count: 6
+  - proto: ClothingUniformJumpsuitClerk
+    price: 50
+    count: 6
+  - proto: ClothingUniformJumpsuitCurator
+    price: 80
+    count: 3
+  - proto: ClothingUniformJumpsuitJournalist
+    price: 100
+    count: 3
+  - proto: ClothingUniformJumpsuitReporter
+    price: 120
+    count: 2
+  - proto: ClothingUniformJumpsuitDisheveled
+    price: 20
+    count: 3
+  - proto: ClothingUniformJumpsuitSuitRolledSleeves
+    price: 150
+    count: 2
+  - proto: ClothingUniformJumpskirtDetectiveGrey
+    price: 120
+    count: 3
+  - proto: ClothingUniformJumpsuitDetectiveGrey
+    price: 120
+    count: 3
+  - proto: ClothingUniformJumpskirtDetective
+    price: 150
+    count: 3
+  - proto: ClothingUniformJumpsuitDetective
+    price: 150
+    count: 3
+  - proto: ClothingUniformJumpsuitLawyerBlue
+    price: 180
+    count: 2
+  - proto: ClothingUniformJumpsuitSuitBlackAlt
+    price: 200
+    count: 3
+  - proto: ClothingUniformJumpsuitLawyerBlack
+    price: 180
+    count: 2
+  - proto: ClothingUniformJumpskirtLawyerBlack
+    price: 180
+    count: 2
+
+
 
 - type: citiNetStorePreset
   id: AstrozonMarket
   defaultDelivery: Corporate
   categories:
   - AstrozonTools
+  - AstrozonMed
+  - AstrozonEquipment
+  - AstrozonClothing
