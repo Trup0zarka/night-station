@@ -54,8 +54,6 @@
   suffix: vendor, normal
   components:
   - type: NcStore
-    buyPresets:
-    - TradeCity_Buy
     sellPresets:
     - TradeCity_Sell
 
