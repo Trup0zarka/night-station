@@ -65,8 +65,8 @@ Night City 2045 форк билда WWDP в мире настольной вер
 
 Оригинальные материалы Night City 2045, добавленные в этот репозиторий после коммита deb3b219142e6d54dc9ef67a3f05d3b09bdd9b81 (`19 March 2026 20:00:00 UTC`), распространяются по лицензиям Night City 2045 Source-Available License и Night City 2045 Content License, если для конкретного файла, директории, metadata-файла или уведомления не указано иное.
 
-См. [NIGHTCITY-SOURCE-AVAILABLE-LICENSE](.NIGHTCITY-SOURCE-AVAILABLE-LICENSE.txt).
-См. [NIGHTCITY-CONTENT-LICENSE](.NIGHTCITY-CONTENT-LICENSE.txt).
+См. [NIGHTCITY-SOURCE-AVAILABLE-LICENSE](./NIGHTCITY-SOURCE-AVAILABLE-LICENSE.txt).
+См. [NIGHTCITY-CONTENT-LICENSE](./NIGHTCITY-CONTENT-LICENSE.txt).
 
 Это уведомление применяется только к оригинальным материалам Night City 2045 и не изменяет лицензии upstream Space Station 14, WWhiteDreamProject, сторонних библиотек, сторонних ассетов или иных материалов, регулируемых собственными лицензиями.
 
