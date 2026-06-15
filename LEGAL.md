@@ -23,6 +23,16 @@ See:
 
 These licenses apply only to original Night City 2045 materials and do not relicense upstream Space Station 14, WWhiteDreamProject, Einstein Engines, third-party materials, or files governed by their own license notices.
 
+## Third-party IP notice
+
+Night City 2045 is an unofficial, non-commercial fan project.
+
+Cyberpunk, Cyberpunk RED, Night City, and related names, settings, concepts, and intellectual property are owned by R. Talsorian Games and/or their respective rights holders.
+
+Night City 2045 does not claim ownership of those materials. They are used only under applicable non-commercial permission, fan content policy, homebrew content policy, or written authorization.
+
+The Night City 2045 licenses apply only to original project code, original server-specific content, original maps, original UI materials, original localization, and original creative materials created for this project.
+
 ## Warranty
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
