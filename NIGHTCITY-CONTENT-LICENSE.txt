@@ -1,0 +1,116 @@
+NIGHT CITY 2045 CONTENT LICENSE v1.0
+
+Effective date: 15 June 2026
+
+Copyright © Yuri Sergeev and the Night City 2045 Project contributors.
+All rights reserved except as expressly granted in this license.
+
+IMPORTANT NOTICE
+
+This license applies only to original Night City 2045 non-software content, including but not limited to original maps, lore, written texts, documentation, sprites, icons, textures, images, sounds, music, UI visuals, designs, branding, localization text, character concepts, worldbuilding materials, server-specific setting materials, and other creative content created specifically for the Night City 2045 Project.
+
+This license does not apply to upstream Space Station 14 assets, third-party assets, Creative Commons materials, or any other files that are governed by their own licenses. Such materials remain under their original licenses.
+
+1. Definitions
+
+"Project" means the Night City 2045 Project.
+
+"Licensor" means Yuri Sergeev and/or the Night City 2045 Project rights holders.
+
+"Content" means the original Night City 2045 non-software materials covered by this license.
+
+"Original Night City 2045 Content" includes original maps, sprites, icons, textures, sounds, music, UI visuals, lore, texts, documentation, localization text, worldbuilding materials, branding, and other creative works created for the Project.
+
+"Use" means copying, modifying, adapting, publishing, distributing, hosting, displaying, sublicensing, selling, or creating derivative works based on the Content.
+
+"Public Server" means any game server, network service, or multiplayer service that is accessible to people outside your private local development environment.
+
+2. Limited Permission
+
+You may:
+
+a) View and read the Content.
+
+b) Download or clone the repository for private review.
+
+c) Use the Content locally for private testing, debugging, or personal educational purposes.
+
+d) Submit contributions to the Project, subject to the Night City 2045 Individual Contributor License Agreement and the Project contribution rules.
+
+3. Prohibited Uses
+
+Without prior written permission from the Licensor, you may not:
+
+a) Copy, reuse, extract, rip, redistribute, publish, mirror, sell, sublicense, or reupload the Content.
+
+b) Use the Content in another game, server, fork, repository, mod, project, website, video game, commercial product, or public build.
+
+c) Operate, host, or help operate a Public Server using the Content or any substantial part of it.
+
+d) Modify, adapt, recolor, edit, remix, translate, convert, or create derivative works based on the Content for public use or redistribution.
+
+e) Use the Content for commercial purposes.
+
+f) Use the Content to create a competing public game server or derivative public build.
+
+g) Remove, alter, or obscure copyright notices, license notices, attribution notices, metadata, or project identifiers.
+
+h) Use the names "Night City 2045", "NC2045", project logos, project branding, distinctive visual identity, server identity, lore identity, or confusingly similar names without written permission.
+
+4. Maps and Server-Specific Content
+
+Original Night City 2045 maps, layouts, room designs, station or city layouts, area concepts, prototypes, and server-specific content are protected Content under this license.
+
+You may not copy, host, adapt, rebuild, convert, or use these materials on another public server or in another public project without written permission.
+
+5. Lore, Text, and Localization
+
+Original Night City 2045 lore, written descriptions, rules text, roleplay materials, character concepts, faction descriptions, setting documents, localization files, and translated project-specific text are protected Content under this license.
+
+You may not copy, translate, adapt, republish, or use these materials in another project without written permission.
+
+6. Third-Party and Upstream Materials
+
+This repository may contain assets, text, sounds, images, or other materials from upstream or third-party sources.
+
+Such materials are not relicensed by this license. They remain subject to their original licenses and notices.
+
+If there is a conflict between this license and the license of an upstream or third-party file, the upstream or third-party license controls for that file.
+
+7. Contributions
+
+Contributions to the Project are accepted only under the Night City 2045 Individual Contributor License Agreement, unless the Project maintainers explicitly agree otherwise in writing.
+
+By submitting a contribution, you represent that you have the legal right to submit it and that your contribution does not violate any third-party rights.
+
+8. No Trademark License
+
+This license does not grant any rights to use the names, logos, trademarks, service marks, visual identity, server identity, lore identity, or branding of the Night City 2045 Project.
+
+9. Termination
+
+Any rights granted under this license terminate automatically if you violate its terms.
+
+Upon termination, you must stop using the Content and delete or remove all unauthorized copies, forks, mirrors, deployments, and derivative works under your control.
+
+10. No Warranty
+
+The Content is provided "as is", with all faults, defects, and errors.
+
+To the maximum extent permitted by law, the Licensor provides no warranties, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, non-infringement, availability, quality, or compatibility.
+
+11. Limitation of Liability
+
+To the maximum extent permitted by law, the Licensor shall not be liable for any direct, indirect, incidental, special, consequential, exemplary, or punitive damages arising from the Content or this license, even if advised of the possibility of such damages.
+
+12. Written Permission
+
+Additional rights may be granted only by explicit written permission from the Licensor.
+
+Silence, lack of enforcement, repository visibility, or access to files shall not be interpreted as permission to use the Content beyond the rights expressly granted in this license.
+
+13. Governing Language
+
+The English version of this license is the legally binding version.
+
+Any translation is provided for convenience only. In case of conflict between translations, the English version controls.
