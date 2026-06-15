@@ -20,7 +20,6 @@ See:
 
 - [NIGHTCITY-SOURCE-AVAILABLE-LICENSE](./LICENSES/NIGHTCITY-SOURCE-AVAILABLE-LICENSE.txt)
 - [NIGHTCITY-CONTENT-LICENSE](./LICENSES/NIGHTCITY-CONTENT-LICENSE.txt)
-- [CONTRIBUTOR-LICENSE-AGREEMENT](./CONTRIBUTOR-LICENSE-AGREEMENT.md)
 
 These licenses apply only to original Night City 2045 materials and do not relicense upstream Space Station 14, WWhiteDreamProject, Einstein Engines, third-party materials, or files governed by their own license notices.
 
