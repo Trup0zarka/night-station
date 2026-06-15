@@ -2,7 +2,7 @@ NIGHT CITY 2045 SOURCE-AVAILABLE LICENSE v1.0
 
 Effective date: 15 June 2026
 
-Copyright © Yuri Sergeev and the Night City 2045 Project contributors.
+Copyright © Yascherke and the Night City 2045 Project contributors.
 All rights reserved except as expressly granted in this license.
 
 IMPORTANT NOTICE
@@ -15,7 +15,7 @@ This license does not apply to upstream Space Station 14 code, RobustToolbox cod
 
 "Project" means the Night City 2045 Project.
 
-"Licensor" means Yuri Sergeev and/or the Night City 2045 Project rights holders.
+"Licensor" means Yascherke and/or the Night City 2045 Project rights holders.
 
 "Software" means the original Night City 2045 software materials covered by this license.
 

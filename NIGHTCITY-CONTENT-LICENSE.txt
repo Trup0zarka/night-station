@@ -2,7 +2,7 @@ NIGHT CITY 2045 CONTENT LICENSE v1.0
 
 Effective date: 15 June 2026
 
-Copyright © Yuri Sergeev and the Night City 2045 Project contributors.
+Copyright © Yascherke and the Night City 2045 Project contributors.
 All rights reserved except as expressly granted in this license.
 
 IMPORTANT NOTICE
@@ -17,7 +17,7 @@ Nothing in this license grants ownership of, or rights to sublicense, any third-
 
 "Project" means the Night City 2045 Project.
 
-"Licensor" means Yuri Sergeev and/or the Night City 2045 Project rights holders.
+"Licensor" means Yascherke and/or the Night City 2045 Project rights holders.
 
 "Content" means the original Night City 2045 non-software materials covered by this license.
 
