@@ -1,11 +1,11 @@
 # SISKI
-
+# NO SISKI ; FIX names
 - type: entity
   parent: ClothingOuterStorageFoldableBase
-  id: ClothingOuterNWNArmorVest
+  id: ClothingOuter54NewsArmorVest
   name: Сейф-Тейк М2
   suffix: NC; Night City; Trupozarka
-  description:  Облегченный бронежилет класса IV с логотипом NET-Watch-News. ПРЕССА! Один лишь косой взгляд на неё это военное преступление.
+  description:  Облегченный бронежилет класса IV с логотипом Пятьдесят четвёртого канала. ПРЕССА! Один лишь косой взгляд на неё это военное преступление.
   components:
     - type: Sprite
       sprite: _NC/Clothing/OuterClothing/Armor/nwn-armorvest.rsi
@@ -20,7 +20,7 @@
           Heat: 0.85
 
 - type: entity
-  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterNWNArmorVest]
-  id: ClothingOuterNWNArmorVestOpened
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuter54NewsArmorVest]
+  id: ClothingOuter54NewsArmorVestOpened
   name: Сейф-Тейк М2
   suffix: NC; Night City; Trupozarka
