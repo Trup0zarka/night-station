@@ -1,0 +1,40 @@
+- type: entity
+  id: MachineIncubator
+  parent: BaseMachinePowered
+  name: инкубатор
+  description: Сложное устройство для выращивания пустых человеческих оболочек из первичного биоматериала.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/cloning.rsi
+    layers:
+    - state: pod_1
+    - state: pod_g
+      shader: unshaded
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: MaterialStorage
+    materials:
+      Biomass: 0
+  - type: ApcPowerReceiver
+    powerLoad: 250
+  - type: Incubator
+    requiredBiomass: 50
+    biomassMaterial: Biomass
+    incubationTime: 30
+    autoEject: false
+  - type: ContainerContainer
+    containers:
+      incubator-bodyContainer: !type:ContainerSlot {}
+
+
+# хахахаха лох пробирочный
